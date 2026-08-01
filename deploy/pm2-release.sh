@@ -34,7 +34,8 @@ CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
 
 if [ "$FAST" = "1" ]; then
   export AVENSAFE_SKIP_LINT="${AVENSAFE_SKIP_LINT:-1}"
-  export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-8}"
+  # Default 4 — 8 can thrash/swap on small VPS and look "stuck".
+  export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-4}"
   echo "==> FAST mode (skip lint, SSG concurrency=${AVENSAFE_SG_CONCURRENCY})"
 fi
 
