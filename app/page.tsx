@@ -53,7 +53,7 @@ export function generateMetadata(): Metadata {
     title: TITLE,
     description: DESCRIPTION,
     path: STATIC_ROUTES.home,
-    image: getImageById('img-invisible-grills-05') ?? getImageById('img-hero-home'),
+    image: getImageById('img-hero-home'),
   });
 }
 
@@ -150,12 +150,11 @@ export default function HomePage() {
   const stats = getCorpusStats();
   const faqs = findFaqs({ scopes: ['global', 'pricing', 'service'] }).slice(0, 10);
   const mosaicImages = getHomeGalleryImages(12);
-  const heroImage =
-    getImageById('img-invisible-grills-05') ?? getImageById('img-hero-home');
+  const heroImage = getImageById('img-hero-home');
   const aboutImages = [
-    getImageById('img-invisible-grills-01'),
-    getImageById('img-invisible-grills-05'),
     getImageById('img-hero-home'),
+    getImageById('img-invisible-grills-01'),
+    getImageById('img-invisible-grills-03'),
   ].filter((image): image is NonNullable<typeof image> => Boolean(image));
   const coreServiceCards = buildCoreServiceCards(services);
   const taxonomyServiceCards = buildTaxonomyServiceCards(12);

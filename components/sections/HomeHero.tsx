@@ -29,14 +29,14 @@ export function HomeHero({ image }: HomeHeroProps) {
           alt={image.alt}
           fill
           priority
-          quality={90}
+          quality={92}
           sizes="100vw"
-          className="object-cover object-[68%_42%] sm:object-[72%_40%]"
+          className="object-cover object-[70%_45%]"
         />
       ) : null}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-linear-to-r from-brand-950/94 via-brand-950/72 to-brand-900/35"
+        className="absolute inset-0 bg-linear-to-r from-brand-950/90 via-brand-950/65 to-brand-900/25"
       />
 
       <Container width="wide" className="relative z-10 flex min-h-[min(92vh,52rem)] items-center py-16 lg:py-24">
