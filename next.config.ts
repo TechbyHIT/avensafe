@@ -1,4 +1,8 @@
 import type { NextConfig } from 'next';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const configDir = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Security headers applied to every response. Kept here rather than in
@@ -26,6 +30,8 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   /** Slim Node runtime for PM2 (no Docker) — see ecosystem.config.cjs */
   output: 'standalone',
+  /** Keep standalone output flat (avoid /var/www/... nesting on VPS). */
+  outputFileTracingRoot: configDir,
 
   typescript: {
     ignoreBuildErrors: false,
