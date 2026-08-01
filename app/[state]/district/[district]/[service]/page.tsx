@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { PRERENDER } from '@/config/constants';
 import { GeneratedPage } from '@/components/templates/GeneratedPage';
 import { getDistrictsByState, getServices, getStates } from '@/lib/data/repository';
 import { loadPage } from '@/lib/routing/page-bundle';
@@ -16,6 +17,8 @@ interface RouteParams {
 }
 
 export function generateStaticParams(): { state: string; district: string; service: string }[] {
+  if (PRERENDER.quickBuild) return [];
+
   const services = getServices();
   const params: { state: string; district: string; service: string }[] = [];
 

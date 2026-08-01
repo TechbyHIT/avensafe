@@ -145,6 +145,11 @@ export const PRERENDER = {
   /** High-intent modifier pages (installation, price, …) for tier-1 cities only. */
   serviceInCityIntentMaxTier: 1,
   serviceInAreaIntent: false,
+  /**
+   * VPS quick builds (`AVENSAFE_QUICK_BUILD=1`): skip locality / long-tail
+   * prerender. Sitemap + indexability unchanged; those URLs render on first hit (ISR).
+   */
+  quickBuild: process.env.AVENSAFE_QUICK_BUILD === '1',
 } as const;
 
 /** Deterministic seed so content and metadata variation is stable per URL. */

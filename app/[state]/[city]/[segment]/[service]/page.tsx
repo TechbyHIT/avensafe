@@ -37,6 +37,9 @@ export function generateStaticParams(): {
   segment: string;
   service: string;
 }[] {
+  // Quick VPS builds skip this long-tail bucket entirely (still in sitemap / ISR).
+  if (PRERENDER.quickBuild) return [];
+
   const services = getServices();
   const intents = getSearchIntents();
   const params: { state: string; city: string; segment: string; service: string }[] = [];

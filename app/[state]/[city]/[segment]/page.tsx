@@ -23,18 +23,20 @@ interface RouteParams {
 }
 
 /**
- * Every locality is prerendered, but service-in-city pages only for the largest
- * cities. The rest render on first request and are then cached by ISR, which is
- * what keeps build time flat as cities are added.
+ * Localities + tier-1 service-in-city are prerendered by default.
+ * `AVENSAFE_QUICK_BUILD=1` skips localities (ISR on first request) for <5m deploys.
  */
 export function generateStaticParams(): { state: string; city: string; segment: string }[] {
   const services = getServices();
   const params: { state: string; city: string; segment: string }[] = [];
+  const quick = PRERENDER.quickBuild;
 
   for (const state of getStates()) {
     for (const city of getCitiesByState(state.id)) {
-      for (const area of getAreasByCity(city.id)) {
-        params.push({ state: state.slug, city: city.slug, segment: area.slug });
+      if (!quick) {
+        for (const area of getAreasByCity(city.id)) {
+          params.push({ state: state.slug, city: city.slug, segment: area.slug });
+        }
       }
 
       if (city.tier <= PRERENDER.serviceInCityMaxTier) {
