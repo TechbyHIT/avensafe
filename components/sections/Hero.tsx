@@ -129,12 +129,13 @@ export function Hero({
               {children ? <div className="mt-8">{children}</div> : null}
             </div>
             {image ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-(--radius-card) border border-white/15 bg-brand-900">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-(--radius-card) border border-white/15 bg-brand-900 lg:sticky lg:top-28">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   priority
+                  quality={85}
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
                 />

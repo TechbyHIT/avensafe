@@ -107,9 +107,18 @@ export interface ContentModulesProps {
   readonly modules: readonly ContentModule[];
   /** Optional photos interleaved into explain-style module layouts. */
   readonly images?: readonly ImageRecord[];
+  /** Sticky side photo on desktop (society / area pages). */
+  readonly stickyImages?: boolean;
+  /** Cap modules that get a side image (keeps society pages light). */
+  readonly maxImagedModules?: number;
 }
 
-export function ContentModules({ modules, images = [] }: ContentModulesProps) {
+export function ContentModules({
+  modules,
+  images = [],
+  stickyImages = false,
+  maxImagedModules = 99,
+}: ContentModulesProps) {
   if (modules.length === 0) return null;
 
   return (
@@ -122,9 +131,10 @@ export function ContentModules({ modules, images = [] }: ContentModulesProps) {
           entry.id === 'applications' ||
           entry.blocks.some((block) => block.type === 'definitions' || block.type === 'specs');
         const anchorId = `module-${entry.id}-${moduleIndex}`;
-        // Every module gets a rotating photo when the page has images available.
         const sideImage =
-          images.length > 0 ? images[moduleIndex % images.length] : undefined;
+          images.length > 0 && moduleIndex < maxImagedModules
+            ? images[moduleIndex % images.length]
+            : undefined;
         const imageLeft = moduleIndex % 2 === 0;
 
         return (
@@ -132,28 +142,33 @@ export function ContentModules({ modules, images = [] }: ContentModulesProps) {
             key={`${entry.id}-${moduleIndex}`}
             className={
               muted
-                ? 'border-y border-ink-200 bg-ink-50 py-12 lg:py-16'
-                : 'bg-surface-elevated py-12 lg:py-16'
+                ? 'border-y border-ink-200 bg-ink-50 py-10 lg:py-12'
+                : 'bg-surface-elevated py-10 lg:py-12'
             }
           >
             <Container width={sideImage || wide ? 'wide' : 'prose'}>
               <section aria-labelledby={anchorId}>
                 {sideImage ? (
-                  <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                  <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
                     <div
                       className={
-                        imageLeft
-                          ? 'relative aspect-[4/3] overflow-hidden rounded-(--radius-media) bg-ink-200 shadow-(--shadow-card)'
-                          : 'relative order-first aspect-[4/3] overflow-hidden rounded-(--radius-media) bg-ink-200 shadow-(--shadow-card) lg:order-last'
+                        [
+                          'relative aspect-[4/3] overflow-hidden rounded-(--radius-media) bg-ink-200 shadow-(--shadow-card)',
+                          stickyImages ? 'lg:sticky lg:top-28' : '',
+                          imageLeft ? '' : 'order-first lg:order-last',
+                        ]
+                          .filter(Boolean)
+                          .join(' ')
                       }
                     >
                       <Image
                         src={sideImage.src}
                         alt={sideImage.alt}
                         fill
-                        sizes="(min-width: 1024px) 40vw, 100vw"
+                        sizes="(min-width: 1024px) 36vw, 100vw"
                         className="object-cover"
-                        loading="lazy"
+                        loading={moduleIndex === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
                       />
                     </div>
                     <div>

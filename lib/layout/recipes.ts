@@ -152,7 +152,8 @@ function heroFor(target: PageTarget, profile: LayoutRecipe['intentProfile']): He
     return pickVariant(`${seed}:hero`, ['editorial', 'compact', 'split'] as const);
   }
   if (profile === 'local') {
-    return pickVariant(`${seed}:hero`, ['split', 'editorial', 'fullBleed'] as const);
+    // Always photo heroes on city/area/society pages — never text-only editorial.
+    return pickVariant(`${seed}:hero`, ['split', 'fullBleed'] as const);
   }
   if (profile === 'service') {
     return pickVariant(`${seed}:hero`, ['fullBleed', 'split'] as const);
@@ -230,7 +231,8 @@ function eligible(
     case 'serviceCoverage':
       return flags.hasCoverage && isServiceHub && Boolean(target.service);
     case 'localityDirectory':
-      return flags.hasLocalityDir;
+      // City hubs only — area/society pages are already a locality (keeps them fast).
+      return flags.hasLocalityDir && kind !== 'area' && kind !== 'serviceInArea' && kind !== 'serviceInAreaIntent';
     case 'testimonials':
       return flags.hasTestimonials && (isServiceLocation || isLocationHub || isServiceHub);
     case 'installProcess':

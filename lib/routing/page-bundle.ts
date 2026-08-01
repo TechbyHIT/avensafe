@@ -1,7 +1,13 @@
 import { cache } from 'react';
 import { buildPageContent } from '@/lib/content/engine';
-import { getImageById, getImagesByIds } from '@/lib/data/repository';
+import {
+  getHomeGalleryImages,
+  getImageById,
+  getImagesByIds,
+  getImagesForService,
+} from '@/lib/data/repository';
 import type { ImageRecord } from '@/lib/data/schemas';
+import { pickVariant } from '@/lib/utils/hash';
 import { buildExploreHub } from '@/lib/links/explore-hub';
 import {
   buildCrumbs,
@@ -77,8 +83,18 @@ function resolveByPath(path: string): PageTarget | null {
 
 function primaryImageFor(target: PageTarget): ImageRecord | undefined {
   if (target.service) {
-    const images = getImagesByIds(target.service.imageIds);
-    if (images.length > 0) return images[0];
+    const fromIds = getImagesByIds(target.service.imageIds);
+    const pool =
+      fromIds.length > 0 ? fromIds : getImagesForService(target.service.id, 12);
+    if (pool.length > 0) {
+      return pickVariant(`${target.path}:hero-image`, pool);
+    }
+  }
+
+  // Area / society / city hubs: rotate portfolio so pages are not image-blank.
+  const gallery = getHomeGalleryImages(16);
+  if (gallery.length > 0) {
+    return pickVariant(`${target.path}:hero-image`, gallery);
   }
   return getImageById('img-hero-home');
 }

@@ -103,7 +103,14 @@ export function EnquiryPhotoCallout({
  * Every service for the current city/area — always shown so no service page
  * is orphaned from the location graph (FeatherGuard-style service chip row).
  */
-export function LocationServicesNav({ target }: { readonly target: PageTarget }) {
+export function LocationServicesNav({
+  target,
+  compact = false,
+}: {
+  readonly target: PageTarget;
+  /** Chip row without heavy photo cards (faster society / area pages). */
+  readonly compact?: boolean;
+}) {
   const location = target.location;
   if (!location?.city) return null;
 
@@ -113,7 +120,7 @@ export function LocationServicesNav({ target }: { readonly target: PageTarget })
   const currentServiceId = target.service?.id;
 
   return (
-    <div className="bg-ink-50 py-10 lg:py-12">
+    <div className="bg-ink-50 py-8 lg:py-10">
       <Container width="wide">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
@@ -131,46 +138,74 @@ export function LocationServicesNav({ target }: { readonly target: PageTarget })
             All services hub →
           </Link>
         </div>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => {
-            const href = area
-              ? serviceInAreaPath(service, state, city, area)
-              : serviceInCityPath(service, state, city);
-            const active = service.id === currentServiceId;
-            const image = getPrimaryImageForService(service.id);
-            return (
-              <li key={service.id}>
-                <Link
-                  href={href}
-                  aria-current={active ? 'page' : undefined}
-                  data-no-underline=""
-                  className={
-                    active
-                      ? 'block overflow-hidden rounded-(--radius-card) border-2 border-brand-700 bg-white no-underline shadow-(--shadow-raised)'
-                      : 'block overflow-hidden rounded-(--radius-card) border border-ink-200/80 bg-white no-underline shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-raised)'
-                  }
-                >
-                  {image ? (
-                    <div className="relative aspect-[16/10] bg-ink-100">
-                      <Image
-                        src={image.src}
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 18vw, 45vw"
-                        className="object-cover"
-                        loading="lazy"
-                      />
+        {compact ? (
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {services.map((service) => {
+              const href = area
+                ? serviceInAreaPath(service, state, city, area)
+                : serviceInCityPath(service, state, city);
+              const active = service.id === currentServiceId;
+              return (
+                <li key={service.id}>
+                  <Link
+                    href={href}
+                    aria-current={active ? 'page' : undefined}
+                    data-no-underline=""
+                    className={
+                      active
+                        ? 'inline-flex rounded-full bg-brand-800 px-3.5 py-2 text-sm font-semibold text-white no-underline'
+                        : 'inline-flex rounded-full border border-ink-200 bg-white px-3.5 py-2 text-sm font-medium text-ink-800 no-underline hover:border-brand-400 hover:text-brand-800'
+                    }
+                  >
+                    {service.shortName}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => {
+              const href = area
+                ? serviceInAreaPath(service, state, city, area)
+                : serviceInCityPath(service, state, city);
+              const active = service.id === currentServiceId;
+              const image = getPrimaryImageForService(service.id);
+              return (
+                <li key={service.id}>
+                  <Link
+                    href={href}
+                    aria-current={active ? 'page' : undefined}
+                    data-no-underline=""
+                    className={
+                      active
+                        ? 'block overflow-hidden rounded-(--radius-card) border-2 border-brand-700 bg-white no-underline shadow-(--shadow-raised)'
+                        : 'block overflow-hidden rounded-(--radius-card) border border-ink-200/80 bg-white no-underline shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-raised)'
+                    }
+                  >
+                    {image ? (
+                      <div className="relative aspect-[16/10] bg-ink-100">
+                        <Image
+                          src={image.src}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 18vw, 45vw"
+                          className="object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                    ) : null}
+                    <div className="px-3.5 py-3">
+                      <p className="text-sm font-bold text-ink-900">{service.shortName}</p>
+                      <p className="mt-0.5 line-clamp-2 text-xs text-ink-600">{service.summary}</p>
                     </div>
-                  ) : null}
-                  <div className="px-3.5 py-3">
-                    <p className="text-sm font-bold text-ink-900">{service.shortName}</p>
-                    <p className="mt-0.5 line-clamp-2 text-xs text-ink-600">{service.summary}</p>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </Container>
     </div>
   );

@@ -88,17 +88,24 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
     target.kind === 'state' ||
     target.kind === 'district';
   const isServiceHub = target.kind === 'service' || target.kind === 'serviceIntent';
+  const isSocietyOrAreaPage =
+    target.kind === 'area' ||
+    target.kind === 'serviceInArea' ||
+    target.kind === 'serviceInAreaIntent';
 
-  const fallbackGallery = getHomeGalleryImages(16);
-  const serviceImages = target.service ? getImagesForService(target.service.id, 16) : [];
+  const fallbackGallery = getHomeGalleryImages(isSocietyOrAreaPage ? 8 : 16);
+  const serviceImages = target.service
+    ? getImagesForService(target.service.id, isSocietyOrAreaPage ? 8 : 16)
+    : [];
   /** Pad thin service catalogs so every content module / FAQ still rotates real photos. */
   const contentImages = (() => {
-    if (serviceImages.length === 0) return [...fallbackGallery];
-    if (serviceImages.length >= 8) return [...serviceImages];
+    const limit = isSocietyOrAreaPage ? 6 : 12;
+    if (serviceImages.length === 0) return [...fallbackGallery].slice(0, limit);
+    if (serviceImages.length >= 6) return [...serviceImages].slice(0, limit);
     const seen = new Set(serviceImages.map((image) => image.id));
     const padded = [...serviceImages];
     for (const image of fallbackGallery) {
-      if (padded.length >= 12) break;
+      if (padded.length >= limit) break;
       if (seen.has(image.id)) continue;
       seen.add(image.id);
       padded.push(image);
@@ -130,11 +137,8 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
     target.location?.city &&
       target.location.state &&
       (target.kind === 'city' ||
-        target.kind === 'area' ||
         target.kind === 'serviceInCity' ||
-        target.kind === 'serviceInArea' ||
-        target.kind === 'serviceInCityIntent' ||
-        target.kind === 'serviceInAreaIntent') &&
+        target.kind === 'serviceInCityIntent') &&
       getAreasByCity(target.location.city.id).length > 0,
   );
 
@@ -171,12 +175,18 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
 
   const sectionMap: Record<LayoutSectionId, ReactNode> = {
     trustStrip: <PageTrustStrip />,
-    compactProcess: <CompactInstallProcess />,
-    servicesNav: <LocationServicesNav target={target} />,
+    compactProcess: isSocietyOrAreaPage ? null : <CompactInstallProcess />,
+    servicesNav: (
+      <LocationServicesNav target={target} compact={isSocietyOrAreaPage} />
+    ),
     content: (
       <ContentModules
-        modules={content.modules}
-        images={contentImages.slice(0, 12)}
+        modules={
+          isSocietyOrAreaPage ? content.modules.slice(0, 5) : content.modules
+        }
+        images={contentImages}
+        stickyImages={isSocietyOrAreaPage}
+        maxImagedModules={isSocietyOrAreaPage ? 4 : 12}
       />
     ),
     gallery: (
@@ -191,7 +201,7 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
             : isServiceHub
               ? { heading: `${target.service?.name ?? 'Project'} installation gallery` }
               : { heading: 'Installation gallery' })}
-        maxImages={isFullLandingKind(target.kind) || isLocationHub ? 16 : 12}
+        maxImages={isSocietyOrAreaPage ? 6 : isFullLandingKind(target.kind) || isLocationHub ? 12 : 8}
       />
     ),
     priceFactors: place ? (
@@ -255,7 +265,9 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
         />
       </div>
     ),
-    relatedLinks: (
+    relatedLinks: isSocietyOrAreaPage ? (
+      <ExploreHub groups={linkGroups.slice(0, 4)} currentPath={target.path} />
+    ) : (
       <ExploreHub
         groups={linkGroups}
         currentPath={target.path}
@@ -268,6 +280,13 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
     ),
   };
 
+  const heroVariant =
+    isSocietyOrAreaPage && primaryImage
+      ? 'split'
+      : recipe.heroVariant === 'editorial' && primaryImage
+        ? 'split'
+        : recipe.heroVariant;
+
   return (
     <>
       <JsonLd graph={buildPageGraph(bundle)} />
@@ -276,14 +295,16 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
       <Hero
         heading={content.h1}
         lede={content.lede}
-        variant={recipe.heroVariant}
+        variant={heroVariant}
         ctaEmphasis={recipe.ctaEmphasis}
         image={primaryImage}
         {...(eyebrow ? { eyebrow } : {})}
         {...(enquiryContext ? { enquiryContext } : {})}
       />
 
-      {recipe.showStickyToc ? <StickyPageToc items={tocItems} /> : null}
+      {recipe.showStickyToc && !isSocietyOrAreaPage ? (
+        <StickyPageToc items={tocItems} />
+      ) : null}
 
       <div
         data-layout-profile={recipe.intentProfile}
