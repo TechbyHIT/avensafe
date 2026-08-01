@@ -1,31 +1,70 @@
 #!/usr/bin/env bash
 # Build + prepare + (re)start Avensafe under PM2 on Linux.
-# Usage from app root:
-#   chmod +x deploy/pm2-release.sh
-#   ./deploy/pm2-release.sh
-# Optional slim disk after build:
-#   CLEAN_NODE_MODULES=1 ./deploy/pm2-release.sh
+#
+# Full release (default):
+#   bash deploy/pm2-release.sh
+#
+# Faster release (reuse node_modules, skip lint, more SSG workers):
+#   bash deploy/pm2-release.sh --fast
+#   # or: FAST=1 bash deploy/pm2-release.sh
+#
+# Restart only (no pull/build — use after prepare already done):
+#   SKIP_BUILD=1 bash deploy/pm2-release.sh
+#
+# Optional:
+#   FORCE_INSTALL=1   always npm ci/install
+#   CLEAN_NODE_MODULES=1   remove root node_modules after prepare
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-echo "==> Installing production+build deps"
-if ! npm ci; then
-  echo "npm ci failed (lock drift) — falling back to npm install"
-  npm install
+for arg in "$@"; do
+  case "$arg" in
+    --fast|fast) FAST=1 ;;
+    --skip-build) SKIP_BUILD=1 ;;
+  esac
+done
+
+FAST="${FAST:-0}"
+SKIP_BUILD="${SKIP_BUILD:-0}"
+FORCE_INSTALL="${FORCE_INSTALL:-0}"
+CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
+
+if [ "$FAST" = "1" ]; then
+  export AVENSAFE_SKIP_LINT="${AVENSAFE_SKIP_LINT:-1}"
+  export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-8}"
+  echo "==> FAST mode (skip lint, SSG concurrency=${AVENSAFE_SG_CONCURRENCY})"
 fi
 
-echo "==> Freeing disk before build (safe caches only)"
-rm -rf .next/cache || true
-npm cache clean --force >/dev/null 2>&1 || true
+if [ "$SKIP_BUILD" != "1" ]; then
+  if [ "$FORCE_INSTALL" = "1" ] || [ ! -d node_modules ]; then
+    echo "==> Installing deps"
+    if ! npm ci; then
+      echo "npm ci failed (lock drift) — falling back to npm install"
+      npm install
+    fi
+  else
+    echo "==> Reusing node_modules (FORCE_INSTALL=1 to reinstall)"
+  fi
 
-echo "==> Building standalone"
-npm run build
+  echo "==> Freeing Next cache only (keeping npm cache)"
+  rm -rf .next/cache || true
 
-echo "==> Preparing standalone assets"
-CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}" npm run prepare:standalone
+  echo "==> Building standalone"
+  npm run build
+
+  echo "==> Preparing standalone assets"
+  CLEAN_NODE_MODULES="$CLEAN_NODE_MODULES" npm run prepare:standalone
+else
+  echo "==> SKIP_BUILD=1 — prepare + PM2 only"
+  if [ ! -f .next/standalone/server.js ] && [ ! -f .next/standalone-app-dir.txt ]; then
+    echo "ERROR: no standalone build present. Run without SKIP_BUILD first."
+    exit 1
+  fi
+  CLEAN_NODE_MODULES=0 npm run prepare:standalone
+fi
 
 echo "==> Verifying standalone bundle"
 test -f .next/standalone/server.js -o -f "$(tr -d '\n' < .next/standalone-app-dir.txt 2>/dev/null)/server.js"

@@ -2,10 +2,10 @@ import { SITEMAP } from '@/config/constants';
 import { STATIC_ROUTES, type SitemapType } from '@/config/routes';
 import { getBlogPosts, getGuides, getImages } from '@/lib/data/repository';
 import {
+  countAreaTargets,
   countServiceAreaIntentTargets,
   countServiceAreaTargets,
   countServiceCityIntentTargets,
-  listAreaTargets,
   listCityTargets,
   listDistrictTargets,
   listServiceCityTargets,
@@ -13,6 +13,7 @@ import {
   listServiceIntentTargets,
   listServiceTargets,
   listStateTargets,
+  sliceAreaTargets,
   sliceServiceAreaIntentTargets,
   sliceServiceAreaTargets,
   sliceServiceCityIntentTargets,
@@ -177,10 +178,11 @@ const BUCKETS: readonly Bucket[] = [
   },
   {
     type: 'areas',
-    kind: 'light-targets',
+    kind: 'heavy-targets',
     priority: 0.6,
     changeFrequency: 'monthly',
-    list: listAreaTargets,
+    count: countAreaTargets,
+    slice: sliceAreaTargets,
   },
   {
     type: 'service-city',
@@ -247,12 +249,16 @@ function bucketCount(bucket: Bucket): number {
 }
 
 let cachedIndexNames: readonly string[] | null = null;
+let cachedIndexXml: string | null = null;
 const fileCache = new Map<string, SitemapFile>();
+const xmlCache = new Map<string, string>();
 
 /** Clears in-memory sitemap caches (tests or hot reload). */
 export function resetSitemapCache(): void {
   cachedIndexNames = null;
+  cachedIndexXml = null;
   fileCache.clear();
+  xmlCache.clear();
 }
 
 /** Cheap index listing from inventory counts (no URL materialization). */
@@ -355,6 +361,17 @@ export function renderUrlset(file: SitemapFile): string {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset ${namespaces}>\n${body}\n</urlset>\n`;
 }
 
+/** Cached XML for one child sitemap (fast for Googlebot retries). */
+export function getSitemapXml(name: string): string | undefined {
+  const hit = xmlCache.get(name);
+  if (hit) return hit;
+  const file = getSitemapFile(name);
+  if (!file) return undefined;
+  const xml = renderUrlset(file);
+  xmlCache.set(name, xml);
+  return xml;
+}
+
 export function renderSitemapIndex(fileNames: readonly string[]): string {
   const body = fileNames
     .map(
@@ -364,4 +381,11 @@ export function renderSitemapIndex(fileNames: readonly string[]): string {
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</sitemapindex>\n`;
+}
+
+/** Cached sitemap index XML. */
+export function getSitemapIndexXml(): string {
+  if (cachedIndexXml) return cachedIndexXml;
+  cachedIndexXml = renderSitemapIndex(listSitemapFileNames());
+  return cachedIndexXml;
 }

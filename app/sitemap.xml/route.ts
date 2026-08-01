@@ -1,5 +1,5 @@
 import { REVALIDATE } from '@/config/constants';
-import { listSitemapFileNames, renderSitemapIndex } from '@/lib/sitemap/engine';
+import { getSitemapIndexXml } from '@/lib/sitemap/engine';
 
 /**
  * Sitemap index at `/sitemap.xml`, pointing at each batched child sitemap.
@@ -10,13 +10,13 @@ import { listSitemapFileNames, renderSitemapIndex } from '@/lib/sitemap/engine';
  */
 export const dynamic = 'force-dynamic';
 
-export function GET(): Response {
-  const xml = renderSitemapIndex(listSitemapFileNames());
+const CACHE_CONTROL = `public, max-age=3600, s-maxage=${REVALIDATE.sitemap}, stale-while-revalidate=86400`;
 
-  return new Response(xml, {
+export function GET(): Response {
+  return new Response(getSitemapIndexXml(), {
     headers: {
       'content-type': 'application/xml; charset=utf-8',
-      'cache-control': `public, max-age=0, s-maxage=${REVALIDATE.sitemap}, stale-while-revalidate=86400`,
+      'cache-control': CACHE_CONTROL,
     },
   });
 }

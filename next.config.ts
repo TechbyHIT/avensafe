@@ -37,13 +37,18 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: false,
+    // VPS fast path: AVENSAFE_SKIP_LINT=1 (set by deploy/pm2-release.sh --fast)
+    ignoreDuringBuilds: process.env.AVENSAFE_SKIP_LINT === '1',
   },
 
-  // Keep static generation workers small — this corpus pre-renders tens of
-  // thousands of pages and can OOM default worker pools on Windows.
+  // Windows: keep concurrency low (OOM risk). Linux VPS: allow more workers
+  // via AVENSAFE_SG_CONCURRENCY (pm2-release --fast sets 8).
   experimental: {
-    staticGenerationMaxConcurrency: 2,
+    staticGenerationMaxConcurrency: (() => {
+      const fromEnv = Number(process.env.AVENSAFE_SG_CONCURRENCY ?? '');
+      if (Number.isFinite(fromEnv) && fromEnv >= 1) return fromEnv;
+      return process.platform === 'win32' ? 2 : 6;
+    })(),
     staticGenerationMinPagesPerWorker: 25,
   },
 

@@ -161,6 +161,41 @@ export function listAreaTargets(): readonly PageTarget[] {
   return targets;
 }
 
+/** Count area pages without allocating the full target list. */
+export function countAreaTargets(): number {
+  let count = 0;
+  for (const city of getCities()) {
+    if (!getStateById(city.stateId)) continue;
+    count += getAreasByCity(city.id).length;
+  }
+  return count;
+}
+
+/** Slice of area targets for sitemap batches (avoids materializing every area). */
+export function sliceAreaTargets(offset: number, limit: number): readonly PageTarget[] {
+  if (limit <= 0 || offset < 0) return [];
+  const targets: PageTarget[] = [];
+  let index = 0;
+  for (const city of getCities()) {
+    const state = getStateById(city.stateId);
+    if (!state) continue;
+    for (const area of getAreasByCity(city.id)) {
+      if (index >= offset + limit) return targets;
+      if (index >= offset) {
+        const location: LocationTarget = { state, city, area };
+        targets.push({
+          kind: 'area',
+          path: areaPath(state, city, area),
+          location,
+          traits: resolveTraits(location),
+        });
+      }
+      index += 1;
+    }
+  }
+  return targets;
+}
+
 export function listServiceCityTargets(): readonly PageTarget[] {
   const targets: PageTarget[] = [];
   const services = getServices();
