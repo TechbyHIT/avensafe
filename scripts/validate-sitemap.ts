@@ -1,8 +1,8 @@
 /**
- * Asserts sitemap policy: only indexable URLs may be listed.
+ * Asserts sitemap policy: every inventory URL listed in the sitemap is indexable.
  *
  * - Samples every inventory kind against the publishing gate
- * - Fully walks lighter buckets and confirms noindex pages are excluded
+ * - Fully walks lighter buckets; any noindex URL is a failure
  * - Checks static / guide / blog sitemap candidates are published and allowed
  *
  *   npm run validate:sitemap
@@ -62,8 +62,17 @@ function auditSample(
   for (let i = 0; i < targets.length; i += step) {
     const target = targets[i]!;
     checked += 1;
-    if (isIndexable(target)) indexable += 1;
-    else noindex += 1;
+    if (isIndexable(target)) {
+      indexable += 1;
+      if (isDisallowed(target.path)) {
+        errors.push(`${label}: indexable ${target.path} is robots-disallowed`);
+      }
+    } else {
+      noindex += 1;
+      errors.push(
+        `${label}: sitemap URL is noindex — ${target.path}`,
+      );
+    }
   }
 
   console.log(
@@ -73,9 +82,7 @@ function auditSample(
 }
 
 /**
- * Full walk of a bucket: every indexable URL must be sitemap-eligible;
- * every noindex URL must stay out. Reports counts; fails only on logic bugs
- * (none expected — this documents the gate).
+ * Full walk of a bucket: every URL must be indexable and robots-allowed.
  */
 function walkBucket(label: string, targets: readonly PageTarget[]): void {
   let indexable = 0;
@@ -89,17 +96,18 @@ function walkBucket(label: string, targets: readonly PageTarget[]): void {
       }
     } else {
       excluded += 1;
+      errors.push(`${label}: sitemap URL is noindex — ${target.path}`);
     }
   }
 
   console.log(
     `  ${label.padEnd(24)} total ${String(targets.length).padStart(8)}  ` +
-      `sitemap ${String(indexable).padStart(8)}  excluded-noindex ${String(excluded).padStart(8)}`,
+      `indexable ${String(indexable).padStart(8)}  noindex ${String(excluded).padStart(8)}`,
   );
 }
 
 console.log('\nSitemap indexability check\n');
-console.log('1) Publishing-gate samples (noindex pages must never enter sitemap):\n');
+console.log('1) Publishing-gate samples (every sitemap URL must be indexable):\n');
 
 auditSample('service', listServiceTargets(), 20);
 auditSample('serviceIntent', listServiceIntentTargets(), 40);
@@ -163,9 +171,8 @@ for (const post of posts) {
 }
 console.log(`  blog posts                ${posts.length} published`);
 
-console.log('\nPolicy: sitemap lists published inventory URLs; pages that fail the');
-console.log('publishing gate render noindex,follow. This check ensures those failures');
-console.log('stay at zero so every sitemap URL stays indexable.\n');
+console.log('\nPolicy: every URL in the sitemap is indexable. Content depth');
+console.log('thresholds are advisory only; only structural faults set noindex.\n');
 
 if (errors.length > 0) {
   console.error(`Sitemap indexability FAILED (${errors.length}):\n`);
@@ -174,4 +181,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log('Sitemap indexability passed — listed URLs must be indexable.\n');
+console.log('Sitemap indexability passed — all listed URLs are indexable.\n');

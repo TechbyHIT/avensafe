@@ -79,8 +79,9 @@ export const SEO_LIMITS = {
 } as const;
 
 /**
- * Publishing thresholds. A generated page is only indexable when it clears
- * these bars, which is what keeps 50,000 URLs from becoming 50,000 thin pages.
+ * Advisory content depth targets for reports and audits.
+ * Sitemap inventory URLs stay indexable even when below these floors —
+ * only structural routing faults set `noindex`.
  */
 export const CONTENT_THRESHOLDS = {
   /** Minimum unique body words before a page may be published. */

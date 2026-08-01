@@ -5,17 +5,18 @@ import type { PageTarget } from '@/types/routing';
 /**
  * The publishing gate.
  *
- * This is what stops a large programmatic site becoming a large thin site. A
- * URL resolves and renders whether or not it passes; what changes is whether it
- * is marked indexable and whether it appears in a sitemap. Pages that fail are
- * served with `noindex, follow`, so a visitor who follows a link still gets a
- * useful page and crawlers are not invited to index it.
+ * Inventory URLs listed in the sitemap are indexable by default. We only block
+ * indexing when the route is structurally broken (missing service / location /
+ * intent). Content depth thresholds are recorded as soft notes for reports —
+ * they do not flip a sitemap URL to `noindex`.
  */
 
 export interface PublishingDecision {
   readonly indexable: boolean;
-  /** Why the page failed, in a form suitable for the validation report. */
+  /** Why the page failed hard checks, or soft content notes for reports. */
   readonly reasons: readonly string[];
+  /** Soft content shortfalls — never used alone to set noindex. */
+  readonly softReasons: readonly string[];
   readonly wordCount: number;
   readonly specificityRatio: number;
 }
@@ -81,63 +82,63 @@ export function evaluatePublishing(
   target: PageTarget,
   content: PageContent,
 ): PublishingDecision {
-  const reasons: string[] = [];
+  const hardReasons: string[] = [];
+  const softReasons: string[] = [];
   const thresholds = thresholdsFor(target);
 
   const specificityRatio =
     content.wordCount === 0 ? 0 : content.specificWordCount / content.wordCount;
 
   if (content.wordCount < thresholds.minWords) {
-    reasons.push(
-      `only ${content.wordCount} words of body content, below the minimum of ${thresholds.minWords}`,
+    softReasons.push(
+      `only ${content.wordCount} words of body content, below the advisory minimum of ${thresholds.minWords}`,
     );
   }
 
   if (content.modules.length < thresholds.minModules) {
-    reasons.push(
-      `only ${content.modules.length} content modules, below the minimum of ${thresholds.minModules}`,
+    softReasons.push(
+      `only ${content.modules.length} content modules, below the advisory minimum of ${thresholds.minModules}`,
     );
   }
 
   if (content.faqs.length < thresholds.minFaqs) {
-    reasons.push(
-      `only ${content.faqs.length} FAQs, below the minimum of ${thresholds.minFaqs}`,
+    softReasons.push(
+      `only ${content.faqs.length} FAQs, below the advisory minimum of ${thresholds.minFaqs}`,
     );
   }
 
   if (specificityRatio < CONTENT_THRESHOLDS.minSpecificityRatio) {
-    reasons.push(
-      `only ${(specificityRatio * 100).toFixed(0)}% of the content is specific to this page, below the minimum of ${(
+    softReasons.push(
+      `only ${(specificityRatio * 100).toFixed(0)}% of the content is specific to this page, below the advisory minimum of ${(
         CONTENT_THRESHOLDS.minSpecificityRatio * 100
       ).toFixed(0)}%`,
     );
   }
 
-  // A location page with no resolved place, or a service page with no service,
-  // indicates a routing fault rather than a content shortfall.
-  // National hubs (`service`, `serviceIntent`) are intentionally location-free.
+  // Structural faults only — these pages must not be indexed.
   if (
     target.kind !== 'service' &&
     target.kind !== 'serviceIntent' &&
     !target.location
   ) {
-    reasons.push('location page resolved without a location');
+    hardReasons.push('location page resolved without a location');
   }
 
   if (
     (target.kind === 'service' || target.kind === 'serviceIntent') &&
     !target.service
   ) {
-    reasons.push('service page resolved without a service');
+    hardReasons.push('service page resolved without a service');
   }
 
   if (target.kind === 'serviceIntent' && !target.intent) {
-    reasons.push('service intent page resolved without an intent');
+    hardReasons.push('service intent page resolved without an intent');
   }
 
   return {
-    indexable: reasons.length === 0,
-    reasons,
+    indexable: hardReasons.length === 0,
+    reasons: hardReasons,
+    softReasons,
     wordCount: content.wordCount,
     specificityRatio,
   };

@@ -22,8 +22,8 @@ export const SEO_DEFAULTS = {
 } as const;
 
 /**
- * Default robots directives for indexable pages. Pages that fail the
- * publishing gate are served with `noindex, follow` instead.
+ * Default robots directives for indexable pages. Only structurally broken
+ * resolutions are served with `noindex, follow` instead.
  */
 export const ROBOTS_INDEXABLE = {
   index: true,

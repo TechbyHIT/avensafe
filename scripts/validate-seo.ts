@@ -93,10 +93,14 @@ for (const target of targets) {
     errors.push(`${target.path}: emits FAQPage schema with no FAQs`);
   }
 
-  // The publishing gate is the thin-content guard; report anything it rejects.
+  // Structural faults → noindex. Soft content shortfalls are advisory only.
   if (!decision.indexable) {
     warnings.push(
       `${target.path}: not indexable — ${decision.reasons.join('; ')} (served noindex, follow)`,
+    );
+  } else if (decision.softReasons.length > 0) {
+    warnings.push(
+      `${target.path}: below advisory depth — ${decision.softReasons.join('; ')}`,
     );
   }
 

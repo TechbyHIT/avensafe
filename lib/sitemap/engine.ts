@@ -26,7 +26,7 @@ import type { PageTarget } from '@/types/routing';
  * - Index (`/sitemap.xml`) only enumerates child file names from counts.
  * - Each `/sitemaps/<name>.xml` builds one batch (≤ SITEMAP.batchSize URLs).
  * - URLs use the same path builders as canonicals.
- * - Indexability is enforced on the page (`evaluatePublishing`) and checked by
+ * - Listed inventory URLs are indexable (structural gate only). Confirmed by
  *   `npm run validate:sitemap` — the sitemap does not re-compose page content.
  */
 

@@ -6,9 +6,8 @@ import { buildMetadata } from '@/lib/seo/metadata';
  * Metadata for a generated page, resolved from its path.
  *
  * Every dynamic route calls this, so canonical URLs and robots directives are
- * derived identically everywhere. A page that fails the publishing gate is
- * marked `noindex, follow` rather than being hidden, so a visitor arriving from
- * a link still gets a usable page.
+ * derived identically everywhere. Inventory pages are indexable; only
+ * structurally broken resolutions are marked `noindex, follow`.
  */
 export function metadataForPath(path: string): Metadata {
   const bundle = loadPage(path);

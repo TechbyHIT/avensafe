@@ -33,8 +33,9 @@ for (const target of listAllTargets()) {
   };
 
   bucket.count += 1;
-  if (decision.indexable) bucket.indexable += 1;
-  else if (bucket.failures.length < 3) {
+  if (decision.indexable) {
+    bucket.indexable += 1;
+  } else if (bucket.failures.length < 3) {
     bucket.failures.push({ path: target.path, reasons: decision.reasons });
   }
   bucket.words.push(content.wordCount);

@@ -1,11 +1,12 @@
 /**
  * After `next build` with `output: 'standalone'`, assemble a runnable folder:
  * - find server.js (top-level or nested under package path)
- * - copy public + .next/static
- * - repair missing server manifests from the main .next build output
+ * - copy public + .next/static (fast path on Linux via `cp -a`)
+ * - patch only missing *manifest* files — never the full HTML page tree
  *
  * Optional: CLEAN_NODE_MODULES=1 removes root node_modules after assemble.
  */
+import { spawnSync } from 'node:child_process';
 import {
   cpSync,
   existsSync,
@@ -22,6 +23,7 @@ const standaloneRoot = join(root, '.next', 'standalone');
 const buildNext = join(root, '.next');
 const staticDir = join(buildNext, 'static');
 const publicDir = join(root, 'public');
+const started = Date.now();
 
 function findServerJs(dir, depth = 0) {
   if (!existsSync(dir) || depth > 4) return null;
@@ -42,6 +44,23 @@ function findServerJs(dir, depth = 0) {
   return null;
 }
 
+/** Prefer native `cp -a` on Linux — far faster than Node cpSync on large trees. */
+function copyTree(src, dest) {
+  mkdirSync(resolve(dest, '..'), { recursive: true });
+  if (process.platform !== 'win32') {
+    rmSync(dest, { recursive: true, force: true });
+    const result = spawnSync('cp', ['-a', src, dest], { stdio: 'inherit' });
+    if (result.status === 0) return;
+    console.warn('cp -a failed; falling back to Node copy');
+  }
+  cpSync(src, dest, { recursive: true });
+}
+
+function copyFile(src, dest) {
+  mkdirSync(resolve(dest, '..'), { recursive: true });
+  cpSync(src, dest);
+}
+
 if (!existsSync(standaloneRoot)) {
   console.error('Missing .next/standalone — run `npm run build` with output: "standalone" first.');
   process.exit(1);
@@ -59,12 +78,29 @@ console.log(`Using standalone app dir: ${standalone}`);
 mkdirSync(join(standalone, '.next', 'cache'), { recursive: true });
 mkdirSync(join(root, 'logs'), { recursive: true });
 
-// Copy full server output (manifests + chunks) from the build into standalone.
+// Do NOT copy the entire .next/server tree (tens of thousands of HTML pages).
+// Standalone already has the traced runtime; we only patch missing manifests.
 const buildServer = join(buildNext, 'server');
-if (existsSync(buildServer)) {
-  cpSync(buildServer, join(standalone, '.next', 'server'), { recursive: true });
-  console.log('Synced .next/server → standalone/.next/server');
+const standaloneServer = join(standalone, '.next', 'server');
+mkdirSync(standaloneServer, { recursive: true });
+
+const serverManifests = [
+  'middleware-manifest.json',
+  'pages-manifest.json',
+  'app-paths-manifest.json',
+  'server-reference-manifest.json',
+  'next-font-manifest.json',
+];
+let patched = 0;
+for (const file of serverManifests) {
+  const src = join(buildServer, file);
+  const dest = join(standaloneServer, file);
+  if (existsSync(src) && !existsSync(dest)) {
+    copyFile(src, dest);
+    patched += 1;
+  }
 }
+console.log(`Patched ${patched} missing server manifest(s) (skipped full .next/server copy)`);
 
 const manifestFiles = [
   'routes-manifest.json',
@@ -78,7 +114,7 @@ const manifestFiles = [
 for (const file of manifestFiles) {
   const src = join(buildNext, file);
   if (existsSync(src)) {
-    cpSync(src, join(standalone, '.next', file));
+    copyFile(src, join(standalone, '.next', file));
   }
 }
 console.log('Synced .next manifests → standalone/.next');
@@ -87,11 +123,11 @@ if (!existsSync(staticDir)) {
   console.error('Missing .next/static — build incomplete.');
   process.exit(1);
 }
-cpSync(staticDir, join(standalone, '.next', 'static'), { recursive: true });
+copyTree(staticDir, join(standalone, '.next', 'static'));
 console.log('Copied .next/static → standalone/.next/static');
 
 if (existsSync(publicDir)) {
-  cpSync(publicDir, join(standalone, 'public'), { recursive: true });
+  copyTree(publicDir, join(standalone, 'public'));
   console.log('Copied public → standalone/public');
 }
 
@@ -109,7 +145,6 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
-// Write resolved path for PM2 / start script.
 const marker = join(root, '.next', 'standalone-app-dir.txt');
 writeFileSync(marker, `${standalone}\n`, 'utf8');
 console.log(`Wrote ${marker}`);
@@ -122,6 +157,7 @@ if (process.env.CLEAN_NODE_MODULES === '1') {
   }
 }
 
-console.log('Standalone ready.');
+const seconds = ((Date.now() - started) / 1000).toFixed(1);
+console.log(`Standalone ready in ${seconds}s.`);
 console.log(`  node ${join(standalone, 'server.js')}`);
 console.log('  or: npm run start:standalone / pm2 start ecosystem.config.cjs');
