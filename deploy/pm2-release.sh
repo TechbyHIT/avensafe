@@ -12,7 +12,10 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 echo "==> Installing production+build deps"
-npm ci
+if ! npm ci; then
+  echo "npm ci failed (lock drift) — falling back to npm install"
+  npm install
+fi
 
 echo "==> Building standalone"
 npm run build
