@@ -18,6 +18,7 @@
 #   FORCE_INSTALL=1
 #   CLEAN_NODE_MODULES=1   (also set automatically by --slim)
 #   AVENSAFE_SG_CONCURRENCY=2
+#   bash deploy/pm2-low-mem.sh     # concurrency=1, 2GB heap (small VPS)
 
 set -euo pipefail
 
@@ -29,6 +30,7 @@ for arg in "$@"; do
     --fast|fast) FAST=1 ;;
     --skip-build) SKIP_BUILD=1 ;;
     --slim|slim) SLIM=1 ;;
+    --low-mem|low-mem) LOW_MEM=1 ;;
   esac
 done
 
@@ -36,14 +38,24 @@ FAST="${FAST:-0}"
 SKIP_BUILD="${SKIP_BUILD:-0}"
 FORCE_INSTALL="${FORCE_INSTALL:-0}"
 SLIM="${SLIM:-0}"
+LOW_MEM="${LOW_MEM:-0}"
 CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
+
+if [ "$LOW_MEM" = "1" ]; then
+  FAST=1
+  export AVENSAFE_SKIP_LINT=1
+  export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-1}"
+  export NODE_OPTIONS="${NODE_OPTIONS:---max-old-space-size=2048}"
+  export NEXT_TELEMETRY_DISABLED=1
+  echo "==> LOW-MEM mode (SSG concurrency=${AVENSAFE_SG_CONCURRENCY}, ${NODE_OPTIONS})"
+fi
 
 if [ "$SLIM" = "1" ]; then
   # Drop root node_modules during prepare; full slim after health check.
   CLEAN_NODE_MODULES=1
 fi
 
-if [ "$FAST" = "1" ]; then
+if [ "$FAST" = "1" ] && [ "$LOW_MEM" != "1" ]; then
   export AVENSAFE_SKIP_LINT="${AVENSAFE_SKIP_LINT:-1}"
   export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-4}"
   echo "==> FAST mode (skip lint, SSG concurrency=${AVENSAFE_SG_CONCURRENCY})"
