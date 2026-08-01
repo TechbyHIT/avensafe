@@ -1,0 +1,2270 @@
+[
+  {
+    "id": "intent-installation",
+    "slug": "installation",
+    "label": "Installation",
+    "titlePhrase": "installation",
+    "h1Phrase": "installation",
+    "lede": "This page is about how installation is planned and executed on site: survey, specification, fixing method, and handover. Timelines and access requirements vary by building, so what follows is what we actually do rather than a generic process diagram.",
+    "focusModules": [
+      "installation",
+      "materials",
+      "safety",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-price",
+    "slug": "price",
+    "label": "Price",
+    "titlePhrase": "price",
+    "h1Phrase": "price and quotation",
+    "lede": "Pricing is driven by measured openings, hardware grade, spacing, access, and substrate condition — not a single rate card. This page explains what we measure on survey and what appears on a written quotation so you can compare like for like.",
+    "focusModules": [
+      "pricingFactors",
+      "materials",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 1,
+    "facetPoints": [
+      {
+        "title": "What a written quote includes",
+        "detail": "Measured openings, grade, spacing, access method, and fixings are itemised so you can compare like for like across vendors."
+      },
+      {
+        "title": "What moves the price most",
+        "detail": "Height access, substrate repairs, and tighter child-safety spacing usually change the total more than brand labels do."
+      }
+    ]
+  },
+  {
+    "id": "intent-cost",
+    "slug": "cost",
+    "label": "Cost",
+    "titlePhrase": "cost",
+    "h1Phrase": "cost estimate",
+    "lede": "Cost and price are used interchangeably in search, but on site they mean the same inputs: area, grade, spacing, height, and fixing condition. We spell out those inputs here because two identical-looking balconies can differ sharply in cost.",
+    "focusModules": [
+      "pricingFactors",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 1
+  },
+  {
+    "id": "intent-company",
+    "slug": "company",
+    "label": "Company",
+    "titlePhrase": "company",
+    "h1Phrase": "installation company",
+    "lede": "Choosing an installer matters as much as choosing a product: specification, anchorage, and tensioning determine whether a barrier still works after a monsoon. This page covers how we survey, specify, and stand behind the work in your area.",
+    "focusModules": [
+      "quality",
+      "installation",
+      "benefits",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-contractor",
+    "slug": "contractor",
+    "label": "Contractor",
+    "titlePhrase": "contractor",
+    "h1Phrase": "contractor",
+    "lede": "Structural safety work should be contracted on a written scope: grades, spacing, fixings, and inspection intervals — not a lump sum with no specification. Below is the scope we use locally after survey.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "safety",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-dealer",
+    "slug": "dealer",
+    "label": "Dealer",
+    "titlePhrase": "dealer",
+    "h1Phrase": "dealer and supply",
+    "lede": "We supply and install as one job so the grade on the quotation is the grade on site. If you are comparing dealers, compare cable or mesh spec, anchor type, and warranty terms — not headline square-foot rates.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "pricingFactors"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-repair",
+    "slug": "repair",
+    "label": "Repair",
+    "titlePhrase": "repair",
+    "h1Phrase": "repair service",
+    "lede": "Most repair calls are slack cables, loose anchors, or mesh abrasion at fixings — failures that are cheaper to fix early. This page describes what we check first and when replacement is the safer option.",
+    "focusModules": [
+      "maintenance",
+      "safety",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "maintenance",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-maintenance",
+    "slug": "maintenance",
+    "label": "Maintenance",
+    "titlePhrase": "maintenance",
+    "h1Phrase": "maintenance and AMC",
+    "lede": "Maintenance is mostly inspection and re-tensioning on a schedule that matches your climate. We document what to check yourself and when to book a visit so gaps do not widen unnoticed.",
+    "focusModules": [
+      "maintenance",
+      "quality",
+      "safety"
+    ],
+    "faqScopes": [
+      "maintenance",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-replacement",
+    "slug": "replacement",
+    "label": "Replacement",
+    "titlePhrase": "replacement",
+    "h1Phrase": "replacement",
+    "lede": "Replacement is warranted when anchors have corroded through, cables have work-hardened, or mesh has abraded at every fixing. We explain when a repair visit is enough and when a full replacement is the only safe choice.",
+    "focusModules": [
+      "maintenance",
+      "materials",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "maintenance",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-for-apartments",
+    "slug": "for-apartments",
+    "label": "For apartments",
+    "titlePhrase": "for apartments",
+    "h1Phrase": "for apartments",
+    "lede": "Apartment work is governed by society access rules, parapet conditions, and the need to fix without damaging common-area finishes. This page covers how we survey a typical high-rise bay and what residents should prepare.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "benefits",
+      "safety"
+    ],
+    "faqScopes": [
+      "location",
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-for-villas",
+    "slug": "for-villas",
+    "label": "For villas",
+    "titlePhrase": "for villas",
+    "h1Phrase": "for villas",
+    "lede": "Villas and independent houses often have longer spans, varied substrates, and outdoor terraces that need different spacing and fixing plans. The specification section below reflects those differences.",
+    "focusModules": [
+      "applications",
+      "benefits",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets",
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-for-homes",
+    "slug": "for-homes",
+    "label": "For homes",
+    "titlePhrase": "for homes",
+    "h1Phrase": "for homes",
+    "lede": "Residential installations prioritize child and pet containment without blocking light or ventilation. We align spacing and hardware with how the opening is used day to day, not only with a generic building code line.",
+    "focusModules": [
+      "benefits",
+      "applications",
+      "safety",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 1
+  },
+  {
+    "id": "intent-for-offices",
+    "slug": "for-offices",
+    "label": "For offices",
+    "titlePhrase": "for offices",
+    "h1Phrase": "for offices",
+    "lede": "Commercial openings add after-hours access, facade coordination, and higher footfall around voids. We schedule around building management rules and specify fixings suited to steel, concrete, or curtain-wall substrates.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "safety",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 2
+  },
+  {
+    "id": "intent-best",
+    "slug": "best",
+    "label": "Best",
+    "titlePhrase": "best",
+    "h1Phrase": "what to look for",
+    "lede": "Best is not a brand claim — it is a specification checklist: grade, spacing, anchor type, tension method, and a written warranty. This page is that checklist applied to local building conditions.",
+    "focusModules": [
+      "features",
+      "materials",
+      "quality",
+      "benefits"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 1
+  },
+  {
+    "id": "intent-rate",
+    "slug": "rate",
+    "label": "Rate",
+    "titlePhrase": "rate",
+    "h1Phrase": "rates after survey",
+    "lede": "Rate searches usually mean price per opening or per square foot. We do not publish a universal rate because grade, spacing, and access change the number more than the city name does. This page lists what we measure before quoting.",
+    "focusModules": [
+      "pricingFactors",
+      "materials",
+      "quality"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 1
+  },
+  {
+    "id": "intent-charges",
+    "slug": "charges",
+    "label": "Charges",
+    "titlePhrase": "charges",
+    "h1Phrase": "charges explained",
+    "lede": "Charges should map to line items: hardware grade, labour, access, and any structural preparation. A lump sum without that breakdown is hard to compare. Below is how we structure charges on a written quotation.",
+    "focusModules": [
+      "pricingFactors",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-price-list",
+    "slug": "price-list",
+    "label": "Price list",
+    "titlePhrase": "price list",
+    "h1Phrase": "why we avoid a fixed price list",
+    "lede": "A public price list implies every balcony or shaft is the same, which they are not. We instead publish the factors that move cost so you know what will appear on your quotation after survey.",
+    "focusModules": [
+      "pricingFactors",
+      "materials",
+      "benefits"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-per-sq-ft",
+    "slug": "per-sq-ft",
+    "label": "Per sq ft",
+    "titlePhrase": "cost per square foot",
+    "h1Phrase": "per square foot pricing",
+    "lede": "Square-foot rates are misleading when spacing, grade, and fixing depth differ. Two openings of the same area can diverge sharply. This page explains what we measure instead of quoting a single per-sq-ft number.",
+    "focusModules": [
+      "pricingFactors",
+      "installation",
+      "materials"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 1
+  },
+  {
+    "id": "intent-installation-cost",
+    "slug": "installation-cost",
+    "label": "Installation cost",
+    "titlePhrase": "installation cost",
+    "h1Phrase": "installation cost drivers",
+    "lede": "Installation cost is mostly access, substrate condition, and how many fixings are needed — not only product cost. We break those down here so installation quotes are easier to compare.",
+    "focusModules": [
+      "installation",
+      "pricingFactors",
+      "safety"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-quote",
+    "slug": "quote",
+    "label": "Quote",
+    "titlePhrase": "quote",
+    "h1Phrase": "quotation process",
+    "lede": "A useful quote states grade, spacing, fixing method, and warranty — not only a total. This page describes what we need from a site visit to issue that quotation in your area.",
+    "focusModules": [
+      "pricingFactors",
+      "quality",
+      "installation"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 1
+  },
+  {
+    "id": "intent-estimate",
+    "slug": "estimate",
+    "label": "Estimate",
+    "titlePhrase": "estimate",
+    "h1Phrase": "site estimate",
+    "lede": "Estimates from photos alone are guesses when access and substrate are unknown. We explain what is measured on site before an estimate becomes a firm quotation you can rely on.",
+    "focusModules": [
+      "pricingFactors",
+      "installation",
+      "materials"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-booking",
+    "slug": "booking",
+    "label": "Booking",
+    "titlePhrase": "booking",
+    "h1Phrase": "booking a survey",
+    "lede": "Booking starts with address, opening type, and access constraints so we bring the right fixings and time allowance. This page sets expectations for what happens between booking and installation day.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "benefits"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-installers",
+    "slug": "installers",
+    "label": "Installers",
+    "titlePhrase": "installers",
+    "h1Phrase": "qualified installers",
+    "lede": "Installer quality shows up in anchor detail, tension consistency, and handover checks — not in marketing claims. Below is how our teams work on site and what we document when we leave.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-services",
+    "slug": "services",
+    "label": "Services",
+    "titlePhrase": "services",
+    "h1Phrase": "local services",
+    "lede": "Services here means survey, specification, installation, and aftercare as one chain — not supply-only boxes. This page ties those steps together for the product you searched for.",
+    "focusModules": [
+      "benefits",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-shop",
+    "slug": "shop",
+    "label": "Shop",
+    "titlePhrase": "shop",
+    "h1Phrase": "supply and install",
+    "lede": "Buying from a shop without installation spec often leaves tensioning and anchorage unresolved. We supply as part of an installed job so the grade on paper matches what is fixed to your wall.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "pricingFactors"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-premium",
+    "slug": "premium",
+    "label": "Premium",
+    "titlePhrase": "premium",
+    "h1Phrase": "premium specification",
+    "lede": "Premium usually means higher grade stainless, tighter spacing, or better anchors — not a logo. This page spells out upgrades that actually change performance in local weather.",
+    "focusModules": [
+      "materials",
+      "features",
+      "quality"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-affordable",
+    "slug": "affordable",
+    "label": "Affordable",
+    "titlePhrase": "affordable",
+    "h1Phrase": "affordable without cutting safety",
+    "lede": "Affordable should still mean safe spacing and adequate anchors. We explain where cost can be trimmed responsibly and where cutting spec creates fall or failure risk.",
+    "focusModules": [
+      "pricingFactors",
+      "safety",
+      "benefits"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "pricing",
+    "tier": 2
+  },
+  {
+    "id": "intent-top",
+    "slug": "top",
+    "label": "Top",
+    "titlePhrase": "top",
+    "h1Phrase": "top specification cues",
+    "lede": "Top-ranked work is verifiable: grade certificates, torque or tension records, and inspection intervals. This page lists evidence to ask for instead of trusting superlatives.",
+    "focusModules": [
+      "quality",
+      "materials",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-fitting",
+    "slug": "fitting",
+    "label": "Fitting",
+    "titlePhrase": "fitting",
+    "h1Phrase": "fitting and fixing",
+    "lede": "Fitting covers substrate preparation, anchor selection, and finishing without damaging tiles or facade panels. Poor fitting is the usual reason barriers fail early, so we detail our fixing sequence here.",
+    "focusModules": [
+      "installation",
+      "materials",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-design",
+    "slug": "design",
+    "label": "Design",
+    "titlePhrase": "design",
+    "h1Phrase": "design and layout",
+    "lede": "Design for safety products is mostly spacing, head height, and frame alignment — not decoration. We explain choices that keep openings safe while preserving light and view.",
+    "focusModules": [
+      "features",
+      "applications",
+      "benefits"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "design",
+    "tier": 2
+  },
+  {
+    "id": "intent-for-balcony",
+    "slug": "for-balcony",
+    "label": "For balcony",
+    "titlePhrase": "for balcony",
+    "h1Phrase": "for balconies",
+    "lede": "Balcony jobs must respect parapet height, tile overhangs, and society access windows. This page covers survey points specific to balcony bays rather than generic apartment copy.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "safety"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "cloth-hangers",
+      "balcony-nets",
+      "bird-pigeon-nets"
+    ]
+  },
+  {
+    "id": "intent-for-windows",
+    "slug": "for-windows",
+    "label": "For windows",
+    "titlePhrase": "for windows",
+    "h1Phrase": "for windows",
+    "lede": "Window and French-door openings need barriers that do not foul inward-opening sashes. We specify stand-off depth and fixing lines so glazing still operates after install.",
+    "focusModules": [
+      "applications",
+      "features",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "bird-pigeon-nets"
+    ]
+  },
+  {
+    "id": "intent-for-terrace",
+    "slug": "for-terrace",
+    "label": "For terrace",
+    "titlePhrase": "for terrace",
+    "h1Phrase": "for terraces",
+    "lede": "Terraces expose fixings to UV and driving rain. Spec here includes drainage clearance, wind load on netting, and parapet height adjustments that differ from a mid-floor balcony.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "location",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets",
+      "sports-nets",
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-for-flats",
+    "slug": "for-flats",
+    "label": "For flats",
+    "titlePhrase": "for flats",
+    "h1Phrase": "for flats",
+    "lede": "Flats in large towers share access rules and repeated bay types. We note what differs between identical-looking flats when substrate or society rules change floor to floor.",
+    "focusModules": [
+      "applications",
+      "benefits",
+      "installation"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-for-high-rise",
+    "slug": "for-high-rise",
+    "label": "For high rise",
+    "titlePhrase": "for high rise",
+    "h1Phrase": "for high-rise buildings",
+    "lede": "High-rise work adds wind exposure, cradle or rope access, and stricter society permits. Hardware and inspection schedules reflect height even when the opening size matches a low floor.",
+    "focusModules": [
+      "installation",
+      "safety",
+      "materials"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "published": true,
+    "dimension": "property-type",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-child-safety",
+    "slug": "child-safety",
+    "label": "Child safety",
+    "titlePhrase": "for child safety",
+    "h1Phrase": "child safety spacing",
+    "lede": "Child safety depends on gap width, climb resistance, and maintenance — not slogans. We document spacing targets and what to re-check as cables stretch or mesh abrades.",
+    "focusModules": [
+      "safety",
+      "benefits",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-pet-safety",
+    "slug": "pet-safety",
+    "label": "Pet safety",
+    "titlePhrase": "for pets",
+    "h1Phrase": "pet and cat safety",
+    "lede": "Pets need tighter spacing and fixings that resist chewing or clawing at edges. This page covers mesh and cable choices where cats or small dogs press against barriers.",
+    "focusModules": [
+      "safety",
+      "applications",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-fall-protection",
+    "slug": "fall-protection",
+    "label": "Fall protection",
+    "titlePhrase": "fall protection",
+    "h1Phrase": "fall protection",
+    "lede": "Fall protection is about effective height, gap control, and anchor capacity working together. We explain how each product type addresses falls from balconies, voids, or low parapets.",
+    "focusModules": [
+      "safety",
+      "benefits",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-stainless-steel",
+    "slug": "stainless-steel",
+    "label": "Stainless steel",
+    "titlePhrase": "stainless steel",
+    "h1Phrase": "stainless steel specification",
+    "lede": "Stainless grade and wire construction determine rust resistance in coastal humidity. We clarify 304 versus 316, cable construction, and where downgrade creates streaking or failure.",
+    "focusModules": [
+      "materials",
+      "features",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "published": true,
+    "dimension": "material",
+    "tier": 1,
+    "serviceSlugs": [
+      "invisible-grills",
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-supplier",
+    "slug": "supplier",
+    "label": "Supplier",
+    "titlePhrase": "supplier",
+    "h1Phrase": "supplier",
+    "lede": "Supply-only quotes are rarely comparable to supply-and-install because tensioning and anchorage determine performance. We document what we supply and how it is installed so you can evaluate suppliers on the same basis.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "pricingFactors"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 2
+  },
+  {
+    "id": "intent-manufacturer",
+    "slug": "manufacturer",
+    "label": "Manufacturer",
+    "titlePhrase": "manufacturer",
+    "h1Phrase": "manufacturer",
+    "lede": "We are installers who specify graded components for each opening; manufacturing is not our role. This page clarifies grades and standards we install to, which is what matters when comparing manufacturer claims.",
+    "focusModules": [
+      "materials",
+      "features",
+      "quality"
+    ],
+    "faqScopes": [
+      "service"
+    ],
+    "published": true,
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-near-me",
+    "slug": "near-me",
+    "label": "Near me",
+    "titlePhrase": "near me",
+    "h1Phrase": "near you",
+    "lede": "Near-me searches usually mean you want a local crew that can survey and install without long travel mark-ups. This page explains how we cover your city, what a site visit includes, and how scheduling works for nearby localities.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "benefits"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "dimension": "commercial",
+    "tier": 2,
+    "facetPoints": [
+      {
+        "title": "Local survey first",
+        "detail": "A measured visit confirms openings, access, and society rules before any rate is locked, which keeps near-me quotes honest."
+      },
+      {
+        "title": "Coverage radius",
+        "detail": "We batch nearby localities on shared travel days so installation windows stay predictable without inflating labour."
+      }
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-same-day",
+    "slug": "same-day",
+    "label": "Same day",
+    "titlePhrase": "same day",
+    "h1Phrase": "same-day response",
+    "lede": "Same-day usually means a survey or emergency patch, not a full multi-bay install without measurement. We clarify what can be done quickly when access, stock, and society permissions align.",
+    "focusModules": [
+      "installation",
+      "safety",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "speed",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-emergency",
+    "slug": "emergency",
+    "label": "Emergency",
+    "titlePhrase": "emergency",
+    "h1Phrase": "emergency service",
+    "lede": "Emergency calls are for failed cables, torn nets, or openings that cannot wait for a routine slot. We prioritise temporary securing and a measured permanent repair rather than rushing an incomplete specification.",
+    "focusModules": [
+      "safety",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "dimension": "speed",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-free-site-visit",
+    "slug": "free-site-visit",
+    "label": "Free site visit",
+    "titlePhrase": "free site visit",
+    "h1Phrase": "free site visit and measurement",
+    "lede": "A free site visit is useful only when it produces a written measurement and specification. This page sets out what we check on visit and what you receive afterward so the free survey is not a sales call with no deliverable.",
+    "focusModules": [
+      "installation",
+      "pricingFactors",
+      "quality"
+    ],
+    "faqScopes": [
+      "pricing",
+      "location",
+      "service"
+    ],
+    "dimension": "commercial",
+    "tier": 2,
+    "published": true
+  },
+  {
+    "id": "intent-ss304",
+    "slug": "ss304",
+    "label": "SS304",
+    "titlePhrase": "SS304",
+    "h1Phrase": "SS304 stainless specification",
+    "lede": "SS304 is the common inland grade for invisible grill cables where coastal salt load is low. This page explains when 304 is appropriate, what certificates to ask for, and when humidity or coastal exposure argues for 316 instead.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "material",
+    "tier": 2,
+    "serviceSlugs": [
+      "invisible-grills"
+    ],
+    "facetPoints": [
+      {
+        "title": "Where SS304 fits",
+        "detail": "Inland apartments and villas with normal humidity usually perform well on verified 304 cable and hardware."
+      },
+      {
+        "title": "When to upgrade",
+        "detail": "Coastal air, persistent damp shafts, or society rules that demand marine-grade hardware point toward SS316."
+      }
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-ss316",
+    "slug": "ss316",
+    "label": "SS316",
+    "titlePhrase": "SS316",
+    "h1Phrase": "SS316 marine-grade specification",
+    "lede": "SS316 adds molybdenum for better resistance in coastal and high-humidity air. We specify it when corrosion risk justifies the premium, and we document grade marks so the upgrade is verifiable on site.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "material",
+    "tier": 2,
+    "serviceSlugs": [
+      "invisible-grills"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-bird-protection",
+    "slug": "bird-protection",
+    "label": "Bird protection",
+    "titlePhrase": "for bird protection",
+    "h1Phrase": "bird protection",
+    "lede": "Bird protection needs mesh aperture, tension, and fixing lines that stop roosting without creating climbing holds for children. This page covers net and covering choices where pigeons and other birds are the main problem.",
+    "focusModules": [
+      "applications",
+      "safety",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-pigeon-control",
+    "slug": "pigeon-control",
+    "label": "Pigeon control",
+    "titlePhrase": "for pigeon control",
+    "h1Phrase": "pigeon control",
+    "lede": "Pigeon control on ledges, ducts, and open shafts is mostly about closing landing and nesting space with UV-stable netting. We detail aperture, overlap, and access for cleaning so the install stays effective after the first season.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "dimension": "benefit",
+    "tier": 2,
+    "serviceSlugs": [
+      "bird-pigeon-nets",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-monkey-protection",
+    "slug": "monkey-protection",
+    "label": "Monkey protection",
+    "titlePhrase": "for monkey protection",
+    "h1Phrase": "monkey protection",
+    "lede": "Monkey pressure needs heavier mesh, stronger perimeter rope, and fixings that resist pulling at corners. Spec here differs from light bird netting because animals test weak edges repeatedly.",
+    "focusModules": [
+      "safety",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "benefit",
+    "tier": 2,
+    "serviceSlugs": [
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-for-staircase",
+    "slug": "for-staircase",
+    "label": "For staircase",
+    "titlePhrase": "for staircases",
+    "h1Phrase": "for staircases",
+    "lede": "Staircase and void-side openings need fall protection that keeps handrail use and daylight. We measure rise runs, side gaps, and fixing into masonry or metal so the net does not sag into the walking line.",
+    "focusModules": [
+      "safety",
+      "applications",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "opening",
+    "tier": 2,
+    "serviceSlugs": [
+      "safety-nets",
+      "balcony-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-transparent-nets",
+    "slug": "transparent-nets",
+    "label": "Transparent nets",
+    "titlePhrase": "transparent nets",
+    "h1Phrase": "transparent nets",
+    "lede": "Transparent or low-visibility nets reduce the visual weight of mesh where outlook matters but cable grills are not the chosen system. Strand colour, denier, and mesh size are confirmed on survey so daylight and airflow stay usable.",
+    "focusModules": [
+      "materials",
+      "applications",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "material",
+    "tier": 2,
+    "serviceSlugs": [
+      "balcony-nets",
+      "safety-nets",
+      "bird-pigeon-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-for-hotels",
+    "slug": "for-hotels",
+    "label": "For hotels",
+    "titlePhrase": "for hotels",
+    "h1Phrase": "for hotels",
+    "lede": "Hotel work adds guest-room access windows, facade aesthetics, and phased floors so occupied rooms stay usable. We plan surveys and installs around housekeeping and night quiet hours.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-for-schools",
+    "slug": "for-schools",
+    "label": "For schools",
+    "titlePhrase": "for schools",
+    "h1Phrase": "for schools and colleges",
+    "lede": "Educational campuses need fall and impact control around corridors, terraces, and sports edges with maintenance access for facilities teams. Spec emphasises durable mesh and clear inspection intervals.",
+    "focusModules": [
+      "safety",
+      "applications",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-for-hospitals",
+    "slug": "for-hospitals",
+    "label": "For hospitals",
+    "titlePhrase": "for hospitals",
+    "h1Phrase": "for hospitals and clinics",
+    "lede": "Healthcare sites need quiet install methods, infection-control awareness around openings, and barriers that meet fall-prevention goals without trapping dust. Scheduling follows ward and OT constraints.",
+    "focusModules": [
+      "safety",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-for-builders",
+    "slug": "for-builders",
+    "label": "For builders",
+    "titlePhrase": "for builders",
+    "h1Phrase": "for builders and developers",
+    "lede": "Builder packages need repeatable bay specs, sample flats, and handover documentation that societies can maintain later. We align cable or mesh schedules with finishing stages so rework is avoided.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-for-architects",
+    "slug": "for-architects",
+    "label": "For architects",
+    "titlePhrase": "for architects",
+    "h1Phrase": "for architects and designers",
+    "lede": "Architect-led jobs need slim sightlines, verified grades, and detailing that respects facade drawings. We provide section notes for frames, stand-offs, and parapet interfaces before fabrication.",
+    "focusModules": [
+      "features",
+      "materials",
+      "quality"
+    ],
+    "faqScopes": [
+      "service"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-under-construction",
+    "slug": "under-construction",
+    "label": "Under construction",
+    "titlePhrase": "for under construction",
+    "h1Phrase": "for under-construction projects",
+    "lede": "Under-construction installs must wait for finished parapets, cured plaster, and safe floor access. We sequence surveys with the finishing contractor so anchors land in sound substrate.",
+    "focusModules": [
+      "installation",
+      "materials",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "stage",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-renovation",
+    "slug": "renovation",
+    "label": "Renovation",
+    "titlePhrase": "for renovation",
+    "h1Phrase": "for renovation projects",
+    "lede": "Renovation work often means removing old iron grills, repairing tile edges, and matching new barriers to remodeled openings. We plan dust control and temporary securing while rooms stay partly occupied.",
+    "focusModules": [
+      "installation",
+      "applications",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "stage",
+    "tier": 2,
+    "published": true
+  },
+  {
+    "id": "intent-buying-guide",
+    "slug": "buying-guide",
+    "label": "Buying guide",
+    "titlePhrase": "buying guide",
+    "h1Phrase": "buying guide",
+    "lede": "A buying guide should help you compare specification, not slogans: grade, spacing, fixings, warranty, and who does the tensioning. Use the checklist below before you accept any quotation.",
+    "focusModules": [
+      "materials",
+      "quality",
+      "pricingFactors"
+    ],
+    "faqScopes": [
+      "pricing",
+      "service"
+    ],
+    "dimension": "decision",
+    "tier": 3,
+    "facetPoints": [
+      {
+        "title": "Ask for measured openings",
+        "detail": "Quotes without bay measurements are not comparable; insist on a survey sheet before comparing totals."
+      },
+      {
+        "title": "Verify grade and spacing",
+        "detail": "Written SS grade, mesh aperture or cable pitch, and anchor type matter more than brochure photos."
+      },
+      {
+        "title": "Confirm aftercare",
+        "detail": "Inspection intervals and what the warranty covers after monsoon season should be on paper."
+      }
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-vs-iron-grills",
+    "slug": "vs-iron-grills",
+    "label": "Vs iron grills",
+    "titlePhrase": "vs iron grills",
+    "h1Phrase": "invisible grills vs iron grills",
+    "lede": "Iron grills block view and light; invisible cable systems keep sightlines while providing a tensioned fall barrier. This comparison covers appearance, maintenance, and when welded iron still makes sense.",
+    "focusModules": [
+      "features",
+      "benefits",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "decision",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-vs-ms-grills",
+    "slug": "vs-ms-grills",
+    "label": "Vs MS grills",
+    "titlePhrase": "vs MS grills",
+    "h1Phrase": "invisible grills vs MS grills",
+    "lede": "Mild-steel grills rust and need paint cycles; stainless cable systems trade visual bulk for tension maintenance. We compare corrosion, view, and typical use cases so the choice matches the opening.",
+    "focusModules": [
+      "materials",
+      "maintenance",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "decision",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-vs-bird-nets",
+    "slug": "vs-bird-nets",
+    "label": "Vs bird nets",
+    "titlePhrase": "vs bird nets",
+    "h1Phrase": "invisible grills vs bird nets",
+    "lede": "Bird nets close large openings cheaply; invisible grills suit vertical fall barriers where view matters. Many homes need both — nets on ducts and cables on balconies — so we explain when each product is the right tool.",
+    "focusModules": [
+      "applications",
+      "benefits",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "decision",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-trusted",
+    "slug": "trusted",
+    "label": "Trusted",
+    "titlePhrase": "trusted",
+    "h1Phrase": "trusted local installers",
+    "lede": "Trust is built from documented grades, measured quotes, and aftercare — not adjectives. This page lists the proof points we provide so you can evaluate installers in your area on the same basis.",
+    "focusModules": [
+      "quality",
+      "installation",
+      "benefits"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "trust",
+    "tier": 2,
+    "published": true
+  },
+  {
+    "id": "intent-iso-certified",
+    "slug": "iso-certified",
+    "label": "ISO certified",
+    "titlePhrase": "ISO certified",
+    "h1Phrase": "process and material assurance",
+    "lede": "ISO claims only help when they map to the materials and process used on your opening. We explain which certificates and test marks matter for cable, mesh, and hardware, and what we show on handover.",
+    "focusModules": [
+      "quality",
+      "materials",
+      "features"
+    ],
+    "faqScopes": [
+      "service"
+    ],
+    "dimension": "trust",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-hdpe",
+    "slug": "hdpe",
+    "label": "HDPE",
+    "titlePhrase": "HDPE",
+    "h1Phrase": "HDPE netting specification",
+    "lede": "HDPE nets balance UV stability and cost for many balcony and duct jobs. We cover denier, knotting, and when nylon or heavier sports mesh is a better fit than light HDPE.",
+    "focusModules": [
+      "materials",
+      "applications",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "material",
+    "tier": 2,
+    "serviceSlugs": [
+      "safety-nets",
+      "sports-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-nylon",
+    "slug": "nylon",
+    "label": "Nylon",
+    "titlePhrase": "nylon",
+    "h1Phrase": "nylon netting specification",
+    "lede": "Nylon nets absorb impact well but need UV care in open sun. Spec here covers when nylon is preferred for sports or heavier containment versus UV-stabilised HDPE for static edges.",
+    "focusModules": [
+      "materials",
+      "applications",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "material",
+    "tier": 2,
+    "serviceSlugs": [
+      "safety-nets",
+      "sports-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-monsoon-ready",
+    "slug": "monsoon-ready",
+    "label": "Monsoon ready",
+    "titlePhrase": "monsoon ready",
+    "h1Phrase": "monsoon-ready specification",
+    "lede": "Monsoon readiness means corrosion-aware hardware, drain-clear fixings, and tension checks before heavy rain. We list what we inspect and upgrade when wet-season wind and humidity hit exposed openings.",
+    "focusModules": [
+      "materials",
+      "maintenance",
+      "safety"
+    ],
+    "faqScopes": [
+      "maintenance",
+      "location"
+    ],
+    "dimension": "benefit",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-experts",
+    "slug": "experts",
+    "label": "Experts",
+    "titlePhrase": "experts",
+    "h1Phrase": "installation experts",
+    "lede": "Expert installation shows in anchorage choice, consistent tension, and clean handover records. This page describes the skills and checks our teams use on local building stock.",
+    "focusModules": [
+      "installation",
+      "quality",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "commercial",
+    "tier": 2,
+    "published": true
+  },
+  {
+    "id": "intent-warranty-guide",
+    "slug": "warranty-guide",
+    "label": "Warranty guide",
+    "titlePhrase": "warranty guide",
+    "h1Phrase": "warranty guide",
+    "lede": "Warranties only protect you when coverage, exclusions, and inspection duties are clear. We spell out what typically is and is not covered after installation so claims are not a surprise.",
+    "focusModules": [
+      "quality",
+      "maintenance",
+      "materials"
+    ],
+    "faqScopes": [
+      "maintenance",
+      "service"
+    ],
+    "dimension": "decision",
+    "tier": 3,
+    "published": true
+  },
+  {
+    "id": "intent-for-1bhk",
+    "slug": "for-1bhk",
+    "label": "For 1 BHK",
+    "titlePhrase": "for 1 BHK",
+    "h1Phrase": "for 1 BHK apartments",
+    "lede": "1 BHK flats usually have fewer but critical openings — often one balcony and a couple of windows. We focus on compact access, society rules, and cost-efficient specs that still meet safety spacing.",
+    "focusModules": [
+      "applications",
+      "pricingFactors",
+      "installation"
+    ],
+    "faqScopes": [
+      "location",
+      "pricing"
+    ],
+    "dimension": "property-type",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-for-2bhk",
+    "slug": "for-2bhk",
+    "label": "For 2 BHK",
+    "titlePhrase": "for 2 BHK",
+    "h1Phrase": "for 2 BHK apartments",
+    "lede": "2 BHK layouts commonly combine a living balcony with bedroom windows that need different stand-offs. Surveying each bay separately keeps quotes accurate when openings are not identical.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "pricingFactors"
+    ],
+    "faqScopes": [
+      "location",
+      "pricing"
+    ],
+    "dimension": "property-type",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-for-3bhk",
+    "slug": "for-3bhk",
+    "label": "For 3 BHK",
+    "titlePhrase": "for 3 BHK",
+    "h1Phrase": "for 3 BHK apartments",
+    "lede": "3 BHK homes often have larger balconies, utility ducts, and multiple window runs. We plan phased installs when families stay in residence and match grades across openings for a consistent finish.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "location",
+      "service"
+    ],
+    "dimension": "property-type",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ],
+    "published": true
+  },
+  {
+    "id": "intent-bird-control",
+    "slug": "bird-control",
+    "label": "Bird control",
+    "titlePhrase": "bird control",
+    "h1Phrase": "bird control",
+    "lede": "Bird control with nets is about aperture, overlaps, and closing corners — not only hanging a panel. This page covers how we survey ledges and balconies so birds cannot work a gap open after install.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "bird-pigeon-nets",
+      "safety-nets",
+      "balcony-nets",
+      "duct-area-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-for-ducts",
+    "slug": "for-ducts",
+    "label": "For ducts",
+    "titlePhrase": "for ducts",
+    "h1Phrase": "for duct openings",
+    "lede": "Duct and shaft mouths need mesh that keeps birds out without pretending every panel is a fall-arrest system. This page covers survey points for duct-area bird and safety nets.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 2,
+    "serviceSlugs": [
+      "bird-pigeon-nets",
+      "duct-area-safety-nets",
+      "safety-nets"
+    ]
+  },
+  {
+    "id": "intent-cricket-nets",
+    "slug": "cricket-nets",
+    "label": "Cricket nets",
+    "titlePhrase": "cricket practice nets",
+    "h1Phrase": "cricket practice nets",
+    "lede": "Cricket practice nets need height, containment, and UV-stable mesh sized for ball impact rather than balcony bird exclusion. We survey span, run-up clearance, and fixing into posts or structures.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "pricing"
+    ],
+    "published": true,
+    "dimension": "audience",
+    "tier": 1,
+    "serviceSlugs": [
+      "sports-nets"
+    ]
+  },
+  {
+    "id": "intent-containment",
+    "slug": "containment",
+    "label": "Containment",
+    "titlePhrase": "containment",
+    "h1Phrase": "sports containment",
+    "lede": "Sports containment nets keep balls and equipment inside a court or practice bay. Specification follows ball type, wind exposure, and how spectators sit relative to the net line.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "audience",
+    "tier": 2,
+    "serviceSlugs": [
+      "sports-nets"
+    ]
+  },
+  {
+    "id": "intent-playground",
+    "slug": "playground",
+    "label": "Playground",
+    "titlePhrase": "for playgrounds",
+    "h1Phrase": "playground safety nets",
+    "lede": "Playground nets protect children around open edges and contain play equipment zones. We align mesh and height with how the playground is supervised and where fall risk sits.",
+    "focusModules": [
+      "safety",
+      "applications",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "audience",
+    "tier": 2,
+    "serviceSlugs": [
+      "sports-nets",
+      "safety-nets"
+    ]
+  },
+  {
+    "id": "intent-ceiling",
+    "slug": "ceiling",
+    "label": "Ceiling",
+    "titlePhrase": "ceiling mounted",
+    "h1Phrase": "ceiling cloth hangers",
+    "lede": "Ceiling cloth hangers need sound slab or beam fixings and a clear drop path for drying. We survey ceiling type, load, and pulley reach before quoting.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "materials",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 2,
+    "serviceSlugs": [
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-wall-mounted",
+    "slug": "wall-mounted",
+    "label": "Wall mounted",
+    "titlePhrase": "wall mounted",
+    "h1Phrase": "wall mounted cloth hangers",
+    "lede": "Wall-mounted hangers suit balconies and utility walls where ceiling fixings are impractical. Substrate condition and projection clearances decide the bracket type.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "materials"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 2,
+    "serviceSlugs": [
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-pulley",
+    "slug": "pulley",
+    "label": "Pulley",
+    "titlePhrase": "pulley system",
+    "h1Phrase": "pulley cloth hangers",
+    "lede": "Pulley cloth hangers let you raise and lower drying lines safely. We specify cable, pulley, and lock hardware so the system stays operable after monsoon dust and coastal air.",
+    "focusModules": [
+      "features",
+      "materials",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "maintenance"
+    ],
+    "published": true,
+    "dimension": "design",
+    "tier": 2,
+    "serviceSlugs": [
+      "cloth-hangers"
+    ]
+  },
+  {
+    "id": "intent-shaft",
+    "slug": "shaft",
+    "label": "Shaft",
+    "titlePhrase": "for shafts",
+    "h1Phrase": "shaft safety nets",
+    "lede": "Shaft nets stop debris and birds entering vertical service voids. Panel size, fixing density, and access for later maintenance are set on survey — not from a floor-plan guess.",
+    "focusModules": [
+      "applications",
+      "safety",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "opening",
+    "tier": 1,
+    "serviceSlugs": [
+      "duct-area-safety-nets",
+      "safety-nets",
+      "bird-pigeon-nets"
+    ]
+  },
+  {
+    "id": "intent-construction",
+    "slug": "construction",
+    "label": "Construction",
+    "titlePhrase": "construction",
+    "h1Phrase": "construction safety nets",
+    "lede": "Construction covering nets manage debris and edge risk during works. Duty rating, tie-in points, and wind exposure differ from permanent residential balcony nets.",
+    "focusModules": [
+      "applications",
+      "safety",
+      "materials",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location",
+      "pricing"
+    ],
+    "published": true,
+    "dimension": "audience",
+    "tier": 1,
+    "serviceSlugs": [
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-facade-debris",
+    "slug": "facade-debris",
+    "label": "Facade debris",
+    "titlePhrase": "facade debris",
+    "h1Phrase": "facade debris nets",
+    "lede": "Facade debris nets protect people and property below during exterior works. We survey bay height, wind, and how panels will be inspected while the scaffold is live.",
+    "focusModules": [
+      "applications",
+      "safety",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "published": true,
+    "dimension": "audience",
+    "tier": 2,
+    "serviceSlugs": [
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-kids-safety",
+    "slug": "kids-safety",
+    "label": "Kids safety",
+    "titlePhrase": "kids safety",
+    "h1Phrase": "kids safety nets",
+    "lede": "Kids safety nets focus on play-age children who climb and push at edges more than toddlers do. Spacing, climb resistance, and soft-edge finishing are written for active use on balconies and terraces — not only a generic child-safety slogan.",
+    "focusModules": [
+      "safety",
+      "benefits",
+      "applications",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance",
+      "location"
+    ],
+    "published": true,
+    "dimension": "benefit",
+    "tier": 1,
+    "serviceSlugs": [
+      "safety-nets",
+      "balcony-nets",
+      "invisible-grills"
+    ],
+    "facetPoints": [
+      {
+        "title": "Climb resistance matters",
+        "detail": "Active kids treat cables and mesh as ladders; we check horizontal footholds and mid-span firmness at survey."
+      },
+      {
+        "title": "Play-use maintenance",
+        "detail": "More contact means more abrasion checks after the first monsoon than a rarely used utility balcony needs."
+      }
+    ]
+  },
+  {
+    "id": "intent-amc",
+    "slug": "amc",
+    "published": true,
+    "label": "AMC",
+    "titlePhrase": "AMC",
+    "h1Phrase": "annual maintenance",
+    "lede": "AMC searches are about scheduled checks after install — tension, tears, rust at terminations, and access for cleaning. This page explains what a maintenance visit covers and when a repair is wiser than a routine wash.",
+    "focusModules": [
+      "maintenance",
+      "quality",
+      "installation"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance",
+      "pricing"
+    ],
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-cleaning",
+    "slug": "cleaning",
+    "published": true,
+    "label": "Cleaning",
+    "titlePhrase": "cleaning",
+    "h1Phrase": "cleaning and upkeep",
+    "lede": "Cleaning requests usually mean dust, bird droppings, or monsoon film on mesh and cable. We cover safe wash methods that do not cut UV stabilisers or loosen perimeter rope, and when cleaning should turn into a repair visit.",
+    "focusModules": [
+      "maintenance",
+      "materials",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-inspection",
+    "slug": "inspection",
+    "published": true,
+    "label": "Inspection",
+    "titlePhrase": "inspection",
+    "h1Phrase": "site inspection",
+    "lede": "An inspection is a measured survey of openings, substrate, and access before any quote is locked. This page lists what we check on apartments and houses so the specification matches the building, not a generic package.",
+    "focusModules": [
+      "installation",
+      "safety",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "commercial",
+    "tier": 3
+  },
+  {
+    "id": "intent-for-factories",
+    "slug": "for-factories",
+    "published": true,
+    "label": "For factories",
+    "titlePhrase": "for factories",
+    "h1Phrase": "for factories and industrial sites",
+    "lede": "Factory and warehouse work changes mesh grade, fixing into steel or masonry, and access around operations. We detail how industrial installs differ from residential balcony jobs and what a survey must confirm before materials are cut.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation",
+      "safety"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "property-type",
+    "tier": 3,
+    "serviceSlugs": [
+      "safety-nets",
+      "bird-pigeon-nets",
+      "sports-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-for-society",
+    "slug": "for-society",
+    "published": true,
+    "label": "For societies",
+    "titlePhrase": "for societies",
+    "h1Phrase": "for gated societies",
+    "lede": "Society and gated-community work usually needs association approval, lift bookings, and uniform detailing across many similar balconies. This page covers how we survey and schedule multi-flat installs without treating every tower as a one-off.",
+    "focusModules": [
+      "applications",
+      "installation",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "property-type",
+    "tier": 2,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets",
+      "cloth-hangers",
+      "duct-area-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-for-families",
+    "slug": "for-families",
+    "published": true,
+    "label": "For families",
+    "titlePhrase": "for families",
+    "h1Phrase": "for family homes",
+    "lede": "Family-focused installs prioritise gap control, climb resistance, and finishes that stay serviceable with daily use. We explain how child, pet, and senior-access needs change spacing and fixing choices on balconies and windows.",
+    "focusModules": [
+      "safety",
+      "applications",
+      "benefits",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "audience",
+    "tier": 3,
+    "serviceSlugs": [
+      "invisible-grills",
+      "safety-nets",
+      "balcony-nets"
+    ]
+  },
+  {
+    "id": "intent-uv-protected",
+    "slug": "uv-protected",
+    "published": true,
+    "label": "UV protected",
+    "titlePhrase": "UV protected",
+    "h1Phrase": "UV-stable specification",
+    "lede": "UV protection matters for netting and twine that sits in full sun for years. This page covers stabilised HDPE and nylon choices, when heavier denier is worth it, and how coastal sun plus monsoon wetting change inspection intervals.",
+    "focusModules": [
+      "materials",
+      "features",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "dimension": "material",
+    "tier": 3,
+    "serviceSlugs": [
+      "safety-nets",
+      "balcony-nets",
+      "bird-pigeon-nets",
+      "sports-nets",
+      "duct-area-safety-nets",
+      "building-covering-safety-nets"
+    ]
+  },
+  {
+    "id": "intent-heavy-duty",
+    "slug": "heavy-duty",
+    "published": true,
+    "label": "Heavy duty",
+    "titlePhrase": "heavy duty",
+    "h1Phrase": "heavy-duty specification",
+    "lede": "Heavy-duty usually means higher denier mesh, thicker rope, or stronger cable for wind, monkeys, or industrial loads. We separate marketing language from the survey measurements that actually justify a heavier grade.",
+    "focusModules": [
+      "materials",
+      "safety",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "pricing"
+    ],
+    "dimension": "material",
+    "tier": 3
+  },
+  {
+    "id": "intent-custom-size",
+    "slug": "custom-size",
+    "published": true,
+    "label": "Custom size",
+    "titlePhrase": "custom size",
+    "h1Phrase": "made to measure",
+    "lede": "Custom size is the default for openings that are out of square or split by columns. This page explains how we measure, template, and cut so gaps stay consistent instead of forcing a stock panel onto a real balcony.",
+    "focusModules": [
+      "installation",
+      "features",
+      "quality"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "design",
+    "tier": 3
+  },
+  {
+    "id": "intent-bird-spikes",
+    "slug": "bird-spikes",
+    "published": true,
+    "label": "Bird spikes",
+    "titlePhrase": "bird spikes",
+    "h1Phrase": "bird spike systems",
+    "lede": "Bird spikes stop landing on ledges and AC sills, but they do not replace netting where birds nest in depth. We cover when spikes, nets, or both are the honest specification, and how base material and pitch affect durability.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation",
+      "maintenance"
+    ],
+    "faqScopes": [
+      "service",
+      "maintenance"
+    ],
+    "dimension": "benefit",
+    "tier": 2,
+    "serviceSlugs": [
+      "bird-pigeon-nets"
+    ],
+    "facetPoints": [
+      {
+        "title": "Ledge width first",
+        "detail": "Spike rows must cover the full landing depth; a single thin strip on a wide sill leaves a perch birds still use."
+      },
+      {
+        "title": "Nets vs spikes",
+        "detail": "Open shafts and deep ducts usually need mesh closure; spikes suit narrow external ledges and pipe runs."
+      }
+    ]
+  },
+  {
+    "id": "intent-mosquito-nets",
+    "slug": "mosquito-nets",
+    "published": true,
+    "label": "Mosquito nets",
+    "titlePhrase": "mosquito nets",
+    "h1Phrase": "mosquito netting",
+    "lede": "Mosquito netting is a fine-mesh window and balcony product, not a fall-arrest system. We explain mesh aperture, frame options, and when residents should choose insect mesh, a safety net, or invisible grills for the same opening.",
+    "focusModules": [
+      "applications",
+      "materials",
+      "installation",
+      "features"
+    ],
+    "faqScopes": [
+      "service",
+      "location"
+    ],
+    "dimension": "benefit",
+    "tier": 2,
+    "serviceSlugs": [
+      "balcony-nets",
+      "safety-nets",
+      "invisible-grills"
+    ],
+    "facetPoints": [
+      {
+        "title": "Aperture vs safety gap",
+        "detail": "Insect mesh stops mosquitoes; it does not meet child fall-gap rules. Safety netting and grills are specified separately when fall risk exists."
+      },
+      {
+        "title": "Ventilation trade-off",
+        "detail": "Finer mesh reduces insect entry and also reduces airflow, so we match fabric to the room use and monsoon humidity."
+      }
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+{
+  "serviceToGuides": {
+    "svc-invisible-grills": ["materials-guide", "safety-guide", "balcony-safety-buying-guide"],
+    "svc-safety-nets": ["safety-guide", "materials-guide", "net-and-cable-maintenance-guide"],
+    "svc-sports-nets": ["installation-guide", "pricing-guide"],
+    "svc-cloth-hangers": ["installation-guide", "net-and-cable-maintenance-guide"],
+    "svc-duct-area-safety-nets": ["safety-guide", "installation-guide"],
+    "svc-building-covering-safety-nets": ["safety-guide", "pricing-guide"]
+  },
+  "guideToServices": {
+    "pricing-guide": ["svc-invisible-grills", "svc-safety-nets", "svc-cloth-hangers"],
+    "materials-guide": ["svc-invisible-grills", "svc-safety-nets"],
+    "installation-guide": ["svc-invisible-grills", "svc-cloth-hangers", "svc-duct-area-safety-nets"],
+    "safety-guide": ["svc-safety-nets", "svc-invisible-grills", "svc-duct-area-safety-nets"],
+    "balcony-safety-buying-guide": ["svc-invisible-grills", "svc-safety-nets"],
+    "net-and-cable-maintenance-guide": ["svc-safety-nets", "svc-cloth-hangers"]
+  },
+  "clusters": [
+    {
+      "id": "cl-decision",
+      "label": "Choosing and budgeting",
+      "paths": [
+        "/pricing-guide",
+        "/materials-guide",
+        "/guides/balcony-safety-buying-guide",
+        "/services/invisible-grills",
+        "/services/safety-nets"
+      ]
+    },
+    {
+      "id": "cl-delivery",
+      "label": "Installation and aftercare",
+      "paths": [
+        "/installation-guide",
+        "/safety-guide",
+        "/guides/net-and-cable-maintenance-guide",
+        "/projects"
+      ]
+    },
+    {
+      "id": "cl-commercial",
+      "label": "Commercial and industrial work",
+      "paths": [
+        "/services/duct-area-safety-nets",
+        "/services/building-covering-safety-nets",
+        "/services/sports-nets",
+        "/projects"
+      ]
+    }
+  ],
+  "manualLinks": [
+    {
+      "from": "/about",
+      "to": "/service-areas",
+      "anchor": "the states and cities we cover",
+      "context": "The about page describes how the business operates and should lead readers to where we actually work."
+    },
+    {
+      "from": "/about",
+      "to": "/installation-guide",
+      "anchor": "how a job runs from survey to handover",
+      "context": "Readers assessing whether to trust us want the process explained in detail rather than summarised."
+    },
+    {
+      "from": "/contact",
+      "to": "/pricing-guide",
+      "anchor": "what drives the cost of a job",
+      "context": "People about to request a quotation benefit from understanding how the price is built up first."
+    },
+    {
+      "from": "/faq",
+      "to": "/safety-guide",
+      "anchor": "gap control and load ratings explained",
+      "context": "Several frequent questions are answered only partially in a FAQ and deserve the full treatment."
+    },
+    {
+      "from": "/gallery",
+      "to": "/projects",
+      "anchor": "the installation scenarios behind this work",
+      "context": "Gallery images make more sense alongside the written explanation of each job type."
+    },
+    {
+      "from": "/projects",
+      "to": "/contact",
+      "anchor": "arrange a site survey",
+      "context": "Scenario pages are read by people close to a decision, so the next step should be immediate."
+    }
+  ]
+}

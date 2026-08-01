@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Avensafe Solutions">
+  <title>Avensafe Solutions</title>
+  <rect width="512" height="512" rx="96" fill="#0f766e" />
+  <!-- Vertical cables, echoing an invisible grill. -->
+  <g stroke="#ccfbf1" stroke-width="10" stroke-linecap="round" opacity="0.55">
+    <path d="M136 132V380" />
+    <path d="M188 132V380" />
+    <path d="M324 132V380" />
+    <path d="M376 132V380" />
+  </g>
+  <!-- Monogram -->
+  <path
+    d="M256 118 L332 394 H286 L268 330 H244 L226 394 H180 Z M256 214 L238 288 H274 Z"
+    fill="#ffffff"
+  />
+</svg>

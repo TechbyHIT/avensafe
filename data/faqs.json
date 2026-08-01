@@ -1,0 +1,236 @@
+[
+  {
+    "id": "faq-survey-required",
+    "question": "Do you need to visit before giving a price?",
+    "answer": "For anything structural we do, yes. We can give an indicative range over the phone from your balcony dimensions, but the final price depends on the condition of the wall or slab we are fixing into, the access route for materials, and the exact spacing you need. A survey takes about twenty minutes and means the quotation we give you is the price you pay.",
+    "scope": "global",
+    "serviceIds": [],
+    "traits": [],
+    "order": 1
+  },
+  {
+    "id": "faq-how-long",
+    "question": "How long does an installation take?",
+    "answer": "A cloth hanger is usually done in an hour or two. A single balcony safety net takes two to six hours, and an invisible grill on one or two bays takes most of a working day. Larger jobs such as sports enclosures or building covering run to several days because foundations and scaffold have to be dealt with first.",
+    "scope": "global",
+    "serviceIds": [],
+    "traits": [],
+    "order": 2
+  },
+  {
+    "id": "faq-association-approval",
+    "question": "Will my apartment association need to approve the work?",
+    "answer": "In most gated communities and housing societies, yes, because anything fixed to an external wall or balcony counts as a facade alteration. We can supply the drawings and material specification you need to submit. It is worth starting that process early, since approval usually takes longer than the installation itself.",
+    "scope": "global",
+    "serviceIds": [],
+    "traits": [],
+    "order": 3
+  },
+  {
+    "id": "faq-warranty",
+    "question": "What warranty do you provide?",
+    "answer": "Warranty depends on the product, and the figure for each one is stated on its service page rather than promised generically here. In every case the warranty covers materials and workmanship on what we installed, and it assumes the yearly inspection is carried out. We will always tell you what is and is not covered before you commit.",
+    "scope": "global",
+    "serviceIds": [],
+    "traits": [],
+    "order": 4
+  },
+  {
+    "id": "faq-price-drivers",
+    "question": "Why do quotations for the same balcony differ so much?",
+    "answer": "Almost always because the specifications are different, even when the dimensions are identical. Cable grade, cable spacing, net polymer and the type of anchor used all change the cost substantially and none of them are visible in a photograph. When comparing quotations, check the stated grade and spacing rather than the total alone.",
+    "scope": "pricing",
+    "serviceIds": [],
+    "traits": [],
+    "order": 10
+  },
+  {
+    "id": "faq-published-rates",
+    "question": "Can you publish a rate per square foot?",
+    "answer": "We deliberately do not, because a single rate would be misleading. The same area costs very different amounts depending on the grade of hardware, the spacing you need, the height you are working at and the condition of the substrate. Our pricing guide sets out every factor that moves the number so you can see how a quotation is built up.",
+    "scope": "pricing",
+    "serviceIds": [],
+    "traits": [],
+    "order": 11
+  },
+  {
+    "id": "faq-cheaper-options",
+    "question": "Is there a cheaper specification that is still safe?",
+    "answer": "Sometimes. Moving from 316 to 304 stainless is a genuine saving and perfectly sound at an inland address, and a coarser mesh is fine if you only need to keep birds out. What we will not do is reduce cable spacing tolerance or anchor quality, because those are the two things that decide whether the installation actually holds.",
+    "scope": "pricing",
+    "serviceIds": [],
+    "traits": [],
+    "order": 12
+  },
+  {
+    "id": "faq-inspection-interval",
+    "question": "How often should an installation be checked?",
+    "answer": "Once a year is right for most installations, and it is largely something you can do yourself: press the cables or net at mid-span to feel for slack, look at the anchor points for rust weeping or hairline cracking, and wash the surfaces down. In coastal and cyclone-exposed locations we recommend an additional check after the wet season.",
+    "scope": "maintenance",
+    "serviceIds": [],
+    "traits": [],
+    "order": 20
+  },
+  {
+    "id": "faq-retension",
+    "question": "My net or cable has gone slack. Is that a problem?",
+    "answer": "It needs attention but rarely means replacement. Slack in a cable widens the gap under load, which is the thing a barrier exists to prevent, and slack in a net lets it whip and abrade against fixings. Both are usually corrected by re-tensioning at the existing hardware, which is a short visit rather than a new installation.",
+    "scope": "maintenance",
+    "serviceIds": [],
+    "traits": [],
+    "order": 21
+  },
+  {
+    "id": "faq-net-lifespan",
+    "question": "How long should a safety net last?",
+    "answer": "A properly stabilised net in a moderate climate should give several years of service, and considerably longer where it is shaded. The way to judge it is by feel rather than by date: twine that has become stiff or chalky and snaps instead of stretching has reached the end of its life and should be replaced.",
+    "scope": "maintenance",
+    "serviceIds": [],
+    "traits": [],
+    "order": 22
+  },
+  {
+    "id": "faq-service-area-coverage",
+    "question": "Do you actually cover my area, or only the main city?",
+    "answer": "We cover the localities listed on our service area pages, and those lists reflect where we genuinely operate rather than everywhere we would like to. If your locality is not listed, call us anyway: we often work just beyond a listed boundary, and we will tell you plainly if a job is outside our reach rather than sending someone unprepared.",
+    "scope": "location",
+    "serviceIds": [],
+    "traits": [],
+    "order": 30
+  },
+  {
+    "id": "faq-coastal-grade",
+    "question": "Does living near the sea change what I should install?",
+    "answer": "Substantially. Chloride in coastal air pits ordinary stainless, so we move to AISI 316 cable and use stainless fittings throughout, and we avoid galvanised hardware entirely. We also seal terminations and detail them so water drains away rather than sitting against the wall, because that is where coastal installations usually fail first.",
+    "scope": "location",
+    "serviceIds": [],
+    "traits": ["coastal"],
+    "order": 31
+  },
+  {
+    "id": "faq-high-floor",
+    "question": "I am on a high floor. Does that change the installation?",
+    "answer": "Yes, because above roughly the tenth floor wind pressure rather than impact governs the design. We increase the number of fixings, set anchors further back from slab edges to avoid spalling, and keep net panels smaller so no single failure can open a large gap. Material handling also has to be arranged through the service lift.",
+    "scope": "location",
+    "serviceIds": [],
+    "traits": ["highRise"],
+    "order": 32
+  },
+  {
+    "id": "faq-monsoon-timing",
+    "question": "Should I wait until after the monsoon to have work done?",
+    "answer": "Not necessarily, though it depends on the job. Cable and net installations can be fitted in the wet season without difficulty. Facade covering and anything involving foundations is better scheduled outside it. Where we do install during the monsoon we will normally return once the season ends to re-tension, since that is when any slack appears.",
+    "scope": "location",
+    "serviceIds": [],
+    "traits": ["monsoonHeavy"],
+    "order": 33
+  },
+  {
+    "id": "faq-ig-spacing",
+    "question": "What cable spacing is right for a home with young children?",
+    "answer": "The spacing has to be tight enough that a child cannot pass a head or limb through, and close enough that the cables cannot be used as a ladder. Vertical cables are better than horizontal ones for exactly that reason. We gauge the gap at several heights on every bay at handover rather than assuming the fabrication came out to specification.",
+    "scope": "service",
+    "serviceIds": ["svc-invisible-grills"],
+    "traits": [],
+    "order": 40
+  },
+  {
+    "id": "faq-ig-vs-grille",
+    "question": "How does an invisible grill compare with a normal iron grille?",
+    "answer": "It costs more and it is far less obtrusive. A welded grille is cheaper and needs no tension maintenance, but it blocks light and view and will eventually rust and streak the facade. An invisible grill keeps the outlook and does not bleed rust, at the cost of an annual tension check and a higher initial price.",
+    "scope": "service",
+    "serviceIds": ["svc-invisible-grills"],
+    "traits": [],
+    "order": 41
+  },
+  {
+    "id": "faq-net-child-vs-bird",
+    "question": "Can one net keep birds out and also stop a fall?",
+    "answer": "No, and treating them as interchangeable is the most common mistake we are called to correct. A light bird-exclusion mesh will not arrest a person or a heavy object. Where there is a genuine fall risk we specify a rated net with rated anchorage, which is a different product at a different price.",
+    "scope": "service",
+    "serviceIds": ["svc-safety-nets"],
+    "traits": [],
+    "order": 42
+  },
+  {
+    "id": "faq-net-pigeon-return",
+    "question": "Will pigeons find a way back in after netting?",
+    "answer": "Only if the enclosure was left with a gap, which in practice means a corner or a service penetration that was not properly closed. A correctly fitted net denies access outright. That is why we clear existing nesting material first and check corners and pipe penetrations last, since those are where birds actually get through.",
+    "scope": "service",
+    "serviceIds": ["svc-safety-nets", "svc-duct-area-safety-nets"],
+    "traits": [],
+    "order": 43
+  },
+  {
+    "id": "faq-sports-height",
+    "question": "How high does a cricket containment net need to be?",
+    "answer": "It depends on the standard of play and how close the boundary is to whatever you are protecting. A practice lane needs less height than an open box-cricket ground with a road behind it. We size height from the expected ball speed and the distance to the nearest thing that can be damaged, rather than from a standard figure.",
+    "scope": "service",
+    "serviceIds": ["svc-sports-nets"],
+    "traits": [],
+    "order": 44
+  },
+  {
+    "id": "faq-sports-roof",
+    "question": "Do I need overhead netting as well as perimeter netting?",
+    "answer": "If the ground is hemmed in by buildings or a road, usually yes, because a lofted ball leaves over the top rather than through the side. Adding a roof changes the structural problem rather than just the area, since the posts and cables then carry a much larger wind load, so it is designed rather than simply extended.",
+    "scope": "service",
+    "serviceIds": ["svc-sports-nets"],
+    "traits": [],
+    "order": 45
+  },
+  {
+    "id": "faq-hanger-load",
+    "question": "How much weight can a ceiling cloth hanger hold?",
+    "answer": "The figure that matters is the wet load, not the dry one, because cotton straight out of the machine weighs roughly three times what it does dry. We state a wet working load for the configuration we install and we load-test every rail before handover, so you know what the system will actually take rather than a marketing number.",
+    "scope": "service",
+    "serviceIds": ["svc-cloth-hangers"],
+    "traits": [],
+    "order": 46
+  },
+  {
+    "id": "faq-hanger-false-ceiling",
+    "question": "Can a cloth hanger be fitted where there is a false ceiling?",
+    "answer": "Yes, but the fixings must pass through and anchor into the structural slab above. Gypsum and cement board cannot carry this load and will fail, usually with the whole rack coming down. We locate the slab with a scanner where necessary and make the penetration good afterwards.",
+    "scope": "service",
+    "serviceIds": ["svc-cloth-hangers"],
+    "traits": [],
+    "order": 47
+  },
+  {
+    "id": "faq-duct-access",
+    "question": "If you net our duct, how do we service the pipes later?",
+    "answer": "Access has to be designed in from the start, which is why we form laced access panels at agreed positions and record where they are for the facilities team. A net with no access provision gets cut open the first time the riser needs work and is never repaired, which defeats the whole installation.",
+    "scope": "service",
+    "serviceIds": ["svc-duct-area-safety-nets"],
+    "traits": [],
+    "order": 48
+  },
+  {
+    "id": "faq-duct-clearing",
+    "question": "Our shaft is full of nesting material. Is that included?",
+    "answer": "Clearing is quoted separately because the volume varies enormously, but it is not optional. Netting over an existing nest traps the problem instead of solving it and is inhumane besides. We clear and photograph the shaft before any panel goes in, and agree disposal arrangements with the building management first.",
+    "scope": "service",
+    "serviceIds": ["svc-duct-area-safety-nets"],
+    "traits": [],
+    "order": 49
+  },
+  {
+    "id": "faq-covering-scaffold",
+    "question": "Can you just sheet the scaffold we already have up?",
+    "answer": "Not without checking its design first. Cladding a scaffold can multiply the wind load it carries, and a scaffold erected without that allowance may not be adequate once sheeted. We review the temporary works before anything goes up, which occasionally means asking for additional ties before we proceed.",
+    "scope": "service",
+    "serviceIds": ["svc-building-covering-safety-nets"],
+    "traits": [],
+    "order": 50
+  },
+  {
+    "id": "faq-covering-residents",
+    "question": "Can residents stay in the building during facade work?",
+    "answer": "In most cases yes, which is usually the main reason for sheeting in the first place. Fine mesh holds dust and overspray on site so windows remain usable for much of the programme, and we phase the sheeting to follow the work up and down the elevation rather than wrapping the whole building at once.",
+    "scope": "service",
+    "serviceIds": ["svc-building-covering-safety-nets"],
+    "traits": [],
+    "order": 51
+  }
+]

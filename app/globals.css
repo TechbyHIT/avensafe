@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+/**
+ * Design tokens.
+ *
+ * Declared once here and consumed as Tailwind utilities everywhere else, so
+ * colour, radius and type decisions are made in a single file rather than
+ * scattered through components as arbitrary values.
+ */
+@theme {
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Brand: deep navy (Hiranya-style conversion UI) with gold accents. */
+  --color-brand-50: #f4f7fb;
+  --color-brand-100: #e8eef7;
+  --color-brand-200: #c9d6ea;
+  --color-brand-300: #9bb0d0;
+  --color-brand-400: #6b87b3;
+  --color-brand-500: #456394;
+  --color-brand-600: #2f4d7a;
+  --color-brand-700: #1e3a5f;
+  --color-brand-800: #152a45;
+  --color-brand-900: #0f1f33;
+  --color-brand-950: #0a1422;
+
+  /* Primary CTA gold */
+  --color-accent-400: #f5c84c;
+  --color-accent-500: #e8b923;
+  --color-accent-600: #d4a017;
+  --color-accent-700: #b8860b;
+  --color-accent-ink: #1a1400;
+
+  /* WhatsApp green */
+  --color-wa-500: #25d366;
+  --color-wa-600: #1ebe57;
+  --color-wa-700: #128c7e;
+
+  /* Neutrals — warm paper surfaces (Hiranya-style), cool ink for type. */
+  --color-ink-50: #fdfcf8;
+  --color-ink-100: #f7f4ec;
+  --color-ink-200: #ebe6da;
+  --color-ink-300: #d6d0c2;
+  --color-ink-400: #a39e90;
+  --color-ink-500: #6f6a5e;
+  --color-ink-600: #524e45;
+  --color-ink-700: #3a3731;
+  --color-ink-800: #24221e;
+  --color-ink-900: #141311;
+  --color-ink-950: #0a0908;
+
+  --color-surface: #fdfcf8;
+  --color-surface-elevated: #ffffff;
+
+  --radius-card: 1.25rem;
+  --radius-control: 9999px;
+  --radius-media: 1.75rem;
+
+  --shadow-card: 0 1px 2px 0 rgb(20 19 17 / 0.04), 0 8px 24px -12px rgb(20 19 17 / 0.12);
+  --shadow-raised: 0 10px 30px -12px rgb(20 19 17 / 0.18);
+  --shadow-accent: 0 12px 28px -8px rgb(232 185 35 / 0.45);
+
+  /* Consistent vertical rhythm for page sections. */
+  --spacing-section: 4.5rem;
+  --spacing-section-lg: 7rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent-500) 35%, white);
+    color: var(--color-ink-900);
+  }
+
+  /* Visible, consistent focus for keyboard users on every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-700);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Headings are set tighter than body copy and never rely on colour alone. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink-900);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Anchors are underlined in body copy so links are distinguishable without colour. */
+  main a:not([data-no-underline]) {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}

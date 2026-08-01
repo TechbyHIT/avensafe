@@ -1,0 +1,67 @@
+import type { NextConfig } from 'next';
+
+/**
+ * Security headers applied to every response. Kept here rather than in
+ * middleware so they are emitted for static and ISR responses alike.
+ */
+const securityHeaders = [
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload',
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+  },
+];
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  productionBrowserSourceMaps: false,
+  /** Slim Node runtime for PM2 (no Docker) — see ecosystem.config.cjs */
+  output: 'standalone',
+
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Keep static generation workers small — this corpus pre-renders tens of
+  // thousands of pages and can OOM default worker pools on Windows.
+  experimental: {
+    staticGenerationMaxConcurrency: 2,
+    staticGenerationMinPagesPerWorker: 25,
+  },
+
+  images: {
+    // AVIF first, WebP fallback. Next negotiates via the Accept header.
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [360, 420, 640, 768, 1024, 1280, 1536, 1920],
+    imageSizes: [96, 128, 192, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+  },
+
+  async headers() {
+    return [{ source: '/:path*', headers: securityHeaders }];
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/favicon.ico',
+        destination: '/favicon.png',
+        permanent: false,
+      },
+    ];
+  },
+};
+
+export default nextConfig;

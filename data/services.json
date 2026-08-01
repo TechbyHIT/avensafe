@@ -1,0 +1,1824 @@
+[
+  {
+    "id": "svc-invisible-grills",
+    "slug": "invisible-grills",
+    "name": "Invisible Grills",
+    "shortName": "Invisible grills",
+    "category": "safety",
+    "summary": "Tensioned stainless steel cable barriers that secure balconies and windows without blocking light, airflow or the view.",
+    "intro": "An invisible grill replaces a welded iron grille with a run of thin, high-tensile stainless steel cables tensioned vertically inside a slim aluminium frame. From a few metres away the cables all but disappear, which is why the system has become the default choice for apartment balconies where residents want a fall barrier without living behind bars. The strength comes from tension and anchor design rather than from bulk, so specification and workmanship matter far more than they do with a conventional grille.",
+    "problemSolved": "Stops falls from balconies, parapets and full-height windows while keeping daylight, cross-ventilation and outward visibility intact.",
+    "searchTerms": [
+      "invisible grills",
+      "invisible grill",
+      "transparent grill",
+      "balcony invisible grill",
+      "window invisible grill",
+      "invisible balcony grill",
+      "stainless steel invisible grill",
+      "invisible grill for balcony",
+      "invisible grill price",
+      "invisible grill installation",
+      "balcony safety grill",
+      "stainless steel cable railing"
+    ],
+    "propertyTypes": [
+      "Apartments and gated communities",
+      "Independent houses and villas",
+      "Balconies and parapets",
+      "Full-height windows and staircases"
+    ],
+    "benefits": [
+      {
+        "title": "An unobstructed view",
+        "detail": "Cables of 2 to 3 mm read as fine lines against the sky, so a balcony keeps its outlook and rooms behind it stay bright."
+      },
+      {
+        "title": "Ventilation is unaffected",
+        "detail": "Open cable spacing leaves airflow essentially unchanged, which matters in cities where cross-ventilation does most of the cooling."
+      },
+      {
+        "title": "No rust bleed onto the facade",
+        "detail": "Stainless cable and aluminium framing avoid the rust streaks that painted mild steel grilles leave down a wall within a few monsoons."
+      },
+      {
+        "title": "Child and pet containment",
+        "detail": "Spacing tight enough to stop a child getting a head or limb through turns a balcony into usable family space rather than a hazard."
+      }
+    ],
+    "features": [
+      {
+        "title": "Vertical cables at controlled spacing",
+        "detail": "Cables run floor to head height at a spacing chosen so a small child cannot pass through or use them as a ladder."
+      },
+      {
+        "title": "Individually tensioned runs",
+        "detail": "Each cable is tensioned to a target load and locked, so the run stays taut instead of sagging into a climbable gap."
+      },
+      {
+        "title": "Concealed anchorage",
+        "detail": "Terminations sit inside the frame profile, leaving a clean edge with no exposed crimps or protruding fasteners."
+      },
+      {
+        "title": "Made to the measured opening",
+        "detail": "Frames are cut to the surveyed dimensions of each bay, which is the only way to hold a consistent gap on out-of-square openings."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Apartment balconies",
+        "detail": "The most common case: a fall barrier on an existing parapet, sized to the bay and fixed without touching the structural railing."
+      },
+      {
+        "title": "Full-height and French windows",
+        "detail": "Glazing that opens inward needs a barrier behind it; cables provide one without darkening the room."
+      },
+      {
+        "title": "Staircase and atrium voids",
+        "detail": "Internal voids and stair wells get an infill that satisfies gap requirements while keeping sightlines through the space."
+      },
+      {
+        "title": "Terrace parapets",
+        "detail": "Low parapets are brought up to a safe effective height without adding visual mass to the roofline."
+      }
+    ],
+    "materials": [
+      {
+        "name": "Stainless steel cable",
+        "spec": "AISI 316 or 304, 7x7 construction, 2 mm to 3 mm diameter",
+        "detail": "Grade 316 carries molybdenum and resists chloride pitting, which is why it is specified near the coast; 304 is adequate inland."
+      },
+      {
+        "name": "Aluminium frame profile",
+        "spec": "Powder-coated 6063-T6 extrusion",
+        "detail": "The extrusion carries the cable tension and gives a finished edge; powder coating over pretreated alloy holds colour for years outdoors."
+      },
+      {
+        "name": "Anchors and terminations",
+        "spec": "Stainless fasteners with nylon or stainless sleeves",
+        "detail": "Mixing a plain steel fastener into a stainless assembly invites galvanic corrosion, so fixings are matched to the cable."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        3,
+        8
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Site survey and measurement",
+          "detail": "Every bay is measured individually and checked for square, since balconies are rarely as uniform as the drawings suggest."
+        },
+        {
+          "title": "Frame fabrication",
+          "detail": "Profiles are cut and drilled to the surveyed sizes so cable spacing stays uniform across openings of different widths."
+        },
+        {
+          "title": "Frame fixing",
+          "detail": "Frames are anchored into sound concrete or masonry, with fixing points set back from edges to avoid spalling."
+        },
+        {
+          "title": "Cable threading and tensioning",
+          "detail": "Cables are threaded, brought to tension in sequence and locked, then re-checked so no run is left slack."
+        },
+        {
+          "title": "Handover inspection",
+          "detail": "Gaps are gauged, tension is spot-checked and the client is shown the annual check they can carry out themselves."
+        }
+      ],
+      "sitePreparation": [
+        "Clear the balcony of furniture, planters and drying racks",
+        "Provide access to a power point for drilling",
+        "Confirm with the building association whether facade alterations need written approval"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Barrier heights and infill gaps follow the National Building Code of India guidance for protective barriers",
+        "Fixings installed to the anchor manufacturer's stated pull-out values"
+      ],
+      "notes": [
+        {
+          "title": "Gap control is the whole point",
+          "detail": "A barrier that is strong but has one wide gap has failed; spacing is gauged at every run rather than assumed from the drawing."
+        },
+        {
+          "title": "The anchor decides the strength",
+          "detail": "Cable rarely fails first. Pull-out at the anchor does, so substrate condition is checked before a fixing method is chosen."
+        },
+        {
+          "title": "Not a substitute for supervision",
+          "detail": "A cable barrier reduces risk substantially but no barrier removes the need to supervise young children on a balcony."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Check tension by hand",
+          "detail": "Press each cable at mid-span; noticeable give means it should be re-tensioned before the gap widens under load."
+        },
+        {
+          "title": "Wash down the cables",
+          "detail": "Plain water and a soft cloth remove the airborne salt and grime that cause staining on stainless if left to sit."
+        },
+        {
+          "title": "Inspect anchor points",
+          "detail": "Look for hairline cracking or rust weeping around fixings, both of which indicate the anchorage needs attention."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 5,
+      "checks": [
+        "Cable grade and diameter verified against the quotation",
+        "Gap gauged at multiple heights on every bay",
+        "Tension confirmed after a settling period",
+        "Anchor pull-out method matched to the surveyed substrate"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Total running area",
+        "detail": "Cost tracks the measured area of the openings, so a wraparound balcony costs more than a single bay of the same height."
+      },
+      {
+        "title": "Cable grade",
+        "detail": "Moving from 304 to 316 stainless raises material cost but is the right call in salt-laden coastal air."
+      },
+      {
+        "title": "Cable spacing",
+        "detail": "Tighter spacing means more cable and more terminations per square metre, which is the single biggest driver after area."
+      },
+      {
+        "title": "Access and floor height",
+        "detail": "Work that needs edge protection or restricted-hours access on an upper floor carries more labour than a ground-floor bay."
+      },
+      {
+        "title": "Substrate condition",
+        "detail": "Weak or spalling concrete needs repair or an alternative anchor before frames can be fixed, which adds to the job."
+      }
+    ],
+    "locationAngles": {
+      "default": "Cable Grade, Spacing and Anchorage Explained",
+      "coastal": "Marine-Grade 316 Cable for Salt-Laden Air",
+      "humid": "Corrosion-Resistant Fixings for Humid Conditions",
+      "arid": "Dust-Tolerant Cable Runs and Easy Cleaning",
+      "highRise": "Wind-Load Anchorage for High-Rise Balconies",
+      "monsoonHeavy": "Monsoon-Ready Anchors and Drainage Detailing",
+      "industrial": "Hard-Wearing Specification for Industrial Surroundings"
+    },
+    "environmentalGuidance": {
+      "default": "Specification here comes down to three decisions: cable grade, cable spacing and how the frame is anchored. We size all three from the survey rather than applying a standard package, because balcony geometry and substrate quality vary far more between buildings than most quotations admit.",
+      "coastal": "Chloride-laden air is the deciding factor near the coast. We specify AISI 316 cable and stainless fixings throughout, because 304 will show brown pitting within a couple of seasons in salt spray, and a single plain-steel screw in an otherwise stainless assembly becomes a galvanic corrosion site. Frames are detailed so water drains rather than pools at terminations.",
+      "humid": "Sustained high humidity keeps metal surfaces damp for long periods, which accelerates crevice corrosion at exactly the points you cannot see: inside terminations and behind the frame. We use sealed terminations and stainless fixings, and we leave a drainage path so moisture is not held against the wall.",
+      "arid": "Dry, dusty air is kinder to stainless but abrasive dust settles on cables and dulls the finish. The practical answer is a specification that cleans easily, with accessible cable runs and terminations that do not trap grit, plus a wash-down as part of the yearly check.",
+      "highRise": "Above roughly the tenth floor, wind pressure rather than impact governs the anchorage. We increase fixing density, set anchors further from slab edges to avoid spalling, and check the parapet substrate before choosing a method, because a fixing that is adequate on floor three can be marginal on floor twenty.",
+      "monsoonHeavy": "Heavy seasonal rain drives water into every unsealed gap and keeps anchor points wet for weeks. We seal penetrations, detail terminations so water runs off rather than sits, and schedule the tension check for after the monsoon, when any settlement will already have shown itself.",
+      "industrial": "Industrial air carries particulates and sometimes sulphur compounds that attack ordinary finishes. We specify the higher cable grade and a more robust coating on framing, and we plan for more frequent washing, since deposits left in place do the damage rather than the exposure itself."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-cloth-hangers",
+      "svc-duct-area-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "imageIds": [
+      "img-invisible-grills-01",
+      "img-invisible-grills-02",
+      "img-invisible-grills-03",
+      "img-invisible-grills-04",
+      "img-invisible-grills-05",
+      "img-invisible-grills-06"
+    ],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "svc-safety-nets",
+    "slug": "safety-nets",
+    "name": "Safety Nets",
+    "shortName": "Safety nets",
+    "category": "safety",
+    "summary": "UV-stabilised knotted nets fitted to balconies, shafts and open edges to catch falling people, objects and birds.",
+    "intro": "A safety net is the most economical way to close an open edge, and the least visually intrusive after invisible grills. The performance of a net installation is decided almost entirely by three things that are invisible in a photograph: the polymer and denier of the twine, how the net is stabilised against ultraviolet light, and how the perimeter rope is anchored. A cheap net looks identical to a good one on the day it is fitted and fails within two summers.",
+    "problemSolved": "Closes open balconies, shafts and edges against falls, dropped objects and bird entry without replacing the existing railing.",
+    "searchTerms": [
+      "safety nets",
+      "balcony safety net",
+      "pigeon net",
+      "children safety net for balcony"
+    ],
+    "propertyTypes": [
+      "Apartment balconies and utility areas",
+      "Gated community common areas",
+      "Commercial atriums and shafts",
+      "Industrial sheds and walkways"
+    ],
+    "benefits": [
+      {
+        "title": "Low visual weight",
+        "detail": "A fine net reads as a faint haze rather than a barrier, so it changes the look of a facade far less than a grille."
+      },
+      {
+        "title": "Fast to install",
+        "detail": "Most balconies are netted in a few hours with minimal drilling, which makes it the practical choice in tenanted flats."
+      },
+      {
+        "title": "Keeps pigeons out for good",
+        "detail": "A correctly sized mesh denies perching and nesting outright, which ends the cycle of cleaning droppings off a balcony."
+      },
+      {
+        "title": "Catches dropped objects",
+        "detail": "Items knocked off a balcony are held rather than becoming a hazard to anyone below, which matters in dense housing."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mesh sized to purpose",
+        "detail": "Bird exclusion, child safety and debris containment need different apertures, so mesh is chosen per application rather than stocked as one size."
+      },
+      {
+        "title": "UV-stabilised twine",
+        "detail": "Stabiliser is compounded into the polymer, not coated on, which is what determines whether a net lasts years or months in direct sun."
+      },
+      {
+        "title": "Bordered perimeter rope",
+        "detail": "A heavier rope is stitched around the edge to carry load into the anchors instead of tearing at the outermost mesh row."
+      },
+      {
+        "title": "Tensioned on stainless anchorage",
+        "detail": "Eye bolts and turnbuckles let the net be drawn taut and re-tensioned later without refitting the whole panel."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Balcony and utility area enclosure",
+        "detail": "The standard residential job: an open balcony closed off against birds, dropped laundry and falls."
+      },
+      {
+        "title": "Internal shafts and light wells",
+        "detail": "Shafts collect rubbish and nesting birds; a net at the head of the shaft keeps both out and keeps maintenance access simple."
+      },
+      {
+        "title": "Open edges during and after works",
+        "detail": "Temporary edge protection on a site, or permanent protection on a plant deck where a railing alone is not enough."
+      },
+      {
+        "title": "Swimming pool and water body covers",
+        "detail": "A tensioned net over an unused pool prevents a child or animal entering the water while still letting it be cleaned."
+      }
+    ],
+    "materials": [
+      {
+        "name": "HDPE monofilament net",
+        "spec": "UV-stabilised high-density polyethylene, knotted, 0.8 mm to 1.6 mm twine",
+        "detail": "The workhorse material: strong, light and stable in sun when properly compounded, and the usual choice for bird and balcony nets."
+      },
+      {
+        "name": "Nylon safety net",
+        "spec": "Braided nylon 6, higher denier, knotted construction",
+        "detail": "Nylon absorbs more energy on impact than HDPE, so it is specified where the net has to arrest a falling load rather than exclude birds."
+      },
+      {
+        "name": "Perimeter rope and anchorage",
+        "spec": "Polypropylene border rope with stainless eye bolts and turnbuckles",
+        "detail": "The border rope transfers load to the anchors; stainless hardware keeps the fixings from becoming the weak point outdoors."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        2,
+        6
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Survey and mesh selection",
+          "detail": "The opening is measured and the intended purpose confirmed, since that decides mesh aperture, twine diameter and polymer."
+        },
+        {
+          "title": "Anchor layout and fixing",
+          "detail": "Eye bolts are set at a spacing that keeps the border rope straight between points, into sound masonry or concrete."
+        },
+        {
+          "title": "Net panel fitting",
+          "detail": "The panel is offered up, laced to the anchors through the border rope and drawn progressively square."
+        },
+        {
+          "title": "Tensioning and trimming",
+          "detail": "Tension is taken up evenly so there are no slack bellies, then surplus is trimmed and edges are finished."
+        },
+        {
+          "title": "Gap closure check",
+          "detail": "Corners and service penetrations are checked last, because that is where birds and objects actually get through."
+        }
+      ],
+      "sitePreparation": [
+        "Clear the balcony or shaft head of stored items",
+        "Remove existing nesting material and clean the surface before enclosure",
+        "Confirm any association approval needed for external fixings"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Fall-arrest netting specified against EN 1263-1 style performance criteria where arrest duty is required",
+        "Anchorage installed to the fastener manufacturer's stated pull-out capacity"
+      ],
+      "notes": [
+        {
+          "title": "Bird net and fall net are not interchangeable",
+          "detail": "A light bird net will not arrest a person. Where a fall risk exists we specify a rated net and rated anchorage, not the cheaper mesh."
+        },
+        {
+          "title": "Corners are the weak point",
+          "detail": "Almost every failure we are called to inspect is a corner or a service penetration that was never properly closed."
+        },
+        {
+          "title": "Nets have a service life",
+          "detail": "Even a good net degrades in sun. It should be inspected yearly and replaced when the twine loses flexibility, not left indefinitely."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Check for slack and sag",
+          "detail": "A net that has developed a belly has lost tension; re-tensioning at the turnbuckles restores it without a new panel."
+        },
+        {
+          "title": "Inspect twine condition",
+          "detail": "Twine that feels stiff or chalky and snaps rather than stretches has reached the end of its useful life."
+        },
+        {
+          "title": "Clear debris and nesting attempts",
+          "detail": "Leaves and litter caught in a net add weight and hold moisture against fixings, so the net is cleared at each check."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 3,
+      "checks": [
+        "Polymer, twine diameter and mesh size verified against the quotation",
+        "UV stabilisation confirmed for the specified material",
+        "Border rope continuity checked around the full perimeter",
+        "Every anchor point load-checked before handover"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Net area",
+        "detail": "Area is the base of every quotation, measured on the opening actually being closed rather than the room behind it."
+      },
+      {
+        "title": "Mesh size and twine diameter",
+        "detail": "A tighter mesh in heavier twine uses considerably more material per square metre than a coarse bird net."
+      },
+      {
+        "title": "Polymer and duty rating",
+        "detail": "A rated nylon fall-arrest net costs multiples of an HDPE bird net, because it is engineered to do a different job."
+      },
+      {
+        "title": "Anchor count and substrate",
+        "detail": "Closer anchor spacing, or a substrate that needs chemical anchors, increases both hardware and labour."
+      },
+      {
+        "title": "Height and access",
+        "detail": "Shaft heads, atriums and upper floors need access equipment and often out-of-hours working, which is priced separately."
+      }
+    ],
+    "locationAngles": {
+      "default": "Mesh, Polymer and Anchorage Chosen for the Job",
+      "coastal": "Salt- and UV-Resistant Netting for Coastal Exposure",
+      "humid": "Mould-Resistant Netting for Humid Balconies",
+      "arid": "High-UV Netting for Long Sun Exposure",
+      "highRise": "Wind-Rated Netting and Anchorage for Tall Buildings",
+      "monsoonHeavy": "Monsoon-Tested Netting, Drainage and Re-Tensioning",
+      "industrial": "Heavy-Duty Netting for Industrial Environments"
+    },
+    "environmentalGuidance": {
+      "default": "The specification questions worth asking are what the net has to stop, how much sun it will take, and what it is anchored into. We answer those from the survey, because the same balcony dimension can need three quite different nets depending on whether the concern is pigeons, dropped objects or a child.",
+      "coastal": "Coastal installations fail at the hardware long before the net. Salt attacks eye bolts, turnbuckles and lacing rings, so we specify stainless throughout and avoid galvanised fittings entirely. The net itself needs full UV stabilisation, since coastal sites combine strong sun with reflected light off water and light-coloured render.",
+      "humid": "In persistently humid air a net stays damp, and anything caught in it stays damp too. That is what causes the black mould people associate with old balcony nets. We specify a polymer that does not hold water, keep the net tensioned so it drains and dries, and treat clearing trapped debris as the main maintenance task.",
+      "arid": "Long hours of hard sunlight are the dominant stress in dry inland conditions, and ultraviolet degradation is what ends a net's life there. We specify heavier twine with full UV stabilisation rather than the thinnest mesh that will do the job, because the extra material buys years of service.",
+      "highRise": "On a tall building the net becomes a sail. Wind loading, not the weight of anything caught in it, sets the anchor spacing, so we increase the number of fixings, use turnbuckles that allow re-tensioning from inside, and keep panel sizes smaller so a single failure cannot open a large gap.",
+      "monsoonHeavy": "Weeks of driving rain load a net with water and wind at the same time and wash grit into every anchor. We fix with stainless, seal penetrations, and plan a post-monsoon re-tension visit, because that is when slack shows up and when a marginal anchor reveals itself.",
+      "industrial": "Industrial settings add abrasion and airborne deposits to ordinary sun exposure, and sometimes chemical attack. We specify a heavier duty net than the dimensions alone would suggest, use hardware matched to the atmosphere, and shorten the inspection interval."
+    },
+    "relatedServiceIds": [
+      "svc-invisible-grills",
+      "svc-duct-area-safety-nets",
+      "svc-building-covering-safety-nets",
+      "svc-balcony-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "imageIds": [
+      "img-safety-nets-01",
+      "img-safety-nets-02",
+      "img-safety-nets-03",
+      "img-safety-nets-04",
+      "img-safety-nets-05",
+      "img-safety-nets-06"
+    ],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "svc-balcony-nets",
+    "slug": "balcony-nets",
+    "name": "Balcony Nets",
+    "shortName": "Balcony nets",
+    "category": "safety",
+    "summary": "Purpose-built balcony enclosure nets for apartments, villas, and high-rise bays — sized for child safety, pet containment, and everyday fall protection.",
+    "intro": "Balcony nets are safety nets specified specifically for residential balcony openings rather than shafts or construction facades. The mesh, perimeter rope, and anchor spacing are chosen for how families actually use a balcony: drying laundry, plants, children, and pets. We treat balcony nets as their own product family so quotations stay focused on parapet geometry, society rules, and the safety goal you name at survey — not a generic “netting” lump sum.",
+    "problemSolved": "Closes apartment and villa balcony openings against falls, pets escaping, and everyday dropped objects while keeping light and airflow.",
+    "searchTerms": [
+      "balcony nets",
+      "balcony protection nets",
+      "apartment balcony nets",
+      "high rise balcony nets",
+      "balcony children safety",
+      "balcony pet safety",
+      "villa balcony nets",
+      "balcony net installation",
+      "balcony net quote",
+      "balcony net price"
+    ],
+    "propertyTypes": [
+      "Apartment balconies and utility areas",
+      "Gated community common areas",
+      "Commercial atriums and shafts",
+      "Industrial sheds and walkways"
+    ],
+    "benefits": [
+      {
+        "title": "Low visual weight",
+        "detail": "A fine net reads as a faint haze rather than a barrier, so it changes the look of a facade far less than a grille."
+      },
+      {
+        "title": "Fast to install",
+        "detail": "Most balconies are netted in a few hours with minimal drilling, which makes it the practical choice in tenanted flats."
+      },
+      {
+        "title": "Keeps pigeons out for good",
+        "detail": "A correctly sized mesh denies perching and nesting outright, which ends the cycle of cleaning droppings off a balcony."
+      },
+      {
+        "title": "Catches dropped objects",
+        "detail": "Items knocked off a balcony are held rather than becoming a hazard to anyone below, which matters in dense housing."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mesh sized to purpose",
+        "detail": "Bird exclusion, child safety and debris containment need different apertures, so mesh is chosen per application rather than stocked as one size."
+      },
+      {
+        "title": "UV-stabilised twine",
+        "detail": "Stabiliser is compounded into the polymer, not coated on, which is what determines whether a net lasts years or months in direct sun."
+      },
+      {
+        "title": "Bordered perimeter rope",
+        "detail": "A heavier rope is stitched around the edge to carry load into the anchors instead of tearing at the outermost mesh row."
+      },
+      {
+        "title": "Tensioned on stainless anchorage",
+        "detail": "Eye bolts and turnbuckles let the net be drawn taut and re-tensioned later without refitting the whole panel."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Balcony and utility area enclosure",
+        "detail": "The standard residential job: an open balcony closed off against birds, dropped laundry and falls."
+      },
+      {
+        "title": "Internal shafts and light wells",
+        "detail": "Shafts collect rubbish and nesting birds; a net at the head of the shaft keeps both out and keeps maintenance access simple."
+      },
+      {
+        "title": "Open edges during and after works",
+        "detail": "Temporary edge protection on a site, or permanent protection on a plant deck where a railing alone is not enough."
+      },
+      {
+        "title": "Swimming pool and water body covers",
+        "detail": "A tensioned net over an unused pool prevents a child or animal entering the water while still letting it be cleaned."
+      }
+    ],
+    "materials": [
+      {
+        "name": "HDPE monofilament net",
+        "spec": "UV-stabilised high-density polyethylene, knotted, 0.8 mm to 1.6 mm twine",
+        "detail": "The workhorse material: strong, light and stable in sun when properly compounded, and the usual choice for bird and balcony nets."
+      },
+      {
+        "name": "Nylon safety net",
+        "spec": "Braided nylon 6, higher denier, knotted construction",
+        "detail": "Nylon absorbs more energy on impact than HDPE, so it is specified where the net has to arrest a falling load rather than exclude birds."
+      },
+      {
+        "name": "Perimeter rope and anchorage",
+        "spec": "Polypropylene border rope with stainless eye bolts and turnbuckles",
+        "detail": "The border rope transfers load to the anchors; stainless hardware keeps the fixings from becoming the weak point outdoors."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        2,
+        6
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Survey and mesh selection",
+          "detail": "The opening is measured and the intended purpose confirmed, since that decides mesh aperture, twine diameter and polymer."
+        },
+        {
+          "title": "Anchor layout and fixing",
+          "detail": "Eye bolts are set at a spacing that keeps the border rope straight between points, into sound masonry or concrete."
+        },
+        {
+          "title": "Net panel fitting",
+          "detail": "The panel is offered up, laced to the anchors through the border rope and drawn progressively square."
+        },
+        {
+          "title": "Tensioning and trimming",
+          "detail": "Tension is taken up evenly so there are no slack bellies, then surplus is trimmed and edges are finished."
+        },
+        {
+          "title": "Gap closure check",
+          "detail": "Corners and service penetrations are checked last, because that is where birds and objects actually get through."
+        }
+      ],
+      "sitePreparation": [
+        "Clear the balcony or shaft head of stored items",
+        "Remove existing nesting material and clean the surface before enclosure",
+        "Confirm any association approval needed for external fixings"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Fall-arrest netting specified against EN 1263-1 style performance criteria where arrest duty is required",
+        "Anchorage installed to the fastener manufacturer's stated pull-out capacity"
+      ],
+      "notes": [
+        {
+          "title": "Bird net and fall net are not interchangeable",
+          "detail": "A light bird net will not arrest a person. Where a fall risk exists we specify a rated net and rated anchorage, not the cheaper mesh."
+        },
+        {
+          "title": "Corners are the weak point",
+          "detail": "Almost every failure we are called to inspect is a corner or a service penetration that was never properly closed."
+        },
+        {
+          "title": "Nets have a service life",
+          "detail": "Even a good net degrades in sun. It should be inspected yearly and replaced when the twine loses flexibility, not left indefinitely."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Check for slack and sag",
+          "detail": "A net that has developed a belly has lost tension; re-tensioning at the turnbuckles restores it without a new panel."
+        },
+        {
+          "title": "Inspect twine condition",
+          "detail": "Twine that feels stiff or chalky and snaps rather than stretches has reached the end of its useful life."
+        },
+        {
+          "title": "Clear debris and nesting attempts",
+          "detail": "Leaves and litter caught in a net add weight and hold moisture against fixings, so the net is cleared at each check."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 3,
+      "checks": [
+        "Polymer, twine diameter and mesh size verified against the quotation",
+        "UV stabilisation confirmed for the specified material",
+        "Border rope continuity checked around the full perimeter",
+        "Every anchor point load-checked before handover"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Net area",
+        "detail": "Area is the base of every quotation, measured on the opening actually being closed rather than the room behind it."
+      },
+      {
+        "title": "Mesh size and twine diameter",
+        "detail": "A tighter mesh in heavier twine uses considerably more material per square metre than a coarse bird net."
+      },
+      {
+        "title": "Polymer and duty rating",
+        "detail": "A rated nylon fall-arrest net costs multiples of an HDPE bird net, because it is engineered to do a different job."
+      },
+      {
+        "title": "Anchor count and substrate",
+        "detail": "Closer anchor spacing, or a substrate that needs chemical anchors, increases both hardware and labour."
+      },
+      {
+        "title": "Height and access",
+        "detail": "Shaft heads, atriums and upper floors need access equipment and often out-of-hours working, which is priced separately."
+      }
+    ],
+    "locationAngles": {
+      "default": "Mesh, Polymer and Anchorage Chosen for the Job",
+      "coastal": "Salt- and UV-Resistant Netting for Coastal Exposure",
+      "humid": "Mould-Resistant Netting for Humid Balconies",
+      "arid": "High-UV Netting for Long Sun Exposure",
+      "highRise": "Wind-Rated Netting and Anchorage for Tall Buildings",
+      "monsoonHeavy": "Monsoon-Tested Netting, Drainage and Re-Tensioning",
+      "industrial": "Heavy-Duty Netting for Industrial Environments"
+    },
+    "environmentalGuidance": {
+      "default": "The specification questions worth asking are what the net has to stop, how much sun it will take, and what it is anchored into. We answer those from the survey, because the same balcony dimension can need three quite different nets depending on whether the concern is pigeons, dropped objects or a child.",
+      "coastal": "Coastal installations fail at the hardware long before the net. Salt attacks eye bolts, turnbuckles and lacing rings, so we specify stainless throughout and avoid galvanised fittings entirely. The net itself needs full UV stabilisation, since coastal sites combine strong sun with reflected light off water and light-coloured render.",
+      "humid": "In persistently humid air a net stays damp, and anything caught in it stays damp too. That is what causes the black mould people associate with old balcony nets. We specify a polymer that does not hold water, keep the net tensioned so it drains and dries, and treat clearing trapped debris as the main maintenance task.",
+      "arid": "Long hours of hard sunlight are the dominant stress in dry inland conditions, and ultraviolet degradation is what ends a net's life there. We specify heavier twine with full UV stabilisation rather than the thinnest mesh that will do the job, because the extra material buys years of service.",
+      "highRise": "On a tall building the net becomes a sail. Wind loading, not the weight of anything caught in it, sets the anchor spacing, so we increase the number of fixings, use turnbuckles that allow re-tensioning from inside, and keep panel sizes smaller so a single failure cannot open a large gap.",
+      "monsoonHeavy": "Weeks of driving rain load a net with water and wind at the same time and wash grit into every anchor. We fix with stainless, seal penetrations, and plan a post-monsoon re-tension visit, because that is when slack shows up and when a marginal anchor reveals itself.",
+      "industrial": "Industrial settings add abrasion and airborne deposits to ordinary sun exposure, and sometimes chemical attack. We specify a heavier duty net than the dimensions alone would suggest, use hardware matched to the atmosphere, and shorten the inspection interval."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-invisible-grills",
+      "svc-bird-pigeon-nets",
+      "svc-cloth-hangers"
+    ],
+    "imageIds": [
+      "img-safety-nets-01",
+      "img-safety-nets-02",
+      "img-safety-nets-03",
+      "img-safety-nets-04",
+      "img-safety-nets-05",
+      "img-safety-nets-06"
+    ],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "svc-bird-pigeon-nets",
+    "slug": "bird-pigeon-nets",
+    "name": "Bird & Pigeon Nets",
+    "shortName": "Bird and pigeon nets",
+    "category": "safety",
+    "summary": "Fine-mesh bird and pigeon exclusion nets for balconies, windows, ledges, and duct mouths — specified to deny nesting without pretending to be a fall-arrest system.",
+    "intro": "Bird and pigeon nets solve a hygiene and maintenance problem: droppings, nesting, and noise on ledges, utility balconies, and duct openings. Mesh aperture and overlap detailing matter more than brand names — birds exploit any gap at corners and service penetrations. We keep this as a dedicated service so you get a written exclusion specification, not a recycled fall-net quote with the wrong mesh.",
+    "problemSolved": "Stops pigeons and other birds from perching and nesting on balconies, windows, ledges, and duct areas without blocking daylight.",
+    "searchTerms": [
+      "bird nets",
+      "pigeon nets",
+      "pigeon safety nets",
+      "anti bird nets",
+      "balcony bird nets",
+      "window bird nets",
+      "duct area bird nets",
+      "bird net installation",
+      "pigeon net price",
+      "pigeon netting"
+    ],
+    "propertyTypes": [
+      "Apartment balconies and utility areas",
+      "Gated community common areas",
+      "Commercial atriums and shafts",
+      "Industrial sheds and walkways"
+    ],
+    "benefits": [
+      {
+        "title": "Stops nesting cycles",
+        "detail": "Correct aperture and closed corners deny perching so you are not cleaning the same ledge every monsoon."
+      },
+      {
+        "title": "Keeps daylight",
+        "detail": "Fine mesh reads as a light haze rather than a solid screen, so rooms behind the opening stay usable."
+      },
+      {
+        "title": "Hygiene first",
+        "detail": "Excluding birds cuts droppings, parasites, and odour at the source instead of relying on temporary spikes alone."
+      },
+      {
+        "title": "Honest duty rating",
+        "detail": "We do not sell a light bird mesh as a fall barrier — if fall risk exists, we specify a rated product separately."
+      }
+    ],
+    "features": [
+      {
+        "title": "Mesh sized to purpose",
+        "detail": "Bird exclusion, child safety and debris containment need different apertures, so mesh is chosen per application rather than stocked as one size."
+      },
+      {
+        "title": "UV-stabilised twine",
+        "detail": "Stabiliser is compounded into the polymer, not coated on, which is what determines whether a net lasts years or months in direct sun."
+      },
+      {
+        "title": "Bordered perimeter rope",
+        "detail": "A heavier rope is stitched around the edge to carry load into the anchors instead of tearing at the outermost mesh row."
+      },
+      {
+        "title": "Tensioned on stainless anchorage",
+        "detail": "Eye bolts and turnbuckles let the net be drawn taut and re-tensioned later without refitting the whole panel."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Balcony bird exclusion",
+        "detail": "Utility and living balconies where pigeons roost on railings and AC units."
+      },
+      {
+        "title": "Window and ledge protection",
+        "detail": "Ledges and window reveals that collect nests above pavements or neighbouring flats."
+      },
+      {
+        "title": "Duct and shaft mouths",
+        "detail": "Openings that draw birds into building services — coordinated with duct-area netting when fall objects are also a risk."
+      },
+      {
+        "title": "Terrace and plant decks",
+        "detail": "Open terraces where birds land on equipment and create hygiene issues for facility teams."
+      }
+    ],
+    "materials": [
+      {
+        "name": "HDPE monofilament net",
+        "spec": "UV-stabilised high-density polyethylene, knotted, 0.8 mm to 1.6 mm twine",
+        "detail": "The workhorse material: strong, light and stable in sun when properly compounded, and the usual choice for bird and balcony nets."
+      },
+      {
+        "name": "Nylon safety net",
+        "spec": "Braided nylon 6, higher denier, knotted construction",
+        "detail": "Nylon absorbs more energy on impact than HDPE, so it is specified where the net has to arrest a falling load rather than exclude birds."
+      },
+      {
+        "name": "Perimeter rope and anchorage",
+        "spec": "Polypropylene border rope with stainless eye bolts and turnbuckles",
+        "detail": "The border rope transfers load to the anchors; stainless hardware keeps the fixings from becoming the weak point outdoors."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        2,
+        6
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Survey and mesh selection",
+          "detail": "The opening is measured and the intended purpose confirmed, since that decides mesh aperture, twine diameter and polymer."
+        },
+        {
+          "title": "Anchor layout and fixing",
+          "detail": "Eye bolts are set at a spacing that keeps the border rope straight between points, into sound masonry or concrete."
+        },
+        {
+          "title": "Net panel fitting",
+          "detail": "The panel is offered up, laced to the anchors through the border rope and drawn progressively square."
+        },
+        {
+          "title": "Tensioning and trimming",
+          "detail": "Tension is taken up evenly so there are no slack bellies, then surplus is trimmed and edges are finished."
+        },
+        {
+          "title": "Gap closure check",
+          "detail": "Corners and service penetrations are checked last, because that is where birds and objects actually get through."
+        }
+      ],
+      "sitePreparation": [
+        "Clear the balcony or shaft head of stored items",
+        "Remove existing nesting material and clean the surface before enclosure",
+        "Confirm any association approval needed for external fixings"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Fall-arrest netting specified against EN 1263-1 style performance criteria where arrest duty is required",
+        "Anchorage installed to the fastener manufacturer's stated pull-out capacity"
+      ],
+      "notes": [
+        {
+          "title": "Bird net and fall net are not interchangeable",
+          "detail": "A light bird net will not arrest a person. Where a fall risk exists we specify a rated net and rated anchorage, not the cheaper mesh."
+        },
+        {
+          "title": "Corners are the weak point",
+          "detail": "Almost every failure we are called to inspect is a corner or a service penetration that was never properly closed."
+        },
+        {
+          "title": "Nets have a service life",
+          "detail": "Even a good net degrades in sun. It should be inspected yearly and replaced when the twine loses flexibility, not left indefinitely."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Check for slack and sag",
+          "detail": "A net that has developed a belly has lost tension; re-tensioning at the turnbuckles restores it without a new panel."
+        },
+        {
+          "title": "Inspect twine condition",
+          "detail": "Twine that feels stiff or chalky and snaps rather than stretches has reached the end of its useful life."
+        },
+        {
+          "title": "Clear debris and nesting attempts",
+          "detail": "Leaves and litter caught in a net add weight and hold moisture against fixings, so the net is cleared at each check."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 3,
+      "checks": [
+        "Polymer, twine diameter and mesh size verified against the quotation",
+        "UV stabilisation confirmed for the specified material",
+        "Border rope continuity checked around the full perimeter",
+        "Every anchor point load-checked before handover"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Net area",
+        "detail": "Area is the base of every quotation, measured on the opening actually being closed rather than the room behind it."
+      },
+      {
+        "title": "Mesh size and twine diameter",
+        "detail": "A tighter mesh in heavier twine uses considerably more material per square metre than a coarse bird net."
+      },
+      {
+        "title": "Polymer and duty rating",
+        "detail": "A rated nylon fall-arrest net costs multiples of an HDPE bird net, because it is engineered to do a different job."
+      },
+      {
+        "title": "Anchor count and substrate",
+        "detail": "Closer anchor spacing, or a substrate that needs chemical anchors, increases both hardware and labour."
+      },
+      {
+        "title": "Height and access",
+        "detail": "Shaft heads, atriums and upper floors need access equipment and often out-of-hours working, which is priced separately."
+      }
+    ],
+    "locationAngles": {
+      "default": "Mesh, Polymer and Anchorage Chosen for the Job",
+      "coastal": "Salt- and UV-Resistant Netting for Coastal Exposure",
+      "humid": "Mould-Resistant Netting for Humid Balconies",
+      "arid": "High-UV Netting for Long Sun Exposure",
+      "highRise": "Wind-Rated Netting and Anchorage for Tall Buildings",
+      "monsoonHeavy": "Monsoon-Tested Netting, Drainage and Re-Tensioning",
+      "industrial": "Heavy-Duty Netting for Industrial Environments"
+    },
+    "environmentalGuidance": {
+      "default": "The specification questions worth asking are what the net has to stop, how much sun it will take, and what it is anchored into. We answer those from the survey, because the same balcony dimension can need three quite different nets depending on whether the concern is pigeons, dropped objects or a child.",
+      "coastal": "Coastal installations fail at the hardware long before the net. Salt attacks eye bolts, turnbuckles and lacing rings, so we specify stainless throughout and avoid galvanised fittings entirely. The net itself needs full UV stabilisation, since coastal sites combine strong sun with reflected light off water and light-coloured render.",
+      "humid": "In persistently humid air a net stays damp, and anything caught in it stays damp too. That is what causes the black mould people associate with old balcony nets. We specify a polymer that does not hold water, keep the net tensioned so it drains and dries, and treat clearing trapped debris as the main maintenance task.",
+      "arid": "Long hours of hard sunlight are the dominant stress in dry inland conditions, and ultraviolet degradation is what ends a net's life there. We specify heavier twine with full UV stabilisation rather than the thinnest mesh that will do the job, because the extra material buys years of service.",
+      "highRise": "On a tall building the net becomes a sail. Wind loading, not the weight of anything caught in it, sets the anchor spacing, so we increase the number of fixings, use turnbuckles that allow re-tensioning from inside, and keep panel sizes smaller so a single failure cannot open a large gap.",
+      "monsoonHeavy": "Weeks of driving rain load a net with water and wind at the same time and wash grit into every anchor. We fix with stainless, seal penetrations, and plan a post-monsoon re-tension visit, because that is when slack shows up and when a marginal anchor reveals itself.",
+      "industrial": "Industrial settings add abrasion and airborne deposits to ordinary sun exposure, and sometimes chemical attack. We specify a heavier duty net than the dimensions alone would suggest, use hardware matched to the atmosphere, and shorten the inspection interval."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets",
+      "svc-duct-area-safety-nets",
+      "svc-invisible-grills"
+    ],
+    "imageIds": [
+      "img-safety-nets-01",
+      "img-safety-nets-02",
+      "img-safety-nets-03",
+      "img-safety-nets-04",
+      "img-safety-nets-05",
+      "img-safety-nets-06"
+    ],
+    "featured": false,
+    "published": true
+  },
+  {
+    "id": "svc-sports-nets",
+    "slug": "sports-nets",
+    "name": "Sports Nets",
+    "shortName": "Sports nets",
+    "category": "sports",
+    "summary": "Impact-rated barrier and containment netting for cricket practice, turf grounds, terraces and multi-sport courts.",
+    "intro": "Sports netting is engineered around repeated impact rather than static load, which makes it a different discipline from safety netting even though the raw material looks similar. A cricket ball leaving a bat carries enough energy to punch through a net that would comfortably hold a person, and the failure is rarely in the mesh: it is at the point where a slack net has been allowed to snap against a steel post. Post spacing, cable support and tension are therefore as much a part of the specification as the net itself.",
+    "problemSolved": "Contains balls within a playing or practice area so surrounding property, vehicles and passers-by are not struck.",
+    "searchTerms": [
+      "sports nets",
+      "cricket practice net",
+      "box cricket net",
+      "turf ground netting"
+    ],
+    "propertyTypes": [
+      "Box cricket and turf grounds",
+      "School and college playgrounds",
+      "Apartment terraces and clubhouses",
+      "Golf and multi-sport practice bays"
+    ],
+    "benefits": [
+      {
+        "title": "Play without collateral damage",
+        "detail": "Containment lets a ground operate next to parked cars and glazing without the constant risk of a broken windscreen or window."
+      },
+      {
+        "title": "More usable ground per square metre",
+        "detail": "Netting divides a site into lanes or courts, so one footprint can host several simultaneous sessions."
+      },
+      {
+        "title": "Built for repeated impact",
+        "detail": "Correct twine and tension mean the net absorbs and returns a ball for years instead of blowing out in a season."
+      },
+      {
+        "title": "Weather-stable across seasons",
+        "detail": "UV-stabilised polymer keeps its strength through summer sun and heavy rain, which matters for an asset used daily."
+      }
+    ],
+    "features": [
+      {
+        "title": "Sport-specific mesh aperture",
+        "detail": "Cricket, football and golf each need a different aperture; a ball only has to pass once for the net to have failed."
+      },
+      {
+        "title": "Cable-supported top line",
+        "detail": "A galvanised or stainless catenary cable carries the net's weight and wind load so the mesh is not asked to span unaided."
+      },
+      {
+        "title": "Post grid designed to the site",
+        "detail": "Post spacing and height come from span, expected ball speed and wind exposure rather than a standard kit layout."
+      },
+      {
+        "title": "Retractable and divider options",
+        "detail": "Sliding curtains let a hall or terrace be reconfigured between a single large space and separate practice lanes."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Box cricket and turf grounds",
+        "detail": "Full enclosure of a commercial turf pitch, including roof netting where the site is hemmed in by buildings."
+      },
+      {
+        "title": "Practice nets and bowling lanes",
+        "detail": "Individual lanes with reinforced rear panels, which take the concentrated wear in any practice facility."
+      },
+      {
+        "title": "Rooftop and terrace play areas",
+        "detail": "Perimeter and overhead containment that turns an unused apartment terrace into a safe five-a-side or badminton space."
+      },
+      {
+        "title": "School playground perimeters",
+        "detail": "Barrier netting between play areas and roads or car parks, sized so a struck ball cannot leave the premises."
+      }
+    ],
+    "materials": [
+      {
+        "name": "Braided nylon netting",
+        "spec": "Nylon 6, braided, 1.5 mm to 3 mm twine, knotted",
+        "detail": "Nylon's elasticity lets it absorb ball impact and recover, which is why it outlasts stiffer polymers in practice nets."
+      },
+      {
+        "name": "HDPE sports netting",
+        "spec": "UV-stabilised HDPE, 2 mm to 4 mm twine",
+        "detail": "More rigid and cheaper than nylon, and a sound choice for perimeter barrier duty where direct high-speed impact is rarer."
+      },
+      {
+        "name": "Support structure",
+        "spec": "Hot-dip galvanised MS posts with catenary cable and turnbuckles",
+        "detail": "Galvanising is essential on posts set into ground that stays wet, since corrosion at the base is the usual mode of failure."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        8,
+        40
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Site and sport assessment",
+          "detail": "We establish the sport, playing level and boundary conditions, which together set net height, aperture and post grid."
+        },
+        {
+          "title": "Foundations and post erection",
+          "detail": "Posts are set in concrete foundations sized for wind load and net tension, then left to cure before any net is hung."
+        },
+        {
+          "title": "Cable rigging",
+          "detail": "Top and intermediate cables are strung and tensioned to form the frame the netting will hang from."
+        },
+        {
+          "title": "Net hanging and lacing",
+          "detail": "Panels are hung, laced to cables and to each other so there is no gap at seams, then tensioned evenly."
+        },
+        {
+          "title": "Impact and gap testing",
+          "detail": "The installation is checked for ball escape routes at ground level, seams and corners before it is signed off."
+        }
+      ],
+      "sitePreparation": [
+        "Confirm underground services before foundations are excavated",
+        "Allow curing time for post foundations within the programme",
+        "Agree a working window that does not clash with ground bookings"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Post foundations designed for local basic wind speed as given in IS 875 Part 3",
+        "Net apertures selected so the ball in use cannot pass through the mesh"
+      ],
+      "notes": [
+        {
+          "title": "Slack netting damages itself",
+          "detail": "A loose net whips against posts and cables on every impact; that abrasion, not the ball, is what wears it out."
+        },
+        {
+          "title": "Ground-level gaps defeat the system",
+          "detail": "A well-built enclosure with a 100 mm gap at the base will still let balls out, so the bottom edge is closed properly."
+        },
+        {
+          "title": "Posts are the real hazard",
+          "detail": "Steel posts inside a playing area need padding, because a player running into an unpadded post is a worse outcome than a lost ball."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 6,
+      "tasks": [
+        {
+          "title": "Re-tension cables and net",
+          "detail": "Heavily used nets stretch; taking up tension at the turnbuckles each season prevents whip damage and sagging."
+        },
+        {
+          "title": "Repair impact zones early",
+          "detail": "Wear concentrates behind the batting area. Patching a small hole is routine work; leaving it means replacing a panel."
+        },
+        {
+          "title": "Inspect post bases",
+          "detail": "Check for corrosion and movement where posts meet the foundation, which is where a failure would start."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 2,
+      "checks": [
+        "Net aperture verified against the ball in use",
+        "Post foundation dimensions and concrete grade recorded",
+        "Cable tension measured after net hanging",
+        "Perimeter walked for escape routes before handover"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Enclosed area and net height",
+        "detail": "Height drives cost faster than plan area, since taller posts need larger foundations as well as more netting."
+      },
+      {
+        "title": "Overhead netting",
+        "detail": "Adding a roof to an enclosure changes the structural problem and typically adds a substantial share to the total."
+      },
+      {
+        "title": "Twine grade and polymer",
+        "detail": "Braided nylon for a serious practice facility costs considerably more per square metre than HDPE barrier netting."
+      },
+      {
+        "title": "Groundworks",
+        "detail": "Rock, made-up ground or existing paving all change excavation cost, and are the least predictable part of any quotation."
+      },
+      {
+        "title": "Moving parts",
+        "detail": "Retractable curtains, tracks and dividers add hardware and commissioning time compared with a fixed enclosure."
+      }
+    ],
+    "locationAngles": {
+      "default": "Post Grid, Cable Support and Mesh Sized to the Sport",
+      "coastal": "Galvanised Structure Built for Coastal Wind and Salt",
+      "humid": "Rot-Resistant Netting for Humid Grounds",
+      "arid": "UV-Stable Netting for Long, Hot Playing Seasons",
+      "highRise": "Rooftop and Terrace Containment with Wind Design",
+      "monsoonHeavy": "Monsoon-Resilient Foundations and Drainage",
+      "industrial": "Heavy-Duty Containment for Industrial and Institutional Sites"
+    },
+    "environmentalGuidance": {
+      "default": "A sports net is a structure, not just a textile. Getting it right means designing the post grid and cable support for the span and the wind, then choosing a mesh the ball in use cannot pass. We size all of that from a site visit, because boundary conditions differ enormously even between two grounds of the same dimensions.",
+      "coastal": "Coastal grounds combine steady onshore wind with salt, which is the hardest combination for a steel post grid. We hot-dip galvanise, detail the base so water cannot stand around it, and design foundations for the higher sustained wind pressure rather than for net tension alone.",
+      "humid": "High humidity keeps netting and lacing damp, and a net that never dries loses strength and smells. We choose a polymer that sheds water, keep the bottom edge clear of standing ground so air moves under it, and tension the net properly so it does not hold pockets of water.",
+      "arid": "Where the playing season runs long and the sun is strong, ultraviolet exposure sets the replacement cycle. We specify heavier UV-stabilised twine than the minimum, because on a ground in daily use the extra cost is repaid well before the first replacement would otherwise fall due.",
+      "highRise": "Rooftop and podium installations are governed by wind uplift, and the anchorage problem is harder because you cannot dig a foundation. We use ballasted or structurally fixed bases designed with the building's slab capacity in mind, and keep net panels smaller so wind load per fixing stays manageable.",
+      "monsoonHeavy": "Weeks of heavy rain saturate the ground around post foundations, and a foundation that was adequate in dry soil can move once the surrounding material softens. We size foundations for the wet condition, provide drainage away from the bases, and re-tension after the season.",
+      "industrial": "On industrial and institutional sites the netting takes abrasion from surroundings as well as from play, and access for maintenance is often restricted. We specify heavier twine and galvanised structure, and design the layout so panels can be replaced individually without dismantling the enclosure."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-building-covering-safety-nets"
+    ],
+    "imageIds": [
+      "img-sports-nets-01",
+      "img-sports-nets-02"
+    ],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "svc-cloth-hangers",
+    "slug": "cloth-hangers",
+    "name": "Cloth Hangers",
+    "shortName": "Cloth hangers",
+    "category": "utility",
+    "summary": "Ceiling-mounted pulley, wall-mounted retractable and telescopic drying systems sized to the balcony and the load.",
+    "intro": "A cloth hanger is the most-used fitting we install and the one most often specified badly. The failures are always the same: a ceiling pulley anchored into a false ceiling instead of the slab, or a system rated for a few kilos asked to carry a full family wash soaked with water. Wet cotton weighs roughly three times its dry weight, so a rack loaded with dry laundry is nowhere near its working condition. We size the anchorage and the rail for the wet load.",
+    "problemSolved": "Provides secure, high-capacity drying space on a balcony or utility area without occupying floor space.",
+    "searchTerms": [
+      "cloth hangers",
+      "ceiling cloth hanger",
+      "pulley cloth drying stand",
+      "balcony cloth drying hanger"
+    ],
+    "propertyTypes": [
+      "Apartment balconies and utility areas",
+      "Independent houses and duplexes",
+      "Service apartments and hostels",
+      "Staff accommodation blocks"
+    ],
+    "benefits": [
+      {
+        "title": "Reclaims the floor",
+        "detail": "Drying moves overhead, which on a compact balcony is the difference between a usable space and a permanent drying rack."
+      },
+      {
+        "title": "Loads at a comfortable height",
+        "detail": "A pulley system is loaded low and raised, so nobody is reaching overhead with an armful of wet washing."
+      },
+      {
+        "title": "Rated for the wet load",
+        "detail": "Rails and anchors are chosen for soaked laundry rather than dry weight, which is where cheaper systems come apart."
+      },
+      {
+        "title": "Corrosion-resistant in a wet area",
+        "detail": "Stainless and anodised components survive constant dripping water, unlike the painted steel used in budget units."
+      }
+    ],
+    "features": [
+      {
+        "title": "Independently operated rails",
+        "detail": "Each rail raises and lowers on its own, so a part-load can be hung without lowering the whole system."
+      },
+      {
+        "title": "Slab-fixed anchorage",
+        "detail": "Fixings go into structural concrete, located with a scanner where a false ceiling hides the slab."
+      },
+      {
+        "title": "Sealed pulleys and locking cleat",
+        "detail": "Sealed bearings keep the action smooth in a wet environment and a proper cleat holds the load without slipping."
+      },
+      {
+        "title": "Sized to the bay",
+        "detail": "Rail length and rail count are set by the opening and the household's laundry volume rather than by a stock size."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Ceiling pulley systems",
+        "detail": "The standard balcony installation: four to six rails under the slab, each raised and lowered on its own rope."
+      },
+      {
+        "title": "Wall-mounted retractable lines",
+        "detail": "For narrow utility areas where a ceiling rack will not fit, a retractable unit gives line length without a permanent obstruction."
+      },
+      {
+        "title": "Telescopic and folding racks",
+        "detail": "Wall-fixed folding frames that extend when needed and sit flat when not, suited to very small balconies."
+      },
+      {
+        "title": "Bulk drying for shared accommodation",
+        "detail": "Multiple heavy-duty banks in a shared utility room, specified for continuous use rather than a single household."
+      }
+    ],
+    "materials": [
+      {
+        "name": "Anodised aluminium rails",
+        "spec": "Anodised 6063 alloy, 22 mm to 25 mm section",
+        "detail": "Light enough to raise easily and stiff enough not to bow under a full wet load across a long span."
+      },
+      {
+        "name": "Stainless hardware and rope",
+        "spec": "AISI 304 brackets and fasteners with braided polyester rope",
+        "detail": "Polyester rope resists stretch better than nylon when repeatedly wetted, which keeps rail heights consistent."
+      },
+      {
+        "name": "Sealed pulley assemblies",
+        "spec": "Nylon body with sealed stainless bearings",
+        "detail": "Sealed bearings keep grit and water out; open pulleys seize within a year or two in a wet balcony."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        1,
+        3
+      ],
+      "surveyRequired": false,
+      "steps": [
+        {
+          "title": "Locate the structural slab",
+          "detail": "The ceiling is checked, and scanned if necessary, so fixings land in concrete rather than in a false ceiling panel."
+        },
+        {
+          "title": "Set out rail positions",
+          "detail": "Rails are spaced so full-length garments hang clear of each other and of the wall, allowing air between them."
+        },
+        {
+          "title": "Fix brackets and reeve the ropes",
+          "detail": "Brackets are anchored, pulleys mounted and ropes reeved to a wall cleat positioned within easy reach."
+        },
+        {
+          "title": "Load test and adjust",
+          "detail": "Each rail is loaded to check it raises smoothly, sits level and holds on the cleat without creep."
+        }
+      ],
+      "sitePreparation": [
+        "Clear the area beneath the ceiling for drilling",
+        "Note the position of any concealed conduit or plumbing in the slab"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Anchors installed to manufacturer pull-out ratings for the host concrete",
+        "Systems rated and labelled for the wet working load, not the dry load"
+      ],
+      "notes": [
+        {
+          "title": "Wet laundry weighs about three times dry",
+          "detail": "A rack that seems generously rated for dry clothes can be at its limit once loaded straight from the machine."
+        },
+        {
+          "title": "False ceilings will not hold",
+          "detail": "Gypsum and cement board cannot carry this load. Where a false ceiling exists, fixings must reach the slab above it."
+        },
+        {
+          "title": "Keep the cleat within reach",
+          "detail": "A cleat placed too high tempts users to stretch or stand on something, which causes more injuries than rack failure does."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Inspect and replace rope",
+          "detail": "Rope is the wear item. Fraying or glazing where it passes over a pulley means it should be replaced, not left."
+        },
+        {
+          "title": "Check pulley action",
+          "detail": "A pulley that squeaks or binds is admitting grit; replacing it early prevents rope damage and jerky loading."
+        },
+        {
+          "title": "Re-check bracket fixings",
+          "detail": "Repeated loading can loosen a fixing over years, so brackets are checked for movement at each service."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 2,
+      "checks": [
+        "Fixings confirmed into structural slab",
+        "Wet working load stated for the installed configuration",
+        "Every rail load-tested before handover",
+        "Rail spacing checked for full-length garment clearance"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Number and length of rails",
+        "detail": "Both are set by laundry volume and the width of the bay, and together they account for most of the material cost."
+      },
+      {
+        "title": "System type",
+        "detail": "A multi-rail ceiling pulley system costs more than a single retractable line but offers many times the capacity."
+      },
+      {
+        "title": "Hardware grade",
+        "detail": "Stainless brackets and sealed pulleys cost more initially and are the reason a system lasts in a constantly wet area."
+      },
+      {
+        "title": "Ceiling condition",
+        "detail": "A false ceiling that must be penetrated, or a slab needing chemical anchors, adds labour to an otherwise quick job."
+      }
+    ],
+    "locationAngles": {
+      "default": "Rail Capacity and Slab Anchorage Sized for Wet Loads",
+      "coastal": "Stainless Hardware That Survives Salt Air",
+      "humid": "Drying Layouts That Work in High Humidity",
+      "arid": "High-Capacity Racks for Fast-Drying Conditions",
+      "highRise": "Balcony Drying Systems for Wind-Exposed High-Rise Flats",
+      "monsoonHeavy": "Covered and Indoor Drying Options for Long Wet Spells",
+      "industrial": "Heavy-Duty Drying Banks for Shared Accommodation"
+    },
+    "environmentalGuidance": {
+      "default": "Two things decide whether a cloth hanger lasts: whether the fixings reach structural concrete, and whether the rails and rope are rated for laundry straight out of the machine rather than dry. We check the ceiling before quoting and size the system to the household's actual load.",
+      "coastal": "Salt air is unforgiving on drying hardware because the components are permanently damp anyway. We use stainless brackets and fasteners and sealed pulleys as standard here, and avoid painted mild steel entirely, since it will bleed rust onto light-coloured laundry within a season.",
+      "humid": "Where humidity is high, clothes dry slowly and the rack stays loaded for longer, so the system carries a wet load nearly all the time. We plan for more line length than the family's wash volume alone suggests, and space rails wider so air can move between garments rather than hanging them close together.",
+      "arid": "Dry air dries laundry quickly, so the system is loaded and cleared often and the mechanism sees more cycles than the load rating implies. We prioritise sealed pulleys and good rope, because in these conditions it is cycle count rather than corrosion that wears a system out.",
+      "highRise": "On an exposed upper-floor balcony, wind rather than weight is the problem: laundry lifts off and rails swing. We reduce rail length, add restraint at the rail ends, and often recommend positioning the rack in the sheltered part of the balcony even where that means an extra bank of shorter rails.",
+      "monsoonHeavy": "For several weeks a year an open balcony cannot dry anything. We plan for that explicitly, siting rails under the covered portion of the balcony where one exists, or specifying an indoor utility-area system to complement the outdoor one rather than leaving the household without options.",
+      "industrial": "Shared and staff accommodation loads a drying system continuously rather than once a day, which is a different duty altogether. We specify heavier rails on shorter spans, upgraded pulleys and a shorter service interval, since these installations wear out on cycle count."
+    },
+    "relatedServiceIds": [
+      "svc-invisible-grills",
+      "svc-safety-nets"
+    ],
+    "imageIds": [
+      "img-cloth-hangers-01",
+      "img-cloth-hangers-02",
+      "img-cloth-hangers-03",
+      "img-cloth-hangers-04",
+      "img-cloth-hangers-05",
+      "img-cloth-hangers-06"
+    ],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "svc-duct-area-safety-nets",
+    "slug": "duct-area-safety-nets",
+    "name": "Duct Area Safety Nets",
+    "shortName": "Duct area nets",
+    "category": "safety",
+    "summary": "Nets fitted across service shafts and duct openings to stop falling objects, bird nesting and refuse accumulation.",
+    "intro": "The service duct is the part of an apartment building nobody looks at until something goes wrong in it. These shafts run the full height of the block, they are the natural roosting site for pigeons, and anything dropped or thrown into them falls the whole way to a floor where somebody has to retrieve it. A net at the head of the shaft, with intermediate nets where the shaft is tall, solves all three problems at once. The work is more about safe access and honest anchorage than about the netting itself.",
+    "problemSolved": "Prevents objects falling the height of a service shaft and stops birds nesting in ducts where they cannot be cleaned out.",
+    "searchTerms": [
+      "duct area safety nets",
+      "shaft safety net",
+      "duct pigeon net",
+      "apartment duct netting"
+    ],
+    "propertyTypes": [
+      "Apartment blocks and gated communities",
+      "Commercial and office towers",
+      "Hospitals and hotels",
+      "Industrial plant rooms and risers"
+    ],
+    "benefits": [
+      {
+        "title": "Nothing falls the full height",
+        "detail": "Objects dropped into the shaft are caught at the nearest net rather than landing many floors below."
+      },
+      {
+        "title": "Ends bird nesting in the shaft",
+        "detail": "Closing the shaft head denies access outright, which is the only reliable way to stop roosting in a space nobody can clean."
+      },
+      {
+        "title": "Cuts recurring cleaning cost",
+        "detail": "Refuse and droppings stop accumulating at the shaft base, removing a job that facilities teams otherwise repeat every year."
+      },
+      {
+        "title": "Protects the services in the riser",
+        "detail": "Pipework and cabling in the duct stop being fouled by nesting material, which is a genuine fire and hygiene concern."
+      }
+    ],
+    "features": [
+      {
+        "title": "Shaft-head enclosure",
+        "detail": "A tensioned panel across the top of the shaft, which is where exclusion has to happen for it to work at all."
+      },
+      {
+        "title": "Intermediate catch nets",
+        "detail": "On tall shafts, nets at intervals limit the drop height and let a caught item be retrieved from a nearby floor."
+      },
+      {
+        "title": "Maintenance access panels",
+        "detail": "Laced access sections let the duct be entered for servicing without cutting the net and leaving a permanent hole."
+      },
+      {
+        "title": "Anchorage into shaft walls",
+        "detail": "Fixings are set into the shaft's structural walls, avoiding the render and blockwork patches shafts are often finished with."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Plumbing and electrical risers",
+        "detail": "The common residential case, where the shaft carries stacks and cabling and is open at roof level."
+      },
+      {
+        "title": "Light wells and ventilation shafts",
+        "detail": "Open wells between wings of a building, which collect both birds and litter from the flats overlooking them."
+      },
+      {
+        "title": "Lift overrun and machine spaces",
+        "detail": "Netting that keeps debris out of spaces where a fallen object could interfere with equipment."
+      },
+      {
+        "title": "Industrial pipe and cable risers",
+        "detail": "Plant risers where dropped tools are a genuine hazard to anyone working at a lower level."
+      }
+    ],
+    "materials": [
+      {
+        "name": "HDPE duct netting",
+        "spec": "UV-stabilised HDPE, 1.2 mm to 2 mm twine, knotted",
+        "detail": "Chosen for its stability where a net will be left in place for years with little inspection, as duct nets always are."
+      },
+      {
+        "name": "Nylon catch netting",
+        "spec": "Braided nylon, higher denier, for intermediate catch layers",
+        "detail": "Where the net must arrest a genuinely heavy falling object, nylon's ability to absorb energy is what is needed."
+      },
+      {
+        "name": "Stainless anchorage",
+        "spec": "AISI 304 eye bolts, turnbuckles and border rope",
+        "detail": "Shafts are damp and poorly ventilated, so stainless is used throughout rather than galvanised hardware."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        4,
+        16
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Shaft survey and access plan",
+          "detail": "Shaft dimensions, wall construction and safe access are established first; this is confined, at-height work."
+        },
+        {
+          "title": "Clearing existing nesting and debris",
+          "detail": "The shaft is cleared before enclosure, since netting over an existing nest traps the problem instead of solving it."
+        },
+        {
+          "title": "Anchor installation",
+          "detail": "Eye bolts are set into sound structural wall at a spacing that keeps the border rope taut across the span."
+        },
+        {
+          "title": "Net fitting and tensioning",
+          "detail": "Panels are laced and tensioned so no belly forms, with corners closed tightly against the shaft wall."
+        },
+        {
+          "title": "Access panel and handover",
+          "detail": "Serviceable access sections are formed and shown to the facilities team so future entry does not damage the net."
+        }
+      ],
+      "sitePreparation": [
+        "Arrange roof and shaft access with the building management",
+        "Isolate or protect live services within the shaft before work starts",
+        "Agree disposal arrangements for material cleared from the shaft"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Work carried out under confined-space and work-at-height precautions",
+        "Anchorage installed to manufacturer pull-out values for the shaft wall construction"
+      ],
+      "notes": [
+        {
+          "title": "Never net over an occupied nest",
+          "detail": "Enclosing a live nest is both inhumane and self-defeating; the shaft is cleared before any panel goes in."
+        },
+        {
+          "title": "Access must be designed in",
+          "detail": "A net with no access panel will be cut open the first time the riser needs servicing, and never repaired."
+        },
+        {
+          "title": "Shaft walls are often not structural",
+          "detail": "Many shafts are lined with thin blockwork. Anchors have to find real structure, which the survey establishes."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 12,
+      "tasks": [
+        {
+          "title": "Clear caught debris",
+          "detail": "Anything the net has caught is removed, since accumulated weight and trapped moisture are what degrade it."
+        },
+        {
+          "title": "Check tension and border rope",
+          "detail": "The border rope and anchors are checked for slack and corrosion, which develop quickly in a damp shaft."
+        },
+        {
+          "title": "Verify access panels reseal",
+          "detail": "Panels opened for servicing are checked to confirm they were laced closed properly afterwards."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 3,
+      "checks": [
+        "Shaft cleared and photographed before enclosure",
+        "Anchor substrate confirmed as structural",
+        "Perimeter checked for gaps at corners and penetrations",
+        "Access panel positions recorded for the facilities team"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Shaft plan area and count",
+        "detail": "A block with several risers is quoted per shaft, and the plan area of each sets the netting required."
+      },
+      {
+        "title": "Number of net levels",
+        "detail": "A tall shaft with intermediate catch nets involves several installations at height rather than one at the top."
+      },
+      {
+        "title": "Access difficulty",
+        "detail": "This is often the largest single factor, since safe access into a live shaft can take longer than fitting the net."
+      },
+      {
+        "title": "Pre-clearing required",
+        "detail": "Shafts with years of accumulated nesting material need clearance and disposal before enclosure can begin."
+      }
+    ],
+    "locationAngles": {
+      "default": "Shaft Enclosure with Designed Maintenance Access",
+      "coastal": "Stainless Anchorage for Damp, Salt-Laden Shafts",
+      "humid": "Mould-Resistant Duct Netting for Humid Risers",
+      "arid": "Dust and Debris Control in Service Shafts",
+      "highRise": "Multi-Level Catch Nets for Tall Service Risers",
+      "monsoonHeavy": "Drainage-Aware Netting for Shafts That Take Rain",
+      "industrial": "Dropped-Object Protection in Plant Risers"
+    },
+    "environmentalGuidance": {
+      "default": "Duct work is judged on two things years later: whether the shaft was actually cleared before it was closed, and whether anyone can service the riser without cutting the net. We survey for both, and we anchor into structure rather than into the thin blockwork many shafts are lined with.",
+      "coastal": "Shafts near the coast stay damp and hold salt-laden air with almost no ventilation, which is close to a worst case for hardware. We use stainless anchorage without exception and inspect on a shorter cycle, because a corroded eye bolt in a shaft is not something anyone will notice from a walkway.",
+      "humid": "A poorly ventilated shaft in a humid climate never really dries, and anything caught in the net becomes a mould site. We specify netting that does not retain water, keep panels tight so they drain, and make clearing caught debris the primary maintenance task rather than an afterthought.",
+      "arid": "Dry conditions bring dust rather than moisture, and the practical consequence is that a duct net gradually loads with fine debris. We keep apertures large enough for dust to pass where exclusion of birds is the actual goal, so the net does not turn into a filter that has to carry weight.",
+      "highRise": "In a tall tower the drop height is the hazard, so a single net at the shaft head is not enough. We install intermediate catch nets so nothing falls more than a few floors, and position them next to a floor level so a caught item can actually be retrieved.",
+      "monsoonHeavy": "Open shafts take a great deal of water during the monsoon, and a net that holds debris will also hold water. We tension panels so they shed rather than pond, keep the drainage path at the shaft base clear, and inspect once the season has passed.",
+      "industrial": "In plant risers the concern shifts from birds to dropped tools and components landing on people working below. That calls for a rated catch net and rated anchorage rather than exclusion mesh, and for panel layouts that can be opened for regular plant maintenance."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-building-covering-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "imageIds": [
+      "img-duct-area-safety-nets-01",
+      "img-duct-area-safety-nets-02",
+      "img-duct-area-safety-nets-03",
+      "img-duct-area-safety-nets-04",
+      "img-duct-area-safety-nets-05",
+      "img-duct-area-safety-nets-06"
+    ],
+    "featured": false,
+    "published": true
+  },
+  {
+    "id": "svc-building-covering-safety-nets",
+    "slug": "building-covering-safety-nets",
+    "name": "Building Covering Safety Nets",
+    "shortName": "Building covering nets",
+    "category": "industrial",
+    "summary": "Facade and scaffold sheeting that contains debris, dust and tools during construction, repair and painting work.",
+    "intro": "Covering a building under repair is a temporary works problem rather than a product purchase. The netting has to contain whatever the work generates, stay attached through the wind the site will actually see, and come down cleanly afterwards. Most of the failures we are asked to look at come from the same cause: the sheeting was tied to scaffold that was never designed to take the extra wind load a clad facade attracts. Getting that relationship right is the whole job.",
+    "problemSolved": "Contains falling debris, tools and dust during facade work so the public, vehicles and neighbouring property are protected.",
+    "searchTerms": [
+      "building covering safety nets",
+      "scaffold debris netting",
+      "facade safety net",
+      "construction site netting"
+    ],
+    "propertyTypes": [
+      "Buildings under construction",
+      "Apartment blocks under repainting or repair",
+      "Commercial facade refurbishment",
+      "Industrial structures and chimneys"
+    ],
+    "benefits": [
+      {
+        "title": "Protects everyone below",
+        "detail": "Debris and tools are contained on the facade, which is what allows work to continue over an occupied street or car park."
+      },
+      {
+        "title": "Keeps dust off neighbours",
+        "detail": "Fine sheeting holds most airborne dust and overspray on site, which is usually the difference between complaints and none."
+      },
+      {
+        "title": "Lets the building stay in use",
+        "detail": "Residents and tenants can remain in occupation during facade work rather than the site being closed off entirely."
+      },
+      {
+        "title": "Comes down without damage",
+        "detail": "Planned fixing points mean the sheeting is removed cleanly, leaving no scarring on new paint or cladding."
+      }
+    ],
+    "features": [
+      {
+        "title": "Graded sheeting weight",
+        "detail": "Netting is specified by GSM and aperture to match the work, from coarse debris containment to fine overspray control."
+      },
+      {
+        "title": "Flame-retardant options",
+        "detail": "Where hot works are planned, flame-retardant sheeting is specified rather than standard netting."
+      },
+      {
+        "title": "Wind-aware fixing pattern",
+        "detail": "Tie spacing is set from the exposed area and expected wind, because sheeting substantially increases load on the scaffold."
+      },
+      {
+        "title": "Phased installation and removal",
+        "detail": "Sheeting follows the work up and down the elevation, so only the active zone is clad at any time."
+      }
+    ],
+    "applications": [
+      {
+        "title": "Scaffold debris containment",
+        "detail": "The standard use: sheeting tied to a scaffold to contain material during repair or construction."
+      },
+      {
+        "title": "Repainting occupied blocks",
+        "detail": "Fine mesh that holds overspray and lets residents keep windows usable through most of the programme."
+      },
+      {
+        "title": "Demolition and stripping work",
+        "detail": "Heavier containment where material is being removed rather than applied, with correspondingly denser fixing."
+      },
+      {
+        "title": "Tall structures and chimneys",
+        "detail": "Wrapped containment on slender structures, where wind loading dominates the temporary works design."
+      }
+    ],
+    "materials": [
+      {
+        "name": "HDPE facade sheeting",
+        "spec": "UV-stabilised HDPE monofilament, 50 to 150 GSM",
+        "detail": "Weight is chosen for the work: lighter mesh passes more wind and heavier sheeting contains finer material."
+      },
+      {
+        "name": "Flame-retardant netting",
+        "spec": "FR-treated polyethylene sheeting",
+        "detail": "Specified wherever welding, cutting or grinding is planned within the clad zone."
+      },
+      {
+        "name": "Ties and edge reinforcement",
+        "spec": "UV-stable cable ties or lacing cord with reinforced eyelets",
+        "detail": "Eyelets spread the load into the sheeting; ties are the intended sacrificial element and are replaced as needed."
+      }
+    ],
+    "installation": {
+      "typicalDurationHours": [
+        8,
+        60
+      ],
+      "surveyRequired": true,
+      "steps": [
+        {
+          "title": "Temporary works review",
+          "detail": "We confirm the scaffold or structure can accept the additional wind load that cladding it will create."
+        },
+        {
+          "title": "Sheeting specification",
+          "detail": "Mesh weight, aperture and any flame-retardant requirement are fixed against the actual scope of work."
+        },
+        {
+          "title": "Phased fixing up the elevation",
+          "detail": "Panels are fitted and tied progressively, following the work rather than cladding the whole building at once."
+        },
+        {
+          "title": "Tie inspection regime",
+          "detail": "Ties are checked at agreed intervals through the programme, since they are what fails first in high wind."
+        },
+        {
+          "title": "Controlled removal",
+          "detail": "Sheeting is struck in sequence with the scaffold and removed from site rather than being left in place to weather."
+        }
+      ],
+      "sitePreparation": [
+        "Confirm the scaffold design accounts for clad wind loading",
+        "Agree the working programme and phasing with the site team",
+        "Establish notification arrangements for residents in occupied buildings"
+      ]
+    },
+    "safety": {
+      "standards": [
+        "Wind loading on clad scaffold assessed against IS 875 Part 3 basic wind speed",
+        "Flame-retardant sheeting specified where hot works fall within the clad zone"
+      ],
+      "notes": [
+        {
+          "title": "Sheeting changes the scaffold's loading",
+          "detail": "Cladding a scaffold can multiply the wind load it carries. It cannot be added to an existing scaffold without checking the design."
+        },
+        {
+          "title": "Ties are the sacrificial element",
+          "detail": "Ties are meant to be inspected and replaced during the programme; a torn panel usually means ties were left unchecked."
+        },
+        {
+          "title": "Containment is not a licence to drop things",
+          "detail": "Sheeting is one layer of protection. Good housekeeping at height remains the primary control on any site."
+        }
+      ]
+    },
+    "maintenance": {
+      "inspectionIntervalMonths": 1,
+      "tasks": [
+        {
+          "title": "Inspect and replace ties",
+          "detail": "Ties are checked frequently through the programme; broken ties concentrate load on their neighbours and cascade."
+        },
+        {
+          "title": "Repair tears promptly",
+          "detail": "A small tear becomes a large one in the next high wind, so panels are patched or replaced as soon as damage appears."
+        },
+        {
+          "title": "Clear accumulated debris",
+          "detail": "Material collecting in the sheeting adds weight the fixing pattern was not designed for and is cleared out regularly."
+        }
+      ]
+    },
+    "quality": {
+      "warrantyYears": 1,
+      "checks": [
+        "Sheeting GSM and aperture recorded against the scope of work",
+        "Scaffold wind-load review confirmed before cladding",
+        "Tie spacing verified on each elevation",
+        "Inspection intervals agreed and logged with the site team"
+      ]
+    },
+    "pricingFactors": [
+      {
+        "title": "Elevation area",
+        "detail": "Total clad area is the base measure, taken on the elevations actually being covered rather than the whole building."
+      },
+      {
+        "title": "Sheeting grade",
+        "detail": "Heavier and flame-retardant grades cost significantly more per square metre than standard debris mesh."
+      },
+      {
+        "title": "Programme length and phasing",
+        "detail": "A long programme with sheeting following the work up and down the building involves repeated visits rather than one installation."
+      },
+      {
+        "title": "Height and access",
+        "detail": "Fixing at height, and any need to work outside normal hours over a public area, both add to labour."
+      }
+    ],
+    "locationAngles": {
+      "default": "Sheeting Grade and Tie Pattern Matched to the Works",
+      "coastal": "Wind-Rated Facade Sheeting for Coastal Exposure",
+      "humid": "Breathable Sheeting That Does Not Trap Moisture",
+      "arid": "Dust Containment for Dry-Season Facade Work",
+      "highRise": "High-Rise Facade Containment and Wind-Load Review",
+      "monsoonHeavy": "Monsoon-Season Sheeting, Drainage and Tie Inspection",
+      "industrial": "Flame-Retardant Containment for Industrial Hot Works"
+    },
+    "environmentalGuidance": {
+      "default": "The specification follows the work: coarse mesh for debris, fine mesh for overspray, flame-retardant where there are hot works. What matters as much as the material is confirming the scaffold was designed to carry the wind load that cladding it creates, which we check before anything goes up.",
+      "coastal": "Steady onshore wind is the governing condition on the coast, and it acts on the sheeting continuously rather than in gusts. We choose a more open mesh to let wind through, increase tie density, and inspect ties more often, because sustained loading works fixings loose in a way that occasional gusts do not.",
+      "humid": "Fine sheeting on a humid site traps moisture against the facade, which matters when the work underneath is paint or render that has to cure. We use a more open weave where curing is involved and phase the sheeting so completed elevations are uncovered rather than left wrapped.",
+      "arid": "In dry conditions the point of the sheeting is usually dust rather than debris, and dust is what generates complaints from neighbours. We specify a finer mesh than debris containment alone would need, and plan for cleaning the sheeting during the programme so it keeps working.",
+      "highRise": "Above a certain height the temporary works design, not the netting, is the real project. Wind pressure rises with height and cladding a tall scaffold can transform the loads it carries, so we insist on a design review, use lighter and more permeable sheeting, and tie at closer centres.",
+      "monsoonHeavy": "Monsoon work means wind and water together, with sheeting that holds water becoming heavy very quickly. We use an open mesh that drains, tie at close centres, inspect weekly rather than monthly through the season, and expect to replace ties as routine rather than exception.",
+      "industrial": "Industrial refurbishment usually involves cutting, welding or grinding, which makes flame-retardant sheeting a requirement rather than an option. We also plan containment around live plant, so that panels can be opened for process access without leaving an uncontained elevation."
+    },
+    "relatedServiceIds": [
+      "svc-safety-nets",
+      "svc-duct-area-safety-nets"
+    ],
+    "imageIds": [
+      "img-building-covering-safety-nets-01",
+      "img-building-covering-safety-nets-02",
+      "img-building-covering-safety-nets-03"
+    ],
+    "featured": false,
+    "published": true
+  }
+]

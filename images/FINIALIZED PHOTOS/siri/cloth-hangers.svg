@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img">
+    
+    <defs>
+      <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+        <stop stop-color="#0F172A" offset="0"/>
+        <stop stop-color="#172554" offset="0.46"/>
+        <stop stop-color="#2563EB" offset="1"/>
+      </linearGradient>
+      <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+        <stop stop-color="#ffffff" stop-opacity="0.92" offset="0"/>
+        <stop stop-color="#e8f3ff" stop-opacity="0.68" offset="1"/>
+      </linearGradient>
+      <linearGradient id="aqua" x1="0" x2="1" y1="0" y2="1">
+        <stop stop-color="#38BDF8" offset="0"/>
+        <stop stop-color="#2563EB" offset="1"/>
+      </linearGradient>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.34"/>
+      </filter>
+      <pattern id="net" width="34" height="34" patternUnits="userSpaceOnUse">
+        <path d="M0 0h34v34H0zM0 0l34 34M34 0 0 34" fill="none" stroke="#d9f7ff" stroke-opacity="0.58" stroke-width="1.6"/>
+      </pattern>
+      <pattern id="fineNet" width="22" height="22" patternUnits="userSpaceOnUse">
+        <path d="M0 0h22v22H0zM0 0l22 22M22 0 0 22" fill="none" stroke="#d9f7ff" stroke-opacity="0.54" stroke-width="1.2"/>
+      </pattern>
+    </defs>
+    
+    <rect width="1200" height="760" fill="url(#sky)"/>
+    <path d="M0 620c120-48 214-24 322-62 117-42 201-130 350-118 112 8 175 68 292 40 95-23 150-85 236-95v375H0z" fill="#0F172A" opacity="0.46"/>
+    <g opacity="0.28" fill="#d9f7ff">
+      <rect x="82" y="280" width="108" height="270" rx="8"/>
+      <rect x="216" y="230" width="150" height="320" rx="8"/>
+      <rect x="398" y="310" width="116" height="240" rx="8"/>
+      <rect x="856" y="250" width="132" height="300" rx="8"/>
+      <rect x="1018" y="300" width="102" height="250" rx="8"/>
+    </g>
+    <g opacity="0.2" stroke="#ffffff" stroke-width="2">
+      <path d="M0 168h1200M0 344h1200M0 520h1200M178 0v760M394 0v760M610 0v760M826 0v760M1042 0v760"/>
+    </g>
+    
+    <g filter="url(#shadow)">
+      <rect x="160" y="124" width="880" height="500" rx="10" fill="url(#glass)" opacity="0.88"/>
+      <rect x="204" y="164" width="792" height="348" rx="8" fill="#06234a" opacity="0.44"/>
+      <rect x="228" y="188" width="334" height="298" rx="8" fill="#e8f7ff" opacity="0.22"/>
+      <rect x="625" y="182" width="350" height="300" rx="8" fill="#e8f7ff" opacity="0.16"/>
+      
+      
+      <g stroke="#f6fbff" stroke-opacity="0.82" stroke-width="5">
+        <path d="M228 512h744M228 556h744"/>
+        <path d="M260 188v366M320 188v366M380 188v366M440 188v366M500 188v366M668 188v366M728 188v366M788 188v366M848 188v366M908 188v366"/>
+      </g>
+      <g stroke="#38BDF8" stroke-width="7" stroke-linecap="round" opacity="0.82">
+        <path d="M228 512h744"/>
+        <path d="M228 188h744"/>
+      </g>
+      <g stroke="#ffffff" stroke-width="10" stroke-linecap="round"><path d="M235 196h310"/><path d="M270 238h245"/><path d="M305 196v90M480 196v90"/></g><g stroke="#F97316" stroke-width="8" stroke-linecap="round"><path d="M315 308c34 32 82 32 116 0"/><path d="M344 286v-36M402 286v-36"/></g>
+      
+      <rect x="150" y="610" width="900" height="54" rx="8" fill="#ffffff" opacity="0.9"/>
+    </g>
+  </svg>

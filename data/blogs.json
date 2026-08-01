@@ -1,0 +1,657 @@
+[
+  {
+    "id": "bl-monsoon-checklist",
+    "slug": "monsoon-checklist-for-balcony-safety-installations",
+    "title": "A Pre-Monsoon Checklist for Balcony Safety Installations",
+    "heading": "What to check on your balcony before the monsoon arrives",
+    "description": "Ten minutes of checks before the wet season will catch the problems that turn into failures during it. Here is what to look at and why.",
+    "excerpt": "The monsoon does not usually break a good installation. It finds the one that was already marginal.",
+    "publishedAt": "2026-05-12",
+    "updatedAt": "2026-05-12",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Maintenance",
+    "tags": ["monsoon", "maintenance", "balcony", "inspection"],
+    "sections": [
+      {
+        "heading": "Why the wet season exposes marginal work",
+        "paragraphs": [
+          "Heavy rain does not often break a properly specified installation. What it does is find the ones that were already borderline. Weeks of driving water get into every unsealed penetration and keep anchor points wet for long enough that any corrosion already started will accelerate sharply. At the same time, netting loaded with water becomes heavier and catches wind, which puts sustained load on fixings that were sized for a dry panel.",
+          "That is why a check before the season is worth far more than one after it. Anything you correct now is a ten-minute job; the same problem found in August is a call-out in the rain."
+        ]
+      },
+      {
+        "heading": "The four things worth checking",
+        "paragraphs": [
+          "Start with tension, because it is the quickest and most informative test. Press each cable or the net at mid-span and feel for give. Then look at the anchors, at the drainage path, and at anything the net has caught over the last year. None of this needs tools."
+        ],
+        "bullets": [
+          "Tension: press-test at mid-span and note anything with noticeable give",
+          "Anchors: look for rust weeping, staining or hairline cracks in surrounding concrete",
+          "Drainage: confirm water can run off terminations rather than pooling against the wall",
+          "Debris: clear leaves, litter and nesting material, which hold moisture against fixings"
+        ],
+        "callout": "Debris in a net is the item most often skipped and the one that does the most quiet damage, because it holds water against the hardware for weeks."
+      },
+      {
+        "heading": "What to do about what you find",
+        "paragraphs": [
+          "Slack is normally corrected at the existing hardware rather than by replacing anything, which is a short visit. Rust weeping at an anchor is more serious and should be looked at properly, because it indicates the fixing itself rather than the surface. Netting that feels stiff or chalky and snaps rather than stretching has reached the end of its service life and should be replaced before the season rather than during it.",
+          "If you are in a heavy-monsoon location such as Kerala, coastal Karnataka or the Konkan coast, it is worth booking the re-tension visit for immediately after the season as well. That is when settlement shows up and when a marginal anchor gives itself away, and it is much easier to deal with then than a year later."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-safety-nets", "svc-invisible-grills"],
+    "faqIds": ["faq-inspection-interval", "faq-retension", "faq-monsoon-timing"],
+    "imageId": "img-safety-nets-02",
+    "published": true
+  },
+  {
+    "id": "bl-coastal-failures",
+    "slug": "why-coastal-installations-fail-early",
+    "title": "Why Coastal Installations Fail Years Before Inland Ones",
+    "heading": "The reason coastal safety installations fail early, and it is not the cable",
+    "description": "Chloride attacks the hardware long before the cable or net, and a single mismatched fitting is often the whole explanation for an early failure.",
+    "excerpt": "In almost every early coastal failure we inspect, the cable is fine. Something much cheaper gave up first.",
+    "publishedAt": "2026-03-24",
+    "updatedAt": "2026-04-02",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Materials",
+    "tags": ["coastal", "corrosion", "materials", "hardware"],
+    "sections": [
+      {
+        "heading": "The cable is usually the innocent party",
+        "paragraphs": [
+          "When we are asked to inspect a coastal installation that has deteriorated within two or three years, the cable itself is very often in good condition. What has failed is an eye bolt, a turnbuckle, a lacing ring or a fastener, and frequently it is a single component that was bought on price while everything around it was specified properly.",
+          "The mechanism is straightforward. Chloride in coastal air pits ordinary stainless, and it destroys galvanising quickly because galvanising is a sacrificial coating with nothing beneath it once gone. Put a plain steel or galvanised fitting into a stainless assembly and you also create a galvanic cell, so the less noble metal corrodes preferentially and fast."
+        ]
+      },
+      {
+        "heading": "What a coastal specification actually changes",
+        "paragraphs": [
+          "Three things change, and none of them are expensive relative to the cost of doing the job twice. Cable moves from AISI 304 to 316, which contains molybdenum and resists chloride pitting. All fittings become stainless with no galvanised components anywhere in the assembly. Terminations are sealed and detailed so water drains away from the wall rather than standing against it.",
+          "The third point is the one most often neglected and it matters as much as the metallurgy. Water held at a termination or behind a frame keeps the surface permanently wet, and crevice corrosion in the places you cannot see is what ends coastal installations early."
+        ],
+        "bullets": [
+          "AISI 316 cable rather than 304 within a few kilometres of the sea",
+          "Stainless fittings throughout, with galvanised hardware excluded entirely",
+          "Sealed terminations with a deliberate drainage path",
+          "A shorter inspection interval, with washing treated as a real maintenance task"
+        ]
+      },
+      {
+        "heading": "Washing is not cosmetic",
+        "paragraphs": [
+          "The single most useful thing a coastal client can do is rinse the installation down with plain water once or twice a year. Salt deposits left sitting on stainless are what initiate staining and pitting, so removing them is genuinely preventive rather than a matter of appearance. It takes a few minutes and materially extends service life.",
+          "This applies with even more force in places that combine salt with industrial particulates, such as Visakhapatnam's Gajuwaka belt or Vasco da Gama, where deposits are heavier and more aggressive. In those locations we shorten the recommended washing cycle rather than upgrading the metal further, because the deposits are doing the damage rather than the exposure alone."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets"],
+    "faqIds": ["faq-coastal-grade", "faq-inspection-interval", "faq-cheaper-options"],
+    "imageId": "img-invisible-grills-02",
+    "published": true
+  },
+  {
+    "id": "bl-highrise-wind",
+    "slug": "high-rise-balcony-wind-loading-explained",
+    "title": "Why a Twentieth-Floor Balcony Needs a Different Specification",
+    "heading": "Wind loading on high-rise balconies, and what it changes",
+    "description": "Above roughly the tenth floor, wind pressure rather than impact governs anchor design. This explains what changes and why it is not an upsell.",
+    "excerpt": "A fixing pattern that is perfectly adequate on the third floor can be marginal on the twentieth. Here is the reason.",
+    "publishedAt": "2026-01-30",
+    "updatedAt": "2026-02-14",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Installation",
+    "tags": ["high-rise", "wind", "anchorage", "apartments"],
+    "sections": [
+      {
+        "heading": "The governing load changes with height",
+        "paragraphs": [
+          "At low level, the load a balcony barrier is designed around is impact: somebody leaning, falling or pushing against it. Higher up, wind pressure becomes the dominant and more or less continuous load, and it acts on the whole area of the installation rather than at a point. A net in particular starts behaving like a sail, so its area and not the weight of anything caught in it sets the anchor spacing.",
+          "This is why the same balcony geometry needs a different fixing pattern at different heights. It is not a matter of making the cable stronger, because the cable is rarely what fails. It is a matter of getting the load into the structure at enough points."
+        ]
+      },
+      {
+        "heading": "What we change on upper floors",
+        "paragraphs": [
+          "Fixing density goes up, anchors are set further back from slab and parapet edges because an anchor near an edge will spall the concrete and lose most of its capacity, and net panels are kept smaller so that a single failure cannot open a large gap. On netting we specify turnbuckles positioned so the panel can be re-tensioned from inside, since working on the outside face of a high balcony to take up slack is not a reasonable annual task.",
+          "Parapet substrate matters more here too. Many parapets are thinner and of poorer quality than the slab, so we check them before choosing a method rather than assuming the detail that worked on a lower floor will transfer."
+        ],
+        "bullets": [
+          "Increased anchor density sized for wind pressure rather than impact",
+          "Fixings set back from slab and parapet edges to prevent spalling",
+          "Smaller net panels so one failure cannot open a wide gap",
+          "Turnbuckles positioned for re-tensioning from inside the balcony"
+        ]
+      },
+      {
+        "heading": "The practical consequences for scheduling",
+        "paragraphs": [
+          "Height also changes logistics, which is worth planning for. Material has to travel by service lift, so frames are fabricated in sections short enough to fit, and most housing societies restrict both the hours in which drilling may happen and the times the lift may be used for materials. In cities such as Mumbai, Bengaluru and Hyderabad this is routinely the longest lead item on the job.",
+          "Our advice is to start the approval conversation with your association before accepting any quotation. The installation itself might take a day; approval frequently takes considerably longer, and it is the part nobody can accelerate on the morning of the work."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets"],
+    "faqIds": ["faq-high-floor", "faq-association-approval", "faq-survey-required"],
+    "imageId": "img-invisible-grills-01",
+    "published": true
+  },
+  {
+    "id": "bl-cloth-hanger-load",
+    "slug": "how-much-weight-a-cloth-hanger-really-holds",
+    "title": "How Much Weight a Cloth Hanger Really Holds",
+    "heading": "Wet load, dry load and why cloth hangers come down",
+    "description": "Wet laundry weighs roughly three times its dry weight, which is why racks rated on dry load fail. What to ask before buying one.",
+    "excerpt": "A rack that looks generously rated for dry clothes can be at its limit straight out of the machine.",
+    "publishedAt": "2025-12-05",
+    "updatedAt": "2026-06-11",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 5,
+    "category": "Buying advice",
+    "tags": ["cloth-hangers", "load", "utility", "apartments"],
+    "sections": [
+      {
+        "heading": "The number that matters is the wet one",
+        "paragraphs": [
+          "Cotton straight out of a washing machine weighs roughly three times what it weighs dry. That single fact explains most cloth hanger failures. A rack advertised against a dry load can be at or beyond its working limit the moment a full wash is hung on it, and it will be in that condition for several hours every time it is used.",
+          "So the useful question to ask a supplier is not how much the rack holds, but what its wet working load is for the configuration being installed. We state that figure for what we fit and load-test every rail before handover, which is a much more honest basis for comparison than a headline capacity."
+        ],
+        "callout": "Ask for the wet working load for your configuration, not the product's maximum. They are rarely the same number."
+      },
+      {
+        "heading": "The other failure mode is the ceiling",
+        "paragraphs": [
+          "The second common cause of collapse has nothing to do with the rack. Fixings anchored into a false ceiling of gypsum or cement board cannot carry this load and will eventually pull through, usually taking the whole rack down with them. Where a false ceiling exists, the fixings must pass through it and anchor into the structural slab above, which is why we scan the ceiling before drilling if there is any doubt.",
+          "It is worth asking directly whether a quotation includes locating the slab. It is a small amount of work and it is the difference between an installation that lasts and one that fails without warning."
+        ],
+        "bullets": [
+          "Confirm fixings reach the structural slab, not a false ceiling panel",
+          "Ask for the stated wet working load for the installed configuration",
+          "Check that pulleys are sealed, since open pulleys seize in a wet balcony",
+          "Make sure the locking cleat is within comfortable reach"
+        ]
+      },
+      {
+        "heading": "Sizing the system to how you actually live",
+        "paragraphs": [
+          "Rail count and length should follow laundry volume and the width of the bay rather than a stock size. In humid places such as Kochi, Vijayawada or Thiruvananthapuram, clothes dry slowly and the rack stays loaded for longer, so it is worth specifying more line length than the wash volume alone suggests and spacing rails wider so air can move between garments.",
+          "Shared and staff accommodation is a different duty altogether, because the system is cycled many times a day and wears out on cycle count rather than corrosion. There we specify heavier rails on shorter spans, upgraded pulleys and a shorter service interval, and we treat rope and pulleys explicitly as replaceable wear items."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-cloth-hangers"],
+    "faqIds": ["faq-hanger-load", "faq-hanger-false-ceiling"],
+    "imageId": "img-cloth-hangers-01",
+    "published": true
+  },
+  {
+    "id": "bl-child-safety-spacing",
+    "slug": "child-safe-balcony-spacing-explained",
+    "title": "Child-Safe Balcony Spacing Explained Without Guesswork",
+    "heading": "How child-safe balcony spacing is actually decided",
+    "description": "Cable and mesh spacing for children is not a single catalogue size. It depends on rail height, side returns, furniture and how the balcony is used.",
+    "excerpt": "Tight spacing alone is not a child-safety plan. The opening geometry and how kids use the space matter as much as the pitch.",
+    "publishedAt": "2026-06-18",
+    "updatedAt": "2026-06-18",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 7,
+    "category": "Safety",
+    "tags": ["child-safety", "spacing", "balcony", "invisible-grills"],
+    "sections": [
+      {
+        "heading": "Spacing is only one part of the barrier",
+        "paragraphs": [
+          "Parents usually ask for the tightest cable pitch available, which is understandable. On site, spacing is one input among several. Rail height, side returns to the wall, furniture that creates climbing steps, and whether the balcony is used as a play area all change what a safe barrier looks like.",
+          "That is why we measure the full opening and walk the balcony with you before locking a specification. Two identical-looking flats on different floors can need different returns and fixing patterns even when the cable pitch looks the same on paper."
+        ]
+      },
+      {
+        "heading": "What we check before recommending a pitch",
+        "paragraphs": [
+          "We look at climbable edges first. A planter ledge, AC outdoor unit, or low furniture against the rail can defeat a tight pitch if a child can step up. Side gaps next to the wall are another common miss: a neat front face with an open return is not a finished job.",
+          "For nets, mesh size and border rope tension matter together. A fine mesh that hangs loose still creates a pocket a child can lean into. For invisible grills, vertical cable pitch must be consistent from end to end, including corners where frames turn."
+        ],
+        "bullets": [
+          "Measure rail height and every side return to the wall",
+          "Note climbable ledges, planters and outdoor units",
+          "Confirm whether pets will share the same opening",
+          "Write spacing and fixing method on the quotation, not only the product name"
+        ],
+        "callout": "Ask any vendor to state cable pitch or mesh size in writing for your measured openings. A verbal 'child safe' label is not a specification."
+      },
+      {
+        "heading": "What changes after installation",
+        "paragraphs": [
+          "A child-safe installation still needs occasional checks. Furniture moved against the rail, new planters, or a loose turnbuckle can change the risk profile months later. We recommend a press-test of cables or mesh after the first monsoon and whenever the balcony layout changes.",
+          "If you are comparing invisible grills and nets for the same balcony, bring photos of how the space is used day to day. Visibility, airflow and play patterns usually decide the system faster than price alone."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets", "svc-balcony-nets"],
+    "faqIds": ["faq-ig-spacing", "faq-net-child-vs-bird", "faq-survey-required"],
+    "imageId": "img-safety-nets-08",
+    "published": true
+  },
+  {
+    "id": "bl-pigeon-control-balcony",
+    "slug": "stop-pigeons-returning-to-balcony-without-blocking-light",
+    "title": "Stop Pigeons Returning Without Blocking Balcony Light",
+    "heading": "Why pigeons come back, and how full-opening nets stop the cycle",
+    "description": "Partial bird spikes on a ledge rarely end a nesting habit. Full-opening nets and clean ledge detailing are what keep pigeons from returning.",
+    "excerpt": "If birds can still land on a ledge or AC line, they will. Coverage of the whole opening is the difference between a temporary scare and a lasting fix.",
+    "publishedAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Bird control",
+    "tags": ["pigeon", "bird-nets", "balcony", "ducts"],
+    "sections": [
+      {
+        "heading": "Partial deterrents train birds to wait",
+        "paragraphs": [
+          "Spikes on one ledge while the neighbouring AC tray stays open is a common reason pigeons 'come back after treatment'. Birds simply shift a few feet. The same happens when a net covers only the front rail and leaves the side return or top gap open.",
+          "A durable bird-control job maps every landing surface in the bay: rail, slab edge, AC outdoor unit, duct mouth and any decorative ledge. Then the net or spikes are planned as one system rather than as separate gadgets."
+        ]
+      },
+      {
+        "heading": "Choosing mesh that keeps light and airflow",
+        "paragraphs": [
+          "Most residential balconies do well with UV-stabilised HDPE mesh tensioned evenly across the full opening. The mesh should be fine enough to deny footholds without turning the balcony into a dark box. Frame colour and border rope finish matter for how visible the install looks from inside.",
+          "On ducts and shafts the priority shifts to access for cleaning and service. Removable panels or zipper openings are planned where technicians still need to reach equipment, otherwise the net gets cut open later and the gap stays."
+        ],
+        "bullets": [
+          "Cover the full opening, including side returns and top gaps",
+          "Treat AC trays and duct mouths as part of the same job",
+          "Use UV-stable mesh with even tension, not a sagging temporary panel",
+          "Plan service access where equipment still needs maintenance"
+        ]
+      },
+      {
+        "heading": "Aftercare that keeps the net working",
+        "paragraphs": [
+          "Clear droppings and nesting material before they cake into the mesh. A light wash during dry months keeps UV coatings cleaner and makes tension checks easier. If one panel loosens, re-tension early — a soft panel becomes a landing pad again.",
+          "If you already tried spikes alone and birds returned, send a photo of the full bay including side walls. That is usually enough for us to say whether a full net, a hybrid, or a ledge redesign is the right next step."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-bird-pigeon-nets", "svc-balcony-nets", "svc-duct-area-safety-nets"],
+    "faqIds": ["faq-net-pigeon-return", "faq-net-child-vs-bird", "faq-duct-access"],
+    "imageId": "img-safety-nets-05",
+    "published": true
+  },
+  {
+    "id": "bl-invisible-vs-net",
+    "slug": "invisible-grills-vs-balcony-safety-nets",
+    "title": "Invisible Grills vs Balcony Safety Nets: Which Fits Your Opening",
+    "heading": "Invisible grills or safety nets — how to choose without marketing noise",
+    "description": "A clear comparison of view, child safety, bird control, maintenance and price drivers so you can pick the right system for your balcony or window.",
+    "excerpt": "Neither system is universally better. The right choice follows the job the opening needs to do, not the brochure headline.",
+    "publishedAt": "2026-04-16",
+    "updatedAt": "2026-05-01",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 7,
+    "category": "Buying advice",
+    "tags": ["comparison", "invisible-grills", "safety-nets", "balcony"],
+    "sections": [
+      {
+        "heading": "Start with the problem, not the product name",
+        "paragraphs": [
+          "If the priority is an open view with fall protection, stainless cable grills usually win. If the priority is birds, pets climbing mesh, or a lower budget for a wide bay, a tensioned net is often the better fit. Many homes use both: grills on the front-facing balcony and nets on utility or duct sides.",
+          "A useful comparison always includes measured area, access for installation, association rules, and who uses the balcony. Without those, price-per-square-foot comparisons are misleading."
+        ]
+      },
+      {
+        "heading": "Where each system tends to fit",
+        "paragraphs": [
+          "Invisible grills suit front balconies and windows where daylight and outlook matter and climbing ledges are limited. Safety nets suit bird pressure, pet containment, terrace edges and openings where a visible mesh is acceptable. Sports and duct work are different categories again and should not be forced into a balcony grill quote."
+        ],
+        "bullets": [
+          "Choose grills when clear view and slim vertical lines are the priority",
+          "Choose nets when birds, pets or wide coverage dominate the brief",
+          "Check association rules for drilling, colour and working hours",
+          "Ask for grade, spacing, access and warranty on the same written quote"
+        ],
+        "callout": "A fair comparison puts both options on the same measured openings with the same access assumptions. Anything else is shopping for a slogan."
+      },
+      {
+        "heading": "Maintenance and lifespan differences",
+        "paragraphs": [
+          "Cable systems need occasional tension checks and, on the coast, freshwater rinsing. Nets need debris clearing and UV inspection; mesh eventually chalks and should be replaced as a wear item rather than run until it tears. Neither system is maintenance-free, and both fail earlier when water sits at terminations.",
+          "If you are still undecided, send one photo of each opening and say whether children, pets or birds are the main concern. That is usually enough to recommend a primary system and a secondary option for utility sides."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets", "svc-balcony-nets"],
+    "faqIds": ["faq-ig-vs-grille", "faq-price-drivers", "faq-cheaper-options"],
+    "imageId": "img-invisible-grills-05",
+    "published": true
+  },
+  {
+    "id": "bl-association-approval",
+    "slug": "housing-society-approval-for-balcony-safety-work",
+    "title": "Housing Society Approval for Balcony Safety Work",
+    "heading": "How to get association approval without delaying installation for weeks",
+    "description": "Most high-rise jobs spend longer in society approval than on the balcony. Here is what associations usually ask for and how to prepare it early.",
+    "excerpt": "Drilling windows and lift bookings, not cable grade, are what stretch apartment timelines. Start the paperwork before you compare final quotes.",
+    "publishedAt": "2026-02-20",
+    "updatedAt": "2026-03-05",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Installation",
+    "tags": ["society", "apartments", "approval", "high-rise"],
+    "sections": [
+      {
+        "heading": "Why approval is on the critical path",
+        "paragraphs": [
+          "In gated apartments the association often controls drilling hours, material lift use, colour of frames, and whether work can happen on weekends. A one-day installation can wait two or three weeks for a letter if nobody starts that conversation early.",
+          "We treat approval as part of planning, not as an afterthought on the morning of the job. The survey notes, proposed fixing method and working-hour request should travel together so the committee is not answering questions one at a time."
+        ]
+      },
+      {
+        "heading": "Documents that usually unblock the process",
+        "paragraphs": [
+          "Most societies want a short method note, the proposed schedule, confirmation that debris will be cleared, and sometimes a sample photo of a similar finished balcony in the same project. Some ask for insurance or vendor registration details. None of this is difficult if you collect it before paying an advance for fabrication."
+        ],
+        "bullets": [
+          "Measured openings and proposed system in one page",
+          "Preferred drilling window and lift booking request",
+          "Frame or border colour options the society already uses",
+          "Contact person for the vendor on installation day"
+        ]
+      },
+      {
+        "heading": "How residents can keep momentum",
+        "paragraphs": [
+          "Nominate one flat owner to chase the association rather than a WhatsApp group of five. Share the same PDF with every committee member. If neighbouring flats are installing in the same week, combine lift bookings — societies often prefer batching work.",
+          "If your society has a banned list of vendors or colours, ask for it before the survey. That avoids quoting a system that will be rejected after measurement."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets", "svc-balcony-nets"],
+    "faqIds": ["faq-association-approval", "faq-how-long", "faq-high-floor"],
+    "imageId": "img-invisible-grills-03",
+    "published": true
+  },
+  {
+    "id": "bl-duct-netting",
+    "slug": "duct-area-safety-nets-for-apartments",
+    "title": "Duct Area Safety Nets for Apartments and Service Shafts",
+    "heading": "What duct-area netting must solve that a balcony net does not",
+    "description": "Service ducts need access, bird control and fall protection at once. Here is how duct nets are planned so maintenance teams can still work safely.",
+    "excerpt": "A duct net that cannot be opened for service will be cut. Plan access panels first, then tension the mesh around them.",
+    "publishedAt": "2026-05-28",
+    "updatedAt": "2026-05-28",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Installation",
+    "tags": ["ducts", "apartments", "bird-control", "maintenance"],
+    "sections": [
+      {
+        "heading": "Ducts are workspaces, not just openings",
+        "paragraphs": [
+          "Apartment ducts carry AC lines, plumbing stacks and sometimes exhaust. Birds nest there because they are sheltered and rarely disturbed. A solid sealed cover can trap heat or block service access, so netting is usually the practical barrier — provided it can be opened when technicians need to enter.",
+          "We survey who uses the duct, how often, and from which floor. That decides zipper panels, removable frames or hinged access rather than a permanently laced face."
+        ]
+      },
+      {
+        "heading": "Specification details that prevent rework",
+        "paragraphs": [
+          "Mesh must resist UV and stay tensioned so it does not sag into the shaft. Anchors need a sound substrate; many duct lips are thin plaster over blockwork and need a different fixing than a balcony slab. Colour and visibility matter less than coverage of every landing ledge birds currently use."
+        ],
+        "bullets": [
+          "Map every landing ledge and AC tray inside the duct",
+          "Design access for cleaning and equipment service",
+          "Confirm substrate before choosing anchors",
+          "Keep panels tensioned so birds cannot perch on soft mesh"
+        ],
+        "callout": "If your society already cut open an old duct net, photograph the gap. That usually shows exactly where the next access panel should have been."
+      },
+      {
+        "heading": "Coordination with building teams",
+        "paragraphs": [
+          "Facility managers often want work outside office hours and clear handover notes for future vendors. We document panel locations and how to re-close them so the next AC service does not leave the duct open for weeks.",
+          "For towers with repeated pigeon complaints across multiple floors, a stacked duct programme is cheaper than flat-by-flat emergency visits. Ask your association whether neighbouring floors want to batch the work."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-duct-area-safety-nets", "svc-bird-pigeon-nets"],
+    "faqIds": ["faq-duct-access", "faq-duct-clearing", "faq-net-pigeon-return"],
+    "imageId": "img-duct-area-safety-nets-01",
+    "published": true
+  },
+  {
+    "id": "bl-sports-net-height",
+    "slug": "sports-net-height-and-containment-for-practice",
+    "title": "Sports Net Height and Containment for Terrace Practice",
+    "heading": "How tall a sports net really needs to be for terrace and ground practice",
+    "description": "Containment height depends on the sport, ball energy and neighbouring property risk. Guessing from a catalogue height is how balls leave the site.",
+    "excerpt": "A net that looks tall from the ground can still be short against a lofted shot. Height and roofing decisions belong in the survey, not the brochure.",
+    "publishedAt": "2026-03-08",
+    "updatedAt": "2026-03-18",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 5,
+    "category": "Sports",
+    "tags": ["sports-nets", "cricket", "terrace", "containment"],
+    "sections": [
+      {
+        "heading": "Height follows ball flight, not aesthetics",
+        "paragraphs": [
+          "Cricket practice on a terrace needs different containment than badminton or a kids' play court. Lofted shots and mis-hits set the required height more than the average rally. Neighbouring glass, parked cars and pedestrian paths set the consequence of getting it wrong.",
+          "We ask what is practised, who uses the space, and what sits beyond the boundary before recommending post height and whether a roof panel is needed."
+        ]
+      },
+      {
+        "heading": "Structure matters as much as mesh",
+        "paragraphs": [
+          "A tall net on light posts will lean and open gaps at the base. Galvanised or stainless posts, correct guy points, and impact zones where balls hit hardest keep the enclosure honest over a season of practice. Soft ground or waterproofing membranes on terraces need special base details so anchors do not leak into the slab."
+        ],
+        "bullets": [
+          "Confirm sport, ball type and maximum expected loft",
+          "Check what sits beyond the boundary if a ball escapes",
+          "Size posts and guys for wind as well as impact",
+          "Protect terrace waterproofing when fixing bases"
+        ]
+      },
+      {
+        "heading": "When a roof net is worth it",
+        "paragraphs": [
+          "Roof panels make sense when lofted shots regularly clear the side nets or when the practice lane sits under a higher building edge. They add cost and shade, so they should follow observed ball flight rather than a default package.",
+          "Send a short video of practice if you already use the space. It is often clearer than a drawing for deciding height and whether the roof is necessary."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-sports-nets"],
+    "faqIds": ["faq-sports-height", "faq-sports-roof", "faq-survey-required"],
+    "imageId": "img-sports-nets-01",
+    "published": true
+  },
+  {
+    "id": "bl-pet-balcony-safety",
+    "slug": "pet-safe-balcony-nets-and-grills",
+    "title": "Pet-Safe Balcony Nets and Grills for Cats and Dogs",
+    "heading": "Keeping cats and dogs safe on balconies without trapping heat",
+    "description": "Pets test gaps differently from children. Mesh size, climbable furniture and door behaviour decide whether a balcony barrier actually works.",
+    "excerpt": "Cats jump to ledges children cannot reach. Design the barrier around animal behaviour, not only human fall height.",
+    "publishedAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Safety",
+    "tags": ["pets", "cats", "dogs", "balcony"],
+    "sections": [
+      {
+        "heading": "Animals find the gap you did not measure",
+        "paragraphs": [
+          "A cat will use an AC unit, window sill or planter as a launch point. A small dog will push at the bottom edge of a soft net. Pet-safe work therefore starts with behaviour: who uses the balcony, unsupervised or not, and which furniture stays outside.",
+          "Invisible grills with tight pitch work well when the view matters and climbing furniture is removed. Fine mesh nets work when pets climb or when bird control is needed at the same time."
+        ]
+      },
+      {
+        "heading": "Details that prevent escapes",
+        "paragraphs": [
+          "Bottom edges must meet the floor or rail without a push-through gap. Side returns to the wall should be closed. Door closers matter — a balcony door left ajar defeats any barrier. For cats, vertical cable systems need pitch tight enough that a head cannot pass; for dogs, impact loads on the lower third of the panel are higher."
+        ],
+        "bullets": [
+          "Close floor-level and side-wall gaps completely",
+          "Remove or relocate climbable outdoor furniture",
+          "Choose mesh or cable pitch for the animal, not a generic 'pet' label",
+          "Use a door closer if unsupervised access is common"
+        ]
+      },
+      {
+        "heading": "Living with the installation",
+        "paragraphs": [
+          "Pets chew soft border ropes and push on loose panels. Schedule a tension check after the first month of use. If you board pets occasionally, tell us — temporary higher loads change how we detail the lower edge.",
+          "Share a photo with the pet on the balcony if you can. Seeing scale against the rail is more useful than a tape measurement alone."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-safety-nets", "svc-invisible-grills", "svc-balcony-nets"],
+    "faqIds": ["faq-net-child-vs-bird", "faq-ig-spacing", "faq-survey-required"],
+    "imageId": "img-safety-nets-14",
+    "published": true
+  },
+  {
+    "id": "bl-building-covering",
+    "slug": "building-covering-safety-nets-during-facade-work",
+    "title": "Building Covering Safety Nets During Facade and Repair Work",
+    "heading": "How building covering nets protect people and property during facade work",
+    "description": "Scaffold-linked covering nets catch debris and reduce wind-blown dust during facade repairs. Planning access and resident communication is half the job.",
+    "excerpt": "A covering net is a temporary safety system. If access routes and resident notices are unclear, the mesh alone will not keep the site orderly.",
+    "publishedAt": "2026-01-14",
+    "updatedAt": "2026-01-22",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 5,
+    "category": "Commercial",
+    "tags": ["building-covering", "scaffold", "facade", "construction"],
+    "sections": [
+      {
+        "heading": "What covering nets are for",
+        "paragraphs": [
+          "During facade repair, painting or structural work, covering nets reduce the chance of tools and debris falling outside the work zone. They also cut wind-blown dust for neighbouring flats. They are temporary systems tied into scaffold or building anchors and must be inspected as the scaffold changes.",
+          "Coverage plans should follow the work face as it moves, not a single static sheet left for months after the trade has finished."
+        ]
+      },
+      {
+        "heading": "Coordination that keeps residents safe",
+        "paragraphs": [
+          "Residents need clear notices about balcony use, window opening and when drilling or welding happens. Facility teams need known access routes for emergency services. We document tie-in points and inspection frequency so the general contractor can keep the system current as scaffold lifts change."
+        ],
+        "bullets": [
+          "Align net coverage with the active work face",
+          "Inspect after every scaffold alteration",
+          "Brief residents on balcony and window restrictions",
+          "Keep emergency access paths unobstructed"
+        ]
+      },
+      {
+        "heading": "When the net should come down",
+        "paragraphs": [
+          "Leaving covering mesh up after work ends creates wind load, UV ageing and a false sense of protection. Removal should be scheduled in the same programme as scaffold strike. If a phase of work pauses for weeks, reassess whether the net still matches the remaining risk.",
+          "For societies planning multi-tower facade cycles, batch procurement and shared inspection checklists save cost and keep standards consistent across blocks."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-building-covering-safety-nets"],
+    "faqIds": ["faq-covering-scaffold", "faq-covering-residents", "faq-how-long"],
+    "imageId": "img-building-covering-safety-nets-01",
+    "published": true
+  },
+  {
+    "id": "bl-quote-checklist",
+    "slug": "what-a-written-safety-net-quote-should-include",
+    "title": "What a Written Safety Net or Grill Quote Should Include",
+    "heading": "The checklist for comparing balcony safety quotations fairly",
+    "description": "Itemised quotes should list openings, grade, spacing, access, warranty and exclusions. Without those, cheaper often means incomplete.",
+    "excerpt": "If two quotes cannot be lined up line by line, you are not comparing price — you are comparing storytelling.",
+    "publishedAt": "2026-07-20",
+    "updatedAt": "2026-07-20",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 6,
+    "category": "Buying advice",
+    "tags": ["pricing", "quotation", "buying", "checklist"],
+    "sections": [
+      {
+        "heading": "Lines that must appear in writing",
+        "paragraphs": [
+          "A usable quotation names each opening, the system for that opening, material grade, spacing or mesh size, fixing method, access assumptions, inclusions such as debris clearance, and warranty terms. Soft phrases like 'best quality' or 'standard fitting' are not specifications.",
+          "Ask for the unit of measurement used — per opening, per square foot of mesh, or per running metre of rail — and whether scaffolding or high-floor access is included or extra."
+        ]
+      },
+      {
+        "heading": "Red flags when you compare vendors",
+        "paragraphs": [
+          "A much lower price with no grade, no spacing and no access note usually means those costs will appear later or the installation will be under-specified. Another red flag is refusing a short survey before a 'final' number. Measured work cannot be finalised from a phone photo alone when anchors and returns are invisible."
+        ],
+        "bullets": [
+          "Measured openings listed individually",
+          "Material grade and spacing stated for each system",
+          "Access, scaffolding and society constraints noted",
+          "Warranty scope and exclusions written clearly"
+        ],
+        "callout": "Bring the same checklist to every vendor. The honest quote is the one that answers every line, not the one with the lowest total."
+      },
+      {
+        "heading": "How we structure Avensafe quotations",
+        "paragraphs": [
+          "After survey we itemise openings, confirm grade and spacing in writing, and separate optional upgrades such as coastal hardware or removable duct panels. You can decline a line without the whole quote collapsing into vagueness.",
+          "If you already have a competing quote, share it with the numbers and we will map it onto this checklist so you can see what is missing rather than simply matching a total."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-invisible-grills", "svc-safety-nets", "svc-balcony-nets"],
+    "faqIds": ["faq-price-drivers", "faq-published-rates", "faq-survey-required"],
+    "imageId": "img-invisible-grills-07",
+    "published": true
+  },
+  {
+    "id": "bl-cloth-hanger-balcony",
+    "slug": "ceiling-cloth-hangers-for-apartment-balconies",
+    "title": "Ceiling Cloth Hangers for Apartment Balconies That Stay Usable",
+    "heading": "Planning a ceiling cloth hanger so the balcony still feels open",
+    "description": "Pulley hangers save floor space but fail when fixed into false ceilings or sized for dry load only. Here is how to specify one that lasts.",
+    "excerpt": "A good hanger disappears when raised and carries wet laundry without pulling the ceiling down. Both outcomes are design choices, not luck.",
+    "publishedAt": "2026-04-28",
+    "updatedAt": "2026-04-28",
+    "author": "Avensafe Solutions",
+    "readingMinutes": 5,
+    "category": "Utility",
+    "tags": ["cloth-hangers", "balcony", "apartments", "utility"],
+    "sections": [
+      {
+        "heading": "Floor space is not the only constraint",
+        "paragraphs": [
+          "Apartment balconies are short on depth. A ceiling pulley system keeps the floor clear for drying stands and movement, but only if the rails lift fully and the cleat is easy to reach. Poorly placed pulleys leave ropes across the walkway or rails that never quite clear the door swing.",
+          "We mark door arcs, AC units and railing height before choosing rail length and count. The goal is a raised park position that does not fight daily use of the balcony."
+        ]
+      },
+      {
+        "heading": "Structural fixing is non-negotiable",
+        "paragraphs": [
+          "Wet laundry loads are real. Anchors must reach the structural slab. Fixing into gypsum or decorative boards is the usual reason hangers collapse. If a false ceiling exists, we locate the slab and pass through with sleeves rather than guessing."
+        ],
+        "bullets": [
+          "Anchor into structural slab, never false ceiling alone",
+          "Size for wet working load of your typical wash",
+          "Place cleats where shorter users can lock the rope",
+          "Choose sealed pulleys for monsoon balconies"
+        ]
+      },
+      {
+        "heading": "Living with humidity and shared use",
+        "paragraphs": [
+          "In humid cities, clothes stay on the line longer, so more line length and wider rail spacing help airflow. In staff or shared flats, expect higher cycle counts and plan rope and pulleys as replaceable wear parts.",
+          "If you already have a failed hanger, keep the old brackets until survey — they often show whether the previous job ever reached the slab."
+        ]
+      }
+    ],
+    "serviceIds": ["svc-cloth-hangers"],
+    "faqIds": ["faq-hanger-load", "faq-hanger-false-ceiling", "faq-survey-required"],
+    "imageId": "img-cloth-hangers-03",
+    "published": true
+  }
+]

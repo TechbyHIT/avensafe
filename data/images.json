@@ -1,0 +1,949 @@
+[
+  {
+    "id": "img-hero-home",
+    "src": "/images/portfolio/safety-nets-0-n1-ff754a78.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Clear-view high-rise balcony with stainless safety cables overlooking green canopy",
+    "caption": "Near-invisible cables that keep the outlook open.",
+    "serviceIds": [
+      "svc-invisible-grills",
+      "svc-safety-nets"
+    ],
+    "tags": [
+      "hero",
+      "home",
+      "balcony",
+      "clarity",
+      "invisible-grills"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-01",
+    "src": "/images/portfolio/safety-nets-0-b2-7f53f322.jpg",
+    "width": 2976,
+    "height": 3968,
+    "alt": "Safety nets installation photo 1 — b2",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-02",
+    "src": "/images/portfolio/safety-nets-1-b3-9c91f7c9.jpg",
+    "width": 1440,
+    "height": 3248,
+    "alt": "Safety nets installation photo 2 — b3",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-03",
+    "src": "/images/portfolio/safety-nets-2-n50-f0476219.jpg",
+    "width": 1024,
+    "height": 1024,
+    "alt": "Safety nets installation photo 3 — n50",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "balcony",
+      "balcony-nets"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-04",
+    "src": "/images/portfolio/safety-nets-3-b-17-702dcd6a.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 4 — b 17",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-05",
+    "src": "/images/portfolio/safety-nets-4-n26-8e42050d.jpg",
+    "width": 1920,
+    "height": 1080,
+    "alt": "Safety nets installation photo 5 — n26",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "balcony",
+      "balcony-nets"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-06",
+    "src": "/images/portfolio/safety-nets-5-n53-70836119.jpg",
+    "width": 1200,
+    "height": 600,
+    "alt": "Safety nets installation photo 6 — n53",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "balcony",
+      "balcony-nets"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-07",
+    "src": "/images/portfolio/safety-nets-6-b10-aea95443.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 7 — b10",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-08",
+    "src": "/images/portfolio/safety-nets-7-child-1-3a49a790.jpg",
+    "width": 1200,
+    "height": 1600,
+    "alt": "Safety nets installation photo 8 — child 1",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "child-safety",
+      "balcony-nets",
+      "balcony"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-09",
+    "src": "/images/portfolio/safety-nets-8-b1-c4ecaad3.jpg",
+    "width": 1079,
+    "height": 1095,
+    "alt": "Safety nets installation photo 9 — b1",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-10",
+    "src": "/images/portfolio/safety-nets-9-b8-217d3154.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 10 — b8",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-11",
+    "src": "/images/portfolio/safety-nets-10-b15-ed3d5384.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 11 — b15",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "balcony-nets",
+      "balcony"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-12",
+    "src": "/images/portfolio/safety-nets-11-b5-013a4e8d.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 12 — b5",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "balcony-nets",
+      "balcony"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-13",
+    "src": "/images/portfolio/safety-nets-12-b6-bf16cf4b.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Safety nets installation photo 13 — b6",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "general",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-safety-nets-14",
+    "src": "/images/portfolio/safety-nets-13-pet-2-aab3d966.jpg",
+    "width": 960,
+    "height": 1106,
+    "alt": "Safety nets installation photo 14 — pet 2",
+    "caption": "Safety nets on site.",
+    "serviceIds": [
+      "svc-safety-nets",
+      "svc-balcony-nets"
+    ],
+    "tags": [
+      "safety-nets",
+      "child-safety",
+      "balcony-nets",
+      "balcony"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-01",
+    "src": "/images/portfolio/cloth-hangers-0-cloth8-1f7f6c25.jpeg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Cloth hangers installation photo 1 — cloth8",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-02",
+    "src": "/images/portfolio/cloth-hangers-1-cloth7-487641a9.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Cloth hangers installation photo 2 — cloth7",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-03",
+    "src": "/images/portfolio/cloth-hangers-2-cloth9-f47ec3d3.jpeg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Cloth hangers installation photo 3 — cloth9",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-04",
+    "src": "/images/portfolio/cloth-hangers-3-cloth-1-ebca242c.jpg",
+    "width": 500,
+    "height": 500,
+    "alt": "Cloth hangers installation photo 4 — cloth 1",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-05",
+    "src": "/images/portfolio/cloth-hangers-4-cloth-2-d7ad6a6b.jpg",
+    "width": 508,
+    "height": 763,
+    "alt": "Cloth hangers installation photo 5 — cloth 2",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-06",
+    "src": "/images/portfolio/cloth-hangers-5-cloth4-19467ece.jpg",
+    "width": 679,
+    "height": 710,
+    "alt": "Cloth hangers installation photo 6 — cloth4",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-07",
+    "src": "/images/portfolio/cloth-hangers-6-cloth6-f7518820.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Cloth hangers installation photo 7 — cloth6",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-cloth-hangers-08",
+    "src": "/images/portfolio/cloth-hangers-7-cloth3-4099fa15.webp",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Cloth hangers installation photo 8 — cloth3",
+    "caption": "Cloth hangers on site.",
+    "serviceIds": [
+      "svc-cloth-hangers"
+    ],
+    "tags": [
+      "cloth-hangers",
+      "utility"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-sports-nets-01",
+    "src": "/images/portfolio/sports-nets-0-sp-2-ca31f921.jpg",
+    "width": 1080,
+    "height": 1175,
+    "alt": "Sports nets installation photo 1 — sp 2",
+    "caption": "Sports nets on site.",
+    "serviceIds": [
+      "svc-sports-nets"
+    ],
+    "tags": [
+      "sports-nets",
+      "practice"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-sports-nets-02",
+    "src": "/images/portfolio/sports-nets-1-sp3-1ba1e6f6.jpg",
+    "width": 620,
+    "height": 342,
+    "alt": "Sports nets installation photo 2 — sp3",
+    "caption": "Sports nets on site.",
+    "serviceIds": [
+      "svc-sports-nets"
+    ],
+    "tags": [
+      "sports-nets",
+      "practice"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-01",
+    "src": "/images/portfolio/duct-area-safety-nets-0-dc7-70215985.jpg",
+    "width": 965,
+    "height": 1280,
+    "alt": "Duct area nets installation photo 1 — dc7",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-02",
+    "src": "/images/portfolio/duct-area-safety-nets-1-dc8-958b5b18.jpg",
+    "width": 939,
+    "height": 1280,
+    "alt": "Duct area nets installation photo 2 — dc8",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-03",
+    "src": "/images/portfolio/duct-area-safety-nets-2-dc50-3f47b302.jpg",
+    "width": 720,
+    "height": 960,
+    "alt": "Duct area nets installation photo 3 — dc50",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-04",
+    "src": "/images/portfolio/duct-area-safety-nets-3-dc18-9b440e48.jpg",
+    "width": 473,
+    "height": 609,
+    "alt": "Duct area nets installation photo 4 — dc18",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-05",
+    "src": "/images/portfolio/duct-area-safety-nets-4-dc69-688c7ed3.jpg",
+    "width": 697,
+    "height": 439,
+    "alt": "Duct area nets installation photo 5 — dc69",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-06",
+    "src": "/images/portfolio/duct-area-safety-nets-5-dc6-e59b468b.jpg",
+    "width": 1000,
+    "height": 500,
+    "alt": "Duct area nets installation photo 6 — dc6",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets",
+      "svc-bird-pigeon-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial",
+      "bird-pigeon-nets",
+      "bird"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-07",
+    "src": "/images/portfolio/duct-area-safety-nets-6-dc49-88f14aa1.jpg",
+    "width": 415,
+    "height": 739,
+    "alt": "Duct area nets installation photo 7 — dc49",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-08",
+    "src": "/images/portfolio/duct-area-safety-nets-7-dc25-63d8a00b.jpg",
+    "width": 738,
+    "height": 414,
+    "alt": "Duct area nets installation photo 8 — dc25",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-09",
+    "src": "/images/portfolio/duct-area-safety-nets-8-dc47-a74e21cc.jpg",
+    "width": 415,
+    "height": 739,
+    "alt": "Duct area nets installation photo 9 — dc47",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-10",
+    "src": "/images/portfolio/duct-area-safety-nets-9-dc15-d7aac7ff.jpg",
+    "width": 698,
+    "height": 400,
+    "alt": "Duct area nets installation photo 10 — dc15",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-11",
+    "src": "/images/portfolio/duct-area-safety-nets-10-dc34-472d3383.jpg",
+    "width": 480,
+    "height": 640,
+    "alt": "Duct area nets installation photo 11 — dc34",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-12",
+    "src": "/images/portfolio/duct-area-safety-nets-11-dc29-95a35dba.jpg",
+    "width": 687,
+    "height": 291,
+    "alt": "Duct area nets installation photo 12 — dc29",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-13",
+    "src": "/images/portfolio/duct-area-safety-nets-12-dc60-117f74d9.jpg",
+    "width": 500,
+    "height": 500,
+    "alt": "Duct area nets installation photo 13 — dc60",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-duct-area-safety-nets-14",
+    "src": "/images/portfolio/duct-area-safety-nets-13-dc41-2412dd44.jpg",
+    "width": 570,
+    "height": 350,
+    "alt": "Duct area nets installation photo 14 — dc41",
+    "caption": "Duct area nets on site.",
+    "serviceIds": [
+      "svc-duct-area-safety-nets"
+    ],
+    "tags": [
+      "duct-nets",
+      "commercial"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-building-covering-safety-nets-01",
+    "src": "/images/portfolio/building-covering-safety-nets-0-indusrties-3-a5c9380b.jpg",
+    "width": 1280,
+    "height": 960,
+    "alt": "Building covering nets installation photo 1 — indusrties 3",
+    "caption": "Building covering nets on site.",
+    "serviceIds": [
+      "svc-building-covering-safety-nets"
+    ],
+    "tags": [
+      "building-covering",
+      "construction"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-building-covering-safety-nets-02",
+    "src": "/images/portfolio/building-covering-safety-nets-1-industries-2-5459b384.jpg",
+    "width": 960,
+    "height": 1280,
+    "alt": "Building covering nets installation photo 2 — industries 2",
+    "caption": "Building covering nets on site.",
+    "serviceIds": [
+      "svc-building-covering-safety-nets"
+    ],
+    "tags": [
+      "building-covering",
+      "construction"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-building-covering-safety-nets-03",
+    "src": "/images/portfolio/building-covering-safety-nets-2-indusrtial-1-82f374a2.jpg",
+    "width": 600,
+    "height": 403,
+    "alt": "Building covering nets installation photo 3 — indusrtial 1",
+    "caption": "Building covering nets on site.",
+    "serviceIds": [
+      "svc-building-covering-safety-nets"
+    ],
+    "tags": [
+      "building-covering",
+      "construction"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-01",
+    "src": "/images/portfolio/invisible-grills-0-i1-e5d5d670.png",
+    "width": 1024,
+    "height": 1024,
+    "alt": "Corner balcony invisible grill with clear panoramic view through stainless cables",
+    "caption": "Clear-view invisible grill on a modern balcony corner.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation",
+      "clarity",
+      "hero"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-02",
+    "src": "/images/portfolio/invisible-grills-1-i3-9383c308.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "Invisible grills installation photo 2 — i3",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-03",
+    "src": "/images/portfolio/invisible-grills-2-i5-ffc0f4f6.jpg",
+    "width": 3072,
+    "height": 4096,
+    "alt": "Invisible grills installation photo 3 — i5",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-04",
+    "src": "/images/portfolio/invisible-grills-3-i4-09468361.jpg",
+    "width": 1840,
+    "height": 4096,
+    "alt": "Invisible grills installation photo 4 — i4",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-05",
+    "src": "/images/portfolio/invisible-grills-4-i6-b5f145e3.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Invisible grills installation photo 5 — i6",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-06",
+    "src": "/images/portfolio/invisible-grills-5-i2-11aa3014.jpg",
+    "width": 718,
+    "height": 1280,
+    "alt": "Invisible grills installation photo 6 — i2",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-07",
+    "src": "/images/portfolio/invisible-grills-6-i15-a550e2eb.jpg",
+    "width": 1599,
+    "height": 722,
+    "alt": "Invisible grills installation photo 7 — i15",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-08",
+    "src": "/images/portfolio/invisible-grills-7-i12-e77a13a9.jpg",
+    "width": 780,
+    "height": 1040,
+    "alt": "Invisible grills installation photo 8 — i12",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-09",
+    "src": "/images/portfolio/invisible-grills-8-i14-8c2e63f2.jpg",
+    "width": 780,
+    "height": 1040,
+    "alt": "Invisible grills installation photo 9 — i14",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-10",
+    "src": "/images/portfolio/invisible-grills-9-i14-5eeb43b3.jpeg",
+    "width": 1024,
+    "height": 768,
+    "alt": "Invisible grills installation photo 10 — i14",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-11",
+    "src": "/images/portfolio/invisible-grills-10-i7-d986d777.jpg",
+    "width": 1170,
+    "height": 780,
+    "alt": "Invisible grills installation photo 11 — i7",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-12",
+    "src": "/images/portfolio/invisible-grills-11-i16-52373bee.jpg",
+    "width": 993,
+    "height": 1280,
+    "alt": "Invisible grills installation photo 12 — i16",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-13",
+    "src": "/images/portfolio/invisible-grills-12-i8-fcc51552.jpg",
+    "width": 600,
+    "height": 400,
+    "alt": "Invisible grills installation photo 13 — i8",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  },
+  {
+    "id": "img-invisible-grills-14",
+    "src": "/images/portfolio/invisible-grills-13-i9-41fd468c.jpg",
+    "width": 640,
+    "height": 480,
+    "alt": "Invisible grills installation photo 14 — i9",
+    "caption": "Invisible grills on site.",
+    "serviceIds": [
+      "svc-invisible-grills"
+    ],
+    "tags": [
+      "invisible-grills",
+      "installation"
+    ],
+    "placeholder": false
+  }
+]

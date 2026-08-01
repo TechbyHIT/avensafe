@@ -1,0 +1,128 @@
+[
+  {
+    "id": "prj-highrise-balcony-retrofit",
+    "slug": "high-rise-balcony-cable-retrofit",
+    "title": "Cable barrier retrofit on a high-rise balcony",
+    "kind": "scenario",
+    "serviceIds": ["svc-invisible-grills"],
+    "propertyType": "Apartment tower, upper floors",
+    "brief": "Fitting a fall barrier to balconies above the tenth floor without altering the existing structural railing.",
+    "challenge": "Above the tenth floor the governing load is wind pressure rather than impact, and the parapet is frequently the weakest part of the structure because its edges are thin and prone to spalling. Material also has to reach the working floor through a service lift within whatever window the association permits, which constrains the length of frame sections that can be fabricated.",
+    "approach": "We survey each bay individually, check the parapet substrate before committing to a fixing method, and set anchors back from the slab edge to avoid spalling. Fixing density is increased over the standard detail to account for wind pressure at height, and frames are fabricated in sections short enough to travel in the service lift.",
+    "outcome": "The balcony gains a barrier that meets gap requirements without changing the appearance of the facade or the outlook from inside. Tension is re-checked after a settling period, and the resident is shown the annual hand check so slack is caught before it widens a gap.",
+    "scopeItems": [
+      "Per-bay survey and substrate assessment",
+      "Increased anchor density for wind loading at height",
+      "Sectional frame fabrication for service lift access",
+      "Post-settlement tension re-check"
+    ],
+    "imageId": "img-invisible-grills-01",
+    "order": 1,
+    "published": true
+  },
+  {
+    "id": "prj-coastal-balcony-netting",
+    "slug": "coastal-balcony-safety-netting",
+    "title": "Balcony netting on a coastal property",
+    "kind": "scenario",
+    "serviceIds": ["svc-safety-nets"],
+    "propertyType": "Sea-facing apartment or villa",
+    "brief": "Enclosing a balcony within salt-spray range, where hardware rather than netting is what usually fails first.",
+    "challenge": "In direct coastal exposure the net itself is rarely the first casualty. Eye bolts, turnbuckles and lacing rings corrode, and a single galvanised fitting in an otherwise stainless assembly becomes the failure point. Strong sun combined with light reflected off water also raises the ultraviolet load well above what an inland balcony sees.",
+    "approach": "We specify stainless hardware throughout with no galvanised components, use a fully ultraviolet-stabilised net rather than the lightest mesh that meets the dimension, and detail terminations so water drains away from the wall instead of standing against it. A shorter inspection interval is agreed at handover.",
+    "outcome": "The enclosure keeps working through repeated wet seasons without rust staining the wall beneath it, and because turnbuckles were used, tension can be taken up on a routine visit rather than requiring a replacement panel.",
+    "scopeItems": [
+      "Fully stainless anchorage specification",
+      "Ultraviolet-stabilised net selection",
+      "Drainage detailing at every termination",
+      "Shortened inspection interval agreed at handover"
+    ],
+    "imageId": "img-safety-nets-01",
+    "order": 2,
+    "published": true
+  },
+  {
+    "id": "prj-service-shaft-enclosure",
+    "slug": "apartment-service-shaft-enclosure",
+    "title": "Service shaft enclosure in an occupied block",
+    "kind": "scenario",
+    "serviceIds": ["svc-duct-area-safety-nets"],
+    "propertyType": "Occupied apartment block, full-height riser",
+    "brief": "Closing a service shaft against falling objects and bird nesting while keeping the riser serviceable.",
+    "challenge": "Shafts in older blocks are usually full of accumulated nesting material, and their walls are often thin blockwork rather than structure, so anchors have to find something that will hold. The riser also has to remain accessible: a net with no access provision gets cut open the first time a plumber needs to reach a stack.",
+    "approach": "The shaft is cleared and photographed before any panel goes in. Anchors are set into confirmed structural wall, a panel is tensioned across the shaft head, and intermediate catch nets are added where the drop is long. Laced access panels are formed at agreed positions and their locations recorded for the facilities team.",
+    "outcome": "Objects dropped into the shaft are caught within a few floors rather than falling its full height, bird nesting stops because access is denied at the head, and the recurring cost of clearing the shaft base is removed. Servicing continues through the access panels without damaging the installation.",
+    "scopeItems": [
+      "Shaft clearance and photographic record",
+      "Anchorage into confirmed structural wall",
+      "Shaft-head panel plus intermediate catch nets",
+      "Documented maintenance access panels"
+    ],
+    "imageId": "img-duct-area-safety-nets-01",
+    "order": 3,
+    "published": true
+  },
+  {
+    "id": "prj-turf-ground-containment",
+    "slug": "turf-ground-ball-containment",
+    "title": "Ball containment for a turf cricket ground",
+    "kind": "scenario",
+    "serviceIds": ["svc-sports-nets"],
+    "propertyType": "Commercial box cricket or turf ground",
+    "brief": "Enclosing a turf pitch hemmed in by buildings and parking so play can run without collateral damage.",
+    "challenge": "A cricket ball leaving a bat carries enough energy to pass through netting that would comfortably hold a person, so mesh has to be sized to the ball rather than to a generic safety rating. Where the site is surrounded by buildings, lofted balls escape over the top, which turns the job into a structural design problem rather than a fencing one.",
+    "approach": "We size net height and aperture from the standard of play and the distance to the nearest vulnerable surface, then design the post grid and foundations for the resulting wind load rather than for net tension alone. Overhead netting is carried on catenary cables, panels are laced so seams cannot open, and the base edge is closed properly.",
+    "outcome": "The ground operates next to parked vehicles and glazing without regular breakages, and because the enclosure is divided into laced panels, a damaged section can be replaced individually instead of dismantling the whole structure.",
+    "scopeItems": [
+      "Aperture sized to the ball in use",
+      "Post grid and foundations designed for wind load",
+      "Cable-supported overhead netting",
+      "Ground-level edge closure and post padding"
+    ],
+    "imageId": "img-sports-nets-01",
+    "order": 4,
+    "published": true
+  },
+  {
+    "id": "prj-facade-repair-containment",
+    "slug": "occupied-block-facade-containment",
+    "title": "Facade containment over an occupied building",
+    "kind": "scenario",
+    "serviceIds": ["svc-building-covering-safety-nets"],
+    "propertyType": "Occupied apartment block under repainting",
+    "brief": "Containing debris and overspray during facade work so residents can remain in occupation throughout.",
+    "challenge": "Sheeting a scaffold substantially increases the wind load it carries, and a scaffold erected without that allowance may not be adequate once clad. At the same time, wrapping an occupied building in fine mesh for months traps moisture against render that needs to cure and makes flats unpleasant to live in.",
+    "approach": "We review the temporary works design before anything is fitted, and ask for additional ties where the scaffold needs them. Sheeting is then phased to follow the work up and down the elevation so only the active zone is clad, with mesh weight chosen for the task and flame-retardant grade used wherever hot works fall inside the clad zone.",
+    "outcome": "Debris and overspray stay on site, so work proceeds over an occupied car park and footpath without closing them. Residents keep usable windows on completed elevations because those are uncovered as the work moves on, and the sheeting comes down without marking new paint.",
+    "scopeItems": [
+      "Temporary works and wind-load review before cladding",
+      "Mesh weight matched to debris or overspray duty",
+      "Phased installation following the work zone",
+      "Scheduled tie inspection through the programme"
+    ],
+    "imageId": "img-building-covering-safety-nets-01",
+    "order": 5,
+    "published": true
+  },
+  {
+    "id": "prj-shared-accommodation-drying",
+    "slug": "shared-accommodation-drying-system",
+    "title": "High-capacity drying for shared accommodation",
+    "kind": "scenario",
+    "serviceIds": ["svc-cloth-hangers"],
+    "propertyType": "Hostel or staff accommodation block",
+    "brief": "Providing drying capacity for continuous use, where domestic-grade racks fail on cycle count.",
+    "challenge": "Shared accommodation loads a drying system many times a day rather than once, so the mechanism wears out long before corrosion becomes an issue. Domestic pulleys seize, rope glazes where it passes over the sheave, and rails rated for a family wash bow under a load that is almost always wet.",
+    "approach": "We specify heavier rails on deliberately shorter spans so deflection stays low, upgrade to sealed pulleys and braided polyester rope, and fix into structural slab in every case. Rail banks are laid out so several users can load simultaneously, and the service interval is shortened to match the duty.",
+    "outcome": "The block gains drying capacity that survives continuous use, with a stated wet working load for each bank so nobody overloads a rail. Wear items are standardised, which makes rope and pulley replacement a routine maintenance task rather than a call-out.",
+    "scopeItems": [
+      "Heavier rails on shortened spans",
+      "Sealed pulleys and braided polyester rope",
+      "Structural slab fixing throughout",
+      "Stated wet working load and shortened service interval"
+    ],
+    "imageId": "img-cloth-hangers-01",
+    "order": 6,
+    "published": true
+  }
+]

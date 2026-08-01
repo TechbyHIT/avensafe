@@ -1,0 +1,2080 @@
+{
+  "ct-hyderabad": {
+    "cityName": "Hyderabad",
+    "citySlug": "hyderabad",
+    "publishedAreas": 8,
+    "uniqueLocalities": 353,
+    "missingFromData": [
+      {
+        "slug": "a-s-rao-nagar",
+        "count": 44,
+        "name": "a. s. rao nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "abdullapurmet",
+        "count": 44,
+        "name": "abdullapurmet",
+        "publishedInData": false
+      },
+      {
+        "slug": "abids",
+        "count": 44,
+        "name": "abids",
+        "publishedInData": false
+      },
+      {
+        "slug": "ac-guards",
+        "count": 44,
+        "name": "ac guards",
+        "publishedInData": false
+      },
+      {
+        "slug": "adarsh-nagar",
+        "count": 44,
+        "name": "adarsh nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "adibatla",
+        "count": 44,
+        "name": "adibatla",
+        "publishedInData": false
+      },
+      {
+        "slug": "adikmet",
+        "count": 44,
+        "name": "adikmet",
+        "publishedInData": false
+      },
+      {
+        "slug": "afzal-gunj",
+        "count": 44,
+        "name": "afzal gunj",
+        "publishedInData": false
+      },
+      {
+        "slug": "agapura",
+        "count": 44,
+        "name": "agapura",
+        "publishedInData": false
+      },
+      {
+        "slug": "ahmed-nagar",
+        "count": 44,
+        "name": "ahmed nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "alijah-kotla",
+        "count": 44,
+        "name": "alijah kotla",
+        "publishedInData": false
+      },
+      {
+        "slug": "alkapur-township",
+        "count": 44,
+        "name": "alkapur township",
+        "publishedInData": false
+      },
+      {
+        "slug": "allwyn-colony",
+        "count": 44,
+        "name": "allwyn colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "almasguda",
+        "count": 44,
+        "name": "almasguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "alwal",
+        "count": 44,
+        "name": "alwal",
+        "publishedInData": false
+      },
+      {
+        "slug": "amberpet",
+        "count": 44,
+        "name": "amberpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "ameenpur",
+        "count": 44,
+        "name": "ameenpur",
+        "publishedInData": false
+      },
+      {
+        "slug": "ameerpet",
+        "count": 44,
+        "name": "ameerpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "ammuguda",
+        "count": 44,
+        "name": "ammuguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "anand-bagh",
+        "count": 44,
+        "name": "anand bagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "anand-nagar-colony",
+        "count": 44,
+        "name": "anand nagar colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "anjaiah-nagar",
+        "count": 44,
+        "name": "anjaiah nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "annojiguda",
+        "count": 44,
+        "name": "annojiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "appa-junction",
+        "count": 44,
+        "name": "appa junction",
+        "publishedInData": false
+      },
+      {
+        "slug": "aramghar",
+        "count": 44,
+        "name": "aramghar",
+        "publishedInData": false
+      },
+      {
+        "slug": "ashok-nagar",
+        "count": 44,
+        "name": "ashok nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "asif-nagar",
+        "count": 44,
+        "name": "asif nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "attapur",
+        "count": 44,
+        "name": "attapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "auto-nagar",
+        "count": 44,
+        "name": "auto nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "azamabad",
+        "count": 44,
+        "name": "azamabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "azampura",
+        "count": 44,
+        "name": "azampura",
+        "publishedInData": false
+      },
+      {
+        "slug": "aziz-nagar",
+        "count": 44,
+        "name": "aziz nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "b-n-reddy-nagar",
+        "count": 44,
+        "name": "b n reddy nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "bachupally",
+        "count": 44,
+        "name": "bachupally",
+        "publishedInData": false
+      },
+      {
+        "slug": "badangpet",
+        "count": 44,
+        "name": "badangpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "bahadurpally",
+        "count": 44,
+        "name": "bahadurpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "bahadurpura",
+        "count": 44,
+        "name": "bahadurpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "bairamalguda",
+        "count": 44,
+        "name": "bairamalguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "balanagar",
+        "count": 44,
+        "name": "balanagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "balapur",
+        "count": 44,
+        "name": "balapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "balkampet",
+        "count": 44,
+        "name": "balkampet",
+        "publishedInData": false
+      },
+      {
+        "slug": "bandlaguda",
+        "count": 44,
+        "name": "bandlaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "bandlaguda-jagir",
+        "count": 44,
+        "name": "bandlaguda jagir",
+        "publishedInData": false
+      },
+      {
+        "slug": "barkas",
+        "count": 44,
+        "name": "barkas",
+        "publishedInData": false
+      },
+      {
+        "slug": "barkatpura",
+        "count": 44,
+        "name": "barkatpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "basheerbagh",
+        "count": 44,
+        "name": "basheerbagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "beeramguda",
+        "count": 44,
+        "name": "beeramguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "begum-bazaar",
+        "count": 44,
+        "name": "begum bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "begumpet",
+        "count": 44,
+        "name": "begumpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "bhag-amberpet",
+        "count": 44,
+        "name": "bhag amberpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "bharat-nagar",
+        "count": 44,
+        "name": "bharat nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "bhel-township",
+        "count": 44,
+        "name": "bhel township",
+        "publishedInData": false
+      },
+      {
+        "slug": "bhoiguda",
+        "count": 44,
+        "name": "bhoiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "bholakpur",
+        "count": 44,
+        "name": "bholakpur",
+        "publishedInData": false
+      },
+      {
+        "slug": "boduppal",
+        "count": 44,
+        "name": "boduppal",
+        "publishedInData": false
+      },
+      {
+        "slug": "boggulkunta",
+        "count": 44,
+        "name": "boggulkunta",
+        "publishedInData": false
+      },
+      {
+        "slug": "bolarum",
+        "count": 44,
+        "name": "bolarum",
+        "publishedInData": false
+      },
+      {
+        "slug": "bongloor",
+        "count": 44,
+        "name": "bongloor",
+        "publishedInData": false
+      },
+      {
+        "slug": "borabanda",
+        "count": 44,
+        "name": "borabanda",
+        "publishedInData": false
+      },
+      {
+        "slug": "botanical-garden",
+        "count": 44,
+        "name": "botanical garden",
+        "publishedInData": false
+      },
+      {
+        "slug": "boudha-nagar",
+        "count": 44,
+        "name": "boudha nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "bowenpally",
+        "count": 44,
+        "name": "bowenpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "bowrampet",
+        "count": 44,
+        "name": "bowrampet",
+        "publishedInData": false
+      },
+      {
+        "slug": "brahmanwadi",
+        "count": 44,
+        "name": "brahmanwadi",
+        "publishedInData": false
+      },
+      {
+        "slug": "budvel",
+        "count": 44,
+        "name": "budvel",
+        "publishedInData": false
+      },
+      {
+        "slug": "chaderghat",
+        "count": 44,
+        "name": "chaderghat",
+        "publishedInData": false
+      },
+      {
+        "slug": "chaitanyapuri",
+        "count": 44,
+        "name": "chaitanyapuri",
+        "publishedInData": false
+      },
+      {
+        "slug": "champapet",
+        "count": 44,
+        "name": "champapet",
+        "publishedInData": false
+      },
+      {
+        "slug": "chanchalguda",
+        "count": 44,
+        "name": "chanchalguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "chandanagar",
+        "count": 44,
+        "name": "chandanagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "chandrayanagutta",
+        "count": 44,
+        "name": "chandrayanagutta",
+        "publishedInData": false
+      },
+      {
+        "slug": "charminar",
+        "count": 44,
+        "name": "charminar",
+        "publishedInData": false
+      },
+      {
+        "slug": "chengicherla",
+        "count": 44,
+        "name": "chengicherla",
+        "publishedInData": false
+      },
+      {
+        "slug": "cherlapally",
+        "count": 44,
+        "name": "cherlapally",
+        "publishedInData": false
+      },
+      {
+        "slug": "chevella",
+        "count": 44,
+        "name": "chevella",
+        "publishedInData": false
+      },
+      {
+        "slug": "chikkadpally",
+        "count": 44,
+        "name": "chikkadpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "chilakalguda",
+        "count": 44,
+        "name": "chilakalguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "chilkalguda",
+        "count": 44,
+        "name": "chilkalguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "chilkur",
+        "count": 44,
+        "name": "chilkur",
+        "publishedInData": false
+      },
+      {
+        "slug": "chintal",
+        "count": 44,
+        "name": "chintal",
+        "publishedInData": false
+      },
+      {
+        "slug": "chintalkunta",
+        "count": 44,
+        "name": "chintalkunta",
+        "publishedInData": false
+      },
+      {
+        "slug": "chintalmet",
+        "count": 44,
+        "name": "chintalmet",
+        "publishedInData": false
+      },
+      {
+        "slug": "chowmahalla",
+        "count": 44,
+        "name": "chowmahalla",
+        "publishedInData": false
+      },
+      {
+        "slug": "d-d-colony",
+        "count": 44,
+        "name": "d d colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "dabirpura",
+        "count": 44,
+        "name": "dabirpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "dammaiguda",
+        "count": 44,
+        "name": "dammaiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "darulshifa",
+        "count": 44,
+        "name": "darulshifa",
+        "publishedInData": false
+      },
+      {
+        "slug": "dattatreya-nagar",
+        "count": 44,
+        "name": "dattatreya nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "dhoolpet",
+        "count": 44,
+        "name": "dhoolpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "dilsukhnagar",
+        "count": 44,
+        "name": "dilsukhnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "domalguda",
+        "count": 44,
+        "name": "domalguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "doodh-bowli",
+        "count": 44,
+        "name": "doodh bowli",
+        "publishedInData": false
+      },
+      {
+        "slug": "dr-a-s-rao-nagar",
+        "count": 44,
+        "name": "dr a. s. rao nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "dundigal",
+        "count": 44,
+        "name": "dundigal",
+        "publishedInData": false
+      },
+      {
+        "slug": "east-anandbagh",
+        "count": 44,
+        "name": "east anandbagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "east-marredpally",
+        "count": 44,
+        "name": "east marredpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "ecil",
+        "count": 44,
+        "name": "ecil",
+        "publishedInData": false
+      },
+      {
+        "slug": "edi-bazaar",
+        "count": 44,
+        "name": "edi bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "erragadda",
+        "count": 44,
+        "name": "erragadda",
+        "publishedInData": false
+      },
+      {
+        "slug": "erramanzil",
+        "count": 44,
+        "name": "erramanzil",
+        "publishedInData": false
+      },
+      {
+        "slug": "falaknuma",
+        "count": 44,
+        "name": "falaknuma",
+        "publishedInData": false
+      },
+      {
+        "slug": "fateh-darwaza",
+        "count": 44,
+        "name": "fateh darwaza",
+        "publishedInData": false
+      },
+      {
+        "slug": "fateh-nagar",
+        "count": 44,
+        "name": "fateh nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "feelkhana",
+        "count": 44,
+        "name": "feelkhana",
+        "publishedInData": false
+      },
+      {
+        "slug": "film-nagar",
+        "count": 44,
+        "name": "film nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "financial-district",
+        "count": 44,
+        "name": "financial district",
+        "publishedInData": false
+      },
+      {
+        "slug": "gaganpahad",
+        "count": 44,
+        "name": "gaganpahad",
+        "publishedInData": false
+      },
+      {
+        "slug": "gajularamaram",
+        "count": 44,
+        "name": "gajularamaram",
+        "publishedInData": false
+      },
+      {
+        "slug": "gandhi-nagar",
+        "count": 44,
+        "name": "gandhi nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "gandimaisamma",
+        "count": 44,
+        "name": "gandimaisamma",
+        "publishedInData": false
+      },
+      {
+        "slug": "gandipet",
+        "count": 44,
+        "name": "gandipet",
+        "publishedInData": false
+      },
+      {
+        "slug": "general-bazaar",
+        "count": 44,
+        "name": "general bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "ghansi-bazaar",
+        "count": 44,
+        "name": "ghansi bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "ghatkesar",
+        "count": 44,
+        "name": "ghatkesar",
+        "publishedInData": false
+      },
+      {
+        "slug": "golconda",
+        "count": 44,
+        "name": "golconda",
+        "publishedInData": false
+      },
+      {
+        "slug": "gopanpally",
+        "count": 44,
+        "name": "gopanpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "goshamahal",
+        "count": 44,
+        "name": "goshamahal",
+        "publishedInData": false
+      },
+      {
+        "slug": "gowlidoddy",
+        "count": 44,
+        "name": "gowlidoddy",
+        "publishedInData": false
+      },
+      {
+        "slug": "gudimalkapur",
+        "count": 44,
+        "name": "gudimalkapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "gundlapochampally",
+        "count": 44,
+        "name": "gundlapochampally",
+        "publishedInData": false
+      },
+      {
+        "slug": "habsiguda",
+        "count": 44,
+        "name": "habsiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "hafeezpet",
+        "count": 44,
+        "name": "hafeezpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "hakimpet",
+        "count": 44,
+        "name": "hakimpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "hasmathpet",
+        "count": 44,
+        "name": "hasmathpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "hastinapuram",
+        "count": 44,
+        "name": "hastinapuram",
+        "publishedInData": false
+      },
+      {
+        "slug": "hayathnagar",
+        "count": 44,
+        "name": "hayathnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "himayat-sagar",
+        "count": 44,
+        "name": "himayat sagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "himayatnagar",
+        "count": 44,
+        "name": "himayatnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "hitec-city",
+        "count": 44,
+        "name": "hitec city",
+        "publishedInData": false
+      },
+      {
+        "slug": "hmt-colony",
+        "count": 44,
+        "name": "hmt colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "humayun-nagar",
+        "count": 44,
+        "name": "humayun nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "hyder-nagar",
+        "count": 44,
+        "name": "hyder nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "hyderguda",
+        "count": 44,
+        "name": "hyderguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "hydershakote",
+        "count": 44,
+        "name": "hydershakote",
+        "publishedInData": false
+      },
+      {
+        "slug": "ibrahim-bagh",
+        "count": 44,
+        "name": "ibrahim bagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "ibrahimpatnam",
+        "count": 44,
+        "name": "ibrahimpatnam",
+        "publishedInData": false
+      },
+      {
+        "slug": "injapur",
+        "count": 44,
+        "name": "injapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "isnapur",
+        "count": 44,
+        "name": "isnapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "jahanuma",
+        "count": 44,
+        "name": "jahanuma",
+        "publishedInData": false
+      },
+      {
+        "slug": "jalpally",
+        "count": 44,
+        "name": "jalpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "jam-bagh",
+        "count": 44,
+        "name": "jam bagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "jambagh",
+        "count": 44,
+        "name": "jambagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "james-street",
+        "count": 44,
+        "name": "james street",
+        "publishedInData": false
+      },
+      {
+        "slug": "jawahar-nagar",
+        "count": 44,
+        "name": "jawahar nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "jeedimetla",
+        "count": 44,
+        "name": "jeedimetla",
+        "publishedInData": false
+      },
+      {
+        "slug": "jillelguda",
+        "count": 44,
+        "name": "jillelguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "jiyaguda",
+        "count": 44,
+        "name": "jiyaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "jntu",
+        "count": 44,
+        "name": "jntu",
+        "publishedInData": false
+      },
+      {
+        "slug": "kachiguda",
+        "count": 44,
+        "name": "kachiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "kakatiya-nagar",
+        "count": 44,
+        "name": "kakatiya nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "kalapathar",
+        "count": 44,
+        "name": "kalapathar",
+        "publishedInData": false
+      },
+      {
+        "slug": "kalasiguda",
+        "count": 44,
+        "name": "kalasiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "kanchanbagh",
+        "count": 44,
+        "name": "kanchanbagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "kandi",
+        "count": 44,
+        "name": "kandi",
+        "publishedInData": false
+      },
+      {
+        "slug": "kandlakoya",
+        "count": 44,
+        "name": "kandlakoya",
+        "publishedInData": false
+      },
+      {
+        "slug": "kapra",
+        "count": 44,
+        "name": "kapra",
+        "publishedInData": false
+      },
+      {
+        "slug": "karkhana",
+        "count": 44,
+        "name": "karkhana",
+        "publishedInData": false
+      },
+      {
+        "slug": "karmanghat",
+        "count": 44,
+        "name": "karmanghat",
+        "publishedInData": false
+      },
+      {
+        "slug": "karwan",
+        "count": 44,
+        "name": "karwan",
+        "publishedInData": false
+      },
+      {
+        "slug": "katedan",
+        "count": 44,
+        "name": "katedan",
+        "publishedInData": false
+      },
+      {
+        "slug": "kavadiguda",
+        "count": 44,
+        "name": "kavadiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "keesara",
+        "count": 44,
+        "name": "keesara",
+        "publishedInData": false
+      },
+      {
+        "slug": "khairatabad",
+        "count": 44,
+        "name": "khairatabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "khajaguda",
+        "count": 44,
+        "name": "khajaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "khanamet",
+        "count": 44,
+        "name": "khanamet",
+        "publishedInData": false
+      },
+      {
+        "slug": "khilwat",
+        "count": 44,
+        "name": "khilwat",
+        "publishedInData": false
+      },
+      {
+        "slug": "king-koti",
+        "count": 44,
+        "name": "king koti",
+        "publishedInData": false
+      },
+      {
+        "slug": "kishanbagh",
+        "count": 44,
+        "name": "kishanbagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "kismatpur",
+        "count": 44,
+        "name": "kismatpur",
+        "publishedInData": false
+      },
+      {
+        "slug": "koheda",
+        "count": 44,
+        "name": "koheda",
+        "publishedInData": false
+      },
+      {
+        "slug": "kokapet",
+        "count": 44,
+        "name": "kokapet",
+        "publishedInData": false
+      },
+      {
+        "slug": "kollur",
+        "count": 44,
+        "name": "kollur",
+        "publishedInData": false
+      },
+      {
+        "slug": "kongara-kalan",
+        "count": 44,
+        "name": "kongara kalan",
+        "publishedInData": false
+      },
+      {
+        "slug": "kothaguda",
+        "count": 44,
+        "name": "kothaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "kothapet",
+        "count": 44,
+        "name": "kothapet",
+        "publishedInData": false
+      },
+      {
+        "slug": "kothur",
+        "count": 44,
+        "name": "kothur",
+        "publishedInData": false
+      },
+      {
+        "slug": "koti",
+        "count": 44,
+        "name": "koti",
+        "publishedInData": false
+      },
+      {
+        "slug": "kowkoor",
+        "count": 44,
+        "name": "kowkoor",
+        "publishedInData": false
+      },
+      {
+        "slug": "kphb-colony",
+        "count": 44,
+        "name": "kphb colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "krishna-nagar",
+        "count": 44,
+        "name": "krishna nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "kushaiguda",
+        "count": 44,
+        "name": "kushaiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "l-b-nagar",
+        "count": 44,
+        "name": "l b nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "lakdikapul",
+        "count": 44,
+        "name": "lakdikapul",
+        "publishedInData": false
+      },
+      {
+        "slug": "lalapet",
+        "count": 44,
+        "name": "lalapet",
+        "publishedInData": false
+      },
+      {
+        "slug": "lallaguda",
+        "count": 44,
+        "name": "lallaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "langar-houz",
+        "count": 44,
+        "name": "langar houz",
+        "publishedInData": false
+      },
+      {
+        "slug": "lingampally",
+        "count": 44,
+        "name": "lingampally",
+        "publishedInData": false
+      },
+      {
+        "slug": "lower-tank-bund",
+        "count": 44,
+        "name": "lower tank bund",
+        "publishedInData": false
+      },
+      {
+        "slug": "madinaguda",
+        "count": 44,
+        "name": "madinaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "mahendra-hills",
+        "count": 44,
+        "name": "mahendra hills",
+        "publishedInData": false
+      },
+      {
+        "slug": "maheshwaram",
+        "count": 44,
+        "name": "maheshwaram",
+        "publishedInData": false
+      },
+      {
+        "slug": "mailardevpally",
+        "count": 44,
+        "name": "mailardevpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "malakpet",
+        "count": 44,
+        "name": "malakpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "malkajgiri",
+        "count": 44,
+        "name": "malkajgiri",
+        "publishedInData": false
+      },
+      {
+        "slug": "mallampet",
+        "count": 44,
+        "name": "mallampet",
+        "publishedInData": false
+      },
+      {
+        "slug": "mallapur",
+        "count": 44,
+        "name": "mallapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "mallepally",
+        "count": 44,
+        "name": "mallepally",
+        "publishedInData": false
+      },
+      {
+        "slug": "mamidipally",
+        "count": 44,
+        "name": "mamidipally",
+        "publishedInData": false
+      },
+      {
+        "slug": "mangalhat",
+        "count": 44,
+        "name": "mangalhat",
+        "publishedInData": false
+      },
+      {
+        "slug": "manikonda",
+        "count": 44,
+        "name": "manikonda",
+        "publishedInData": false
+      },
+      {
+        "slug": "mansoorabad",
+        "count": 44,
+        "name": "mansoorabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "marredpally",
+        "count": 44,
+        "name": "marredpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "masab-tank",
+        "count": 44,
+        "name": "masab tank",
+        "publishedInData": false
+      },
+      {
+        "slug": "masjid-banda",
+        "count": 44,
+        "name": "masjid banda",
+        "publishedInData": false
+      },
+      {
+        "slug": "medchal",
+        "count": 44,
+        "name": "medchal",
+        "publishedInData": false
+      },
+      {
+        "slug": "medipally",
+        "count": 44,
+        "name": "medipally",
+        "publishedInData": false
+      },
+      {
+        "slug": "meerpet",
+        "count": 44,
+        "name": "meerpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "mehdipatnam",
+        "count": 44,
+        "name": "mehdipatnam",
+        "publishedInData": false
+      },
+      {
+        "slug": "mettuguda",
+        "count": 44,
+        "name": "mettuguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "mg-road",
+        "count": 44,
+        "name": "mg road",
+        "publishedInData": false
+      },
+      {
+        "slug": "moghalpura",
+        "count": 44,
+        "name": "moghalpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "moinabad",
+        "count": 43,
+        "name": "moinabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "moosapet",
+        "count": 40,
+        "name": "moosapet",
+        "publishedInData": false
+      },
+      {
+        "slug": "moosarambagh",
+        "count": 40,
+        "name": "moosarambagh",
+        "publishedInData": false
+      },
+      {
+        "slug": "moula-ali",
+        "count": 40,
+        "name": "moula ali",
+        "publishedInData": false
+      },
+      {
+        "slug": "muchintal",
+        "count": 40,
+        "name": "muchintal",
+        "publishedInData": false
+      },
+      {
+        "slug": "mughalpura",
+        "count": 40,
+        "name": "mughalpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "musheerabad",
+        "count": 40,
+        "name": "musheerabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "muthangi",
+        "count": 40,
+        "name": "muthangi",
+        "publishedInData": false
+      },
+      {
+        "slug": "nacharam",
+        "count": 40,
+        "name": "nacharam",
+        "publishedInData": false
+      },
+      {
+        "slug": "nadergul",
+        "count": 40,
+        "name": "nadergul",
+        "publishedInData": false
+      },
+      {
+        "slug": "nagaram",
+        "count": 40,
+        "name": "nagaram",
+        "publishedInData": false
+      },
+      {
+        "slug": "nagole",
+        "count": 40,
+        "name": "nagole",
+        "publishedInData": false
+      },
+      {
+        "slug": "nallagandla",
+        "count": 40,
+        "name": "nallagandla",
+        "publishedInData": false
+      },
+      {
+        "slug": "nallakunta",
+        "count": 40,
+        "name": "nallakunta",
+        "publishedInData": false
+      },
+      {
+        "slug": "nampally",
+        "count": 40,
+        "name": "nampally",
+        "publishedInData": false
+      },
+      {
+        "slug": "nanakramguda",
+        "count": 40,
+        "name": "nanakramguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "nanal-nagar",
+        "count": 40,
+        "name": "nanal nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "nandigama",
+        "count": 40,
+        "name": "nandigama",
+        "publishedInData": false
+      },
+      {
+        "slug": "narapally",
+        "count": 40,
+        "name": "narapally",
+        "publishedInData": false
+      },
+      {
+        "slug": "narayanaguda",
+        "count": 40,
+        "name": "narayanaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "narsingi",
+        "count": 40,
+        "name": "narsingi",
+        "publishedInData": false
+      },
+      {
+        "slug": "nawab-saheb-kunta",
+        "count": 40,
+        "name": "nawab saheb kunta",
+        "publishedInData": false
+      },
+      {
+        "slug": "necklace-road",
+        "count": 40,
+        "name": "necklace road",
+        "publishedInData": false
+      },
+      {
+        "slug": "neknampur",
+        "count": 40,
+        "name": "neknampur",
+        "publishedInData": false
+      },
+      {
+        "slug": "neopolis",
+        "count": 40,
+        "name": "neopolis",
+        "publishedInData": false
+      },
+      {
+        "slug": "neredmet",
+        "count": 40,
+        "name": "neredmet",
+        "publishedInData": false
+      },
+      {
+        "slug": "new-bowenpally",
+        "count": 40,
+        "name": "new bowenpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "new-malakpet",
+        "count": 40,
+        "name": "new malakpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "nizampet",
+        "count": 40,
+        "name": "nizampet",
+        "publishedInData": false
+      },
+      {
+        "slug": "noor-khan-bazaar",
+        "count": 40,
+        "name": "noor khan bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "old-alwal",
+        "count": 40,
+        "name": "old alwal",
+        "publishedInData": false
+      },
+      {
+        "slug": "old-bowenpally",
+        "count": 40,
+        "name": "old bowenpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "old-city",
+        "count": 40,
+        "name": "old city",
+        "publishedInData": false
+      },
+      {
+        "slug": "osman-nagar",
+        "count": 40,
+        "name": "osman nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "osmania-university",
+        "count": 40,
+        "name": "osmania university",
+        "publishedInData": false
+      },
+      {
+        "slug": "padmarao-nagar",
+        "count": 40,
+        "name": "padmarao nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "pahadi-shareef",
+        "count": 40,
+        "name": "pahadi shareef",
+        "publishedInData": false
+      },
+      {
+        "slug": "pan-mandi",
+        "count": 40,
+        "name": "pan mandi",
+        "publishedInData": false
+      },
+      {
+        "slug": "panjagutta",
+        "count": 40,
+        "name": "panjagutta",
+        "publishedInData": false
+      },
+      {
+        "slug": "paradise",
+        "count": 40,
+        "name": "paradise",
+        "publishedInData": false
+      },
+      {
+        "slug": "parsigutta",
+        "count": 40,
+        "name": "parsigutta",
+        "publishedInData": false
+      },
+      {
+        "slug": "patancheru",
+        "count": 40,
+        "name": "patancheru",
+        "publishedInData": false
+      },
+      {
+        "slug": "pathergatti",
+        "count": 40,
+        "name": "pathergatti",
+        "publishedInData": false
+      },
+      {
+        "slug": "patighanpur",
+        "count": 40,
+        "name": "patighanpur",
+        "publishedInData": false
+      },
+      {
+        "slug": "patny",
+        "count": 40,
+        "name": "patny",
+        "publishedInData": false
+      },
+      {
+        "slug": "pedda-amberpet",
+        "count": 40,
+        "name": "pedda amberpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "peerancheru",
+        "count": 40,
+        "name": "peerancheru",
+        "publishedInData": false
+      },
+      {
+        "slug": "peerzadiguda",
+        "count": 40,
+        "name": "peerzadiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "pet-basheerabad",
+        "count": 40,
+        "name": "pet basheerabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "petlaburj",
+        "count": 40,
+        "name": "petlaburj",
+        "publishedInData": false
+      },
+      {
+        "slug": "picket",
+        "count": 40,
+        "name": "picket",
+        "publishedInData": false
+      },
+      {
+        "slug": "pocharam",
+        "count": 40,
+        "name": "pocharam",
+        "publishedInData": false
+      },
+      {
+        "slug": "pragathi-nagar",
+        "count": 40,
+        "name": "pragathi nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "prakash-nagar",
+        "count": 40,
+        "name": "prakash nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "puppalaguda",
+        "count": 40,
+        "name": "puppalaguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "puranapul",
+        "count": 40,
+        "name": "puranapul",
+        "publishedInData": false
+      },
+      {
+        "slug": "purani-haveli",
+        "count": 40,
+        "name": "purani haveli",
+        "publishedInData": false
+      },
+      {
+        "slug": "quthbullapur",
+        "count": 40,
+        "name": "quthbullapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "raidurg",
+        "count": 40,
+        "name": "raidurg",
+        "publishedInData": false
+      },
+      {
+        "slug": "raj-bhavan-road",
+        "count": 40,
+        "name": "raj bhavan road",
+        "publishedInData": false
+      },
+      {
+        "slug": "rajendranagar",
+        "count": 40,
+        "name": "rajendranagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "ramachandrapuram",
+        "count": 40,
+        "name": "ramachandrapuram",
+        "publishedInData": false
+      },
+      {
+        "slug": "ramanthapur",
+        "count": 40,
+        "name": "ramanthapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "ramnagar",
+        "count": 40,
+        "name": "ramnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "rampally",
+        "count": 40,
+        "name": "rampally",
+        "publishedInData": false
+      },
+      {
+        "slug": "ranigunj",
+        "count": 40,
+        "name": "ranigunj",
+        "publishedInData": false
+      },
+      {
+        "slug": "rasoolpura",
+        "count": 40,
+        "name": "rasoolpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "red-hills",
+        "count": 40,
+        "name": "red hills",
+        "publishedInData": false
+      },
+      {
+        "slug": "rein-bazaar",
+        "count": 40,
+        "name": "rein bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "riyasat-nagar",
+        "count": 40,
+        "name": "riyasat nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "rtc-cross-roads",
+        "count": 40,
+        "name": "rtc cross roads",
+        "publishedInData": false
+      },
+      {
+        "slug": "rudraram",
+        "count": 40,
+        "name": "rudraram",
+        "publishedInData": false
+      },
+      {
+        "slug": "s-d-road",
+        "count": 40,
+        "name": "s d road",
+        "publishedInData": false
+      },
+      {
+        "slug": "s-r-nagar",
+        "count": 40,
+        "name": "s r nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "safilguda",
+        "count": 40,
+        "name": "safilguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "saidabad",
+        "count": 40,
+        "name": "saidabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "saifabad",
+        "count": 40,
+        "name": "saifabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "sainikpuri",
+        "count": 40,
+        "name": "sainikpuri",
+        "publishedInData": false
+      },
+      {
+        "slug": "saleem-nagar",
+        "count": 40,
+        "name": "saleem nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "sanath-nagar",
+        "count": 40,
+        "name": "sanath nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "santosh-nagar",
+        "count": 40,
+        "name": "santosh nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "santoshnagar",
+        "count": 40,
+        "name": "santoshnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "saroornagar",
+        "count": 40,
+        "name": "saroornagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "satamrai",
+        "count": 40,
+        "name": "satamrai",
+        "publishedInData": false
+      },
+      {
+        "slug": "secunderabad",
+        "count": 40,
+        "name": "secunderabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "seven-tombs",
+        "count": 40,
+        "name": "seven tombs",
+        "publishedInData": false
+      },
+      {
+        "slug": "shadnagar",
+        "count": 40,
+        "name": "shadnagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "shah-ali-banda",
+        "count": 40,
+        "name": "shah ali banda",
+        "publishedInData": false
+      },
+      {
+        "slug": "shaikpet",
+        "count": 40,
+        "name": "shaikpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "shamirpet",
+        "count": 40,
+        "name": "shamirpet",
+        "publishedInData": false
+      },
+      {
+        "slug": "shamshabad",
+        "count": 40,
+        "name": "shamshabad",
+        "publishedInData": false
+      },
+      {
+        "slug": "shankarpally",
+        "count": 40,
+        "name": "shankarpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "shapur-nagar",
+        "count": 40,
+        "name": "shapur nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "shivrampally",
+        "count": 40,
+        "name": "shivrampally",
+        "publishedInData": false
+      },
+      {
+        "slug": "siddiamber-bazaar",
+        "count": 40,
+        "name": "siddiamber bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "sikh-village",
+        "count": 40,
+        "name": "sikh village",
+        "publishedInData": false
+      },
+      {
+        "slug": "sitaphalmandi",
+        "count": 40,
+        "name": "sitaphalmandi",
+        "publishedInData": false
+      },
+      {
+        "slug": "somajiguda",
+        "count": 40,
+        "name": "somajiguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "sri-nagar-colony",
+        "count": 40,
+        "name": "sri nagar colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "subhash-nagar",
+        "count": 40,
+        "name": "subhash nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "suchitra",
+        "count": 40,
+        "name": "suchitra",
+        "publishedInData": false
+      },
+      {
+        "slug": "sultan-bazaar",
+        "count": 40,
+        "name": "sultan bazaar",
+        "publishedInData": false
+      },
+      {
+        "slug": "sun-city",
+        "count": 40,
+        "name": "sun city",
+        "publishedInData": false
+      },
+      {
+        "slug": "suraram",
+        "count": 40,
+        "name": "suraram",
+        "publishedInData": false
+      },
+      {
+        "slug": "tadban",
+        "count": 40,
+        "name": "tadban",
+        "publishedInData": false
+      },
+      {
+        "slug": "tadbund",
+        "count": 40,
+        "name": "tadbund",
+        "publishedInData": false
+      },
+      {
+        "slug": "talab-katta",
+        "count": 40,
+        "name": "talab katta",
+        "publishedInData": false
+      },
+      {
+        "slug": "tappachabutra",
+        "count": 40,
+        "name": "tappachabutra",
+        "publishedInData": false
+      },
+      {
+        "slug": "tarnaka",
+        "count": 40,
+        "name": "tarnaka",
+        "publishedInData": false
+      },
+      {
+        "slug": "tellapur",
+        "count": 40,
+        "name": "tellapur",
+        "publishedInData": false
+      },
+      {
+        "slug": "theatre-road",
+        "count": 40,
+        "name": "theatre road",
+        "publishedInData": false
+      },
+      {
+        "slug": "thumkunta",
+        "count": 40,
+        "name": "thumkunta",
+        "publishedInData": false
+      },
+      {
+        "slug": "tilak-nagar",
+        "count": 40,
+        "name": "tilak nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "tolichowki",
+        "count": 40,
+        "name": "tolichowki",
+        "publishedInData": false
+      },
+      {
+        "slug": "trimulgherry",
+        "count": 40,
+        "name": "trimulgherry",
+        "publishedInData": false
+      },
+      {
+        "slug": "tukkuguda",
+        "count": 40,
+        "name": "tukkuguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "turkayamjal",
+        "count": 40,
+        "name": "turkayamjal",
+        "publishedInData": false
+      },
+      {
+        "slug": "uppal",
+        "count": 40,
+        "name": "uppal",
+        "publishedInData": false
+      },
+      {
+        "slug": "uppal-bhagat",
+        "count": 40,
+        "name": "uppal bhagat",
+        "publishedInData": false
+      },
+      {
+        "slug": "uppuguda",
+        "count": 40,
+        "name": "uppuguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "vanasthalipuram",
+        "count": 40,
+        "name": "vanasthalipuram",
+        "publishedInData": false
+      },
+      {
+        "slug": "velimela",
+        "count": 40,
+        "name": "velimela",
+        "publishedInData": false
+      },
+      {
+        "slug": "vengal-rao-nagar",
+        "count": 40,
+        "name": "vengal rao nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "vidyanagar",
+        "count": 40,
+        "name": "vidyanagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "vijayanagar-colony",
+        "count": 40,
+        "name": "vijayanagar colony",
+        "publishedInData": false
+      },
+      {
+        "slug": "vivekananda-nagar",
+        "count": 40,
+        "name": "vivekananda nagar",
+        "publishedInData": false
+      },
+      {
+        "slug": "west-marredpally",
+        "count": 40,
+        "name": "west marredpally",
+        "publishedInData": false
+      },
+      {
+        "slug": "whitefields",
+        "count": 40,
+        "name": "whitefields",
+        "publishedInData": false
+      },
+      {
+        "slug": "yakutpura",
+        "count": 40,
+        "name": "yakutpura",
+        "publishedInData": false
+      },
+      {
+        "slug": "yapral",
+        "count": 40,
+        "name": "yapral",
+        "publishedInData": false
+      },
+      {
+        "slug": "yellareddyguda",
+        "count": 40,
+        "name": "yellareddyguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "yousufguda",
+        "count": 40,
+        "name": "yousufguda",
+        "publishedInData": false
+      },
+      {
+        "slug": "zamistanpur",
+        "count": 40,
+        "name": "zamistanpur",
+        "publishedInData": false
+      },
+      {
+        "slug": "ziaguda",
+        "count": 40,
+        "name": "ziaguda",
+        "publishedInData": false
+      }
+    ]
+  }
+}

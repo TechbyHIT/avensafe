@@ -1,0 +1,732 @@
+[
+  {
+    "id": "gal-img-safety-nets-01",
+    "imageId": "img-safety-nets-01",
+    "title": "Safety nets — site 1",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 1,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-02",
+    "imageId": "img-safety-nets-02",
+    "title": "Safety nets — site 2",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 2,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-03",
+    "imageId": "img-safety-nets-03",
+    "title": "Safety nets — site 3",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 3,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-04",
+    "imageId": "img-safety-nets-04",
+    "title": "Safety nets — site 4",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 4,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-05",
+    "imageId": "img-safety-nets-05",
+    "title": "Safety nets — site 5",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 5,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-06",
+    "imageId": "img-safety-nets-06",
+    "title": "Safety nets — site 6",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 6,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-07",
+    "imageId": "img-safety-nets-07",
+    "title": "Safety nets — site 7",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 7,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-08",
+    "imageId": "img-safety-nets-08",
+    "title": "Safety nets — site 8",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 8,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-09",
+    "imageId": "img-safety-nets-09",
+    "title": "Safety nets — site 9",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 9,
+    "published": true
+  },
+  {
+    "id": "gal-img-safety-nets-10",
+    "imageId": "img-safety-nets-10",
+    "title": "Safety nets — site 10",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 10,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-01",
+    "imageId": "img-cloth-hangers-01",
+    "title": "Cloth hangers — site 1",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 11,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-02",
+    "imageId": "img-cloth-hangers-02",
+    "title": "Cloth hangers — site 2",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 12,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-03",
+    "imageId": "img-cloth-hangers-03",
+    "title": "Cloth hangers — site 3",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 13,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-04",
+    "imageId": "img-cloth-hangers-04",
+    "title": "Cloth hangers — site 4",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 14,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-05",
+    "imageId": "img-cloth-hangers-05",
+    "title": "Cloth hangers — site 5",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 15,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-06",
+    "imageId": "img-cloth-hangers-06",
+    "title": "Cloth hangers — site 6",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 16,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-07",
+    "imageId": "img-cloth-hangers-07",
+    "title": "Cloth hangers — site 7",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 17,
+    "published": true
+  },
+  {
+    "id": "gal-img-cloth-hangers-08",
+    "imageId": "img-cloth-hangers-08",
+    "title": "Cloth hangers — site 8",
+    "description": "Real installation photography for cloth hangers projects.",
+    "serviceId": "svc-cloth-hangers",
+    "category": "Cloth hangers",
+    "order": 18,
+    "published": true
+  },
+  {
+    "id": "gal-img-sports-nets-01",
+    "imageId": "img-sports-nets-01",
+    "title": "Sports nets — site 1",
+    "description": "Real installation photography for sports nets projects.",
+    "serviceId": "svc-sports-nets",
+    "category": "Sports nets",
+    "order": 19,
+    "published": true
+  },
+  {
+    "id": "gal-img-sports-nets-02",
+    "imageId": "img-sports-nets-02",
+    "title": "Sports nets — site 2",
+    "description": "Real installation photography for sports nets projects.",
+    "serviceId": "svc-sports-nets",
+    "category": "Sports nets",
+    "order": 20,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-01",
+    "imageId": "img-duct-area-safety-nets-01",
+    "title": "Duct area nets — site 1",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 21,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-02",
+    "imageId": "img-duct-area-safety-nets-02",
+    "title": "Duct area nets — site 2",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 22,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-03",
+    "imageId": "img-duct-area-safety-nets-03",
+    "title": "Duct area nets — site 3",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 23,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-04",
+    "imageId": "img-duct-area-safety-nets-04",
+    "title": "Duct area nets — site 4",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 24,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-05",
+    "imageId": "img-duct-area-safety-nets-05",
+    "title": "Duct area nets — site 5",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 25,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-06",
+    "imageId": "img-duct-area-safety-nets-06",
+    "title": "Duct area nets — site 6",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 26,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-07",
+    "imageId": "img-duct-area-safety-nets-07",
+    "title": "Duct area nets — site 7",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 27,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-08",
+    "imageId": "img-duct-area-safety-nets-08",
+    "title": "Duct area nets — site 8",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 28,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-09",
+    "imageId": "img-duct-area-safety-nets-09",
+    "title": "Duct area nets — site 9",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 29,
+    "published": true
+  },
+  {
+    "id": "gal-img-duct-area-safety-nets-10",
+    "imageId": "img-duct-area-safety-nets-10",
+    "title": "Duct area nets — site 10",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 30,
+    "published": true
+  },
+  {
+    "id": "gal-img-building-covering-safety-nets-01",
+    "imageId": "img-building-covering-safety-nets-01",
+    "title": "Building covering nets — site 1",
+    "description": "Real installation photography for building covering nets projects.",
+    "serviceId": "svc-building-covering-safety-nets",
+    "category": "Building covering nets",
+    "order": 31,
+    "published": true
+  },
+  {
+    "id": "gal-img-building-covering-safety-nets-02",
+    "imageId": "img-building-covering-safety-nets-02",
+    "title": "Building covering nets — site 2",
+    "description": "Real installation photography for building covering nets projects.",
+    "serviceId": "svc-building-covering-safety-nets",
+    "category": "Building covering nets",
+    "order": 32,
+    "published": true
+  },
+  {
+    "id": "gal-img-building-covering-safety-nets-03",
+    "imageId": "img-building-covering-safety-nets-03",
+    "title": "Building covering nets — site 3",
+    "description": "Real installation photography for building covering nets projects.",
+    "serviceId": "svc-building-covering-safety-nets",
+    "category": "Building covering nets",
+    "order": 33,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-01",
+    "imageId": "img-invisible-grills-01",
+    "title": "Invisible grills — site 1",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 34,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-02",
+    "imageId": "img-invisible-grills-02",
+    "title": "Invisible grills — site 2",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 35,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-03",
+    "imageId": "img-invisible-grills-03",
+    "title": "Invisible grills — site 3",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 36,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-04",
+    "imageId": "img-invisible-grills-04",
+    "title": "Invisible grills — site 4",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 37,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-05",
+    "imageId": "img-invisible-grills-05",
+    "title": "Invisible grills — site 5",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 38,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-06",
+    "imageId": "img-invisible-grills-06",
+    "title": "Invisible grills — site 6",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 39,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-07",
+    "imageId": "img-invisible-grills-07",
+    "title": "Invisible grills — site 7",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 40,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-08",
+    "imageId": "img-invisible-grills-08",
+    "title": "Invisible grills — site 8",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 41,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-09",
+    "imageId": "img-invisible-grills-09",
+    "title": "Invisible grills — site 9",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 42,
+    "published": true
+  },
+  {
+    "id": "gal-img-invisible-grills-10",
+    "imageId": "img-invisible-grills-10",
+    "title": "Invisible grills — site 10",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 43,
+    "published": true
+  },
+  {
+    "id": "gal-invisible-grills-hero-home",
+    "imageId": "img-hero-home",
+    "title": "Invisible grills — site photo",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 44,
+    "published": true
+  },
+  {
+    "id": "gal-safety-nets-hero-home",
+    "imageId": "img-hero-home",
+    "title": "Safety nets — site photo",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 45,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-02",
+    "imageId": "img-safety-nets-02",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 46,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-03",
+    "imageId": "img-safety-nets-03",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 47,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-04",
+    "imageId": "img-safety-nets-04",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 48,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-05",
+    "imageId": "img-safety-nets-05",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 49,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-06",
+    "imageId": "img-safety-nets-06",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 50,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-07",
+    "imageId": "img-safety-nets-07",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 51,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-08",
+    "imageId": "img-safety-nets-08",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 52,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-09",
+    "imageId": "img-safety-nets-09",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 53,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-10",
+    "imageId": "img-safety-nets-10",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 54,
+    "published": true
+  },
+  {
+    "id": "gal-safety-nets-safety-nets-11",
+    "imageId": "img-safety-nets-11",
+    "title": "Safety nets — site photo",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 55,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-11",
+    "imageId": "img-safety-nets-11",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 56,
+    "published": true
+  },
+  {
+    "id": "gal-safety-nets-safety-nets-12",
+    "imageId": "img-safety-nets-12",
+    "title": "Safety nets — site photo",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 57,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-12",
+    "imageId": "img-safety-nets-12",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 58,
+    "published": true
+  },
+  {
+    "id": "gal-safety-nets-safety-nets-13",
+    "imageId": "img-safety-nets-13",
+    "title": "Safety nets — site photo",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 59,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-safety-nets-13",
+    "imageId": "img-safety-nets-13",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 60,
+    "published": true
+  },
+  {
+    "id": "gal-safety-nets-safety-nets-14",
+    "imageId": "img-safety-nets-14",
+    "title": "Safety nets — site photo",
+    "description": "Real installation photography for safety nets projects.",
+    "serviceId": "svc-safety-nets",
+    "category": "Safety nets",
+    "order": 61,
+    "published": true
+  },
+  {
+    "id": "gal-balcony-nets-safety-nets-14",
+    "imageId": "img-safety-nets-14",
+    "title": "Balcony nets — site photo",
+    "description": "Real installation photography for balcony nets projects.",
+    "serviceId": "svc-balcony-nets",
+    "category": "Balcony nets",
+    "order": 62,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-duct-area-safety-nets-02",
+    "imageId": "img-duct-area-safety-nets-02",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 63,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-duct-area-safety-nets-04",
+    "imageId": "img-duct-area-safety-nets-04",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 64,
+    "published": true
+  },
+  {
+    "id": "gal-bird-pigeon-nets-duct-area-safety-nets-06",
+    "imageId": "img-duct-area-safety-nets-06",
+    "title": "Bird and pigeon nets — site photo",
+    "description": "Real installation photography for bird and pigeon nets projects.",
+    "serviceId": "svc-bird-pigeon-nets",
+    "category": "Bird and pigeon nets",
+    "order": 65,
+    "published": true
+  },
+  {
+    "id": "gal-duct-area-safety-nets-duct-area-safety-nets-11",
+    "imageId": "img-duct-area-safety-nets-11",
+    "title": "Duct area nets — site photo",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 66,
+    "published": true
+  },
+  {
+    "id": "gal-duct-area-safety-nets-duct-area-safety-nets-12",
+    "imageId": "img-duct-area-safety-nets-12",
+    "title": "Duct area nets — site photo",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 67,
+    "published": true
+  },
+  {
+    "id": "gal-duct-area-safety-nets-duct-area-safety-nets-13",
+    "imageId": "img-duct-area-safety-nets-13",
+    "title": "Duct area nets — site photo",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 68,
+    "published": true
+  },
+  {
+    "id": "gal-duct-area-safety-nets-duct-area-safety-nets-14",
+    "imageId": "img-duct-area-safety-nets-14",
+    "title": "Duct area nets — site photo",
+    "description": "Real installation photography for duct area nets projects.",
+    "serviceId": "svc-duct-area-safety-nets",
+    "category": "Duct area nets",
+    "order": 69,
+    "published": true
+  },
+  {
+    "id": "gal-invisible-grills-invisible-grills-11",
+    "imageId": "img-invisible-grills-11",
+    "title": "Invisible grills — site photo",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 70,
+    "published": true
+  },
+  {
+    "id": "gal-invisible-grills-invisible-grills-12",
+    "imageId": "img-invisible-grills-12",
+    "title": "Invisible grills — site photo",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 71,
+    "published": true
+  },
+  {
+    "id": "gal-invisible-grills-invisible-grills-13",
+    "imageId": "img-invisible-grills-13",
+    "title": "Invisible grills — site photo",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 72,
+    "published": true
+  },
+  {
+    "id": "gal-invisible-grills-invisible-grills-14",
+    "imageId": "img-invisible-grills-14",
+    "title": "Invisible grills — site photo",
+    "description": "Real installation photography for invisible grills projects.",
+    "serviceId": "svc-invisible-grills",
+    "category": "Invisible grills",
+    "order": 73,
+    "published": true
+  }
+]

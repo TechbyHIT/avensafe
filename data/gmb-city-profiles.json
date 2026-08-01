@@ -1,0 +1,120 @@
+[
+  {
+    "citySlug": "hyderabad",
+    "cityName": "Hyderabad",
+    "stateName": "Telangana",
+    "priority": 1,
+    "suggestedCategories": [
+      "Safety equipment supplier",
+      "Window installation service",
+      "Fence contractor"
+    ],
+    "primaryServiceAreaNote": "Hyderabad metro + ORR corridor societies and IT belt apartments",
+    "serviceRadiusKm": 40,
+    "napChecklist": [
+      "Exact business name: Avensafe Solutions",
+      "Primary phone matching website CTAs",
+      "WhatsApp number enabled for messaging",
+      "Website URL https://avensafesolutions.com with UTM?utm_source=gmb",
+      "Hours matching config/business.ts openingHours",
+      "Services: Invisible Grills, Safety Nets, Balcony Nets, Pigeon Nets, Cloth Hangers",
+      "10+ real installation photos from Hyderabad jobs",
+      "Weekly Google Posts linking city/society pages",
+      "Ask every completed job for a Google review (no incentives that violate Google policy)"
+    ]
+  },
+  {
+    "citySlug": "bengaluru",
+    "cityName": "Bengaluru",
+    "stateName": "Karnataka",
+    "priority": 1,
+    "suggestedCategories": [
+      "Safety equipment supplier",
+      "Window installation service",
+      "Fence contractor"
+    ],
+    "primaryServiceAreaNote": "Whitefield, ORR, North Bengaluru townships and gated communities",
+    "serviceRadiusKm": 45,
+    "napChecklist": [
+      "Exact business name: Avensafe Solutions",
+      "Primary phone matching website CTAs",
+      "WhatsApp number enabled for messaging",
+      "Website URL https://avensafesolutions.com/karnataka/bengaluru",
+      "Hours matching config/business.ts openingHours",
+      "Services listed in Kannada + English where GMB allows",
+      "10+ real Bengaluru installation photos",
+      "Weekly posts to Whitefield / ORR / Hebbal landing pages",
+      "Review requests after every handover"
+    ]
+  },
+  {
+    "citySlug": "chennai",
+    "cityName": "Chennai",
+    "stateName": "Tamil Nadu",
+    "priority": 1,
+    "suggestedCategories": [
+      "Safety equipment supplier",
+      "Window installation service",
+      "Fence contractor"
+    ],
+    "primaryServiceAreaNote": "OMR, ECR coastal apartments and central Chennai societies",
+    "serviceRadiusKm": 40,
+    "napChecklist": [
+      "Exact business name: Avensafe Solutions",
+      "Primary phone matching website CTAs",
+      "Highlight coastal SS / humid-climate capability in description",
+      "Website URL https://avensafesolutions.com/tamil-nadu/chennai",
+      "Hours matching config/business.ts openingHours",
+      "Tamil + English service descriptions",
+      "10+ Chennai coastal / OMR job photos",
+      "Weekly posts to OMR and Porur society pages",
+      "Review requests after every handover"
+    ]
+  },
+  {
+    "citySlug": "visakhapatnam",
+    "cityName": "Visakhapatnam",
+    "stateName": "Andhra Pradesh",
+    "priority": 1,
+    "suggestedCategories": [
+      "Safety equipment supplier",
+      "Window installation service",
+      "Fence contractor"
+    ],
+    "primaryServiceAreaNote": "Beach Road, MVP, Madhurawada, Gajuwaka residential belts",
+    "serviceRadiusKm": 35,
+    "napChecklist": [
+      "Exact business name: Avensafe Solutions",
+      "Primary phone matching website CTAs",
+      "Emphasise coastal-grade materials in GMB description",
+      "Website URL https://avensafesolutions.com/andhra-pradesh/visakhapatnam",
+      "Hours matching config/business.ts openingHours",
+      "Telugu + English descriptions",
+      "10+ Vizag coastal job photos",
+      "Weekly posts to MVP / Madhurawada / Rushikonda pages",
+      "Review requests after every handover"
+    ]
+  },
+  {
+    "citySlug": "vijayawada",
+    "cityName": "Vijayawada",
+    "stateName": "Andhra Pradesh",
+    "priority": 2,
+    "suggestedCategories": [
+      "Safety equipment supplier",
+      "Window installation service"
+    ],
+    "primaryServiceAreaNote": "Benz Circle, Patamata, Poranki, Currency Nagar apartment belts",
+    "serviceRadiusKm": 30,
+    "napChecklist": [
+      "Exact business name: Avensafe Solutions",
+      "Primary phone matching website CTAs",
+      "Website URL https://avensafesolutions.com/andhra-pradesh/vijayawada",
+      "Hours matching config/business.ts openingHours",
+      "Telugu + English descriptions",
+      "Local installation photos",
+      "Weekly posts to Benz Circle / Patamata pages",
+      "Review requests after every handover"
+    ]
+  }
+]
