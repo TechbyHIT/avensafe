@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
-# Build + prepare + (re)start Avensafe under PM2 on Linux.
+# Build + prepare + (re)start Avensafe under PM2 on Linux (no Docker).
 #
-# Full release (default):
+# Full release:
 #   bash deploy/pm2-release.sh
 #
-# Faster release (reuse node_modules, skip lint, more SSG workers):
+# Faster (reuse deps if present, skip lint):
 #   bash deploy/pm2-release.sh --fast
-#   # or: FAST=1 bash deploy/pm2-release.sh
 #
-# Restart only (no pull/build — use after prepare already done):
+# Minimal disk after healthy start (recommended on VPS):
+#   bash deploy/pm2-release.sh --fast --slim
+#   # or: SLIM=1 bash deploy/pm2-fast.sh
+#
+# Restart only:
 #   SKIP_BUILD=1 bash deploy/pm2-release.sh
 #
 # Optional:
-#   FORCE_INSTALL=1   always npm ci/install
-#   CLEAN_NODE_MODULES=1   remove root node_modules after prepare
+#   FORCE_INSTALL=1
+#   CLEAN_NODE_MODULES=1   (also set automatically by --slim)
+#   AVENSAFE_SG_CONCURRENCY=2
 
 set -euo pipefail
 
@@ -24,19 +28,29 @@ for arg in "$@"; do
   case "$arg" in
     --fast|fast) FAST=1 ;;
     --skip-build) SKIP_BUILD=1 ;;
+    --slim|slim) SLIM=1 ;;
   esac
 done
 
 FAST="${FAST:-0}"
 SKIP_BUILD="${SKIP_BUILD:-0}"
 FORCE_INSTALL="${FORCE_INSTALL:-0}"
+SLIM="${SLIM:-0}"
 CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
+
+if [ "$SLIM" = "1" ]; then
+  # Drop root node_modules during prepare; full slim after health check.
+  CLEAN_NODE_MODULES=1
+fi
 
 if [ "$FAST" = "1" ]; then
   export AVENSAFE_SKIP_LINT="${AVENSAFE_SKIP_LINT:-1}"
-  # Default 4 — 8 can thrash/swap on small VPS and look "stuck".
   export AVENSAFE_SG_CONCURRENCY="${AVENSAFE_SG_CONCURRENCY:-4}"
   echo "==> FAST mode (skip lint, SSG concurrency=${AVENSAFE_SG_CONCURRENCY})"
+fi
+
+if [ "$SLIM" = "1" ]; then
+  echo "==> SLIM mode (remove build leftovers + node_modules after healthy start)"
 fi
 
 if [ "$SKIP_BUILD" != "1" ]; then
@@ -50,7 +64,7 @@ if [ "$SKIP_BUILD" != "1" ]; then
     echo "==> Reusing node_modules (FORCE_INSTALL=1 to reinstall)"
   fi
 
-  echo "==> Freeing Next cache only (keeping npm cache)"
+  echo "==> Freeing Next cache only"
   rm -rf .next/cache || true
 
   echo "==> Building standalone"
@@ -97,4 +111,9 @@ if [ "$CODE" != "200" ] && [ "$CODE" != "304" ]; then
   exit 1
 fi
 
-echo "==> Done. nginx should proxy to 127.0.0.1:3006"
+if [ "$SLIM" = "1" ]; then
+  echo "==> Slimming disk (post-health)"
+  bash "$ROOT/deploy/slim-disk.sh"
+fi
+
+echo "==> Done. nginx → 127.0.0.1:3006 (standalone only; no Docker)"
