@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { PRERENDER } from '@/config/constants';
 import { GeneratedPage } from '@/components/templates/GeneratedPage';
 import { listServiceIntentTargets } from '@/lib/routing/inventory';
 import { loadPage } from '@/lib/routing/page-bundle';
@@ -12,6 +13,7 @@ interface RouteParams {
 }
 
 export function generateStaticParams(): { service: string; intent: string }[] {
+  if (PRERENDER.quickBuild) return [];
   return listServiceIntentTargets().map((target) => ({
     service: target.service!.slug,
     intent: target.intent!.slug,

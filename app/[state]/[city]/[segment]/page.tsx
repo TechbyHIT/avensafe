@@ -27,16 +27,16 @@ interface RouteParams {
  * `AVENSAFE_QUICK_BUILD=1` skips localities (ISR on first request) for <5m deploys.
  */
 export function generateStaticParams(): { state: string; city: string; segment: string }[] {
+  // Quick VPS: no locality / service-in-city prerender (ISR + sitemap unchanged).
+  if (PRERENDER.quickBuild) return [];
+
   const services = getServices();
   const params: { state: string; city: string; segment: string }[] = [];
-  const quick = PRERENDER.quickBuild;
 
   for (const state of getStates()) {
     for (const city of getCitiesByState(state.id)) {
-      if (!quick) {
-        for (const area of getAreasByCity(city.id)) {
-          params.push({ state: state.slug, city: city.slug, segment: area.slug });
-        }
+      for (const area of getAreasByCity(city.id)) {
+        params.push({ state: state.slug, city: city.slug, segment: area.slug });
       }
 
       if (city.tier <= PRERENDER.serviceInCityMaxTier) {

@@ -41,16 +41,17 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: process.env.AVENSAFE_SKIP_LINT === '1',
   },
 
-  // Windows: keep concurrency low (OOM risk). Linux VPS: allow more workers
-  // via AVENSAFE_SG_CONCURRENCY (pm2-release --fast sets 8).
+  // Windows: keep concurrency low (OOM risk). Linux VPS: AVENSAFE_SG_CONCURRENCY.
   experimental: {
     staticGenerationMaxConcurrency: (() => {
       const fromEnv = Number(process.env.AVENSAFE_SG_CONCURRENCY ?? '');
       if (Number.isFinite(fromEnv) && fromEnv >= 1) return fromEnv;
       return process.platform === 'win32' ? 2 : 6;
     })(),
-    staticGenerationMinPagesPerWorker: 25,
+    staticGenerationMinPagesPerWorker:
+      process.env.AVENSAFE_QUICK_BUILD === '1' ? 5 : 25,
   },
+
 
   images: {
     // AVIF first, WebP fallback. Next negotiates via the Accept header.

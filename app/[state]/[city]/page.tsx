@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { PRERENDER } from '@/config/constants';
 import { GeneratedPage } from '@/components/templates/GeneratedPage';
 import { getCitiesByState, getStates } from '@/lib/data/repository';
 import { loadPage } from '@/lib/routing/page-bundle';
@@ -12,6 +13,8 @@ interface RouteParams {
 }
 
 export function generateStaticParams(): { state: string; city: string }[] {
+  // Quick VPS builds: cities via ISR (still in sitemap).
+  if (PRERENDER.quickBuild) return [];
   return getStates().flatMap((state) =>
     getCitiesByState(state.id).map((city) => ({ state: state.slug, city: city.slug })),
   );

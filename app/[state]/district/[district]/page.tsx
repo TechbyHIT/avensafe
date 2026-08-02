@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { PRERENDER } from '@/config/constants';
 import { GeneratedPage } from '@/components/templates/GeneratedPage';
 import { getDistrictsByState, getStates } from '@/lib/data/repository';
 import { loadPage } from '@/lib/routing/page-bundle';
@@ -12,6 +13,7 @@ interface RouteParams {
 }
 
 export function generateStaticParams(): { state: string; district: string }[] {
+  if (PRERENDER.quickBuild) return [];
   return getStates().flatMap((state) =>
     getDistrictsByState(state.id).map((district) => ({
       state: state.slug,
