@@ -24,6 +24,7 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "validate:seo": "tsx scripts/validate-seo.ts",
     "validate:sitemap": "tsx scripts/validate-sitemap.ts",
+    "validate:sitemap:ci": "tsx scripts/validate-sitemap.ts --ci",
     "validate:isr": "tsx scripts/validate-isr.ts",
     "audit:coverage": "tsx scripts/audit-coverage-gaps.ts",
     "report:routes": "tsx scripts/report-routes.ts",

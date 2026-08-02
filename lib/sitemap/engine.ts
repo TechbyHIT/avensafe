@@ -19,6 +19,11 @@ import {
   sliceServiceCityIntentTargets,
 } from '@/lib/routing/inventory';
 import { absoluteUrl, blogPath, guidePath } from '@/lib/routing/url';
+import {
+  corpusSitemapLastmod,
+  resetCorpusLastmodCache,
+  resolveSitemapLastmod,
+} from '@/lib/sitemap/lastmod';
 import type { PageTarget } from '@/types/routing';
 
 /**
@@ -27,8 +32,9 @@ import type { PageTarget } from '@/types/routing';
  * - Index (`/sitemap.xml`) only enumerates child file names from counts.
  * - Each `/sitemaps/<name>.xml` builds one batch (≤ SITEMAP.batchSize URLs).
  * - URLs use the same path builders as canonicals.
+ * - Every `<url>` has absolute HTTPS `<loc>` + `<lastmod>` (corpus fingerprint).
  * - Listed inventory URLs are indexable (structural gate only). Confirmed by
- *   `npm run validate:sitemap` — the sitemap does not re-compose page content.
+ *   `npm run validate:sitemap`.
  */
 
 export interface SitemapImage {
@@ -38,7 +44,8 @@ export interface SitemapImage {
 
 export interface SitemapUrl {
   readonly loc: string;
-  readonly lastModified?: string;
+  /** W3C date YYYY-MM-DD — required on every entry. */
+  readonly lastModified: string;
   readonly changeFrequency?: 'daily' | 'weekly' | 'monthly' | 'yearly';
   readonly priority?: number;
   readonly images?: readonly SitemapImage[];
@@ -74,18 +81,32 @@ interface HeavyTargetBucket {
 
 type Bucket = StaticBucket | LightTargetBucket | HeavyTargetBucket;
 
+/** Drop duplicate locs within a batch (first wins). */
+function dedupeUrls(urls: readonly SitemapUrl[]): readonly SitemapUrl[] {
+  const seen = new Map<string, SitemapUrl>();
+  for (const url of urls) {
+    if (!seen.has(url.loc)) seen.set(url.loc, url);
+  }
+  return [...seen.values()];
+}
+
 function urlsFromTargets(
   targets: readonly PageTarget[],
   options: { readonly priority: number; readonly changeFrequency: SitemapUrl['changeFrequency'] },
 ): readonly SitemapUrl[] {
-  return targets.map((target) => ({
-    loc: absoluteUrl(target.path),
-    priority: options.priority,
-    ...(options.changeFrequency ? { changeFrequency: options.changeFrequency } : {}),
-  }));
+  const lastModified = corpusSitemapLastmod();
+  return dedupeUrls(
+    targets.map((target) => ({
+      loc: absoluteUrl(target.path),
+      lastModified,
+      priority: options.priority,
+      ...(options.changeFrequency ? { changeFrequency: options.changeFrequency } : {}),
+    })),
+  );
 }
 
 function coreUrls(): readonly SitemapUrl[] {
+  const lastModified = corpusSitemapLastmod();
   const paths: readonly { readonly path: string; readonly priority: number }[] = [
     { path: STATIC_ROUTES.home, priority: 1 },
     { path: STATIC_ROUTES.services, priority: 0.9 },
@@ -93,36 +114,43 @@ function coreUrls(): readonly SitemapUrl[] {
     { path: STATIC_ROUTES.about, priority: 0.6 },
     { path: STATIC_ROUTES.contact, priority: 0.7 },
     { path: STATIC_ROUTES.faq, priority: 0.6 },
-    { path: STATIC_ROUTES.gallery, priority: 0.5 },
+    // Gallery lives only in the images sitemap (with image:image extensions).
     { path: STATIC_ROUTES.projects, priority: 0.6 },
     { path: STATIC_ROUTES.blog, priority: 0.6 },
     { path: STATIC_ROUTES.guides, priority: 0.7 },
     { path: STATIC_ROUTES.compare, priority: 0.65 },
   ];
 
-  return paths.map((entry) => ({
-    loc: absoluteUrl(entry.path),
-    priority: entry.priority,
-    changeFrequency: 'monthly' as const,
-  }));
+  return dedupeUrls(
+    paths.map((entry) => ({
+      loc: absoluteUrl(entry.path),
+      lastModified,
+      priority: entry.priority,
+      changeFrequency: 'monthly' as const,
+    })),
+  );
 }
 
 function guideUrls(): readonly SitemapUrl[] {
-  return getGuides().map((guide) => ({
-    loc: absoluteUrl(guidePath(guide)),
-    lastModified: guide.updatedAt,
-    changeFrequency: 'monthly' as const,
-    priority: guide.cornerstone ? 0.8 : 0.6,
-  }));
+  return dedupeUrls(
+    getGuides().map((guide) => ({
+      loc: absoluteUrl(guidePath(guide)),
+      lastModified: resolveSitemapLastmod(guide.updatedAt),
+      changeFrequency: 'monthly' as const,
+      priority: guide.cornerstone ? 0.8 : 0.6,
+    })),
+  );
 }
 
 function blogUrls(): readonly SitemapUrl[] {
-  return getBlogPosts().map((post) => ({
-    loc: absoluteUrl(blogPath(post)),
-    lastModified: post.updatedAt,
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
-  }));
+  return dedupeUrls(
+    getBlogPosts().map((post) => ({
+      loc: absoluteUrl(blogPath(post)),
+      lastModified: resolveSitemapLastmod(post.updatedAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    })),
+  );
 }
 
 function imageUrls(): readonly SitemapUrl[] {
@@ -131,6 +159,9 @@ function imageUrls(): readonly SitemapUrl[] {
   return [
     {
       loc: absoluteUrl(STATIC_ROUTES.gallery),
+      lastModified: corpusSitemapLastmod(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
       images: images.map((image) => ({
         loc: absoluteUrl(image.src),
         ...(image.caption ? { caption: image.caption } : { caption: image.alt }),
@@ -250,13 +281,21 @@ function bucketCount(bucket: Bucket): number {
 
 let cachedIndexNames: readonly string[] | null = null;
 let cachedIndexXml: string | null = null;
+let cachedCorpusLastmod: string | null = null;
 const fileCache = new Map<string, SitemapFile>();
 const xmlCache = new Map<string, string>();
+
+function corpusLastmodCached(): string {
+  if (!cachedCorpusLastmod) cachedCorpusLastmod = corpusSitemapLastmod();
+  return cachedCorpusLastmod;
+}
 
 /** Clears in-memory sitemap caches (tests or hot reload). */
 export function resetSitemapCache(): void {
   cachedIndexNames = null;
   cachedIndexXml = null;
+  cachedCorpusLastmod = null;
+  resetCorpusLastmodCache();
   fileCache.clear();
   xmlCache.clear();
 }
@@ -290,7 +329,7 @@ export function getSitemapFile(name: string): SitemapFile | undefined {
   let urls: readonly SitemapUrl[];
 
   if (bucket.kind === 'static') {
-    urls = bucket.urls().slice(offset, offset + SITEMAP.batchSize);
+    urls = dedupeUrls(bucket.urls().slice(offset, offset + SITEMAP.batchSize));
   } else if (bucket.kind === 'light-targets') {
     urls = urlsFromTargets(bucket.list().slice(offset, offset + SITEMAP.batchSize), {
       priority: bucket.priority,
@@ -329,12 +368,18 @@ function escapeXml(value: string): string {
 }
 
 export function renderUrlset(file: SitemapFile): string {
-  const hasImages = file.urls.some((url) => url.images && url.images.length > 0);
+  const urls = dedupeUrls(file.urls);
+  const hasImages = urls.some((url) => url.images && url.images.length > 0);
 
-  const body = file.urls
+  const body = urls
     .map((url) => {
-      const parts = [`    <loc>${escapeXml(url.loc)}</loc>`];
-      if (url.lastModified) parts.push(`    <lastmod>${escapeXml(url.lastModified)}</lastmod>`);
+      if (!url.lastModified) {
+        throw new Error(`Sitemap URL missing lastmod: ${url.loc}`);
+      }
+      const parts = [
+        `    <loc>${escapeXml(url.loc)}</loc>`,
+        `    <lastmod>${escapeXml(url.lastModified)}</lastmod>`,
+      ];
       if (url.changeFrequency) parts.push(`    <changefreq>${url.changeFrequency}</changefreq>`);
       if (url.priority !== undefined) {
         parts.push(`    <priority>${url.priority.toFixed(1)}</priority>`);
@@ -373,10 +418,11 @@ export function getSitemapXml(name: string): string | undefined {
 }
 
 export function renderSitemapIndex(fileNames: readonly string[]): string {
+  const lastmod = corpusLastmodCached();
   const body = fileNames
     .map(
       (name) =>
-        `  <sitemap>\n    <loc>${escapeXml(absoluteUrl(`/sitemaps/${name}.xml`))}</loc>\n  </sitemap>`,
+        `  <sitemap>\n    <loc>${escapeXml(absoluteUrl(`/sitemaps/${name}.xml`))}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n  </sitemap>`,
     )
     .join('\n');
 

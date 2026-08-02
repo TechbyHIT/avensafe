@@ -18,6 +18,7 @@
 #   FORCE_INSTALL=1
 #   CLEAN_NODE_MODULES=1   (also set automatically by --slim)
 #   AVENSAFE_SG_CONCURRENCY=2
+#   VALIDATE_SITEMAP=1      (run npm run validate:sitemap:ci before build)
 #   bash deploy/pm2-low-mem.sh     # concurrency=1, 2GB heap (small VPS)
 
 set -euo pipefail
@@ -31,6 +32,7 @@ for arg in "$@"; do
     --skip-build) SKIP_BUILD=1 ;;
     --slim|slim) SLIM=1 ;;
     --low-mem|low-mem) LOW_MEM=1 ;;
+    --validate-sitemap) VALIDATE_SITEMAP=1 ;;
   esac
 done
 
@@ -39,6 +41,7 @@ SKIP_BUILD="${SKIP_BUILD:-0}"
 FORCE_INSTALL="${FORCE_INSTALL:-0}"
 SLIM="${SLIM:-0}"
 LOW_MEM="${LOW_MEM:-0}"
+VALIDATE_SITEMAP="${VALIDATE_SITEMAP:-0}"
 CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
 
 if [ "$LOW_MEM" = "1" ]; then
@@ -74,6 +77,11 @@ if [ "$SKIP_BUILD" != "1" ]; then
     fi
   else
     echo "==> Reusing node_modules (FORCE_INSTALL=1 to reinstall)"
+  fi
+
+  if [ "$VALIDATE_SITEMAP" = "1" ]; then
+    echo "==> Validating sitemap (CI fast)"
+    npm run validate:sitemap:ci
   fi
 
   echo "==> Freeing Next cache only"

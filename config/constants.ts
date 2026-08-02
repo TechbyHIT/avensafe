@@ -69,6 +69,13 @@ export const SITEMAP = {
   maxUrlsPerFile: 50_000,
 } as const;
 
+/**
+ * Corpus lastmod floor (W3C date). Bump when composer/templates change without
+ * inventory-count changes. Inventory count changes also shift lastmod via
+ * `corpusSitemapLastmod()` in `lib/sitemap/lastmod.ts`.
+ */
+export const SITEMAP_CONTENT_VERSION = '2026-08-02';
+
 /** Search-result rendering budgets used by the SEO validator. */
 export const SEO_LIMITS = {
   titleMin: 20,
