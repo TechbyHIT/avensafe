@@ -7,6 +7,7 @@ import { FaqSection } from '@/components/sections/FaqSection';
 import { Hero } from '@/components/sections/Hero';
 import { ExploreHub } from '@/components/sections/ExploreHub';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { LINK_LIMITS } from '@/config/constants';
 import { locationLabel } from '@/lib/routing/resolve';
 import type { PageBundle } from '@/lib/routing/page-bundle';
 import { buildPageGraph } from '@/lib/schema/page-graph';
@@ -241,6 +242,9 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
           state={target.location.state}
           city={target.location.city}
           {...(target.service ? { service: target.service } : {})}
+          {...(target.service || target.kind !== 'city'
+            ? { maxAreas: LINK_LIMITS.localityDirectoryPreview }
+            : {})}
         />
       ) : null,
     testimonials:

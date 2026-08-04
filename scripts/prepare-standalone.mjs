@@ -131,6 +131,46 @@ if (existsSync(publicDir)) {
   console.log('Copied public → standalone/public');
 }
 
+/**
+ * Safe disk reclaim inside standalone:
+ * delete prerender HTML/RSC/.meta only — NEVER page.js / layout.js / route.js.
+ * Full SSG of millions of URLs embeds those artifacts and fills the VPS.
+ */
+function stripPrerenderArtifacts(dir) {
+  if (!existsSync(dir)) return 0;
+  let removed = 0;
+  const walk = (current) => {
+    for (const name of readdirSync(current)) {
+      const full = join(current, name);
+      let st;
+      try {
+        st = statSync(full);
+      } catch {
+        continue;
+      }
+      if (st.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      if (name.endsWith('.html') || name.endsWith('.rsc') || name.endsWith('.meta')) {
+        try {
+          rmSync(full, { force: true });
+          removed += 1;
+        } catch {
+          // ignore
+        }
+      }
+    }
+  };
+  walk(dir);
+  return removed;
+}
+
+const stripped = stripPrerenderArtifacts(join(standalone, '.next', 'server'));
+console.log(
+  `Stripped ${stripped} prerender artifact(s) (.html/.rsc/.meta) — route modules kept`,
+);
+
 const required = [
   join(standalone, 'server.js'),
   join(standalone, '.next', 'server', 'middleware-manifest.json'),

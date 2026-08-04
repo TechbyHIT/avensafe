@@ -1,8 +1,5 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
 import { business, primaryPhone, telHref, whatsappHref, whatsappPhone } from '@/config/business';
 import { Container } from '@/components/ui/Container';
 import type { ExploreCluster, LinkGroup } from '@/types/routing';
@@ -51,30 +48,29 @@ const CLUSTER_ORDER: readonly ExploreCluster[] = [
   'content',
 ];
 
+function clusterGroups(groups: readonly LinkGroup[]) {
+  const map = new Map<ExploreCluster, LinkGroup[]>();
+  for (const group of groups) {
+    const key = group.cluster ?? 'content';
+    const list = map.get(key) ?? [];
+    list.push(group);
+    map.set(key, list);
+  }
+  return CLUSTER_ORDER.flatMap((cluster) => {
+    const items = map.get(cluster);
+    if (!items || items.length === 0) return [];
+    return [{ cluster, items }];
+  });
+}
+
 /**
- * Premium Explore / Related Pages hub — docs-style cards, mobile accordions,
- * strong internal-link crawl surface without dumping every URL at once.
+ * Explore / Related Pages hub — server-rendered so link matrices are not
+ * duplicated into a client RSC payload on every HTML page.
  */
 export function ExploreHub({ groups, currentPath, mosaic = [] }: ExploreHubProps) {
-  const [openId, setOpenId] = useState<string | null>(groups[0]?.id ?? groups[0]?.heading ?? null);
-
-  const clusters = useMemo(() => {
-    const map = new Map<ExploreCluster, LinkGroup[]>();
-    for (const group of groups) {
-      const key = group.cluster ?? 'content';
-      const list = map.get(key) ?? [];
-      list.push(group);
-      map.set(key, list);
-    }
-    return CLUSTER_ORDER.flatMap((cluster) => {
-      const items = map.get(cluster);
-      if (!items || items.length === 0) return [];
-      return [{ cluster, items }];
-    });
-  }, [groups]);
-
   if (groups.length === 0) return null;
 
+  const clusters = clusterGroups(groups);
   const waMessage = `Hello ${business.shortName}, I want a free site inspection. I will share a photo of the opening and my city/PIN.`;
 
   return (
@@ -102,7 +98,7 @@ export function ExploreHub({ groups, currentPath, mosaic = [] }: ExploreHubProps
           </div>
           {mosaic.length > 0 ? (
             <ul className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-2">
-              {mosaic.slice(0, 4).map((image) => (
+              {mosaic.slice(0, 2).map((image) => (
                 <li
                   key={image.id}
                   className="relative aspect-[4/3] overflow-hidden rounded-(--radius-card) bg-ink-100 shadow-(--shadow-card)"
@@ -121,10 +117,9 @@ export function ExploreHub({ groups, currentPath, mosaic = [] }: ExploreHubProps
           ) : null}
         </header>
 
-        {/* Desktop / laptop / tablet grid */}
-        <div className="mt-12 hidden md:block">
+        <div className="mt-12">
           {clusters.map(({ cluster, items }) => (
-            <div key={cluster} className="mb-12 last:mb-0">
+            <div key={cluster} className="mb-10 last:mb-0 md:mb-12">
               <div className="mb-5 flex items-end justify-between gap-4 border-b border-ink-200 pb-3">
                 <h3 className="text-sm font-bold tracking-widest text-ink-500 uppercase">
                   {exploreClusterLabel(cluster)}
@@ -132,14 +127,14 @@ export function ExploreHub({ groups, currentPath, mosaic = [] }: ExploreHubProps
                 <p className="text-xs text-ink-400">{items.length} sections</p>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 lg:grid-cols-5 xl:grid-cols-12 xl:gap-5">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 xl:gap-5">
                 {items.map((group) => {
                   const span =
                     group.span === 3
-                      ? 'col-span-3 lg:col-span-5 xl:col-span-12'
+                      ? 'xl:col-span-12'
                       : group.span === 2
-                        ? 'col-span-3 lg:col-span-3 xl:col-span-6'
-                        : 'col-span-3 sm:col-span-1 lg:col-span-1 xl:col-span-3';
+                        ? 'xl:col-span-6'
+                        : 'xl:col-span-3';
 
                   return (
                     <ExploreCard
@@ -156,77 +151,6 @@ export function ExploreHub({ groups, currentPath, mosaic = [] }: ExploreHubProps
           ))}
         </div>
 
-        {/* Mobile accordion */}
-        <div className="mt-10 space-y-3 md:hidden">
-          {groups.map((group) => {
-            const id = group.id ?? group.heading;
-            const open = openId === id;
-            return (
-              <div
-                key={id}
-                className="overflow-hidden rounded-(--radius-card) border border-ink-200/80 bg-white/90 shadow-(--shadow-card) backdrop-blur"
-              >
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left"
-                  aria-expanded={open}
-                  onClick={() => setOpenId(open ? null : id)}
-                >
-                  <span>
-                    <span className="block text-[11px] font-bold tracking-widest text-accent-700 uppercase">
-                      {exploreClusterLabel(group.cluster ?? 'content')}
-                    </span>
-                    <span className="mt-1 block text-base font-bold text-ink-900">
-                      {group.heading}
-                    </span>
-                  </span>
-                  <span aria-hidden="true" className="text-ink-400">
-                    {open ? '−' : '+'}
-                  </span>
-                </button>
-                {open ? (
-                  <div className="border-t border-ink-100 px-4 pb-4">
-                    {group.description ? (
-                      <p className="pt-3 text-sm text-ink-600">{group.description}</p>
-                    ) : null}
-                    <ul className="mt-3 space-y-2.5">
-                      {group.links.map((link) => (
-                        <li key={`${id}:${link.href}:${link.label}`}>
-                          <Link
-                            href={link.href}
-                            aria-current={currentPath === link.href ? 'page' : undefined}
-                            className={
-                              currentPath === link.href
-                                ? 'text-sm font-semibold text-brand-800'
-                                : 'text-sm font-medium text-ink-800 no-underline hover:text-brand-800'
-                            }
-                          >
-                            {link.label}
-                          </Link>
-                          {link.context ? (
-                            <p className="mt-0.5 text-xs leading-relaxed text-ink-500">
-                              {link.context}
-                            </p>
-                          ) : null}
-                        </li>
-                      ))}
-                    </ul>
-                    {group.viewAllHref ? (
-                      <Link
-                        href={group.viewAllHref}
-                        className="mt-4 inline-flex text-sm font-bold text-brand-800 no-underline"
-                      >
-                        View all →
-                      </Link>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Conversion strip */}
         <div className="mt-12 rounded-(--radius-card) border border-ink-200/80 bg-ink-900 px-5 py-6 text-white shadow-(--shadow-raised) sm:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div>
@@ -315,7 +239,7 @@ function ExploreCard({
         </p>
       ) : null}
 
-      <ul className="mt-4 flex-1 space-y-2.5">
+      <ul className="mt-4 flex-1 space-y-2">
         {group.links.map((link) => {
           const active = currentPath === link.href;
           return (
@@ -333,17 +257,6 @@ function ExploreCard({
               >
                 {link.label}
               </Link>
-              {link.context ? (
-                <p
-                  className={
-                    featured
-                      ? 'mt-0.5 text-xs leading-relaxed text-white/55'
-                      : 'mt-0.5 text-xs leading-relaxed text-ink-500'
-                  }
-                >
-                  {link.context}
-                </p>
-              ) : null}
             </li>
           );
         })}

@@ -23,8 +23,9 @@ interface RouteParams {
 }
 
 /**
- * Localities + tier-1 service-in-city are prerendered by default.
- * `AVENSAFE_QUICK_BUILD=1` skips localities (ISR on first request) for <5m deploys.
+ * Tier-1 service-in-city hubs are prerendered by default.
+ * Locality HTML is ISR-only unless `AVENSAFE_FULL_SSG=1` (shared VPS disk budget).
+ * `AVENSAFE_QUICK_BUILD=1` skips this entire bucket for <5m deploys.
  */
 export function generateStaticParams(): { state: string; city: string; segment: string }[] {
   // Quick VPS: no locality / service-in-city prerender (ISR + sitemap unchanged).
@@ -35,8 +36,10 @@ export function generateStaticParams(): { state: string; city: string; segment: 
 
   for (const state of getStates()) {
     for (const city of getCitiesByState(state.id)) {
-      for (const area of getAreasByCity(city.id)) {
-        params.push({ state: state.slug, city: city.slug, segment: area.slug });
+      if (PRERENDER.areas) {
+        for (const area of getAreasByCity(city.id)) {
+          params.push({ state: state.slug, city: city.slug, segment: area.slug });
+        }
       }
 
       if (city.tier <= PRERENDER.serviceInCityMaxTier) {

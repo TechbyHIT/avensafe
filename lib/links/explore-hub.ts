@@ -33,8 +33,9 @@ import {
 import { orderDeterministic, pickVariant } from '@/lib/utils/hash';
 import type { ContextualLink, ExploreCluster, LinkGroup, PageTarget } from '@/types/routing';
 
-const PER_SECTION = 8;
-const MAX_SECTIONS = 14;
+/** Keep Explore hub scannable; city hubs own the full locality graph. */
+const PER_SECTION = 6;
+const MAX_SECTIONS = 8;
 
 type LocationKind = NonNullable<Area['locationKind']>;
 
@@ -190,8 +191,14 @@ function kindGroups(target: PageTarget): readonly LinkGroup[] {
   );
 
   const out: LinkGroup[] = [];
+  // At most two geo-kind columns — the city hub lists the full directory.
+  const buckets = orderDeterministic(
+    [...GEO_KIND_BUCKETS],
+    `${seed}:geo-buckets`,
+    (bucket) => bucket.id,
+  ).slice(0, 2);
 
-  for (const bucket of GEO_KIND_BUCKETS) {
+  for (const bucket of buckets) {
     const kindSet = new Set<string>(bucket.kinds);
     const matched = areas
       .filter((area) => area.locationKind && kindSet.has(area.locationKind))
@@ -817,7 +824,7 @@ export function buildExploreHub(target: PageTarget): readonly LinkGroup[] {
   const rotated = orderDeterministic(rotatable, `${seed}:explore`, (group) => group.id ?? group.heading);
 
   // Pick a layout density variant so sibling pages do not share the same visual rhythm.
-  const budget = pickVariant(`${seed}:explore-budget`, [10, 12, MAX_SECTIONS] as const);
+  const budget = pickVariant(`${seed}:explore-budget`, [6, 7, MAX_SECTIONS] as const);
   const body = rotated.slice(0, Math.max(0, budget - pinned.length));
 
   const assembled = [...pinned, ...body];

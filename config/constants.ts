@@ -29,25 +29,35 @@ export const REVALIDATE = {
 export const LINK_LIMITS = {
   /** All published services must appear in service-nav groups. */
   relatedServices: 8,
-  nearbyCities: 24,
-  /** Adjacent localities in related-links (full list lives in LocalityDirectory UI). */
-  nearbyAreas: 24,
-  /** Related-link deep locality dump per city/service (UI directory shows all). */
-  areasOnCityPage: 48,
-  citiesOnStatePage: 80,
-  districtsOnStatePage: 80,
-  citiesOnDistrictPage: 40,
+  nearbyCities: 8,
+  /** Adjacent localities in related-links (full list lives on the city hub). */
+  nearbyAreas: 6,
+  /**
+   * Areas listed inline when a page covers several cities, or as a preview on
+   * service-in-city. Remainder is reached via the city hub (one crawl hop).
+   */
+  areasOnCityPage: 6,
+  citiesOnStatePage: 12,
+  districtsOnStatePage: 12,
+  citiesOnDistrictPage: 12,
   relatedGuides: 6,
   relatedPosts: 4,
-  taxonomyIntents: 24,
+  taxonomyIntents: 8,
   /**
    * Hard ceiling on generated contextual links per page.
    * Critical groups (services/intents/parents) are assembled first so locality
    * dumps cannot starve them.
    */
-  maxContextualLinksPerPage: 360,
+  maxContextualLinksPerPage: 48,
   /** Cap FAQs rendered on a single generated page. */
-  maxFaqsPerPage: 15,
+  maxFaqsPerPage: 12,
+  /**
+   * LocalityDirectory preview on service×city pages. City hubs may list more
+   * (see `localityDirectoryOnCityHub`); the rest stay on the hub / sitemap.
+   */
+  localityDirectoryPreview: 6,
+  /** Soft cap for the city-hub directory itself (sitemap still lists every URL). */
+  localityDirectoryOnCityHub: 48,
 } as const;
 
 /** How many items each index page shows before paginating. */
@@ -157,6 +167,12 @@ export const PRERENDER = {
    * prerender. Sitemap + indexability unchanged; those URLs render on first hit (ISR).
    */
   quickBuild: process.env.AVENSAFE_QUICK_BUILD === '1',
+  /**
+   * Prerender every locality hub at build time. Off unless explicitly opted in —
+   * 11k+ area HTML files at ~400–800 KB each filled the VPS disk. Sitemap + ISR
+   * still cover every URL.
+   */
+  areas: process.env.AVENSAFE_FULL_SSG === '1',
 } as const;
 
 /** Deterministic seed so content and metadata variation is stable per URL. */

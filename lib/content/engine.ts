@@ -463,7 +463,7 @@ function coverageModule(target: PageTarget, service: Service): ContentModule | n
     const nearby = getAdjacentAreas(area).slice(0, LINK_LIMITS.nearbyAreas);
     const extras = getAreasByCity(city.id)
       .filter((entry) => entry.id !== area.id && !nearby.some((near) => near.id === entry.id))
-      .slice(0, Math.max(0, 24 - nearby.length));
+      .slice(0, Math.max(0, LINK_LIMITS.nearbyAreas - nearby.length));
     const names = [...nearby, ...extras].map((entry) => entry.name);
     if (names.length === 0) return null;
     return makeModule(
@@ -471,7 +471,7 @@ function coverageModule(target: PageTarget, service: Service): ContentModule | n
       `Service areas near ${area.name}`,
       [
         prose([
-          `We also install ${lowerFirst(service.shortName)} across nearby localities in ${city.name}, including ${joinWithAnd(names.slice(0, 12))}${names.length > 12 ? `, and ${names.length - 12} more listed in the links below` : ''}.`,
+          `We also install ${lowerFirst(service.shortName)} across nearby localities in ${city.name}, including ${joinWithAnd(names.slice(0, LINK_LIMITS.nearbyAreas))}${names.length > LINK_LIMITS.nearbyAreas ? `, and ${names.length - LINK_LIMITS.nearbyAreas} more listed in the links below` : ''}.`,
         ]),
         { type: 'list', items: names.slice(0, LINK_LIMITS.nearbyAreas) },
       ],

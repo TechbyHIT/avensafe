@@ -330,7 +330,7 @@ function cityGroups(target: PageTarget): readonly LinkGroup[] {
       groups.push({
         heading: `${service.shortName} in ${city.name} localities`,
         priority: 55,
-        links: areas.slice(0, 24).map((area) => ({
+        links: areas.slice(0, LINK_LIMITS.areasOnCityPage).map((area) => ({
           href: serviceInAreaPath(service, location.state, city, area),
           label: `${service.shortName} in ${area.name}`,
         })),

@@ -48,10 +48,15 @@ slim_one_site() {
 
   echo "  slim: $site"
   rm -rf "$site/node_modules"
-  # Never delete inside standalone — only siblings under .next/
+  # Never delete route modules inside standalone — only siblings under .next/
   if [ -d "$site/.next" ]; then
     rm -rf "$site/.next/cache" "$site/.next/server" "$site/.next/static"
     find "$site/.next" -maxdepth 1 -type f ! -name 'standalone-app-dir.txt' -delete 2>/dev/null || true
+  fi
+  # Safe: delete prerender HTML/RSC/.meta only (keeps page.js)
+  if [ -d "$standalone/.next/server" ]; then
+    find "$standalone/.next/server" -type f \( -name '*.html' -o -name '*.rsc' -o -name '*.meta' \) -delete 2>/dev/null || true
+    rm -rf "$standalone/.next/cache" 2>/dev/null || true
   fi
   # Truncate PM2-style logs in project
   if [ -d "$site/logs" ]; then

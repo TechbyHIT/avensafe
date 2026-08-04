@@ -38,11 +38,18 @@ if [ ! -d "$APP_DIR/.next/static/chunks" ] || [ ! -d "$APP_DIR/public" ]; then
   exit 1
 fi
 
-echo "==> Removing build leftovers (ONLY siblings of standalone — never inside it)"
+echo "==> Removing build leftovers (ONLY siblings of standalone — never delete server.js)"
 # Huge prerender HTML + caches live here; already copied/traced into standalone.
 rm -rf .next/cache .next/server .next/static
 # Top-level manifests not needed at runtime (standalone has its own copies).
 find .next -maxdepth 1 -type f ! -name 'standalone-app-dir.txt' -delete 2>/dev/null || true
+
+echo "==> Strip prerender HTML/RSC/.meta only (keep page.js — no rebuild needed)"
+STANDALONE_SERVER="$APP_DIR/.next/server"
+if [ -d "$STANDALONE_SERVER" ]; then
+  find "$STANDALONE_SERVER" -type f \( -name '*.html' -o -name '*.rsc' -o -name '*.meta' \) -delete 2>/dev/null || true
+  rm -rf "$APP_DIR/.next/cache" 2>/dev/null || true
+fi
 
 echo "==> Clearing npm cache"
 npm cache clean --force >/dev/null 2>&1 || true

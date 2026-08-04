@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { LINK_LIMITS } from '@/config/constants';
 import { Container } from '@/components/ui/Container';
 import {
   getImageById,
@@ -7,13 +8,18 @@ import {
   getPrimaryImageForService,
 } from '@/lib/data/repository';
 import type { Area, City, Service, State } from '@/lib/data/schemas';
-import { areaPath, serviceInAreaPath } from '@/lib/routing/url';
+import { areaPath, cityPath, serviceInAreaPath } from '@/lib/routing/url';
 
 export interface LocalityDirectoryProps {
   readonly state: State;
   readonly city: City;
   readonly service?: Service;
   readonly heading?: string;
+  /**
+   * Max localities to render. Omit for the city-hub soft cap. Pass a smaller
+   * preview on service×city pages — remainder is one hop via the city hub.
+   */
+  readonly maxAreas?: number;
 }
 
 const SOCIETY_KINDS = new Set([
@@ -37,17 +43,26 @@ function hrefFor(
 }
 
 /**
- * Full locality directory for a city — societies/apartments and mandals
- * highlighted, then every other published area.
+ * Locality directory for a city — societies/apartments and mandals highlighted,
+ * then other published areas. Capped so the matrix is not duplicated into every
+ * service×city HTML page (same pattern as ap-all-areas ServiceCityAreaLinks).
  */
 export function LocalityDirectory({
   state,
   city,
   service,
   heading,
+  maxAreas,
 }: LocalityDirectoryProps) {
-  const areas = [...getAreasByCity(city.id)].sort((a, b) => a.name.localeCompare(b.name));
-  if (areas.length === 0) return null;
+  const allAreas = [...getAreasByCity(city.id)].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+  if (allAreas.length === 0) return null;
+
+  const limit = maxAreas ?? LINK_LIMITS.localityDirectoryOnCityHub;
+  const areas = allAreas.slice(0, limit);
+  const remaining = allAreas.length - areas.length;
+  const hubHref = cityPath(state, city);
 
   const societies = areas.filter(
     (area) => area.locationKind && SOCIETY_KINDS.has(area.locationKind),
@@ -64,8 +79,8 @@ export function LocalityDirectory({
   const title =
     heading ??
     (service
-      ? `${service.name} in every ${city.name} locality`
-      : `All localities in ${city.name}`);
+      ? `${service.name} in key ${city.name} localities`
+      : `Localities in ${city.name}`);
 
   const banner =
     (service ? getPrimaryImageForService(service.id) : undefined) ??
@@ -87,13 +102,17 @@ export function LocalityDirectory({
               {title}
             </h2>
             <p className="mt-3 text-base text-ink-600">
-              {areas.length} published localities
+              {remaining > 0
+                ? `Showing ${areas.length} of ${allAreas.length} published localities`
+                : `${allAreas.length} published localities`}
               {societies.length > 0
                 ? ` including ${societies.length} apartment / society pages`
                 : ''}
               {mandals.length > 0 ? ` and ${mandals.length} mandal / town pages` : ''}
-              — each has its own URL
-              {service ? ` for ${service.shortName}` : ' and all services'}.
+              {remaining > 0
+                ? ` — more on the ${city.name} hub`
+                : ` — each has its own URL${service ? ` for ${service.shortName}` : ' and all services'}`}
+              .
             </p>
           </div>
           {banner ? (
@@ -163,6 +182,17 @@ export function LocalityDirectory({
               </li>
             ))}
           </ul>
+        ) : null}
+
+        {remaining > 0 ? (
+          <p className="mt-8">
+            <Link
+              href={hubHref}
+              className="text-sm font-semibold text-brand-800 no-underline hover:text-brand-900"
+            >
+              +{remaining} more areas in {city.name} →
+            </Link>
+          </p>
         ) : null}
       </Container>
     </section>

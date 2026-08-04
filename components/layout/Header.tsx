@@ -126,7 +126,10 @@ export function Header() {
                         <div className="invisible absolute left-1/2 top-full z-50 w-[min(96vw,72rem)] -translate-x-1/2 pt-2 opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                           <div className="overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-(--shadow-raised)">
                             <div className="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-4">
-                              {SERVICES_MEGA_MENU.map((column) => (
+                              {SERVICES_MEGA_MENU.map((column) => {
+                                const preview = column.links.slice(0, 4);
+                                const remaining = column.links.length - preview.length;
+                                return (
                                 <div key={column.heading}>
                                   <Link
                                     href={column.href}
@@ -135,7 +138,7 @@ export function Header() {
                                     {column.heading}
                                   </Link>
                                   <ul className="mt-3 space-y-1.5">
-                                    {column.links.map((link) => (
+                                    {preview.map((link) => (
                                       <li key={`${column.heading}-${link.label}`}>
                                         <Link
                                           href={link.href}
@@ -145,9 +148,20 @@ export function Header() {
                                         </Link>
                                       </li>
                                     ))}
+                                    {remaining > 0 ? (
+                                      <li>
+                                        <Link
+                                          href={column.href}
+                                          className="block text-sm font-medium text-brand-800 no-underline hover:text-accent-700"
+                                        >
+                                          +{remaining} more →
+                                        </Link>
+                                      </li>
+                                    ) : null}
                                   </ul>
                                 </div>
-                              ))}
+                                );
+                              })}
                             </div>
                             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ink-100 bg-[#f7f3ea] px-6 py-3">
                               <p className="text-sm text-ink-700">
@@ -246,7 +260,7 @@ export function Header() {
                 <PhoneIcon />
                 {primaryPhone.display}
               </a>
-              <MobileNav groups={nav} areasMegaMenu={areasMegaMenu} />
+              <MobileNav groups={nav} />
             </div>
           </div>
         </Container>

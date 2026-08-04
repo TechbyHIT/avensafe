@@ -2,6 +2,7 @@
  * Builds the Areas mega-menu from published city/area data so every city with
  * localities surfaces crawlable internal links — not only Hyderabad.
  */
+import { LINK_LIMITS } from '@/config/constants';
 import { getAreasByCity, getCities, getServices, getStateById } from '@/lib/data/repository';
 import { areaPath, cityPath, serviceInCityPath } from '@/lib/routing/url';
 import type { AreaMegaCity, MegaMenuLink } from '@/config/mega-menu';
@@ -38,8 +39,13 @@ export function buildAreasMegaMenu(): readonly AreaMegaCity[] {
 
   const columns: AreaMegaCity[] = [];
 
+  // Cap cities + areas so the desktop mega-menu is not a 100+ anchor matrix on
+  // every HTML response (mobile drawer no longer duplicates this list).
+  const AREAS_PER_CITY = LINK_LIMITS.areasOnCityPage;
+  const MAX_CITIES = 8;
+
   for (const city of cities) {
-    if (columns.length >= 12) break;
+    if (columns.length >= MAX_CITIES) break;
 
     const state = getStateById(city.stateId);
     if (!state?.published) continue;
@@ -63,15 +69,17 @@ export function buildAreasMegaMenu(): readonly AreaMegaCity[] {
       });
     }
 
-    for (const area of areas.slice(0, 6)) {
+    const preview = areas.slice(0, AREAS_PER_CITY);
+    for (const area of preview) {
       links.push({
         label: area.name,
         href: areaPath(state, city, area),
       });
     }
 
+    const remaining = areas.length - preview.length;
     links.push({
-      label: `All ${city.name} areas`,
+      label: remaining > 0 ? `+${remaining} more in ${city.name}` : `All ${city.name} areas`,
       href,
     });
 
