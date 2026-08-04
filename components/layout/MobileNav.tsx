@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { STATIC_ROUTES } from '@/config/routes';
 import { Dialog } from '@/components/ui/Dialog';
 import type { NavItem } from '@/types/navigation';
 
@@ -17,10 +16,16 @@ export interface MobileNavProps {
   readonly groups: readonly MobileNavGroup[];
 }
 
+/** Keep the drawer useful without dumping every locality into the RSC payload. */
+const MAX_ITEMS = {
+  Services: 12,
+  Areas: 12,
+  default: 8,
+} as const;
+
 /**
- * Mobile drawer lists hub links only. The desktop mega-menus already expose the
- * city/area matrix; duplicating them here doubled anchors + RSC payload on every
- * HTML page (~200 links × ~400 KB flight data across the fleet).
+ * Mobile drawer — hub link plus capped service / area lists from primary nav.
+ * Full mega-menu matrices stay desktop-only to limit HTML weight.
  */
 export function MobileNav({ groups }: MobileNavProps) {
   const [open, setOpen] = useState(false);
@@ -49,59 +54,59 @@ export function MobileNav({ groups }: MobileNavProps) {
         <Dialog open={open} onClose={() => setOpen(false)} title="Site navigation" variant="drawer">
           <nav aria-label="Site navigation" className="max-h-[75vh] overflow-y-auto pr-1">
             <ul className="space-y-6">
-              {groups.map((group) => (
-                <li key={group.label}>
-                  <Link
-                    href={group.href}
-                    className="block text-sm font-semibold tracking-wide text-ink-900 uppercase"
-                  >
-                    {group.label}
-                  </Link>
+              {groups.map((group) => {
+                const cap =
+                  group.label === 'Services'
+                    ? MAX_ITEMS.Services
+                    : group.label === 'Areas'
+                      ? MAX_ITEMS.Areas
+                      : MAX_ITEMS.default;
+                const items = group.items.slice(0, cap);
+                const remaining = group.items.length - items.length;
+                const showItems = items.length > 0;
 
-                  {group.label === 'Services' ? (
-                    <ul className="mt-2 space-y-1 border-l border-ink-200 pl-3">
-                      <li>
-                        <Link
-                          href={STATIC_ROUTES.services}
-                          className="block py-1.5 text-sm font-medium text-brand-800 hover:text-brand-900"
-                        >
-                          All services hub →
-                        </Link>
-                      </li>
-                    </ul>
-                  ) : null}
+                return (
+                  <li key={group.label}>
+                    <Link
+                      href={group.href}
+                      className="block text-sm font-semibold tracking-wide text-ink-900 uppercase"
+                    >
+                      {group.label}
+                    </Link>
 
-                  {group.label === 'Areas' ? (
-                    <ul className="mt-2 space-y-1 border-l border-ink-200 pl-3">
-                      <li>
-                        <Link
-                          href={STATIC_ROUTES.serviceAreas}
-                          className="block py-1.5 text-sm font-medium text-brand-800 hover:text-brand-900"
-                        >
-                          Browse all service areas →
-                        </Link>
-                      </li>
-                    </ul>
-                  ) : null}
-
-                  {group.label !== 'Services' &&
-                  group.label !== 'Areas' &&
-                  group.items.length > 0 ? (
-                    <ul className="mt-2 space-y-1 border-l border-ink-200 pl-3">
-                      {group.items.slice(0, 8).map((item) => (
-                        <li key={item.href}>
-                          <Link
-                            href={item.href}
-                            className="block py-1.5 text-sm text-ink-600 hover:text-brand-800"
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </li>
-              ))}
+                    {showItems ? (
+                      <ul className="mt-2 space-y-1 border-l border-ink-200 pl-3">
+                        {items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className="block py-1.5 text-sm text-ink-600 hover:text-brand-800"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                        {remaining > 0 || group.label === 'Services' || group.label === 'Areas' ? (
+                          <li>
+                            <Link
+                              href={group.href}
+                              className="block py-1.5 text-sm font-medium text-brand-800 hover:text-brand-900"
+                            >
+                              {remaining > 0
+                                ? `+${remaining} more →`
+                                : group.label === 'Services'
+                                  ? 'All services hub →'
+                                  : group.label === 'Areas'
+                                    ? 'Browse all service areas →'
+                                    : 'View all →'}
+                            </Link>
+                          </li>
+                        ) : null}
+                      </ul>
+                    ) : null}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </Dialog>

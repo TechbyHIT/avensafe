@@ -512,12 +512,19 @@ export function ProductCompare() {
   );
 }
 
+export interface FeaturedCityLink {
+  readonly label: string;
+  readonly href: string;
+}
+
 export interface FeaturedCitiesProps {
   readonly cities: readonly {
     readonly name: string;
     readonly href: string;
     readonly note: string;
     readonly image?: ImageRecord | undefined;
+    readonly services?: readonly FeaturedCityLink[];
+    readonly areas?: readonly FeaturedCityLink[];
   }[];
 }
 
@@ -561,37 +568,95 @@ export function FeaturedCities({ cities }: FeaturedCitiesProps) {
         {cities.map((city, index) => {
           const image =
             city.image ?? getImageById(CITY_IMAGE_ROTATION[index % CITY_IMAGE_ROTATION.length]!);
+          const services = city.services ?? [];
+          const areas = city.areas ?? [];
           return (
             <li key={city.href}>
-              <Link
-                href={city.href}
-                data-no-underline=""
-                className="block overflow-hidden rounded-(--radius-card) border border-ink-200/80 bg-white no-underline shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-raised)"
-              >
-                {image ? (
-                  <div className="relative aspect-[16/10] bg-ink-100">
-                    <Image
-                      src={image.src}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 50vw"
-                      className="object-cover"
-                      loading="lazy"
-                    />
+              <article className="overflow-hidden rounded-(--radius-card) border border-ink-200/80 bg-white shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-raised)">
+                <Link
+                  href={city.href}
+                  data-no-underline=""
+                  className="block no-underline"
+                >
+                  {image ? (
+                    <div className="relative aspect-[16/10] bg-ink-100">
+                      <Image
+                        src={image.src}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 50vw"
+                        className="object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="p-5 pb-3">
+                    <h3 className="text-lg font-semibold text-ink-900">
+                      Safety installations in {city.name}
+                    </h3>
+                    <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-600">
+                      {city.note}
+                    </p>
                   </div>
-                ) : null}
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-ink-900">
-                    Safety installations in {city.name}
-                  </h3>
-                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-600">
-                    {city.note}
-                  </p>
-                  <p className="mt-3 text-sm font-medium text-brand-800">
-                    Explore {city.name} areas and services →
-                  </p>
-                </div>
-              </Link>
+                </Link>
+                {(services.length > 0 || areas.length > 0) ? (
+                  <div className="space-y-3 border-t border-ink-100 px-5 py-4">
+                    {services.length > 0 ? (
+                      <div>
+                        <p className="text-[11px] font-semibold tracking-wider text-ink-500 uppercase">
+                          Services
+                        </p>
+                        <ul className="mt-1.5 space-y-1">
+                          {services.map((link) => (
+                            <li key={link.href}>
+                              <Link
+                                href={link.href}
+                                className="text-sm text-ink-700 no-underline hover:text-brand-800"
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                    {areas.length > 0 ? (
+                      <div>
+                        <p className="text-[11px] font-semibold tracking-wider text-ink-500 uppercase">
+                          Areas
+                        </p>
+                        <ul className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1">
+                          {areas.map((link) => (
+                            <li key={link.href}>
+                              <Link
+                                href={link.href}
+                                className="text-sm text-ink-700 no-underline hover:text-brand-800"
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                    <Link
+                      href={city.href}
+                      className="inline-block text-sm font-medium text-brand-800 no-underline hover:text-accent-700"
+                    >
+                      Explore {city.name} →
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="border-t border-ink-100 px-5 py-4">
+                    <Link
+                      href={city.href}
+                      className="text-sm font-medium text-brand-800 no-underline hover:text-accent-700"
+                    >
+                      Explore {city.name} areas and services →
+                    </Link>
+                  </div>
+                )}
+              </article>
             </li>
           );
         })}

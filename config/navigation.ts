@@ -16,7 +16,8 @@ export const PRIMARY_NAV: readonly NavGroup[] = [
   {
     label: 'Areas',
     href: STATIC_ROUTES.serviceAreas,
-    dynamicSource: 'states',
+    /** City hubs for the menu; full state/locality tree lives on service-areas. */
+    dynamicSource: 'featuredCities',
   },
   { label: 'Gallery', href: STATIC_ROUTES.gallery },
   { label: 'Blog', href: STATIC_ROUTES.blog },

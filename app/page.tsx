@@ -27,6 +27,7 @@ import { LinkCard } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import {
   findFaqs,
+  getAreasByCity,
   getCities,
   getCornerstoneGuides,
   getCorpusStats,
@@ -37,7 +38,7 @@ import {
   getStates,
   getTestimonials,
 } from '@/lib/data/repository';
-import { cityPath, guidePath, servicePath, statePath } from '@/lib/routing/url';
+import { areaPath, cityPath, guidePath, serviceInCityPath, servicePath, statePath } from '@/lib/routing/url';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { breadcrumbSchema, webPageSchema } from '@/lib/schema/builders';
 import { buildGraph } from '@/lib/schema/graph';
@@ -160,16 +161,37 @@ export default function HomePage() {
   const taxonomyServiceCards = buildTaxonomyServiceCards(12);
 
   const citiesBySlug = new Map(getCities().map((city) => [city.slug, city]));
+  const homeServiceSlugs = ['invisible-grills', 'safety-nets', 'balcony-nets'] as const;
+  const homeServices = homeServiceSlugs
+    .map((slug) => services.find((entry) => entry.slug === slug))
+    .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+
+  let richCityCount = 0;
   const featuredCities = FEATURED_CITY_SLUGS.flatMap((slug) => {
     const city = citiesBySlug.get(slug);
     if (!city) return [];
     const state = states.find((entry) => entry.id === city.stateId);
     if (!state) return [];
+    const withLinks = richCityCount < 12;
+    if (withLinks) richCityCount += 1;
+    const localities = withLinks ? getAreasByCity(city.id).slice(0, 4) : [];
     return [
       {
         name: city.name,
         href: cityPath(state, city),
         note: city.localConsiderations,
+        services: withLinks
+          ? homeServices.map((service) => ({
+              label: `${service.name} in ${city.name}`,
+              href: serviceInCityPath(service, state, city),
+            }))
+          : undefined,
+        areas: withLinks
+          ? localities.map((area) => ({
+              label: area.name,
+              href: areaPath(state, city, area),
+            }))
+          : undefined,
       },
     ];
   });

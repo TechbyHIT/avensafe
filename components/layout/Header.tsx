@@ -127,7 +127,7 @@ export function Header() {
                           <div className="overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-(--shadow-raised)">
                             <div className="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-4">
                               {SERVICES_MEGA_MENU.map((column) => {
-                                const preview = column.links.slice(0, 4);
+                                const preview = column.links.slice(0, 6);
                                 const remaining = column.links.length - preview.length;
                                 return (
                                 <div key={column.heading}>
