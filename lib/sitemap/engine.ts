@@ -2,10 +2,6 @@ import { SITEMAP, SITEMAP_LONG_TAIL_TYPES, SITEMAP_PRIMARY_TYPES } from '@/confi
 import { STATIC_ROUTES, type SitemapType } from '@/config/routes';
 import { getBlogPosts, getGuides, getImages } from '@/lib/data/repository';
 import {
-  countAreaTargets,
-  countServiceAreaIntentTargets,
-  countServiceAreaTargets,
-  countServiceCityIntentTargets,
   listCityTargets,
   listDistrictTargets,
   listServiceCityTargets,
@@ -13,10 +9,6 @@ import {
   listServiceIntentTargets,
   listServiceTargets,
   listStateTargets,
-  sliceAreaTargets,
-  sliceServiceAreaIntentTargets,
-  sliceServiceAreaTargets,
-  sliceServiceCityIntentTargets,
 } from '@/lib/routing/inventory';
 import { absoluteUrl, blogPath, guidePath } from '@/lib/routing/url';
 import {
@@ -25,18 +17,33 @@ import {
   resolveSitemapLastmod,
   sitemapLastmodForPath,
 } from '@/lib/sitemap/lastmod';
+import {
+  cachedCountAreaTargets,
+  cachedCountServiceAreaIntentTargets,
+  cachedCountServiceAreaTargets,
+  cachedCountServiceCityIntentTargets,
+  resetSitemapPathCache,
+  sliceAreaPaths,
+  sliceServiceAreaIntentPaths,
+  sliceServiceAreaPaths,
+  sliceServiceCityIntentPaths,
+} from '@/lib/sitemap/paths';
 import type { PageTarget } from '@/types/routing';
 
 /**
  * The sitemap engine.
  *
- * Two indexes (Search Console cannot nest indexes; robots.txt lists both):
- * - `/sitemap.xml` — hubs, geo, service×place, editorial (submit this first)
- * - `/sitemap-long-tail.xml` — service×city/area×intent (still fully listed)
+ * Search Console counts `<url>` entries on the submitted file. An index has
+ * none, so GSC showed 0 pages until every child was fetched (often never).
  *
- * Child files: `/sitemaps/<name>.xml` (≤ SITEMAP.batchSize URLs).
+ * Submit these urlsets (≤ 50,000 URLs — protocol max):
+ * - `/sitemap.xml` — highest-value hubs / geo / service×place
+ * - `/sitemap-long-tail.xml` — highest-value intent URLs
+ *
+ * Full coverage stays in `/sitemaps/<name>.xml`, listed from
+ * `/sitemap-more.xml` and `/sitemap-intents.xml` (robots.txt).
+ *
  * Locs match canonicals. Every `<url>` has https `<loc>` + `<lastmod>`.
- * Confirmed by `npm run validate:sitemap`.
  */
 
 export interface SitemapImage {
@@ -78,7 +85,7 @@ interface HeavyTargetBucket {
   readonly priority: number;
   readonly changeFrequency: NonNullable<SitemapUrl['changeFrequency']>;
   readonly count: () => number;
-  readonly slice: (offset: number, limit: number) => readonly PageTarget[];
+  readonly slicePaths: (offset: number, limit: number) => readonly string[];
 }
 
 type Bucket = StaticBucket | LightTargetBucket | HeavyTargetBucket;
@@ -216,8 +223,8 @@ const BUCKETS: readonly Bucket[] = [
     kind: 'heavy-targets',
     priority: 0.6,
     changeFrequency: 'monthly',
-    count: countAreaTargets,
-    slice: sliceAreaTargets,
+    count: cachedCountAreaTargets,
+    slicePaths: sliceAreaPaths,
   },
   {
     type: 'service-city',
@@ -238,24 +245,24 @@ const BUCKETS: readonly Bucket[] = [
     kind: 'heavy-targets',
     priority: 0.6,
     changeFrequency: 'monthly',
-    count: countServiceAreaTargets,
-    slice: sliceServiceAreaTargets,
+    count: cachedCountServiceAreaTargets,
+    slicePaths: sliceServiceAreaPaths,
   },
   {
     type: 'service-city-intent',
     kind: 'heavy-targets',
     priority: 0.5,
     changeFrequency: 'monthly',
-    count: countServiceCityIntentTargets,
-    slice: sliceServiceCityIntentTargets,
+    count: cachedCountServiceCityIntentTargets,
+    slicePaths: sliceServiceCityIntentPaths,
   },
   {
     type: 'service-area-intent',
     kind: 'heavy-targets',
     priority: 0.4,
     changeFrequency: 'monthly',
-    count: countServiceAreaIntentTargets,
-    slice: sliceServiceAreaIntentTargets,
+    count: cachedCountServiceAreaIntentTargets,
+    slicePaths: sliceServiceAreaIntentPaths,
   },
   { type: 'guides', kind: 'static', urls: guideUrls },
   { type: 'blog', kind: 'static', urls: blogUrls },
@@ -291,6 +298,8 @@ let cachedPrimaryNames: readonly string[] | null = null;
 let cachedLongTailNames: readonly string[] | null = null;
 let cachedIndexXml: string | null = null;
 let cachedLongTailIndexXml: string | null = null;
+let cachedPrimaryUrlsetXml: string | null = null;
+let cachedLongTailUrlsetXml: string | null = null;
 let cachedCorpusLastmod: string | null = null;
 const fileCache = new Map<string, SitemapFile>();
 const xmlCache = new Map<string, string>();
@@ -316,8 +325,11 @@ export function resetSitemapCache(): void {
   cachedLongTailNames = null;
   cachedIndexXml = null;
   cachedLongTailIndexXml = null;
+  cachedPrimaryUrlsetXml = null;
+  cachedLongTailUrlsetXml = null;
   cachedCorpusLastmod = null;
   resetCorpusLastmodCache();
+  resetSitemapPathCache();
   fileCache.clear();
   xmlCache.clear();
 }
@@ -366,10 +378,13 @@ export function getSitemapFile(name: string): SitemapFile | undefined {
       changeFrequency: bucket.changeFrequency,
     });
   } else {
-    urls = urlsFromTargets(bucket.slice(offset, SITEMAP.batchSize), {
-      priority: bucket.priority,
-      changeFrequency: bucket.changeFrequency,
-    });
+    const lastmod = corpusLastmodCached();
+    urls = dedupeUrls(
+      bucket.slicePaths(offset, SITEMAP.batchSize).map((path) => ({
+        loc: absoluteUrl(path),
+        lastModified: lastmod,
+      })),
+    );
   }
 
   if (urls.length === 0) return undefined;
@@ -466,9 +481,63 @@ export function getSitemapIndexXml(): string {
   return cachedIndexXml;
 }
 
-/** Long-tail sitemap index — service × city/area × intent URLs. */
+/** Long-tail sitemap index — remaining intent batches (robots.txt). */
 export function getLongTailSitemapIndexXml(): string {
   if (cachedLongTailIndexXml) return cachedLongTailIndexXml;
   cachedLongTailIndexXml = renderSitemapIndex(listLongTailSitemapFileNames());
   return cachedLongTailIndexXml;
+}
+
+function urlsFromPaths(paths: readonly string[], lastmod: string): readonly SitemapUrl[] {
+  return paths.map((path) => ({
+    loc: absoluteUrl(path),
+    lastModified: lastmod,
+  }));
+}
+
+function urlsFromBucket(bucket: Bucket, offset: number, limit: number): readonly SitemapUrl[] {
+  if (limit <= 0) return [];
+  if (bucket.kind === 'static') {
+    return bucket.urls().slice(offset, offset + limit);
+  }
+  if (bucket.kind === 'light-targets') {
+    return urlsFromTargets(bucket.list().slice(offset, offset + limit), {
+      priority: bucket.priority,
+      changeFrequency: bucket.changeFrequency,
+    });
+  }
+  return urlsFromPaths(bucket.slicePaths(offset, limit), corpusLastmodCached());
+}
+
+function collectUrlset(types: readonly string[], max: number): readonly SitemapUrl[] {
+  const collected: SitemapUrl[] = [];
+  for (const type of types) {
+    if (collected.length >= max) break;
+    const bucket = BUCKETS.find((entry) => entry.type === type);
+    if (!bucket) continue;
+    collected.push(...urlsFromBucket(bucket, 0, max - collected.length));
+  }
+  return dedupeUrls(collected);
+}
+
+/**
+ * Submitted `/sitemap.xml` — urlset so Search Console counts pages immediately.
+ * Remaining primary URLs stay in `/sitemaps/*` via `/sitemap-more.xml`.
+ */
+export function getPrimaryUrlsetXml(): string {
+  if (cachedPrimaryUrlsetXml) return cachedPrimaryUrlsetXml;
+  const urls = collectUrlset(SITEMAP_PRIMARY_TYPES, SITEMAP.maxUrlsPerFile);
+  cachedPrimaryUrlsetXml = renderUrlset({ name: 'primary', urls });
+  return cachedPrimaryUrlsetXml;
+}
+
+/**
+ * Submitted `/sitemap-long-tail.xml` — urlset of the first 50k intent URLs.
+ * Remaining intent URLs stay in `/sitemaps/*` via `/sitemap-intents.xml`.
+ */
+export function getLongTailUrlsetXml(): string {
+  if (cachedLongTailUrlsetXml) return cachedLongTailUrlsetXml;
+  const urls = collectUrlset(SITEMAP_LONG_TAIL_TYPES, SITEMAP.maxUrlsPerFile);
+  cachedLongTailUrlsetXml = renderUrlset({ name: 'long-tail', urls });
+  return cachedLongTailUrlsetXml;
 }

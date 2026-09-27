@@ -10,6 +10,8 @@ import { resolve } from 'node:path';
 import { SITEMAP } from '../config/constants';
 import {
   getLongTailSitemapIndexXml,
+  getLongTailUrlsetXml,
+  getPrimaryUrlsetXml,
   getSitemapFile,
   getSitemapIndexXml,
   listLongTailSitemapFileNames,
@@ -26,8 +28,14 @@ const names = listSitemapFileNames();
 const primary = listPrimarySitemapFileNames();
 const longTail = listLongTailSitemapFileNames();
 const xml = getSitemapIndexXml();
+const primaryUrlset = getPrimaryUrlsetXml();
+const longTailUrlset = getLongTailUrlsetXml();
 const elapsed = ((Date.now() - started) / 1000).toFixed(1);
+const countLocs = (body: string) => body.match(/<loc>/gu)?.length ?? 0;
 
+console.log('--- submitted urlsets ---');
+console.log(`  sitemap.xml urls: ${countLocs(primaryUrlset)}`);
+console.log(`  sitemap-long-tail.xml urls: ${countLocs(longTailUrlset)}`);
 console.log(xml);
 console.log('\n--- long-tail index ---\n');
 console.log(getLongTailSitemapIndexXml());

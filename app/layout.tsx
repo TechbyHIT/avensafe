@@ -38,6 +38,8 @@ export const metadata: Metadata = {
       'application/xml': [
         { url: absoluteUrl('/sitemap.xml'), title: 'Sitemap' },
         { url: absoluteUrl('/sitemap-long-tail.xml'), title: 'Long-tail sitemap' },
+        { url: absoluteUrl('/sitemap-more.xml'), title: 'Sitemap (more)' },
+        { url: absoluteUrl('/sitemap-intents.xml'), title: 'Sitemap (intents)' },
       ],
     },
   },

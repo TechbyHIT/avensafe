@@ -103,9 +103,8 @@ export const SITEMAP_PRIMARY_TYPES = [
 export const SITEMAP_LONG_TAIL_TYPES = ['service-city-intent', 'service-area-intent'] as const;
 
 /**
- * Corpus lastmod floor (W3C date). Bump when composer/templates change without
- * inventory-count changes. Inventory count changes also shift lastmod via
- * `corpusSitemapLastmod()` in `lib/sitemap/lastmod.ts`.
+ * Corpus lastmod (W3C date). Bump when page templates change. Must never be
+ * in the future — Search Console rejects future lastmod.
  */
 export const SITEMAP_CONTENT_VERSION = '2026-09-27';
 

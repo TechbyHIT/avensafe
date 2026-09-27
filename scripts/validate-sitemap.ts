@@ -30,6 +30,8 @@ import { evaluatePublishing } from '../lib/routing/publishing';
 import { blogPath, guidePath, normalizePath } from '../lib/routing/url';
 import {
   getLongTailSitemapIndexXml,
+  getLongTailUrlsetXml,
+  getPrimaryUrlsetXml,
   getSitemapFile,
   getSitemapIndexXml,
   getSitemapXml,
@@ -243,7 +245,7 @@ for (const post of posts) {
 }
 console.log(`  blog posts                ${posts.length} published`);
 
-console.log('\n4) Sitemap index sync + XML protocol samples:\n');
+console.log('\n4) Submitted urlsets + overflow indexes:\n');
 
 const today = new Date().toISOString().slice(0, 10);
 const allNames = listSitemapFileNames();
@@ -283,10 +285,20 @@ function assertIndex(label: string, xml: string, expectedNames: readonly string[
   }
 }
 
+const primaryUrlset = getPrimaryUrlsetXml();
+const longTailUrlset = getLongTailUrlsetXml();
+assertXmlShape('sitemap.xml', primaryUrlset, 'urlset');
+assertUrlEntries('sitemap.xml', primaryUrlset);
+assertXmlShape('sitemap-long-tail.xml', longTailUrlset, 'urlset');
+assertUrlEntries('sitemap-long-tail.xml', longTailUrlset);
+const countLocs = (xml: string) => xml.match(/<loc>/gu)?.length ?? 0;
+console.log(`  sitemap.xml urlset        ${String(countLocs(primaryUrlset)).padStart(6)} urls`);
+console.log(`  sitemap-long-tail urlset  ${String(countLocs(longTailUrlset)).padStart(6)} urls`);
+
 const indexXml = getSitemapIndexXml();
 const longTailXml = getLongTailSitemapIndexXml();
-assertIndex('sitemap.xml', indexXml, primaryNames);
-assertIndex('sitemap-long-tail.xml', longTailXml, longTailNames);
+assertIndex('sitemap-more.xml', indexXml, primaryNames);
+assertIndex('sitemap-intents.xml', longTailXml, longTailNames);
 
 console.log(`  primary files             ${primaryNames.length}`);
 console.log(`  long-tail files           ${longTailNames.length}`);

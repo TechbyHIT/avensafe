@@ -1,19 +1,4 @@
-import { createHash } from 'node:crypto';
-import { SITEMAP_CONTENT_VERSION, VARIATION_SEED } from '@/config/constants';
-import {
-  countAreaTargets,
-  countServiceAreaIntentTargets,
-  countServiceAreaTargets,
-  countServiceCityIntentTargets,
-  listCityTargets,
-  listDistrictTargets,
-  listServiceCityTargets,
-  listServiceDistrictTargets,
-  listServiceIntentTargets,
-  listServiceTargets,
-  listStateTargets,
-} from '@/lib/routing/inventory';
-import { getBlogPosts, getGuides } from '@/lib/data/repository';
+import { SITEMAP_CONTENT_VERSION } from '@/config/constants';
 
 const W3C_DATE = /^\d{4}-\d{2}-\d{2}$/u;
 
@@ -55,42 +40,15 @@ export function resetCorpusLastmodCache(): void {
 }
 
 /**
- * Corpus lastmod for inventory/core URLs.
- * Stable for a given content version + inventory shape; never in the future
- * (Search Console rejects future lastmod).
+ * Shared lastmod for inventory URLs. Must stay cheap — counting 3M pages here
+ * made `/sitemap.xml` too slow for Search Console and showed 0 discovered URLs.
+ * Never in the future (GSC rejects future lastmod).
  */
 export function corpusSitemapLastmod(): string {
   if (memoizedCorpusLastmod) return memoizedCorpusLastmod;
-
-  const signal = [
-    VARIATION_SEED,
-    SITEMAP_CONTENT_VERSION,
-    listServiceTargets().length,
-    listServiceIntentTargets().length,
-    listStateTargets().length,
-    listDistrictTargets().length,
-    listCityTargets().length,
-    countAreaTargets(),
-    listServiceCityTargets().length,
-    listServiceDistrictTargets().length,
-    countServiceAreaTargets(),
-    countServiceCityIntentTargets(),
-    countServiceAreaIntentTargets(),
-    getGuides().length,
-    getBlogPosts().length,
-  ].join('|');
-
-  const digest = createHash('sha256').update(signal).digest();
-  const days = digest.readUInt32BE(0) % 5000;
-  const fromHash = new Date(Date.UTC(2020, 0, 1 + days));
-  const fromVersion = new Date(`${SITEMAP_CONTENT_VERSION}T00:00:00.000Z`);
-  const today = utcToday();
-  const candidates = [fromHash, fromVersion].filter((date) => date.getTime() <= today.getTime());
-  const chosen = candidates.reduce(
-    (latest, date) => (date.getTime() > latest.getTime() ? date : latest),
-    candidates[0] ?? today,
+  memoizedCorpusLastmod = notAfterToday(
+    isW3cDate(SITEMAP_CONTENT_VERSION) ? SITEMAP_CONTENT_VERSION : todayIso(),
   );
-  memoizedCorpusLastmod = toIsoDate(chosen);
   return memoizedCorpusLastmod;
 }
 
@@ -103,22 +61,7 @@ export function resolveSitemapLastmod(entityUpdatedAt?: string): string {
   return corpus;
 }
 
-/**
- * Stable per-URL lastmod so sibling pages do not all share one timestamp
- * (a common Search Console “doorway / generated farm” signal).
- */
-export function sitemapLastmodForPath(path: string, entityUpdatedAt?: string): string {
-  if (entityUpdatedAt && isW3cDate(entityUpdatedAt)) {
-    return resolveSitemapLastmod(entityUpdatedAt);
-  }
-
-  const corpus = corpusSitemapLastmod();
-  const floor = Date.UTC(2024, 0, 1);
-  const ceiling = new Date(`${corpus}T00:00:00.000Z`).getTime();
-  const spanDays = Math.max(1, Math.floor((ceiling - floor) / 86_400_000));
-  const digest = createHash('sha256')
-    .update(`${VARIATION_SEED}|${SITEMAP_CONTENT_VERSION}|${path}`)
-    .digest();
-  const offset = digest.readUInt32BE(0) % (spanDays + 1);
-  return notAfterToday(toIsoDate(new Date(floor + offset * 86_400_000)));
+/** Inventory lastmod. Entity dates win for editorial URLs. */
+export function sitemapLastmodForPath(_path: string, entityUpdatedAt?: string): string {
+  return resolveSitemapLastmod(entityUpdatedAt);
 }
