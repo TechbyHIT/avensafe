@@ -7,6 +7,10 @@
  * inappropriate structured data; missing image files and alt text; and thin
  * content via the publishing gate.
  *
+ * The inventory runs to millions of pages, so the audit streams: each page is
+ * checked as it is built and only compact per-page state (hashes, flags) is
+ * retained. Issue messages are counted in full but only a sample is kept.
+ *
  * Run with `npm run validate:seo`.
  */
 import { existsSync } from 'node:fs';
@@ -30,44 +34,132 @@ import {
 import { buildGraph } from '../lib/schema/graph';
 import type { PageTarget } from '../types/routing';
 
-const errors: string[] = [];
-const warnings: string[] = [];
+class IssueLog {
+  count = 0;
+  readonly samples: string[] = [];
 
-interface AuditedPage {
-  readonly path: string;
+  constructor(private readonly limit: number) {}
+
+  add(message: string): void {
+    this.count += 1;
+    if (this.samples.length < this.limit) this.samples.push(message);
+  }
+}
+
+const errors = new IssueLog(200);
+const warnings = new IssueLog(100);
+
+/** 53-bit string hash (cyrb53); collisions are re-checked against the real values. */
+function hash53(value: string): number {
+  let h1 = 0xdeadbeef;
+  let h2 = 0x41c6ce57;
+  for (let i = 0; i < value.length; i += 1) {
+    const ch = value.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+}
+
+interface PageValues {
   readonly title: string;
   readonly description: string;
   readonly h1: string;
   readonly canonical: string;
-  readonly indexable: boolean;
-  readonly outboundLinks: readonly string[];
 }
+
+type DuplicateField = keyof PageValues;
+
+const DUPLICATE_LABELS: Record<DuplicateField, string> = {
+  title: 'title',
+  description: 'meta description',
+  h1: 'H1',
+  canonical: 'canonical URL',
+};
 
 /* ------------------------------------------------------------ build the audit */
 
 const targets = listAllTargets();
-const pages: AuditedPage[] = [];
 
-for (const target of targets) {
+const extraPaths = [
+  ...Object.values(STATIC_ROUTES),
+  ...getGuides().map((guide) => guidePath(guide)),
+  ...getBlogPosts().map((post) => blogPath(post)),
+];
+
+/** Every known URL → a dense index, so per-page flags fit in typed arrays. */
+const pathIndex = new Map<string, number>();
+targets.forEach((target, index) => {
+  if (!pathIndex.has(target.path)) pathIndex.set(target.path, index);
+});
+let nextIndex = targets.length;
+for (const path of extraPaths) {
+  if (!pathIndex.has(path)) pathIndex.set(path, nextIndex++);
+}
+
+const hasInbound = new Uint8Array(nextIndex);
+const indexable = new Uint8Array(targets.length);
+
+/** Per field: value hash → first indexable page index carrying it. */
+const firstByHash = Object.fromEntries(
+  (Object.keys(DUPLICATE_LABELS) as DuplicateField[]).map((field) => [field, new Map<number, number>()]),
+) as Record<DuplicateField, Map<number, number>>;
+
+/** Per field: first page index → every page path sharing its exact value. */
+const duplicateGroups = Object.fromEntries(
+  (Object.keys(DUPLICATE_LABELS) as DuplicateField[]).map((field) => [
+    field,
+    new Map<number, { value: string; paths: string[] }>(),
+  ]),
+) as Record<DuplicateField, Map<number, { value: string; paths: string[] }>>;
+
+function pageValues(target: PageTarget): PageValues {
+  const copy = buildPageCopy(target);
+  return {
+    title: copy.title,
+    description: copy.description,
+    h1: buildPageContent(target).h1,
+    canonical: absoluteUrl(target.path),
+  };
+}
+
+function trackDuplicates(index: number, values: PageValues): void {
+  for (const field of Object.keys(DUPLICATE_LABELS) as DuplicateField[]) {
+    const value = values[field].trim().toLowerCase();
+    const key = hash53(value);
+    const first = firstByHash[field].get(key);
+    if (first === undefined) {
+      firstByHash[field].set(key, index);
+      continue;
+    }
+
+    let group = duplicateGroups[field].get(first);
+    if (!group) {
+      const firstValue = pageValues(targets[first]!)[field].trim().toLowerCase();
+      if (firstValue !== value) continue;
+      group = { value, paths: [targets[first]!.path] };
+      duplicateGroups[field].set(first, group);
+    }
+    if (group.value === value) group.paths.push(targets[index]!.path);
+  }
+}
+
+const started = Date.now();
+const PROGRESS_EVERY = 250_000;
+
+targets.forEach((target, index) => {
   const copy = buildPageCopy(target);
   const content = buildPageContent(target);
   const decision = evaluatePublishing(target, content);
   const linkGroups = buildContextualLinks(target);
-
-  pages.push({
-    path: target.path,
-    title: copy.title,
-    description: copy.description,
-    h1: content.h1,
-    canonical: absoluteUrl(target.path),
-    indexable: decision.indexable,
-    outboundLinks: linkGroups.flatMap((group) => group.links.map((link) => link.href)),
-  });
+  const crumbs = buildCrumbs(target);
 
   // Structured data must be present and appropriate for every generated page.
   const graph = buildGraph([
     webPageSchema({ name: copy.title, description: copy.description, path: target.path }),
-    breadcrumbSchema(buildCrumbs(target), target.path),
+    breadcrumbSchema(crumbs, target.path),
     target.service
       ? serviceSchema({
           service: target.service,
@@ -80,113 +172,95 @@ for (const target of targets) {
   ]);
 
   const types = new Set(graph['@graph'].map((node) => node['@type']));
-  if (!types.has('WebPage')) errors.push(`${target.path}: no WebPage schema`);
-  if (!types.has('BreadcrumbList')) errors.push(`${target.path}: no BreadcrumbList schema`);
-  if (!types.has('Organization')) errors.push(`${target.path}: no Organization schema`);
+  if (!types.has('WebPage')) errors.add(`${target.path}: no WebPage schema`);
+  if (!types.has('BreadcrumbList')) errors.add(`${target.path}: no BreadcrumbList schema`);
+  if (!types.has('Organization')) errors.add(`${target.path}: no Organization schema`);
   if (target.service && !types.has('Service')) {
-    errors.push(`${target.path}: service page without Service schema`);
+    errors.add(`${target.path}: service page without Service schema`);
   }
   if (content.faqs.length > 0 && !types.has('FAQPage')) {
-    errors.push(`${target.path}: renders FAQs but emits no FAQPage schema`);
+    errors.add(`${target.path}: renders FAQs but emits no FAQPage schema`);
   }
   if (content.faqs.length === 0 && types.has('FAQPage')) {
-    errors.push(`${target.path}: emits FAQPage schema with no FAQs`);
+    errors.add(`${target.path}: emits FAQPage schema with no FAQs`);
   }
 
   // Structural faults → noindex. Soft content shortfalls are advisory only.
   if (!decision.indexable) {
-    warnings.push(
+    warnings.add(
       `${target.path}: not indexable — ${decision.reasons.join('; ')} (served noindex, follow)`,
     );
   } else if (decision.softReasons.length > 0) {
-    warnings.push(
-      `${target.path}: below advisory depth — ${decision.softReasons.join('; ')}`,
+    warnings.add(`${target.path}: below advisory depth — ${decision.softReasons.join('; ')}`);
+  }
+
+  if (crumbs.length < 2) errors.add(`${target.path}: no breadcrumb trail`);
+
+  /* ------------------------------------------ titles, descriptions, H1s */
+
+  const values: PageValues = {
+    title: copy.title,
+    description: copy.description,
+    h1: content.h1,
+    canonical: absoluteUrl(target.path),
+  };
+
+  if (decision.indexable) {
+    indexable[index] = 1;
+    trackDuplicates(index, values);
+  }
+
+  if (values.title.length > SEO_LIMITS.titleMax) {
+    errors.add(`${target.path}: title is ${values.title.length} chars (max ${SEO_LIMITS.titleMax})`);
+  }
+  if (values.title.length < SEO_LIMITS.titleMin) {
+    errors.add(`${target.path}: title is only ${values.title.length} chars`);
+  }
+  if (values.description.length > SEO_LIMITS.descriptionMax) {
+    errors.add(
+      `${target.path}: description is ${values.description.length} chars (max ${SEO_LIMITS.descriptionMax})`,
     );
   }
-
-  if (buildCrumbs(target).length < 2) errors.push(`${target.path}: no breadcrumb trail`);
-}
-
-/* -------------------------------------------------- titles, descriptions, H1s */
-
-function reportDuplicates(label: string, valueOf: (page: AuditedPage) => string): void {
-  const seen = new Map<string, string[]>();
-  for (const page of pages) {
-    if (!page.indexable) continue;
-    const key = valueOf(page).trim().toLowerCase();
-    const bucket = seen.get(key);
-    if (bucket) bucket.push(page.path);
-    else seen.set(key, [page.path]);
+  if (values.description.length < SEO_LIMITS.descriptionMin) {
+    warnings.add(`${target.path}: description is only ${values.description.length} chars`);
+  }
+  if (values.h1.length > SEO_LIMITS.h1Max) {
+    warnings.add(`${target.path}: H1 is ${values.h1.length} chars`);
   }
 
-  for (const [value, paths] of seen) {
-    if (paths.length > 1) {
-      errors.push(
-        `duplicate ${label} across ${paths.length} indexable pages: "${value}" — ${paths
-          .slice(0, 4)
-          .join(', ')}${paths.length > 4 ? ', …' : ''}`,
-      );
+  /* ---------------------------------------------------- internal links */
+
+  for (const group of linkGroups) {
+    for (const link of group.links) {
+      const href = link.href;
+      if (/^(https?:|tel:|mailto:|#)/u.test(href)) continue;
+      const linked = pathIndex.get(href);
+      if (linked === undefined) {
+        errors.add(`${target.path}: links to "${href}", which is not a known page`);
+        continue;
+      }
+      if (href === target.path) errors.add(`${target.path}: links to itself`);
+      hasInbound[linked] = 1;
     }
   }
-}
 
-reportDuplicates('title', (page) => page.title);
-reportDuplicates('meta description', (page) => page.description);
-reportDuplicates('H1', (page) => page.h1);
-reportDuplicates('canonical URL', (page) => page.canonical);
+  if ((index + 1) % PROGRESS_EVERY === 0) {
+    const seconds = Math.round((Date.now() - started) / 1000);
+    console.log(`  … audited ${index + 1} / ${targets.length} pages (${seconds}s)`);
+  }
+});
 
-for (const page of pages) {
-  if (page.title.length > SEO_LIMITS.titleMax) {
-    errors.push(`${page.path}: title is ${page.title.length} chars (max ${SEO_LIMITS.titleMax})`);
-  }
-  if (page.title.length < SEO_LIMITS.titleMin) {
-    errors.push(`${page.path}: title is only ${page.title.length} chars`);
-  }
-  if (page.description.length > SEO_LIMITS.descriptionMax) {
-    errors.push(
-      `${page.path}: description is ${page.description.length} chars (max ${SEO_LIMITS.descriptionMax})`,
+for (const field of Object.keys(DUPLICATE_LABELS) as DuplicateField[]) {
+  for (const { value, paths } of duplicateGroups[field].values()) {
+    errors.add(
+      `duplicate ${DUPLICATE_LABELS[field]} across ${paths.length} indexable pages: "${value}" — ${paths
+        .slice(0, 4)
+        .join(', ')}${paths.length > 4 ? ', …' : ''}`,
     );
-  }
-  if (page.description.length < SEO_LIMITS.descriptionMin) {
-    warnings.push(`${page.path}: description is only ${page.description.length} chars`);
-  }
-  if (page.h1.length > SEO_LIMITS.h1Max) {
-    warnings.push(`${page.path}: H1 is ${page.h1.length} chars`);
-  }
-  if (page.canonical !== absoluteUrl(page.path)) {
-    errors.push(`${page.path}: canonical does not match its own URL`);
-  }
-}
-
-/* ------------------------------------------------------------ internal links */
-
-const validPaths = new Set<string>([
-  ...Object.values(STATIC_ROUTES),
-  ...targets.map((target) => target.path),
-  ...getGuides().map((guide) => guidePath(guide)),
-  ...getBlogPosts().map((post) => blogPath(post)),
-]);
-
-for (const page of pages) {
-  for (const href of page.outboundLinks) {
-    if (/^(https?:|tel:|mailto:|#)/u.test(href)) continue;
-    if (!validPaths.has(href)) {
-      errors.push(`${page.path}: links to "${href}", which is not a known page`);
-    }
-    if (href === page.path) errors.push(`${page.path}: links to itself`);
   }
 }
 
 /* ------------------------------------------------------------------- orphans */
-
-const inbound = new Map<string, number>();
-for (const path of validPaths) inbound.set(path, 0);
-
-for (const page of pages) {
-  for (const href of new Set(page.outboundLinks)) {
-    if (inbound.has(href)) inbound.set(href, (inbound.get(href) ?? 0) + 1);
-  }
-}
 
 // Pages reachable from the header, footer or a hub page are linked by definition.
 const navLinked = new Set<string>([
@@ -197,16 +271,20 @@ const navLinked = new Set<string>([
   ...getBlogPosts().map((post) => blogPath(post)),
 ]);
 
-const orphans = pages
-  .filter((page) => page.indexable)
-  .filter((page) => !navLinked.has(page.path) && (inbound.get(page.path) ?? 0) === 0)
-  .map((page) => page.path);
+let orphanCount = 0;
+const orphanSamples: string[] = [];
+targets.forEach((target, index) => {
+  if (!indexable[index] || navLinked.has(target.path)) return;
+  if (hasInbound[pathIndex.get(target.path)!]) return;
+  orphanCount += 1;
+  if (orphanSamples.length < 6) orphanSamples.push(target.path);
+});
 
-if (orphans.length > 0) {
-  errors.push(
-    `${orphans.length} indexable page(s) have no inbound internal links: ${orphans
-      .slice(0, 6)
-      .join(', ')}${orphans.length > 6 ? ', …' : ''}`,
+if (orphanCount > 0) {
+  errors.add(
+    `${orphanCount} indexable page(s) have no inbound internal links: ${orphanSamples.join(', ')}${
+      orphanCount > 6 ? ', …' : ''
+    }`,
   );
 }
 
@@ -215,39 +293,36 @@ if (orphans.length > 0) {
 for (const image of getImages()) {
   const file = join(process.cwd(), 'public', image.src.replace(/^\//u, ''));
   if (!existsSync(file)) {
-    errors.push(`images.json[${image.id}]: file missing at public${image.src}`);
+    errors.add(`images.json[${image.id}]: file missing at public${image.src}`);
   }
   if (image.alt.trim().length === 0) {
-    errors.push(`images.json[${image.id}]: empty alt text`);
+    errors.add(`images.json[${image.id}]: empty alt text`);
   }
   if (image.placeholder) {
-    warnings.push(`images.json[${image.id}]: still a generated placeholder`);
+    warnings.add(`images.json[${image.id}]: still a generated placeholder`);
   }
 }
 
 /* ------------------------------------------------------------------ reporting */
 
-function summarise(targetsAudited: readonly PageTarget[]): void {
-  const indexable = pages.filter((page) => page.indexable).length;
-  console.log('\nSEO audit');
-  console.log(`  pages audited : ${targetsAudited.length}`);
-  console.log(`  indexable     : ${indexable}`);
-  console.log(`  noindex       : ${targetsAudited.length - indexable}`);
-  console.log(`  known URLs    : ${validPaths.size}`);
+const indexableCount = indexable.reduce((sum, flag) => sum + flag, 0);
+console.log('\nSEO audit');
+console.log(`  pages audited : ${targets.length}`);
+console.log(`  indexable     : ${indexableCount}`);
+console.log(`  noindex       : ${targets.length - indexableCount}`);
+console.log(`  known URLs    : ${pathIndex.size}`);
+console.log(`  duration      : ${Math.round((Date.now() - started) / 1000)}s`);
+
+if (warnings.count > 0) {
+  console.log(`\n${warnings.count} warning(s):`);
+  for (const warning of warnings.samples.slice(0, 25)) console.log(`  • ${warning}`);
+  if (warnings.count > 25) console.log(`  … and ${warnings.count - 25} more`);
 }
 
-summarise(targets);
-
-if (warnings.length > 0) {
-  console.log(`\n${warnings.length} warning(s):`);
-  for (const warning of warnings.slice(0, 25)) console.log(`  • ${warning}`);
-  if (warnings.length > 25) console.log(`  … and ${warnings.length - 25} more`);
-}
-
-if (errors.length > 0) {
-  console.error(`\nSEO audit failed with ${errors.length} error(s):`);
-  for (const error of errors.slice(0, 40)) console.error(`  • ${error}`);
-  if (errors.length > 40) console.error(`  … and ${errors.length - 40} more`);
+if (errors.count > 0) {
+  console.error(`\nSEO audit failed with ${errors.count} error(s):`);
+  for (const error of errors.samples.slice(0, 40)) console.error(`  • ${error}`);
+  if (errors.count > 40) console.error(`  … and ${errors.count - 40} more`);
   console.error('');
   process.exit(1);
 }

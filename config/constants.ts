@@ -71,20 +71,43 @@ export const PAGINATION = {
 } as const;
 
 /**
- * Sitemap batching. The protocol allows 50,000 URLs per file; we use a smaller
- * batch so files stay small, cache well and are quick to regenerate.
+ * Sitemap batching. Protocol max is 50,000 URLs / 50 MB per file.
+ * 40k keeps files under the cap while cutting Search Console file-count
+ * (5k batches produced 600+ child sitemaps that timed out or never finished).
  */
 export const SITEMAP = {
-  batchSize: 5_000,
+  batchSize: 40_000,
   maxUrlsPerFile: 50_000,
 } as const;
+
+/**
+ * High-value buckets listed in `/sitemap.xml` (the index to submit first
+ * in Search Console). Long-tail intents live in `/sitemap-long-tail.xml`.
+ */
+export const SITEMAP_PRIMARY_TYPES = [
+  'core',
+  'services',
+  'service-intents',
+  'states',
+  'districts',
+  'cities',
+  'areas',
+  'service-district',
+  'service-city',
+  'service-area',
+  'blog',
+  'guides',
+  'images',
+] as const;
+
+export const SITEMAP_LONG_TAIL_TYPES = ['service-city-intent', 'service-area-intent'] as const;
 
 /**
  * Corpus lastmod floor (W3C date). Bump when composer/templates change without
  * inventory-count changes. Inventory count changes also shift lastmod via
  * `corpusSitemapLastmod()` in `lib/sitemap/lastmod.ts`.
  */
-export const SITEMAP_CONTENT_VERSION = '2026-08-02';
+export const SITEMAP_CONTENT_VERSION = '2026-09-27';
 
 /** Search-result rendering budgets used by the SEO validator. */
 export const SEO_LIMITS = {
@@ -155,16 +178,20 @@ export const CONTENT_THRESHOLDS = {
  * grows from hundreds to tens of thousands of URLs.
  */
 export const PRERENDER = {
+  /**
+   * 10GB VPS default. Long-tail HTML is ISR-on-demand (still in sitemap / indexable).
+   * Set `AVENSAFE_FULL_SSG=1` only on a host with spare disk.
+   */
+  lowDisk: process.env.AVENSAFE_FULL_SSG !== '1',
   /** Prerender service-in-city pages only for cities at or below this tier. */
-  serviceInCityMaxTier: 1,
+  serviceInCityMaxTier: process.env.AVENSAFE_FULL_SSG === '1' ? 1 : 0,
   /** Service-in-area pages are the largest bucket, so they build on demand. */
   serviceInArea: false,
   /** High-intent modifier pages (installation, price, …) for tier-1 cities only. */
-  serviceInCityIntentMaxTier: 1,
+  serviceInCityIntentMaxTier: process.env.AVENSAFE_FULL_SSG === '1' ? 1 : 0,
   serviceInAreaIntent: false,
   /**
-   * VPS quick builds (`AVENSAFE_QUICK_BUILD=1`): skip locality / long-tail
-   * prerender. Sitemap + indexability unchanged; those URLs render on first hit (ISR).
+   * Emergency skip of city/district SSG too (`AVENSAFE_QUICK_BUILD=1`).
    */
   quickBuild: process.env.AVENSAFE_QUICK_BUILD === '1',
   /**

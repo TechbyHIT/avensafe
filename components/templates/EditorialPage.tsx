@@ -2,7 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { EditorialArticle } from '@/components/sections/EditorialArticle';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { Hero } from '@/components/sections/Hero';
@@ -81,7 +83,8 @@ export function EditorialPage({
           ? { enquiryContext: 'pricing guide — photo estimate' }
           : {})}
       >
-        <p className={image ? 'text-sm text-white/80' : 'text-sm text-ink-500'}>
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse={Boolean(image)} />
+        <p className={image ? 'mt-6 text-sm text-white/80' : 'mt-6 text-sm text-ink-500'}>
           {entry.readingMinutes} min read · Published{' '}
           <time dateTime={entry.publishedAt}>
             {published.toLocaleDateString('en-IN', { dateStyle: 'long' })}
@@ -97,6 +100,8 @@ export function EditorialPage({
           ) : null}
         </p>
       </Hero>
+
+      <PageTrustStrip />
 
       {path === STATIC_ROUTES.pricingGuide ? (
         <PricingToolkit
@@ -150,7 +155,10 @@ export function EditorialPage({
         </Section>
       ) : null}
 
-      <CtaSection />
+      <StaticConversionRail
+        enquiryContext={`${eyebrow} — photo estimate`}
+        showTrustStrip={false}
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { SEO_LIMITS } from '@/config/constants';
 import { taxonomyLabelFor } from '@/config/service-taxonomy';
 import { locationLabel, shortLocationLabel } from '@/lib/routing/resolve';
 import { areaH1Variant, cityH1Variant } from '@/lib/content/local-depth';
+import { getSearchIntents } from '@/lib/data/repository';
 import { joinWithAnd, lowerFirst, truncateAtWord, unique } from '@/lib/utils/text';
 import type { Service } from '@/lib/data/schemas';
 import type { PageTarget } from '@/types/routing';
@@ -138,6 +139,21 @@ function serviceIntentCopy(target: PageTarget): PageCopy {
  * Builds a title that always keeps the full place string (needed when locality
  * names collide across cities) and trims the lead phrase instead.
  */
+/** Keep the city (last comma segment) when a place string must shrink. */
+function keepPlaceCity(place: string, budget: number): string {
+  if (place.length <= budget) return place;
+  const comma = place.lastIndexOf(', ');
+  if (comma !== -1) {
+    const city = place.slice(comma);
+    const areaBudget = budget - city.length;
+    if (areaBudget >= 4) {
+      return `${place.slice(0, areaBudget).replace(/[\s,;:.\-—]+$/u, '')}${city}`;
+    }
+    return city.trim().slice(0, budget);
+  }
+  return place.slice(0, budget);
+}
+
 function titleWithPlace(lead: string, place: string, modifiers: readonly string[] = []): string {
   const brand = business.shortName;
   for (const modifier of modifiers) {
@@ -148,8 +164,17 @@ function titleWithPlace(lead: string, place: string, modifiers: readonly string[
   if (withPlace.length <= SEO_LIMITS.titleMax) return withPlace;
 
   const suffix = ` in ${place} | ${brand}`;
-  const maxLead = Math.max(8, SEO_LIMITS.titleMax - suffix.length);
-  return `${truncateAtWord(lead, maxLead)}${suffix}`;
+  const maxLead = SEO_LIMITS.titleMax - suffix.length;
+  if (maxLead >= 8) return `${truncateAtWord(lead, maxLead)}${suffix}`;
+
+  const unbranded = ` in ${place}`;
+  const maxUnbrandedLead = SEO_LIMITS.titleMax - unbranded.length;
+  if (maxUnbrandedLead >= 8) return `${truncateAtWord(lead, maxUnbrandedLead)}${unbranded}`;
+
+  const shortLead = truncateAtWord(lead, 18);
+  const sep = ' | ';
+  const placeBit = keepPlaceCity(place, SEO_LIMITS.titleMax - shortLead.length - sep.length);
+  return `${shortLead}${sep}${placeBit}`;
 }
 
 /** Compact unique service identity for titles that cannot fit the short name. */
@@ -157,12 +182,79 @@ function serviceTitleCode(serviceSlug: string): string {
   const known: Readonly<Record<string, string>> = {
     'invisible-grills': 'ig',
     'safety-nets': 'snet',
+    'balcony-nets': 'balc',
+    'bird-pigeon-nets': 'bird',
     'sports-nets': 'spnet',
     'cloth-hangers': 'ch',
     'duct-area-safety-nets': 'duct',
     'building-covering-safety-nets': 'bcsn',
   };
   return known[serviceSlug] ?? serviceSlug.replace(/-/gu, '').slice(0, 5);
+}
+
+function stateAbbrev(stateSlug: string): string {
+  const known: Readonly<Record<string, string>> = {
+    'andhra-pradesh': 'ap',
+    telangana: 'tg',
+    karnataka: 'ka',
+    'tamil-nadu': 'tn',
+    kerala: 'kl',
+    maharashtra: 'mh',
+    odisha: 'od',
+    goa: 'ga',
+  };
+  return known[stateSlug] ?? stateSlug.replace(/-/gu, '').slice(0, 2);
+}
+
+function draftIntentCode(intentSlug: string): string {
+  const parts = intentSlug.split('-');
+  if (parts.length === 1) return intentSlug.slice(0, 8);
+  if (parts.length === 2) {
+    return `${(parts[0] ?? '').slice(0, 2)}${(parts[1] ?? '').slice(0, 3)}`;
+  }
+  return parts.map((part) => part.slice(0, 2)).join('');
+}
+
+const INTENT_CODE_BY_SLUG: Readonly<Record<string, string>> = (() => {
+  const used = new Set<string>();
+  const map: Record<string, string> = {};
+  for (const intent of getSearchIntents()) {
+    let code = draftIntentCode(intent.slug);
+    let suffix = 2;
+    while (used.has(code)) {
+      code = `${draftIntentCode(intent.slug)}${suffix}`;
+      suffix += 1;
+    }
+    used.add(code);
+    map[intent.slug] = code;
+  }
+  return map;
+})();
+
+function intentCode(intentSlug: string): string {
+  return INTENT_CODE_BY_SLUG[intentSlug] ?? draftIntentCode(intentSlug);
+}
+
+/** Keep the last slug token(s) so phase-1 vs phase-2 never share a prefix cut. */
+function shortenKeepingTail(slug: string, maxLen: number): string {
+  if (slug.length <= maxLen) return slug;
+  if (maxLen < 4) return slug.slice(0, maxLen);
+  const parts = slug.split('-').filter(Boolean);
+  if (parts.length < 2) {
+    const tailLen = Math.min(4, Math.floor(maxLen / 2));
+    return `${slug.slice(0, maxLen - tailLen)}${slug.slice(-tailLen)}`;
+  }
+  const last = parts[parts.length - 1] ?? '';
+  const lastTwo = `${parts[parts.length - 2]}-${last}`;
+  const tail =
+    last.length <= 2 && lastTwo.length <= Math.ceil(maxLen / 2) ? lastTwo : last;
+  const headBudget = maxLen - tail.length - 1;
+  if (headBudget >= 2) {
+    const head = parts.slice(0, tail === lastTwo ? -2 : -1).join('-') || slug;
+    return `${head.slice(0, headBudget)}-${tail}`;
+  }
+  const headLen = Math.ceil(maxLen / 2);
+  return `${slug.slice(0, headLen)}${slug.slice(-(maxLen - headLen))}`;
 }
 
 /**
@@ -177,6 +269,8 @@ function titleWithPlaceAndIntent(
   areaOrPlace: string,
   cityName?: string,
   areaSlug?: string,
+  stateSlug?: string,
+  citySlug?: string,
 ): string {
   const brand = business.shortName;
   const intentToken = intentSlug.replace(/-/gu, ' ');
@@ -188,11 +282,28 @@ function titleWithPlaceAndIntent(
     serviceLead.split(/\s+/u)[0] ?? svcCode,
     svcCode,
   ]);
+  const slugAsName = areaSlug?.replace(/-/gu, ' ');
+  const areaLooksLikeCity =
+    Boolean(areaSlug) &&
+    areaOrPlace.trim().toLowerCase() === (cityName ?? '').trim().toLowerCase();
+  const preferredArea = areaLooksLikeCity && slugAsName ? slugAsName : areaOrPlace;
   const areaOptions = unique(
-    [areaOrPlace, areaSlug?.replace(/-/gu, ' '), areaSlug].filter(
+    [preferredArea, slugAsName, areaSlug, areaOrPlace].filter(
       (value): value is string => Boolean(value && value.length > 0),
     ),
   );
+
+  const hasAreaIdentity = (title: string): boolean => {
+    if (!areaSlug) return true;
+    const lower = title.toLowerCase();
+    const compact = lower.replace(/[^a-z0-9]+/gu, '');
+    const slugCompact = areaSlug.replace(/-/gu, '').toLowerCase();
+    return (
+      lower.includes(areaSlug.toLowerCase()) ||
+      Boolean(slugAsName && lower.includes(slugAsName.toLowerCase())) ||
+      compact.includes(slugCompact)
+    );
+  };
 
   const build = (lead: string, areaBit: string): string =>
     city
@@ -202,7 +313,9 @@ function titleWithPlaceAndIntent(
   for (const lead of leadOptions) {
     for (const areaBit of areaOptions) {
       const candidate = build(lead, areaBit);
-      if (candidate.length <= SEO_LIMITS.titleMax) return candidate;
+      if (candidate.length <= SEO_LIMITS.titleMax && hasAreaIdentity(candidate)) {
+        return candidate;
+      }
     }
   }
 
@@ -211,16 +324,26 @@ function titleWithPlaceAndIntent(
     const candidate = city
       ? `${lead} | ${intentToken} | ${compactArea} | ${city} | ${brand}`
       : `${lead} | ${intentToken} | ${compactArea} | ${brand}`;
-    if (candidate.length <= SEO_LIMITS.titleMax) return candidate;
+    if (candidate.length <= SEO_LIMITS.titleMax && hasAreaIdentity(candidate)) {
+      return candidate;
+    }
   }
 
-  // Guaranteed-unique compact form: service code is never dropped.
-  const uniqueFallback = city
-    ? `${svcCode} ${intentSlug} | ${compactArea} | ${city} | ${brand}`
-    : `${svcCode} ${intentSlug} | ${compactArea} | ${brand}`;
-  return uniqueFallback.length <= SEO_LIMITS.titleMax
-    ? uniqueFallback
-    : truncateAtWord(uniqueFallback, SEO_LIMITS.titleMax);
+  // Never drop intent + city + state — same locality names exist in many cities.
+  const st = stateSlug ? stateAbbrev(stateSlug) : '';
+  const cityBit = (citySlug ?? city).replace(/\s+/gu, '-');
+  const intentBit = intentCode(intentSlug);
+  const tail = [intentBit, cityBit, st].filter((part) => part.length > 0).join(' | ');
+  const tailFull = tail.length > 0 ? ` | ${tail}` : '';
+  const headMax = Math.max(8, SEO_LIMITS.titleMax - tailFull.length);
+  const areaBit = compactArea.replace(/\s+/gu, '-');
+  const head = `${svcCode} ${areaBit}`;
+  if (head.length <= headMax) return `${head}${tailFull}`;
+  const areaMax = Math.max(4, headMax - svcCode.length - 1);
+  return `${svcCode} ${shortenKeepingTail(areaBit, areaMax)}${tailFull}`.slice(
+    0,
+    SEO_LIMITS.titleMax,
+  );
 }
 
 /** Landing-page title: try conversion modifiers, then keep place + brand. */
@@ -340,8 +463,10 @@ function serviceLocationIntentCopy(target: PageTarget): PageCopy {
       service.slug,
       intent.slug,
       areaOrPlace,
-      cityName,
+      cityName ?? location.city?.name,
       areaSlug,
+      location.state.slug,
+      location.city?.slug,
     ),
     h1: truncateAtWord(`${service.name} ${intent.h1Phrase} in ${fullPlace}`, SEO_LIMITS.h1Max),
     description: fitDescription(descriptionLead),

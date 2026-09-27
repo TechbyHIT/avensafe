@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { business } from '@/config/business';
-import { SEO_DEFAULTS } from '@/config/seo';
+import { googleSiteVerification, ROBOTS_INDEXABLE, SEO_DEFAULTS } from '@/config/seo';
+import { absoluteUrl } from '@/lib/routing/url';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { StickyMobileCta } from '@/components/layout/StickyMobileCta';
@@ -31,6 +32,18 @@ export const metadata: Metadata = {
   creator: business.legalName,
   publisher: business.legalName,
   formatDetection: { telephone: true, address: false, email: true },
+  robots: ROBOTS_INDEXABLE,
+  alternates: {
+    types: {
+      'application/xml': [
+        { url: absoluteUrl('/sitemap.xml'), title: 'Sitemap' },
+        { url: absoluteUrl('/sitemap-long-tail.xml'), title: 'Long-tail sitemap' },
+      ],
+    },
+  },
+  ...(googleSiteVerification()
+    ? { verification: { google: googleSiteVerification() } }
+    : {}),
   // Icons come from Next's file conventions (`app/icon.svg`), so they are not
   // declared here — doing both would emit duplicate tags.
 };

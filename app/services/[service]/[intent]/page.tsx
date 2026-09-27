@@ -7,13 +7,14 @@ import { loadPage } from '@/lib/routing/page-bundle';
 import { metadataForPath } from '@/lib/routing/page-helpers';
 
 export const revalidate = 43200; // REVALIDATE.service
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{ readonly service: string; readonly intent: string }>;
 }
 
 export function generateStaticParams(): { service: string; intent: string }[] {
-  if (PRERENDER.quickBuild) return [];
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
   return listServiceIntentTargets().map((target) => ({
     service: target.service!.slug,
     intent: target.intent!.slug,

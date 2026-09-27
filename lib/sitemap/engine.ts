@@ -1,4 +1,4 @@
-import { SITEMAP } from '@/config/constants';
+import { SITEMAP, SITEMAP_LONG_TAIL_TYPES, SITEMAP_PRIMARY_TYPES } from '@/config/constants';
 import { STATIC_ROUTES, type SitemapType } from '@/config/routes';
 import { getBlogPosts, getGuides, getImages } from '@/lib/data/repository';
 import {
@@ -23,18 +23,20 @@ import {
   corpusSitemapLastmod,
   resetCorpusLastmodCache,
   resolveSitemapLastmod,
+  sitemapLastmodForPath,
 } from '@/lib/sitemap/lastmod';
 import type { PageTarget } from '@/types/routing';
 
 /**
  * The sitemap engine.
  *
- * - Index (`/sitemap.xml`) only enumerates child file names from counts.
- * - Each `/sitemaps/<name>.xml` builds one batch (≤ SITEMAP.batchSize URLs).
- * - URLs use the same path builders as canonicals.
- * - Every `<url>` has absolute HTTPS `<loc>` + `<lastmod>` (corpus fingerprint).
- * - Listed inventory URLs are indexable (structural gate only). Confirmed by
- *   `npm run validate:sitemap`.
+ * Two indexes (Search Console cannot nest indexes; robots.txt lists both):
+ * - `/sitemap.xml` — hubs, geo, service×place, editorial (submit this first)
+ * - `/sitemap-long-tail.xml` — service×city/area×intent (still fully listed)
+ *
+ * Child files: `/sitemaps/<name>.xml` (≤ SITEMAP.batchSize URLs).
+ * Locs match canonicals. Every `<url>` has https `<loc>` + `<lastmod>`.
+ * Confirmed by `npm run validate:sitemap`.
  */
 
 export interface SitemapImage {
@@ -94,11 +96,10 @@ function urlsFromTargets(
   targets: readonly PageTarget[],
   options: { readonly priority: number; readonly changeFrequency: SitemapUrl['changeFrequency'] },
 ): readonly SitemapUrl[] {
-  const lastModified = corpusSitemapLastmod();
   return dedupeUrls(
     targets.map((target) => ({
       loc: absoluteUrl(target.path),
-      lastModified,
+      lastModified: sitemapLastmodForPath(target.path),
       priority: options.priority,
       ...(options.changeFrequency ? { changeFrequency: options.changeFrequency } : {}),
     })),
@@ -106,27 +107,30 @@ function urlsFromTargets(
 }
 
 function coreUrls(): readonly SitemapUrl[] {
-  const lastModified = corpusSitemapLastmod();
-  const paths: readonly { readonly path: string; readonly priority: number }[] = [
-    { path: STATIC_ROUTES.home, priority: 1 },
-    { path: STATIC_ROUTES.services, priority: 0.9 },
-    { path: STATIC_ROUTES.serviceAreas, priority: 0.8 },
-    { path: STATIC_ROUTES.about, priority: 0.6 },
-    { path: STATIC_ROUTES.contact, priority: 0.7 },
-    { path: STATIC_ROUTES.faq, priority: 0.6 },
-    // Gallery lives only in the images sitemap (with image:image extensions).
-    { path: STATIC_ROUTES.projects, priority: 0.6 },
-    { path: STATIC_ROUTES.blog, priority: 0.6 },
-    { path: STATIC_ROUTES.guides, priority: 0.7 },
-    { path: STATIC_ROUTES.compare, priority: 0.65 },
+  const paths: readonly {
+    readonly path: string;
+    readonly priority: number;
+    readonly changeFrequency: NonNullable<SitemapUrl['changeFrequency']>;
+  }[] = [
+    { path: STATIC_ROUTES.home, priority: 1, changeFrequency: 'weekly' },
+    { path: STATIC_ROUTES.services, priority: 0.9, changeFrequency: 'weekly' },
+    { path: STATIC_ROUTES.serviceAreas, priority: 0.8, changeFrequency: 'weekly' },
+    { path: STATIC_ROUTES.contact, priority: 0.7, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.guides, priority: 0.7, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.compare, priority: 0.65, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.faq, priority: 0.6, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.about, priority: 0.6, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.projects, priority: 0.6, changeFrequency: 'monthly' },
+    { path: STATIC_ROUTES.blog, priority: 0.6, changeFrequency: 'weekly' },
+    // Gallery lives only in the images sitemap (image:image extensions).
   ];
 
   return dedupeUrls(
     paths.map((entry) => ({
       loc: absoluteUrl(entry.path),
-      lastModified,
+      lastModified: sitemapLastmodForPath(entry.path),
       priority: entry.priority,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: entry.changeFrequency,
     })),
   );
 }
@@ -159,7 +163,7 @@ function imageUrls(): readonly SitemapUrl[] {
   return [
     {
       loc: absoluteUrl(STATIC_ROUTES.gallery),
-      lastModified: corpusSitemapLastmod(),
+      lastModified: sitemapLastmodForPath(STATIC_ROUTES.gallery),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
       images: images.map((image) => ({
@@ -176,21 +180,21 @@ const BUCKETS: readonly Bucket[] = [
     type: 'services',
     kind: 'light-targets',
     priority: 0.9,
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     list: listServiceTargets,
   },
   {
     type: 'service-intents',
     kind: 'light-targets',
     priority: 0.85,
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     list: listServiceIntentTargets,
   },
   {
     type: 'states',
     kind: 'light-targets',
-    priority: 0.7,
-    changeFrequency: 'monthly',
+    priority: 0.75,
+    changeFrequency: 'weekly',
     list: listStateTargets,
   },
   {
@@ -203,8 +207,8 @@ const BUCKETS: readonly Bucket[] = [
   {
     type: 'cities',
     kind: 'light-targets',
-    priority: 0.7,
-    changeFrequency: 'monthly',
+    priority: 0.8,
+    changeFrequency: 'weekly',
     list: listCityTargets,
   },
   {
@@ -218,8 +222,8 @@ const BUCKETS: readonly Bucket[] = [
   {
     type: 'service-city',
     kind: 'light-targets',
-    priority: 0.7,
-    changeFrequency: 'monthly',
+    priority: 0.75,
+    changeFrequency: 'weekly',
     list: listServiceCityTargets,
   },
   {
@@ -240,7 +244,7 @@ const BUCKETS: readonly Bucket[] = [
   {
     type: 'service-city-intent',
     kind: 'heavy-targets',
-    priority: 0.65,
+    priority: 0.5,
     changeFrequency: 'monthly',
     count: countServiceCityIntentTargets,
     slice: sliceServiceCityIntentTargets,
@@ -248,7 +252,7 @@ const BUCKETS: readonly Bucket[] = [
   {
     type: 'service-area-intent',
     kind: 'heavy-targets',
-    priority: 0.55,
+    priority: 0.4,
     changeFrequency: 'monthly',
     count: countServiceAreaIntentTargets,
     slice: sliceServiceAreaIntentTargets,
@@ -279,8 +283,14 @@ function bucketCount(bucket: Bucket): number {
   return bucket.count();
 }
 
-let cachedIndexNames: readonly string[] | null = null;
+const PRIMARY_TYPE_SET = new Set<string>(SITEMAP_PRIMARY_TYPES);
+const LONG_TAIL_TYPE_SET = new Set<string>(SITEMAP_LONG_TAIL_TYPES);
+
+let cachedAllNames: readonly string[] | null = null;
+let cachedPrimaryNames: readonly string[] | null = null;
+let cachedLongTailNames: readonly string[] | null = null;
 let cachedIndexXml: string | null = null;
+let cachedLongTailIndexXml: string | null = null;
 let cachedCorpusLastmod: string | null = null;
 const fileCache = new Map<string, SitemapFile>();
 const xmlCache = new Map<string, string>();
@@ -290,26 +300,46 @@ function corpusLastmodCached(): string {
   return cachedCorpusLastmod;
 }
 
+function namesForTypes(allowed: ReadonlySet<string>): readonly string[] {
+  const names: string[] = [];
+  for (const bucket of BUCKETS) {
+    if (!allowed.has(bucket.type)) continue;
+    names.push(...batchNames(bucket.type, bucketCount(bucket)));
+  }
+  return names;
+}
+
 /** Clears in-memory sitemap caches (tests or hot reload). */
 export function resetSitemapCache(): void {
-  cachedIndexNames = null;
+  cachedAllNames = null;
+  cachedPrimaryNames = null;
+  cachedLongTailNames = null;
   cachedIndexXml = null;
+  cachedLongTailIndexXml = null;
   cachedCorpusLastmod = null;
   resetCorpusLastmodCache();
   fileCache.clear();
   xmlCache.clear();
 }
 
-/** Cheap index listing from inventory counts (no URL materialization). */
-export function listSitemapFileNames(): readonly string[] {
-  if (cachedIndexNames) return cachedIndexNames;
+/** Child sitemap names in the primary index (`/sitemap.xml`). */
+export function listPrimarySitemapFileNames(): readonly string[] {
+  if (!cachedPrimaryNames) cachedPrimaryNames = namesForTypes(PRIMARY_TYPE_SET);
+  return cachedPrimaryNames;
+}
 
-  const names: string[] = [];
-  for (const bucket of BUCKETS) {
-    names.push(...batchNames(bucket.type, bucketCount(bucket)));
+/** Child sitemap names in the long-tail index (`/sitemap-long-tail.xml`). */
+export function listLongTailSitemapFileNames(): readonly string[] {
+  if (!cachedLongTailNames) cachedLongTailNames = namesForTypes(LONG_TAIL_TYPE_SET);
+  return cachedLongTailNames;
+}
+
+/** Every child sitemap file (primary + long-tail). */
+export function listSitemapFileNames(): readonly string[] {
+  if (!cachedAllNames) {
+    cachedAllNames = [...listPrimarySitemapFileNames(), ...listLongTailSitemapFileNames()];
   }
-  cachedIndexNames = names;
-  return names;
+  return cachedAllNames;
 }
 
 /** Builds one sitemap batch on demand. */
@@ -429,9 +459,16 @@ export function renderSitemapIndex(fileNames: readonly string[]): string {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</sitemapindex>\n`;
 }
 
-/** Cached sitemap index XML. */
+/** Primary sitemap index — hubs, geo, service×place, editorial. */
 export function getSitemapIndexXml(): string {
   if (cachedIndexXml) return cachedIndexXml;
-  cachedIndexXml = renderSitemapIndex(listSitemapFileNames());
+  cachedIndexXml = renderSitemapIndex(listPrimarySitemapFileNames());
   return cachedIndexXml;
+}
+
+/** Long-tail sitemap index — service × city/area × intent URLs. */
+export function getLongTailSitemapIndexXml(): string {
+  if (cachedLongTailIndexXml) return cachedLongTailIndexXml;
+  cachedLongTailIndexXml = renderSitemapIndex(listLongTailSitemapFileNames());
+  return cachedLongTailIndexXml;
 }

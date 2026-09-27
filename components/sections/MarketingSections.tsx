@@ -384,7 +384,7 @@ const PROCESS = [
 
 export function InstallProcess() {
   return (
-    <Section id="process" tone="muted" heading="From one photo to a checked fitting" width="wide">
+    <Section id="process" tone="muted" heading="A clear next step, at every step" width="wide">
       <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {PROCESS.map((item) => {
           const image = getImageById(item.imageId);
@@ -561,8 +561,8 @@ export function FeaturedCities({ cities }: FeaturedCitiesProps) {
       id="featured-cities"
       tone="muted"
       width="wide"
-      heading="Find installation support in your city"
-      lede="Each city page groups the services and localities we cover — including Andhra Pradesh belts from Visakhapatnam to Nellore."
+      heading="Find Avensafe in your city"
+      lede="Browse local services and neighbourhoods, then share your address to confirm availability for your installation."
     >
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {cities.map((city, index) => {

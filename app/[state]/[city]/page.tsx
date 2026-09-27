@@ -7,14 +7,15 @@ import { loadPage } from '@/lib/routing/page-bundle';
 import { metadataForPath } from '@/lib/routing/page-helpers';
 
 export const revalidate = 86400; // REVALIDATE.city
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{ readonly state: string; readonly city: string }>;
 }
 
 export function generateStaticParams(): { state: string; city: string }[] {
-  // Quick VPS builds: cities via ISR (still in sitemap).
-  if (PRERENDER.quickBuild) return [];
+  // 10GB hosts: city HTML via ISR (still in sitemap / indexable).
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
   return getStates().flatMap((state) =>
     getCitiesByState(state.id).map((city) => ({ state: state.slug, city: city.slug })),
   );

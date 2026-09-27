@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
 import { business } from '@/config/business';
-import {
-  ROBOTS_INDEXABLE,
-  ROBOTS_NOINDEX,
-  SEARCH_CONSOLE_VERIFICATION,
-  SEO_DEFAULTS,
-} from '@/config/seo';
+import { googleSiteVerification, ROBOTS_INDEXABLE, ROBOTS_NOINDEX, SEO_DEFAULTS } from '@/config/seo';
 import type { ImageRecord } from '@/lib/data/schemas';
 import { absoluteUrl } from '@/lib/routing/url';
 
@@ -59,6 +54,7 @@ export function buildMetadata({
 }: MetadataInput): Metadata {
   const canonical = absoluteUrl(path);
   const images = openGraphImage(image);
+  const google = googleSiteVerification();
 
   return {
     // Absolute so the title template never double-appends the brand name.
@@ -86,8 +82,6 @@ export function buildMetadata({
       ...(SEO_DEFAULTS.twitterSite ? { site: SEO_DEFAULTS.twitterSite } : {}),
       ...(SEO_DEFAULTS.twitterCreator ? { creator: SEO_DEFAULTS.twitterCreator } : {}),
     },
-    ...(Object.keys(SEARCH_CONSOLE_VERIFICATION).length > 0
-      ? { verification: { other: SEARCH_CONSOLE_VERIFICATION } }
-      : {}),
+    ...(google ? { verification: { google } } : {}),
   };
 }

@@ -53,7 +53,9 @@ export type LayoutSectionId =
   | 'installProcess'
   | 'faq'
   | 'cta'
-  | 'relatedLinks';
+  | 'relatedLinks'
+  | 'thoughtfulFitting'
+  | 'relatedWays';
 
 export interface LayoutRecipe {
   readonly heroVariant: HeroVariant;
@@ -90,6 +92,8 @@ function baseOrder(profile: LayoutRecipe['intentProfile']): readonly LayoutSecti
     case 'informational':
       return [
         'content',
+        'thoughtfulFitting',
+        'relatedWays',
         'gallery',
         'compactProcess',
         'faq',
@@ -105,6 +109,8 @@ function baseOrder(profile: LayoutRecipe['intentProfile']): readonly LayoutSecti
         'photoEnquiry',
         'servicesNav',
         'content',
+        'thoughtfulFitting',
+        'relatedWays',
         'priceFactors',
         'localityDirectory',
         'gallery',
@@ -117,6 +123,8 @@ function baseOrder(profile: LayoutRecipe['intentProfile']): readonly LayoutSecti
       return [
         'trustStrip',
         'content',
+        'thoughtfulFitting',
+        'relatedWays',
         'installProcess',
         'priceFactors',
         'gallery',
@@ -134,6 +142,8 @@ function baseOrder(profile: LayoutRecipe['intentProfile']): readonly LayoutSecti
         'compactProcess',
         'servicesNav',
         'content',
+        'thoughtfulFitting',
+        'relatedWays',
         'priceFactors',
         'gallery',
         'photoEnquiry',
@@ -243,6 +253,10 @@ function eligible(
       return true;
     case 'relatedLinks':
       return true;
+    case 'thoughtfulFitting':
+      return true;
+    case 'relatedWays':
+      return Boolean(target.service) || isLocationHub;
     default:
       return false;
   }
@@ -398,6 +412,19 @@ function rotateFlow(
   return pickVariant(`${seed}:flow`, variants);
 }
 
+/** Rotation variants predate these bands — keep them on every generated page. */
+function ensureEverSafeSections(sections: readonly LayoutSectionId[]): readonly LayoutSectionId[] {
+  const result = [...sections];
+  const have = new Set(result);
+  for (const id of ['thoughtfulFitting', 'relatedWays'] as const) {
+    if (have.has(id)) continue;
+    const contentAt = result.indexOf('content');
+    result.splice(contentAt >= 0 ? contentAt + 1 : 1, 0, id);
+    have.add(id);
+  }
+  return result;
+}
+
 export function composeLayoutRecipe(
   target: PageTarget,
   content: PageContent,
@@ -410,7 +437,7 @@ export function composeLayoutRecipe(
 ): LayoutRecipe {
   const profile = intentProfileFor(target);
   const seed = pageSeed(target);
-  const order = rotateFlow(profile, baseOrder(profile), seed);
+  const order = ensureEverSafeSections(rotateFlow(profile, baseOrder(profile), seed));
   const sections = order.filter((id) => eligible(id, target, content, flags));
 
   return {

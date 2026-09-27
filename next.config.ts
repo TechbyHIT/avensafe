@@ -49,15 +49,26 @@ const nextConfig: NextConfig = {
       return process.platform === 'win32' ? 2 : 6;
     })(),
     staticGenerationMinPagesPerWorker:
-      process.env.AVENSAFE_QUICK_BUILD === '1' ? 5 : 25,
+      process.env.AVENSAFE_FULL_SSG === '1' ? 25 : 5,
+    /**
+     * Do not write every ISR response to disk. Google crawling millions of
+     * URLs would fill a 10GB VPS via `.next/cache`. Pages stay indexable;
+     * they render on demand and live in a small memory cache.
+     */
+    isrFlushToDisk: process.env.AVENSAFE_ISR_DISK === '1',
   },
 
+  // Cap Next fetch/ISR memory so the Node process stays small on a 10GB host.
+  cacheMaxMemorySize: 32 * 1024 * 1024,
 
   images: {
-    // AVIF first, WebP fallback. Next negotiates via the Accept header.
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [360, 420, 640, 768, 1024, 1280, 1536, 1920],
-    imageSizes: [96, 128, 192, 256, 384],
+    // Fewer variants = far less `.next/cache/images` growth when crawlers hit photos.
+    deviceSizes:
+      process.env.AVENSAFE_FULL_SSG === '1'
+        ? [360, 420, 640, 768, 1024, 1280, 1536, 1920]
+        : [640, 1080, 1920],
+    imageSizes: process.env.AVENSAFE_FULL_SSG === '1' ? [96, 128, 192, 256, 384] : [96, 256],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
 

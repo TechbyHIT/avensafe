@@ -7,6 +7,7 @@ import { loadPage } from '@/lib/routing/page-bundle';
 import { metadataForPath } from '@/lib/routing/page-helpers';
 
 export const revalidate = 172800; // REVALIDATE.serviceLocation
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{
@@ -17,7 +18,7 @@ interface RouteParams {
 }
 
 export function generateStaticParams(): { state: string; district: string; service: string }[] {
-  if (PRERENDER.quickBuild) return [];
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
 
   const services = getServices();
   const params: { state: string; district: string; service: string }[] = [];

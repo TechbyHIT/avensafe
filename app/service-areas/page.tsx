@@ -4,15 +4,15 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Hero } from '@/components/sections/Hero';
 import {
   FeaturedCities,
-  InstallProcess,
   NeedSelector,
   ProductCompare,
 } from '@/components/sections/MarketingSections';
-import { EnquiryPhotoCallout } from '@/components/sections/LocationPageEnhancements';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { Section } from '@/components/ui/Section';
 import { getCities, getCitiesByState, getCorpusStats, getImageById, getServices, getStates } from '@/lib/data/repository';
 import { cityPath, statePath } from '@/lib/routing/url';
@@ -78,17 +78,17 @@ export default function ServiceAreasPage() {
         heading="Where we work, and why location changes the specification"
         lede={`We cover ${stats.states} states, ${stats.cities} cities and ${stats.areas} localities. Coastal salt, monsoon intensity and building height each change the hardware we specify, so every state and city page explains what differs there rather than repeating a national pitch.`}
         image={getImageById('img-hero-home')}
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
 
-      <EnquiryPhotoCallout placeLabel="your city" enquiryContext="Service areas enquiry" />
+      <PageTrustStrip />
 
       <NeedSelector services={services} />
 
       {featuredCities.length > 0 ? <FeaturedCities cities={featuredCities} /> : null}
 
       <ProductCompare />
-
-      <InstallProcess />
 
       {states.map((state) => {
         const cities = getCitiesByState(state.id);
@@ -119,7 +119,11 @@ export default function ServiceAreasPage() {
         );
       })}
 
-      <CtaSection />
+      <StaticConversionRail
+        enquiryContext="Service areas enquiry"
+        placeLabel="your city"
+        processVariant="full"
+      />
     </>
   );
 }

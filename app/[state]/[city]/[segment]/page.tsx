@@ -13,6 +13,7 @@ import { metadataForPath } from '@/lib/routing/page-helpers';
  * slug spaces never collide.
  */
 export const revalidate = 172800; // REVALIDATE.serviceLocation
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{
@@ -29,7 +30,7 @@ interface RouteParams {
  */
 export function generateStaticParams(): { state: string; city: string; segment: string }[] {
   // Quick VPS: no locality / service-in-city prerender (ISR + sitemap unchanged).
-  if (PRERENDER.quickBuild) return [];
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
 
   const services = getServices();
   const params: { state: string; city: string; segment: string }[] = [];

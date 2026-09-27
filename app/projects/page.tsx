@@ -3,8 +3,10 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { ProjectList, type ProjectEntry } from '@/components/sections/ProjectList';
 import { Section } from '@/components/ui/Section';
 import { getImageById, getProjects, getServicesByIds } from '@/lib/data/repository';
@@ -60,13 +62,17 @@ export default function ProjectsPage() {
         eyebrow="Installations"
         heading="The job types we handle, and what is actually hard about each"
         lede="These are representative scenarios rather than named client projects. Each sets out the real difficulty, how we approach it and what the finished installation achieves, which is more useful than a photograph with a company name attached."
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       <Section width="wide">
         <ProjectList entries={entries} />
       </Section>
 
-      <CtaSection />
+      <StaticConversionRail enquiryContext="Projects enquiry" showTrustStrip={false} />
     </>
   );
 }

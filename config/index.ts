@@ -18,6 +18,8 @@ export {
   REVALIDATE,
   SEO_LIMITS,
   SITEMAP,
+  SITEMAP_LONG_TAIL_TYPES,
+  SITEMAP_PRIMARY_TYPES,
   VARIATION_SEED,
 } from '@/config/constants';
 export { FOOTER_COLUMNS, PRIMARY_NAV } from '@/config/navigation';
@@ -30,9 +32,9 @@ export {
 } from '@/config/routes';
 export type { PageKind, SitemapType, StaticRouteKey } from '@/config/routes';
 export {
+  googleSiteVerification,
   ROBOTS_DISALLOW,
   ROBOTS_INDEXABLE,
   ROBOTS_NOINDEX,
-  SEARCH_CONSOLE_VERIFICATION,
   SEO_DEFAULTS,
 } from '@/config/seo';

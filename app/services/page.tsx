@@ -3,10 +3,12 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { ExplainFeatureBlocks } from '@/components/sections/ExplainFeatureBlocks';
 import { Hero } from '@/components/sections/Hero';
-import { InstallProcess, PhotoMosaic } from '@/components/sections/MarketingSections';
+import { PhotoMosaic } from '@/components/sections/MarketingSections';
 import {
   buildCoreServiceCards,
   buildTaxonomyServiceCards,
@@ -101,7 +103,11 @@ export default function ServicesPage() {
         lede="Every family below opens into city and locality pages with written quotations — grade, spacing, and access — not a single national rate card."
         image={getImageById('img-invisible-grills-01') ?? getImageById('img-hero-home')}
         variant="split"
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       <ServiceImageCards
         cards={coreCards}
@@ -125,8 +131,6 @@ export default function ServicesPage() {
 
       <PhotoMosaic images={mosaic} />
 
-      <InstallProcess />
-
       <Section tone="muted" heading="Decide before you buy">
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {guides.map((guide) => (
@@ -142,7 +146,12 @@ export default function ServicesPage() {
         </ul>
       </Section>
 
-      <CtaSection />
+      <StaticConversionRail
+        enquiryContext="Services hub enquiry"
+        processVariant="full"
+        showTrustStrip={false}
+        ctaHeading="Book a survey for your opening"
+      />
     </>
   );
 }

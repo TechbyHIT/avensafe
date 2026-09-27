@@ -1,7 +1,7 @@
 /**
  * Asserts sitemap policy for production indexing:
  * - Every inventory URL is indexable and robots-allowed
- * - Index syncs with listSitemapFileNames()
+ * - Primary + long-tail indexes cover every child file exactly once
  * - Sampled child sitemaps are valid XML with https loc + lastmod
  * - No duplicate locs in sampled batches
  *
@@ -29,9 +29,12 @@ import {
 import { evaluatePublishing } from '../lib/routing/publishing';
 import { blogPath, guidePath, normalizePath } from '../lib/routing/url';
 import {
+  getLongTailSitemapIndexXml,
   getSitemapFile,
   getSitemapIndexXml,
   getSitemapXml,
+  listLongTailSitemapFileNames,
+  listPrimarySitemapFileNames,
   listSitemapFileNames,
   resetSitemapCache,
 } from '../lib/sitemap/engine';
@@ -152,6 +155,8 @@ function assertUrlEntries(label: string, xml: string): void {
       errors.push(`${label}: missing <lastmod> for ${loc}`);
     } else if (!isW3cDate(lastmod)) {
       errors.push(`${label}: invalid lastmod "${lastmod}" for ${loc}`);
+    } else if (lastmod > new Date().toISOString().slice(0, 10)) {
+      errors.push(`${label}: future lastmod "${lastmod}" for ${loc}`);
     }
     if (locs.has(loc)) {
       errors.push(`${label}: duplicate loc ${loc}`);
@@ -206,6 +211,13 @@ const corePaths = [
   STATIC_ROUTES.blog,
   STATIC_ROUTES.guides,
   STATIC_ROUTES.compare,
+  STATIC_ROUTES.pricingGuide,
+  STATIC_ROUTES.materialsGuide,
+  STATIC_ROUTES.installationGuide,
+  STATIC_ROUTES.safetyGuide,
+  STATIC_ROUTES.buyingGuide,
+  STATIC_ROUTES.maintenanceGuide,
+  STATIC_ROUTES.faqTroubleshootingGuide,
 ] as const;
 
 for (const path of corePaths) {
@@ -233,32 +245,55 @@ console.log(`  blog posts                ${posts.length} published`);
 
 console.log('\n4) Sitemap index sync + XML protocol samples:\n');
 
-const names = listSitemapFileNames();
-const indexXml = getSitemapIndexXml();
-assertXmlShape('sitemap.xml', indexXml, 'sitemapindex');
+const today = new Date().toISOString().slice(0, 10);
+const allNames = listSitemapFileNames();
+const primaryNames = listPrimarySitemapFileNames();
+const longTailNames = listLongTailSitemapFileNames();
 
-const indexLocs = [...indexXml.matchAll(/<loc>([^<]+)<\/loc>/gu)].map((m) => m[1]!);
-const expectedLocs = names.map((name) => `${business.url}/sitemaps/${name}.xml`);
-
-if (indexLocs.length !== expectedLocs.length) {
+if (primaryNames.length + longTailNames.length !== allNames.length) {
   errors.push(
-    `sitemap index loc count ${indexLocs.length} != file name count ${expectedLocs.length}`,
+    `primary (${primaryNames.length}) + long-tail (${longTailNames.length}) != all (${allNames.length})`,
   );
 }
-for (let i = 0; i < Math.min(indexLocs.length, expectedLocs.length); i += 1) {
-  if (indexLocs[i] !== expectedLocs[i]) {
-    errors.push(`sitemap index mismatch at ${i}: ${indexLocs[i]} vs ${expectedLocs[i]}`);
-    break;
+const overlap = primaryNames.filter((name) => longTailNames.includes(name));
+if (overlap.length > 0) {
+  errors.push(`child sitemap listed in both indexes: ${overlap.slice(0, 4).join(', ')}`);
+}
+
+function assertIndex(label: string, xml: string, expectedNames: readonly string[]): void {
+  assertXmlShape(label, xml, 'sitemapindex');
+  const indexLocs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/gu)].map((m) => m[1]!);
+  const expectedLocs = expectedNames.map((name) => `${business.url}/sitemaps/${name}.xml`);
+  if (indexLocs.length !== expectedLocs.length) {
+    errors.push(`${label}: loc count ${indexLocs.length} != file name count ${expectedLocs.length}`);
+  }
+  for (let i = 0; i < Math.min(indexLocs.length, expectedLocs.length); i += 1) {
+    if (indexLocs[i] !== expectedLocs[i]) {
+      errors.push(`${label}: mismatch at ${i}: ${indexLocs[i]} vs ${expectedLocs[i]}`);
+      break;
+    }
+  }
+  const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/gu)].map((m) => m[1]!);
+  if (lastmods.length !== expectedNames.length) {
+    errors.push(`${label}: lastmod count ${lastmods.length} != files ${expectedNames.length}`);
+  }
+  for (const lastmod of lastmods) {
+    if (!isW3cDate(lastmod)) errors.push(`${label}: invalid lastmod ${lastmod}`);
+    else if (lastmod > today) errors.push(`${label}: future lastmod ${lastmod}`);
   }
 }
 
-const indexLastmods = indexXml.match(/<lastmod>/gu)?.length ?? 0;
-if (indexLastmods !== names.length) {
-  errors.push(`sitemap index lastmod count ${indexLastmods} != files ${names.length}`);
-}
+const indexXml = getSitemapIndexXml();
+const longTailXml = getLongTailSitemapIndexXml();
+assertIndex('sitemap.xml', indexXml, primaryNames);
+assertIndex('sitemap-long-tail.xml', longTailXml, longTailNames);
 
-console.log(`  index files               ${names.length}`);
-console.log(`  index locs synced         ${indexLocs.length === expectedLocs.length ? 'yes' : 'NO'}`);
+console.log(`  primary files             ${primaryNames.length}`);
+console.log(`  long-tail files           ${longTailNames.length}`);
+console.log(`  all child files           ${allNames.length}`);
+console.log(`  indexes partition         ${overlap.length === 0 ? 'yes' : 'NO'}`);
+
+const names = allNames;
 
 const resolvedSamples = new Set<string>();
 for (const hint of ['core', 'services', 'guides', 'blog', 'cities']) {

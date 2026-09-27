@@ -12,6 +12,7 @@ import { metadataForPath } from '@/lib/routing/page-helpers';
  * `/state/city/area/service/installation`, `/state/city/area/service/price`, …
  */
 export const revalidate = 172800; // REVALIDATE.serviceLocation
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{

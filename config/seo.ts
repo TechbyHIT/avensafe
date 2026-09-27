@@ -51,7 +51,10 @@ export const ROBOTS_NOINDEX = {
 export const ROBOTS_DISALLOW: readonly string[] = ['/api/'];
 
 /**
- * Verification tokens. Left empty so no invalid `<meta>` tags are emitted;
- * fill in when the properties are claimed.
+ * Google Search Console HTML tag.
+ * Set `GOOGLE_SITE_VERIFICATION` (the content value from GSC) in the env.
  */
-export const SEARCH_CONSOLE_VERIFICATION: Readonly<Record<string, string>> = {};
+export function googleSiteVerification(): string | undefined {
+  const token = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+  return token && token.length > 0 ? token : undefined;
+}

@@ -3,8 +3,10 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { EditorialIndexList } from '@/components/templates/EditorialPage';
 import { Section } from '@/components/ui/Section';
 import { getBlogPosts, getImageById } from '@/lib/data/repository';
@@ -60,7 +62,11 @@ export default function BlogIndexPage() {
         lede="Shorter pieces on balcony safety, materials, bird control and the failures we keep being called out to inspect — each with real installation photography."
         image={heroImage}
         variant="split"
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       <Section
         heading="Latest posts"
@@ -80,7 +86,7 @@ export default function BlogIndexPage() {
         />
       </Section>
 
-      <CtaSection enquiryContext="Blog enquiry" />
+      <StaticConversionRail enquiryContext="Blog enquiry" showTrustStrip={false} />
     </>
   );
 }

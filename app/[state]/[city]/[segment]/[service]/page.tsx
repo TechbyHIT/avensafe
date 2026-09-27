@@ -21,6 +21,7 @@ import { metadataForPath } from '@/lib/routing/page-helpers';
  * - `/state/city/area/service` when the third segment is a locality slug.
  */
 export const revalidate = 172800; // REVALIDATE.serviceLocation
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{
@@ -38,7 +39,7 @@ export function generateStaticParams(): {
   service: string;
 }[] {
   // Quick VPS builds skip this long-tail bucket entirely (still in sitemap / ISR).
-  if (PRERENDER.quickBuild) return [];
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
 
   const services = getServices();
   const intents = getSearchIntents();

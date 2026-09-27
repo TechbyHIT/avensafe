@@ -4,10 +4,10 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
 import { Hero } from '@/components/sections/Hero';
-import { InstallProcess } from '@/components/sections/MarketingSections';
-import { EnquiryPhotoCallout } from '@/components/sections/LocationPageEnhancements';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Accordion } from '@/components/ui/Accordion';
 import { Section } from '@/components/ui/Section';
 import { getFaqsByScope } from '@/lib/data/repository';
@@ -66,11 +66,11 @@ export default function FaqPage() {
         eyebrow="FAQ"
         heading="Questions we are asked most, answered plainly"
         lede="Where a question deserves more than a paragraph, we have written a full guide and linked to it. Nothing here is hedged to avoid quoting a number we would rather not quote."
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
 
-      <EnquiryPhotoCallout placeLabel="your area" enquiryContext="FAQ enquiry" />
-
-      <InstallProcess />
+      <PageTrustStrip />
 
       {groups.map((group, index) => (
         <Section
@@ -112,7 +112,7 @@ export default function FaqPage() {
         </Section>
       ))}
 
-      <CtaSection />
+      <StaticConversionRail enquiryContext="FAQ enquiry" processVariant="full" showTrustStrip={false} />
     </>
   );
 }

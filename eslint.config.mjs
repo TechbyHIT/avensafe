@@ -38,6 +38,12 @@ const eslintConfig = [
       'object-shorthand': 'error',
     },
   },
+  {
+    files: ['**/*.cjs'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
 ];
 
 export default eslintConfig;

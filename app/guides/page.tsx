@@ -3,8 +3,10 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { EditorialIndexList } from '@/components/templates/EditorialPage';
 import { Section } from '@/components/ui/Section';
 import { getGuides, getImageById } from '@/lib/data/repository';
@@ -56,7 +58,11 @@ export default function GuidesIndexPage() {
         eyebrow="Guides"
         heading="What to know before you commission safety work"
         lede="These are the questions we get asked most, answered properly rather than in a paragraph. If you read only one, read the pricing guide: it explains why quotations for the same balcony can differ by a factor of two."
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       <Section heading="Start here">
         <EditorialIndexList entries={cornerstone.map(toEntry)} />
@@ -68,7 +74,7 @@ export default function GuidesIndexPage() {
         </Section>
       ) : null}
 
-      <CtaSection />
+      <StaticConversionRail enquiryContext="Guides enquiry" showTrustStrip={false} />
     </>
   );
 }

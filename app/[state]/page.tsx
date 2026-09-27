@@ -11,6 +11,7 @@ import { metadataForPath } from '@/lib/routing/page-helpers';
  * refuses any reserved segment, so `/about` can never be read as a state.
  */
 export const revalidate = 86400; // REVALIDATE.state
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{ readonly state: string }>;

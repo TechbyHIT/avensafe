@@ -6,9 +6,13 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { ContactActions } from '@/components/layout/ContactActions';
 import { JsonLd } from '@/components/layout/JsonLd';
 import { EnquiryForm } from '@/components/forms/EnquiryForm';
+import { CityContactGrid } from '@/components/sections/CityContactGrid';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { getServices, getStates } from '@/lib/data/repository';
+import { findFaqs, getCities, getServices, getStates } from '@/lib/data/repository';
 import { breadcrumbSchema, contactPageSchema } from '@/lib/schema/builders';
 import { buildGraph } from '@/lib/schema/graph';
 import { buildMetadata } from '@/lib/seo/metadata';
@@ -25,13 +29,36 @@ const CRUMBS = [
   { label: 'Contact', href: STATIC_ROUTES.contact },
 ];
 
+const FEATURED_CITY_SLUGS = [
+  'bengaluru',
+  'hyderabad',
+  'chennai',
+  'coimbatore',
+  'visakhapatnam',
+  'vijayawada',
+  'guntur',
+  'tirupati',
+  'pune',
+  'mumbai',
+] as const;
+
 export function generateMetadata(): Metadata {
   return buildMetadata({ title: TITLE, description: DESCRIPTION, path: STATIC_ROUTES.contact });
 }
 
 export default function ContactPage() {
   const services = getServices();
-  const stateNames = getStates().map((state) => state.name);
+  const states = getStates();
+  const stateNames = states.map((state) => state.name);
+  const citiesBySlug = new Map(getCities().map((city) => [city.slug, city]));
+  const cityContacts = FEATURED_CITY_SLUGS.flatMap((slug) => {
+    const city = citiesBySlug.get(slug);
+    if (!city) return [];
+    const state = states.find((entry) => entry.id === city.stateId);
+    if (!state) return [];
+    return [{ state, city }];
+  });
+  const contactFaqs = findFaqs({ scopes: ['global', 'pricing', 'location'] }).slice(0, 6);
 
   return (
     <>
@@ -43,15 +70,29 @@ export default function ContactPage() {
       />
       <Breadcrumbs crumbs={CRUMBS} />
 
+      <Hero
+        eyebrow="Contact"
+        heading="Let's plan your safety net installation"
+        lede="Tell us what you need to protect. Call or WhatsApp with your city and opening details — balcony safety nets, pigeon nets, invisible grills, and related installations across South and West India."
+        variant="split"
+        ctaEmphasis="photo"
+        enquiryContext="Contact page enquiry"
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
+
       <div className="bg-linear-to-b from-ink-50 to-white py-14">
         <Container width="wide">
           <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
             <div>
-              <h1 className="text-3xl sm:text-4xl">Tell us about the job</h1>
+              <h2 className="text-2xl font-bold text-ink-900 sm:text-3xl">
+                Send your safety net requirement
+              </h2>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-600">
-                The more you can tell us up front — which floor, roughly how wide the balcony is, and
-                what you are trying to prevent — the more useful our first reply will be. For
-                anything structural we will still want to see it before quoting a firm price.
+                Add your city, area, service need, and preferred visit time. We open WhatsApp with
+                your details ready, or you can submit the form below.
               </p>
 
               <p className="mt-4 text-base text-ink-600">
@@ -76,18 +117,18 @@ export default function ContactPage() {
 
             <aside className="space-y-8">
               <div>
-                <h2 className="text-lg">Faster by phone</h2>
+                <h2 className="text-lg font-semibold text-ink-900">Fast help without extra steps</h2>
                 <p className="mt-2 text-sm leading-relaxed text-ink-600">
-                  If you would rather talk it through, call or message us. We answer during working
-                  hours and call back outside them.
+                  Phone, WhatsApp, or email during working hours — we call back if you reach us
+                  outside them.
                 </p>
                 <div className="mt-4">
-                  <ContactActions layout="stack" />
+                  <ContactActions layout="stack" emphasis="photo" enquiryContext="Contact page" />
                 </div>
               </div>
 
               <div className="rounded-(--radius-card) border border-ink-200 bg-white p-6">
-                <h2 className="text-base">All contact details</h2>
+                <h2 className="text-base font-semibold">All contact details</h2>
                 <dl className="mt-4 space-y-4 text-sm">
                   <div>
                     <dt className="text-xs tracking-wide text-ink-500 uppercase">Phone</dt>
@@ -143,45 +184,17 @@ export default function ContactPage() {
         </Container>
       </div>
 
-      <Section tone="muted" width="prose" heading="What happens after you get in touch">
-        <ol className="space-y-5">
-          {[
-            {
-              title: 'We call you back',
-              detail:
-                'Usually the same working day. We will ask a few questions to work out whether the job needs a survey or can be quoted from measurements.',
-            },
-            {
-              title: 'Survey, if the work is structural',
-              detail:
-                'About twenty minutes. We measure every bay, check what we would be fixing into, and confirm whether your association needs to approve anything.',
-            },
-            {
-              title: 'A written quotation',
-              detail:
-                'Stating the measured area, the hardware grade, the spacing in millimetres, the anchor type and the warranty — plus anything excluded, so there are no surprises later.',
-            },
-            {
-              title: 'Installation and handover',
-              detail:
-                'We gauge the gaps, spot-check tension and show you the annual check before we leave. Cable systems get a follow-up tension check after they settle.',
-            },
-          ].map((step, index) => (
-            <li key={step.title} className="flex gap-4">
-              <span
-                aria-hidden="true"
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-semibold text-brand-800"
-              >
-                {index + 1}
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-ink-900">{step.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">{step.detail}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </Section>
+      <CityContactGrid entries={cityContacts} heading="City & branch contacts" />
+
+      <StaticConversionRail
+        enquiryContext="Contact page enquiry"
+        faqs={contactFaqs}
+        faqHeading="Safety net enquiry questions"
+        processVariant="compact"
+        showTrustStrip={false}
+        ctaHeading="WhatsApp a photo or call us"
+        ctaBody="Share your city, photos of the opening, and what the installation should solve. We confirm availability and what belongs on a written quotation."
+      />
     </>
   );
 }

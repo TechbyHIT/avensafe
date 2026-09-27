@@ -46,19 +46,20 @@ export function HomeHero({ image }: HomeHeroProps) {
           </p>
 
           <h1 className="mt-5 text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-[2.85rem]">
-            Invisible Grills, Balcony Safety Nets &amp; Pigeon Nets
+            Safety nets &amp; invisible grills — made for your space
           </h1>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
-            Choose by the job — clear view, child safety, birds, monkeys, sports, or laundry —
-            then send one photo for a local written estimate across eight states.
+            Balcony safety nets, pigeon protection, and slim cable grills planned around your
+            opening, your view, and how you use the home — with locality-level pages across eight
+            states, not a thin national brochure.
           </p>
 
           <ul className="mt-5 space-y-2 text-sm text-white/90">
             {[
-              'Measured around your opening and fixing points',
-              'Family safety, bird control, pets, monkeys, sports, and cloth hangers',
-              'Deep city and locality pages — not a thin national brochure',
+              'A fit for your opening — measurements, edges, and fixing points',
+              'Options for everyday living — view, access, birds, children, or sports',
+              'Find your city — thousands of locality pages with real specification notes',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span aria-hidden="true" className="mt-0.5 text-accent-400">

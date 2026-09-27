@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [...ROBOTS_DISALLOW],
       },
     ],
-    sitemap: absoluteUrl('/sitemap.xml'),
+    sitemap: [absoluteUrl('/sitemap.xml'), absoluteUrl('/sitemap-long-tail.xml')],
     host: business.url,
   };
 }

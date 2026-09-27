@@ -9,9 +9,12 @@ import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { SITEMAP } from '../config/constants';
 import {
+  getLongTailSitemapIndexXml,
   getSitemapFile,
+  getSitemapIndexXml,
+  listLongTailSitemapFileNames,
+  listPrimarySitemapFileNames,
   listSitemapFileNames,
-  renderSitemapIndex,
   resetSitemapCache,
 } from '../lib/sitemap/engine';
 
@@ -20,17 +23,21 @@ const write = process.argv.includes('--write');
 resetSitemapCache();
 const started = Date.now();
 const names = listSitemapFileNames();
-const xml = renderSitemapIndex(names);
+const primary = listPrimarySitemapFileNames();
+const longTail = listLongTailSitemapFileNames();
+const xml = getSitemapIndexXml();
 const elapsed = ((Date.now() - started) / 1000).toFixed(1);
 
 console.log(xml);
+console.log('\n--- long-tail index ---\n');
+console.log(getLongTailSitemapIndexXml());
 console.log('--- summary ---');
-console.log(`  files: ${names.length}  index built in ${elapsed}s`);
+console.log(`  primary files: ${primary.length}`);
+console.log(`  long-tail files: ${longTail.length}`);
+console.log(`  all child files: ${names.length}  indexes built in ${elapsed}s`);
 console.log(`  batchSize: ${SITEMAP.batchSize}`);
 console.log('\nSample child files:');
-for (const name of ['core', 'areas-1', 'services', 'guides', 'blog'].filter((n) =>
-  names.includes(n) || names.some((x) => x.startsWith(n)),
-)) {
+for (const name of ['core', 'areas', 'services', 'guides', 'blog', 'service-area-intent-1']) {
   const resolved = names.includes(name)
     ? name
     : names.find((entry) => entry === name || entry.startsWith(`${name}-`));

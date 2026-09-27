@@ -4,8 +4,9 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
 import { Hero } from '@/components/sections/Hero';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Section } from '@/components/ui/Section';
 import { getCorpusStats, getImageById } from '@/lib/data/repository';
 import { breadcrumbSchema, webPageSchema } from '@/lib/schema/builders';
@@ -55,7 +56,9 @@ export default function AboutPage() {
         heading="We specify for the building in front of us, not from a price list"
         lede={`${business.name} installs invisible grills, safety nets, sports nets, cloth hangers and containment netting across ${stats.states} states. Most of what determines whether an installation lasts is invisible in a photograph, so this page explains how we work and what we will not cut.`}
         image={getImageById('img-safety-nets-03')}
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
 
       <Section width="prose" heading="What we do">
         <div className="space-y-4 text-base leading-relaxed text-ink-700">
@@ -144,7 +147,11 @@ export default function AboutPage() {
         </p>
       </Section>
 
-      <CtaSection />
+      <StaticConversionRail
+        enquiryContext="About page — photo estimate"
+        ctaHeading="Ready to plan your installation?"
+        ctaBody="Share your city and a photo of the opening. We reply with the right system options and what a written quote should include."
+      />
     </>
   );
 }

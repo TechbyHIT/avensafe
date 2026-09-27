@@ -7,13 +7,14 @@ import { loadPage } from '@/lib/routing/page-bundle';
 import { metadataForPath } from '@/lib/routing/page-helpers';
 
 export const revalidate = 86400; // REVALIDATE.district
+export const dynamicParams = true;
 
 interface RouteParams {
   readonly params: Promise<{ readonly state: string; readonly district: string }>;
 }
 
 export function generateStaticParams(): { state: string; district: string }[] {
-  if (PRERENDER.quickBuild) return [];
+  if (PRERENDER.quickBuild || PRERENDER.lowDisk) return [];
   return getStates().flatMap((state) =>
     getDistrictsByState(state.id).map((district) => ({
       state: state.slug,

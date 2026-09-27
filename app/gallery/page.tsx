@@ -4,9 +4,11 @@ import { business } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { GalleryGrid, type GalleryEntry } from '@/components/sections/GalleryGrid';
 import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { Section } from '@/components/ui/Section';
 import { getGalleryItems, getImageById } from '@/lib/data/repository';
 import { breadcrumbSchema, imageObjectSchema, webPageSchema } from '@/lib/schema/builders';
@@ -58,7 +60,11 @@ export default function GalleryPage() {
         heading="The details that decide whether an installation lasts"
         lede="Most of what matters is close-up work: how a cable is terminated, how a net's border rope meets its anchor, how a shaft is closed at the head. These are the things worth looking at when comparing quotations."
         image={entries[0]?.image}
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       {categories.map((category, index) => (
         <Section
@@ -82,7 +88,7 @@ export default function GalleryPage() {
         </p>
       </Section>
 
-      <CtaSection />
+      <StaticConversionRail enquiryContext="Gallery enquiry" showTrustStrip={false} />
     </>
   );
 }

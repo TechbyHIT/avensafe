@@ -6,8 +6,10 @@ import { STATIC_ROUTES } from '@/config/routes';
 import { SERVICE_TAXONOMY } from '@/config/service-taxonomy';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { JsonLd } from '@/components/layout/JsonLd';
-import { CtaSection } from '@/components/sections/CtaSection';
+import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverSafeBlocks';
+import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Hero } from '@/components/sections/Hero';
+import { PageTrustStrip } from '@/components/sections/LocationPageEnhancements';
 import { Section } from '@/components/ui/Section';
 import { getPrimaryImageForService, getServiceBySlug } from '@/lib/data/repository';
 import { serviceIntentPath, servicePath } from '@/lib/routing/url';
@@ -15,7 +17,7 @@ import { breadcrumbSchema, webPageSchema } from '@/lib/schema/builders';
 import { buildGraph } from '@/lib/schema/graph';
 import { buildMetadata } from '@/lib/seo/metadata';
 
-export const revalidate = 43200;
+export const revalidate = 43200; // REVALIDATE.static
 
 const TITLE = `Compare Invisible Grills vs Safety Nets | ${business.shortName}`;
 const DESCRIPTION =
@@ -112,7 +114,11 @@ export default function ComparePage() {
         heading="Pick the system by the job — not by the product name"
         lede={`${business.shortName} keeps the choice on one hub: clear view, transparent mesh, children or pets, stairs, birds, monkeys, society rules, or price factors — then routes you to the right service and local page. Survey still decides the final grade.`}
         enquiryContext="compare systems"
-      />
+      >
+        <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
+      </Hero>
+
+      <PageTrustStrip />
 
       <Section heading="Quick decision table" width="wide">
         <div className="overflow-x-auto">
@@ -212,7 +218,7 @@ export default function ComparePage() {
         </p>
       </Section>
 
-      <CtaSection enquiryContext="compare systems" />
+      <StaticConversionRail enquiryContext="compare systems" ctaHeading="Send a photo after you compare" showTrustStrip={false} />
     </>
   );
 }

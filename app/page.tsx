@@ -9,6 +9,8 @@ import { CtaSection } from '@/components/sections/CtaSection';
 import { ExplainFeatureBlocks } from '@/components/sections/ExplainFeatureBlocks';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { HomeHero } from '@/components/sections/HomeHero';
+import { ThoughtfulFitting } from '@/components/sections/EverSafeBlocks';
+import { PrimaryServicesSpotlight } from '@/components/sections/PrimaryServicesSpotlight';
 import {
   FeaturedCities,
   InstallProcess,
@@ -43,7 +45,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 import { breadcrumbSchema, webPageSchema } from '@/lib/schema/builders';
 import { buildGraph } from '@/lib/schema/graph';
 
-export const revalidate = 21600;
+export const revalidate = 21600; // REVALIDATE.home
 
 const TITLE = `Premium Invisible Grills & Safety Nets | ${business.shortName}`;
 const DESCRIPTION =
@@ -253,6 +255,8 @@ export default function HomePage() {
 
       <HomeHero image={heroImage} />
 
+      <PrimaryServicesSpotlight services={homeServices} />
+
       <NeedSelector services={services} />
 
       <AboutShowcase
@@ -277,6 +281,11 @@ export default function HomePage() {
       />
 
       <ExplainFeatureBlocks blocks={explainBlocks} />
+
+      <ThoughtfulFitting
+        image={heroImage}
+        placeLabel="South and West India"
+      />
 
       <ServiceTaxonomy />
 

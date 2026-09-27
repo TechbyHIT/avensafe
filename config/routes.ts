@@ -55,6 +55,7 @@ export const RESERVED_ROOT_SEGMENTS: ReadonlySet<string> = new Set([
   'api',
   'sitemaps',
   'sitemap.xml',
+  'sitemap-long-tail.xml',
   'robots.txt',
   'brand',
   'images',

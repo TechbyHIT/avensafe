@@ -27,6 +27,12 @@ import {
 } from '@/components/sections/LocationPageEnhancements';
 import { ServiceCoverage } from '@/components/sections/ServiceCoverage';
 import { LocalityDirectory } from '@/components/sections/LocalityDirectory';
+import {
+  HeroPromiseChips,
+  RelatedFittingWays,
+  ThoughtfulFitting,
+  heroPromiseItems,
+} from '@/components/sections/EverSafeBlocks';
 import { composeLayoutRecipe, type LayoutSectionId } from '@/lib/layout/recipes';
 import type { ImageRecord } from '@/lib/data/schemas';
 import type { ReactNode } from 'react';
@@ -176,7 +182,7 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
 
   const sectionMap: Record<LayoutSectionId, ReactNode> = {
     trustStrip: <PageTrustStrip />,
-    compactProcess: isSocietyOrAreaPage ? null : <CompactInstallProcess />,
+    compactProcess: <CompactInstallProcess />,
     servicesNav: (
       <LocationServicesNav target={target} compact={isSocietyOrAreaPage} />
     ),
@@ -282,6 +288,14 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
         }))}
       />
     ),
+    thoughtfulFitting: (
+      <ThoughtfulFitting
+        {...(target.service ? { service: target.service } : {})}
+        {...(place ? { placeLabel: place } : {})}
+        {...(primaryImage ? { image: primaryImage } : {})}
+      />
+    ),
+    relatedWays: <RelatedFittingWays target={target} compact={isSocietyOrAreaPage} />,
   };
 
   const heroVariant =
@@ -304,7 +318,12 @@ export function GeneratedPage({ bundle }: GeneratedPageProps) {
         image={primaryImage}
         {...(eyebrow ? { eyebrow } : {})}
         {...(enquiryContext ? { enquiryContext } : {})}
-      />
+      >
+        <HeroPromiseChips
+          items={heroPromiseItems(target)}
+          inverse={heroVariant !== 'editorial'}
+        />
+      </Hero>
 
       {recipe.showStickyToc && !isSocietyOrAreaPage ? (
         <StickyPageToc items={tocItems} />

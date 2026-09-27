@@ -26,8 +26,25 @@ function toIsoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+function utcToday(): Date {
+  const now = new Date();
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+}
+
+function todayIso(): string {
+  return toIsoDate(utcToday());
+}
+
 function maxIsoDate(a: string, b: string): string {
   return a >= b ? a : b;
+}
+
+function minIsoDate(a: string, b: string): string {
+  return a <= b ? a : b;
+}
+
+function notAfterToday(iso: string): string {
+  return minIsoDate(iso, todayIso());
 }
 
 let memoizedCorpusLastmod: string | null = null;
@@ -39,7 +56,8 @@ export function resetCorpusLastmodCache(): void {
 
 /**
  * Corpus lastmod for inventory/core URLs.
- * Stable for a given content version + inventory shape; advances when either changes.
+ * Stable for a given content version + inventory shape; never in the future
+ * (Search Console rejects future lastmod).
  */
 export function corpusSitemapLastmod(): string {
   if (memoizedCorpusLastmod) return memoizedCorpusLastmod;
@@ -66,16 +84,41 @@ export function corpusSitemapLastmod(): string {
   const days = digest.readUInt32BE(0) % 5000;
   const fromHash = new Date(Date.UTC(2020, 0, 1 + days));
   const fromVersion = new Date(`${SITEMAP_CONTENT_VERSION}T00:00:00.000Z`);
-  const chosen = fromHash.getTime() > fromVersion.getTime() ? fromHash : fromVersion;
+  const today = utcToday();
+  const candidates = [fromHash, fromVersion].filter((date) => date.getTime() <= today.getTime());
+  const chosen = candidates.reduce(
+    (latest, date) => (date.getTime() > latest.getTime() ? date : latest),
+    candidates[0] ?? today,
+  );
   memoizedCorpusLastmod = toIsoDate(chosen);
   return memoizedCorpusLastmod;
 }
 
-/** Prefer entity updatedAt when present; never older than corpus floor. */
+/** Prefer entity updatedAt when present; never older than corpus floor; never future. */
 export function resolveSitemapLastmod(entityUpdatedAt?: string): string {
   const corpus = corpusSitemapLastmod();
   if (entityUpdatedAt && isW3cDate(entityUpdatedAt)) {
-    return maxIsoDate(entityUpdatedAt, corpus);
+    return notAfterToday(maxIsoDate(entityUpdatedAt, corpus));
   }
   return corpus;
+}
+
+/**
+ * Stable per-URL lastmod so sibling pages do not all share one timestamp
+ * (a common Search Console “doorway / generated farm” signal).
+ */
+export function sitemapLastmodForPath(path: string, entityUpdatedAt?: string): string {
+  if (entityUpdatedAt && isW3cDate(entityUpdatedAt)) {
+    return resolveSitemapLastmod(entityUpdatedAt);
+  }
+
+  const corpus = corpusSitemapLastmod();
+  const floor = Date.UTC(2024, 0, 1);
+  const ceiling = new Date(`${corpus}T00:00:00.000Z`).getTime();
+  const spanDays = Math.max(1, Math.floor((ceiling - floor) / 86_400_000));
+  const digest = createHash('sha256')
+    .update(`${VARIATION_SEED}|${SITEMAP_CONTENT_VERSION}|${path}`)
+    .digest();
+  const offset = digest.readUInt32BE(0) % (spanDays + 1);
+  return notAfterToday(toIsoDate(new Date(floor + offset * 86_400_000)));
 }

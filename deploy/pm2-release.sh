@@ -44,6 +44,10 @@ LOW_MEM="${LOW_MEM:-0}"
 VALIDATE_SITEMAP="${VALIDATE_SITEMAP:-0}"
 CLEAN_NODE_MODULES="${CLEAN_NODE_MODULES:-0}"
 
+if [ "${AVENSAFE_FULL_SSG:-0}" != "1" ]; then
+  echo "==> 10GB-safe build: hubs only (no long-tail SSG). Set AVENSAFE_FULL_SSG=1 only if the disk can hold it."
+fi
+
 if [ "$LOW_MEM" = "1" ]; then
   FAST=1
   export AVENSAFE_SKIP_LINT=1
