@@ -47,9 +47,9 @@ import { buildGraph } from '@/lib/schema/graph';
 
 export const revalidate = 21600; // REVALIDATE.home
 
-const TITLE = `Premium Invisible Grills & Safety Nets | ${business.shortName}`;
+const TITLE = `Invisible Grills, Safety Nets & Cloth Hangers | ${business.shortName}`;
 const DESCRIPTION =
-  'Professional invisible grills, balcony safety nets, pigeon nets, sports nets and cloth hangers — measured, specified and installed across South and West India. Free site inspection and written quotes.';
+  'Invisible grills, safety nets and cloth hangers installed across Andhra Pradesh. Surveyed quotes in Visakhapatnam, Vijayawada, Guntur and other cities.';
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
@@ -61,46 +61,18 @@ export function generateMetadata(): Metadata {
 }
 
 const FEATURED_CITY_SLUGS = [
-  'hyderabad',
-  'warangal',
-  'karimnagar',
-  'nizamabad',
-  'khammam',
-  'bengaluru',
-  'mysuru',
-  'mangaluru',
-  'hubballi',
-  'belagavi',
-  'chennai',
-  'coimbatore',
-  'madurai',
-  'tiruchirappalli',
-  'salem',
-  'tiruppur',
-  'kochi',
-  'thiruvananthapuram',
-  'kozhikode',
-  'thrissur',
-  'pune',
-  'mumbai',
-  'thane',
-  'navi-mumbai',
-  'nashik',
-  'nagpur',
-  'aurangabad',
   'visakhapatnam',
   'vijayawada',
   'guntur',
   'tirupati',
-  'kakinada',
   'nellore',
-  'bhubaneswar',
-  'cuttack',
-  'berhampur',
-  'rourkela',
-  'sambalpur',
-  'panaji',
-  'margao',
+  'kakinada',
+  'rajahmundry',
+  'kurnool',
+  'eluru',
+  'kadapa',
+  'ongole',
+  'srikakulam',
 ] as const;
 
 const WHY_US = [
@@ -110,8 +82,8 @@ const WHY_US = [
     imageId: 'img-invisible-grills-01',
   },
   {
-    title: 'Eight-state coverage',
-    detail: 'AP, Telangana, Karnataka, Tamil Nadu, Kerala, Maharashtra, Odisha, and Goa with city-level pages.',
+    title: 'Andhra Pradesh coverage',
+    detail: 'City and locality pages across Andhra Pradesh, with quotations written for coastal salt, monsoon, and local building stock.',
     imageId: 'img-hero-home',
   },
   {
@@ -131,7 +103,7 @@ const WHY_US = [
   },
   {
     title: 'Locality-level guidance',
-    detail: 'Thousands of area pages explain building stock and climate — not one recycled city blurb.',
+    detail: 'Locality pages for Visakhapatnam, Vijayawada, and the other Andhra Pradesh cities explain building stock and climate.',
     imageId: 'img-building-covering-safety-nets-01',
   },
   {
@@ -261,13 +233,13 @@ export default function HomePage() {
 
       <AboutShowcase
         images={aboutImages}
-        statsLabel={`${stats.states} states and ${stats.cities} cities`}
+        statsLabel={`${stats.cities} cities in Andhra Pradesh`}
       />
 
       <ServiceImageCards
         cards={coreServiceCards}
         eyebrow="Core services"
-        heading="Eight product families with real install photos"
+        heading="Services we install in Andhra Pradesh"
         lede="Invisible grills, balcony and bird nets, sports nets, cloth hangers, duct and building covering — each card opens its own hub."
         id="core-services"
       />
@@ -284,7 +256,7 @@ export default function HomePage() {
 
       <ThoughtfulFitting
         image={heroImage}
-        placeLabel="South and West India"
+        placeLabel="Andhra Pradesh"
       />
 
       <ServiceTaxonomy />

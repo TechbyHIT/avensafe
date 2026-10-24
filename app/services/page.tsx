@@ -31,9 +31,9 @@ import { buildMetadata } from '@/lib/seo/metadata';
 
 export const revalidate = 43200; // REVALIDATE.serviceHub
 
-const TITLE = `Our Services | ${business.shortName}`;
+const TITLE = `Invisible Grill and Safety Net Services | ${business.shortName}`;
 const DESCRIPTION =
-  'Invisible grills, safety nets, balcony nets, bird and pigeon nets, sports nets, cloth hangers, duct area nets, and building covering — specified from survey across South and West India.';
+  'Invisible grills, safety nets, balcony nets, bird and pigeon nets, sports nets, cloth hangers, duct area nets, and building covering — specified from survey across Andhra Pradesh.';
 
 const CRUMBS = [
   { label: 'Home', href: STATIC_ROUTES.home },
@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
       <Hero
         eyebrow="Service library"
-        heading="Eight product families — start with the job, finish with a survey"
+        heading="Invisible grill and safety net services in Andhra Pradesh"
         lede="Every family below opens into city and locality pages with written quotations — grade, spacing, and access — not a single national rate card."
         image={getImageById('img-invisible-grills-01') ?? getImageById('img-hero-home')}
         variant="split"

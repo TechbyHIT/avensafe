@@ -12,7 +12,7 @@
     "buildingContext": "Development in and around Hyderabad has run strongly to towers of fifteen storeys and above, particularly along the western IT corridor, while the older city retains dense independent housing with smaller openings. That split matters: a high-rise balcony needs anchorage designed for wind pressure, whereas a two-storey house in the old city usually needs careful attention to the condition of older masonry instead. We survey for whichever situation applies rather than pricing a standard package.",
     "climateContext": "The Deccan plateau climate here is hot and dry for much of the year with a concentrated south-west monsoon. Without salt-laden air, AISI 304 stainless is generally adequate for cable work, which keeps costs sensible. The dominant material stress is ultraviolet exposure over long, cloudless summers, so netting specification leans towards heavier UV-stabilised twine rather than the corrosion-driven upgrades we recommend on the coast.",
     "primaryLanguages": ["Telugu", "Urdu", "English", "Hindi"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-andhra-pradesh",
@@ -42,7 +42,7 @@
     "buildingContext": "Bengaluru's growth has been vertical, with large gated developments of fifteen to thirty storeys across Whitefield, Sarjapur and the northern corridor, and most work there involves association approval and restricted working hours. Elsewhere in the state, Mysuru and the tier-two cities are predominantly independent housing and mid-rise apartments, while the coastal districts combine low-rise housing with the heaviest corrosion loading in Karnataka.",
     "climateContext": "The plateau enjoys a comparatively mild climate, which is easy on materials, though Bengaluru's altitude and open corridors make upper-floor balconies windier than people expect. The Malnad and coastal belts see extremely heavy south-west monsoon rainfall, among the highest in India, so drainage detailing and post-monsoon re-tensioning matter a great deal there, along with 316-grade hardware within a few kilometres of the sea.",
     "primaryLanguages": ["Kannada", "English", "Hindi", "Tulu"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-tamil-nadu",
@@ -57,7 +57,7 @@
     "buildingContext": "Chennai has grown vertically along the OMR and the northern suburbs while retaining large areas of independent housing in the older parts of the city. The western industrial cities are mostly low- and mid-rise with substantial factory and warehouse stock, which is where duct netting and dropped-object protection see most demand. Access arrangements differ sharply between a serviced high-rise and an operating factory, and we plan the work accordingly.",
     "climateContext": "The coastal belt is hot and humid with the main rainfall arriving on the north-east monsoon between October and December, often as intense, prolonged events. Salt exposure along the coast makes 316-grade cable and stainless fittings the sensible default, and because the wet season is late, we usually schedule inspection visits in January rather than September as we would on the west coast.",
     "primaryLanguages": ["Tamil", "English", "Telugu"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-kerala",
@@ -72,7 +72,7 @@
     "buildingContext": "Settlement in Kerala is unusually dispersed, with independent houses on individual plots the dominant built form even in urban districts, alongside growing mid- and high-rise development in Kochi and Thiruvananthapuram. Independent houses mean straightforward access but a wide variety of wall constructions, from laterite block to modern concrete frame, and the fixing method has to follow the wall rather than the other way round.",
     "climateContext": "Kerala receives among the heaviest south-west monsoon rainfall in the country, with humidity staying high through most of the year. Combined with coastal chloride, this is the worst case for hardware, so we specify AISI 316 throughout and avoid galvanised fittings entirely. Nets are chosen for polymers that shed water rather than hold it, since anything that stays wet for weeks will develop mould.",
     "primaryLanguages": ["Malayalam", "English", "Tamil"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-maharashtra",
@@ -87,7 +87,7 @@
     "buildingContext": "Mumbai and Thane are dominated by high-rise towers, frequently above thirty storeys, where wind pressure governs anchorage and where society approvals and restricted working windows shape the programme as much as the technical work. Pune's growth is in large gated townships of mid- and high-rise blocks, while the industrial belts add factory and warehouse work with a different set of access and safety requirements.",
     "climateContext": "The Konkan coast, including Mumbai, takes extremely intense south-west monsoon rainfall with strong onshore wind, while Pune and the interior sit in the rain shadow and are markedly drier. That difference is material: coastal installations get 316-grade hardware, sealed terminations and post-monsoon re-tensioning, whereas inland Pune can reasonably use 304 with ultraviolet exposure as the leading concern.",
     "primaryLanguages": ["Marathi", "Hindi", "English", "Gujarati"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-odisha",
@@ -102,7 +102,7 @@
     "buildingContext": "Bhubaneswar and Cuttack are largely mid-rise, with planned apartment development and a substantial stock of independent housing, so access is usually straightforward. The industrial districts add plant structures, risers and sheds where netting is specified for containment duty. Across the state we pay particular attention to the condition of external render, which weathers hard under repeated cyclonic rain.",
     "climateContext": "Hot and humid through most of the year, with a strong south-west monsoon and a pronounced cyclone season between October and December. Design wind speeds along this coast are the highest in our service area, so net anchorage and post foundations are sized for gusts rather than averages, and we recommend a documented inspection after every significant storm rather than only on an annual cycle.",
     "primaryLanguages": ["Odia", "Hindi", "English"],
-    "published": true
+    "published": false
   },
   {
     "id": "st-goa",
@@ -117,6 +117,6 @@
     "buildingContext": "Built form is predominantly low-rise: independent houses, villas and boutique hospitality buildings, with mid-rise apartments in Panaji and along the Mapusa corridor. Low buildings make access simple, but the prevalence of laterite masonry and older render means fixing methods are chosen after inspecting the wall rather than assumed. Heritage and coastal-zone restrictions occasionally affect what may be fixed to a facade.",
     "climateContext": "Very heavy south-west monsoon rainfall over roughly four months, high humidity year-round and permanent salt exposure across the whole territory. This combination makes 316-grade cable and stainless fittings a baseline rather than an upgrade, and makes drainage detailing at terminations the difference between an installation that lasts and one that stains a wall within two seasons.",
     "primaryLanguages": ["Konkani", "Marathi", "English", "Hindi"],
-    "published": true
+    "published": false
   }
 ]

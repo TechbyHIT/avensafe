@@ -152,7 +152,7 @@ export function contactPageSchema(description: string): JsonLdNode {
     '@type': 'ContactPage',
     '@id': `${url}#webpage`,
     url,
-    name: `Contact ${business.name}`,
+    name: 'Contact Avensafe in Andhra Pradesh',
     description,
     inLanguage: SEO_DEFAULTS.htmlLang,
     isPartOf: { '@id': SCHEMA_IDS.website },

@@ -18,7 +18,7 @@ export function PageTrustStrip() {
     'Photo estimate on WhatsApp',
     'Written quotation after survey',
     'Named material grades',
-    'Eight-state coverage',
+    'Andhra Pradesh coverage',
   ] as const;
 
   return (

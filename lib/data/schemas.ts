@@ -308,11 +308,25 @@ export type GalleryItem = z.infer<typeof galleryItemSchema>;
 
 /* --------------------------------------------------------- editorial content */
 
+/** H4 under an editorial H3. Omitted unless the section truly needs that depth. */
+const contentDetailSchema = z.object({
+  heading: nonEmpty,
+  paragraphs: z.array(paragraph).min(1),
+});
+
+/** H3 under an editorial H2. */
+const contentSubsectionSchema = z.object({
+  heading: nonEmpty,
+  paragraphs: z.array(paragraph).min(1),
+  details: z.array(contentDetailSchema).optional(),
+});
+
 export const contentSectionSchema = z.object({
   heading: nonEmpty,
   paragraphs: z.array(paragraph).min(1),
   bullets: z.array(nonEmpty).optional(),
   callout: sentence.optional(),
+  subsections: z.array(contentSubsectionSchema).optional(),
 });
 
 export type ContentSection = z.infer<typeof contentSectionSchema>;

@@ -17,7 +17,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 
 export const revalidate = 43200; // REVALIDATE.editorial
 
-const TITLE = `Guides | ${business.shortName}`;
+const TITLE = `Invisible Grill and Safety Net Guides | ${business.shortName}`;
 const DESCRIPTION =
   'Practical guides to pricing, materials, installation and safety for invisible grills, safety nets and drying systems. Written to be useful whether or not you buy from us.';
 

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Container } from '@/components/ui/Container';
+import { Heading, type HeadingLevel } from '@/components/ui/Heading';
 import { cn } from '@/lib/utils/cn';
 
 const tones = {
@@ -14,7 +15,7 @@ export interface SectionProps {
   readonly width?: 'prose' | 'default' | 'wide';
   /** Rendered as the section heading, and used as its accessible label. */
   readonly heading?: string;
-  readonly headingLevel?: 2 | 3;
+  readonly headingLevel?: Exclude<HeadingLevel, 1>;
   readonly lede?: string;
   readonly id?: string;
   readonly className?: string;
@@ -37,8 +38,6 @@ export function Section({
   id,
   className,
 }: SectionProps) {
-  const HeadingTag = headingLevel === 2 ? 'h2' : 'h3';
-
   return (
     <section
       id={id}
@@ -48,7 +47,8 @@ export function Section({
       <Container width={width}>
         {heading ? (
           <div className="mb-10 max-w-3xl lg:mb-12">
-            <HeadingTag
+            <Heading
+              level={headingLevel}
               {...(id ? { id: `${id}-heading` } : {})}
               className={cn(
                 'text-2xl tracking-tight sm:text-3xl lg:text-[2.15rem]',
@@ -56,7 +56,7 @@ export function Section({
               )}
             >
               {heading}
-            </HeadingTag>
+            </Heading>
             {lede ? (
               <p
                 className={cn(

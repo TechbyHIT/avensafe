@@ -8,7 +8,7 @@ import { HeroPromiseChips, STATIC_HERO_CHIPS } from '@/components/sections/EverS
 import { Hero } from '@/components/sections/Hero';
 import { StaticConversionRail } from '@/components/sections/StaticConversionRail';
 import { Section } from '@/components/ui/Section';
-import { getCorpusStats, getImageById } from '@/lib/data/repository';
+import { getImageById } from '@/lib/data/repository';
 import { breadcrumbSchema, webPageSchema } from '@/lib/schema/builders';
 import { buildGraph } from '@/lib/schema/graph';
 import { buildMetadata } from '@/lib/seo/metadata';
@@ -34,8 +34,6 @@ export function generateMetadata(): Metadata {
 }
 
 export default function AboutPage() {
-  const stats = getCorpusStats();
-
   return (
     <>
       <JsonLd
@@ -54,7 +52,7 @@ export default function AboutPage() {
       <Hero
         eyebrow="About us"
         heading="We specify for the building in front of us, not from a price list"
-        lede={`${business.name} installs invisible grills, safety nets, sports nets, cloth hangers and containment netting across ${stats.states} states. Most of what determines whether an installation lasts is invisible in a photograph, so this page explains how we work and what we will not cut.`}
+        lede={`${business.name} installs invisible grills, safety nets, sports nets, cloth hangers and containment netting across Andhra Pradesh. Most of what determines whether an installation lasts is invisible in a photograph, so this page explains how we work and what we will not cut.`}
         image={getImageById('img-safety-nets-03')}
       >
         <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />
@@ -141,7 +139,7 @@ export default function AboutPage() {
           </Link>{' '}
           walks through how a job runs from survey to handover, and the{' '}
           <Link href={STATIC_ROUTES.serviceAreas} className="font-medium text-brand-800">
-            states and cities we cover
+            cities we cover in Andhra Pradesh
           </Link>{' '}
           set out what changes locally.
         </p>

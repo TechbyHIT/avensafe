@@ -20,7 +20,7 @@ import { joinWithAnd } from '@/lib/utils/text';
 
 export const revalidate = 43200; // REVALIDATE.static
 
-const TITLE = `Contact ${business.name}`;
+const TITLE = `Contact Avensafe in Andhra Pradesh`;
 const DESCRIPTION =
   'Call, WhatsApp or send us the details of your job. We survey before quoting, and the survey takes about twenty minutes.';
 
@@ -30,16 +30,14 @@ const CRUMBS = [
 ];
 
 const FEATURED_CITY_SLUGS = [
-  'bengaluru',
-  'hyderabad',
-  'chennai',
-  'coimbatore',
   'visakhapatnam',
   'vijayawada',
   'guntur',
   'tirupati',
-  'pune',
-  'mumbai',
+  'nellore',
+  'kakinada',
+  'rajahmundry',
+  'kurnool',
 ] as const;
 
 export function generateMetadata(): Metadata {
@@ -72,8 +70,8 @@ export default function ContactPage() {
 
       <Hero
         eyebrow="Contact"
-        heading="Let's plan your safety net installation"
-        lede="Tell us what you need to protect. Call or WhatsApp with your city and opening details — balcony safety nets, pigeon nets, invisible grills, and related installations across South and West India."
+        heading="Contact Avensafe for a survey in Andhra Pradesh"
+        lede="Tell us what you need to protect. Call or WhatsApp with your city and opening details — balcony safety nets, pigeon nets, invisible grills, and related installations across Andhra Pradesh."
         variant="split"
         ctaEmphasis="photo"
         enquiryContext="Contact page enquiry"

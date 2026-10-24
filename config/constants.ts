@@ -106,7 +106,7 @@ export const SITEMAP_LONG_TAIL_TYPES = ['service-city-intent', 'service-area-int
  * Corpus lastmod (W3C date). Bump when page templates change. Must never be
  * in the future — Search Console rejects future lastmod.
  */
-export const SITEMAP_CONTENT_VERSION = '2026-09-27';
+export const SITEMAP_CONTENT_VERSION = '2026-10-24';
 
 /** Search-result rendering budgets used by the SEO validator. */
 export const SEO_LIMITS = {
@@ -119,8 +119,8 @@ export const SEO_LIMITS = {
 
 /**
  * Advisory content depth targets for reports and audits.
- * Sitemap inventory URLs stay indexable even when below these floors —
- * only structural routing faults set `noindex`.
+ * Ranking-set URLs stay indexable even when below these floors. Pages outside
+ * that set are noindex (see `lib/seo/index-policy.ts`).
  */
 export const CONTENT_THRESHOLDS = {
   /** Minimum unique body words before a page may be published. */

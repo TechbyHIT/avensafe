@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { ContactActions } from '@/components/layout/ContactActions';
 import { Container } from '@/components/ui/Container';
+import { Heading } from '@/components/ui/Heading';
 import type { CtaEmphasis, HeroVariant } from '@/lib/layout/recipes';
 import type { ImageRecord } from '@/lib/data/schemas';
 
@@ -41,9 +42,12 @@ export function Hero({
                 {eyebrow}
               </p>
             ) : null}
-            <h1 className="mt-3 text-3xl leading-tight font-bold text-ink-900 sm:text-4xl lg:text-[2.5rem]">
+            <Heading
+              level={1}
+              className="mt-3 text-3xl leading-tight font-bold text-ink-900 sm:text-4xl lg:text-[2.5rem]"
+            >
               {heading}
-            </h1>
+            </Heading>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-700 sm:text-lg">
               {lede}
             </p>
@@ -82,9 +86,9 @@ export function Hero({
                 {eyebrow}
               </p>
             ) : null}
-            <h1 className="mt-3 text-2xl leading-tight font-bold text-white sm:text-3xl">
+            <Heading level={1} className="mt-3 text-2xl leading-tight font-bold text-white sm:text-3xl">
               {heading}
-            </h1>
+            </Heading>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
               {lede}
             </p>
@@ -114,9 +118,9 @@ export function Hero({
                   {eyebrow}
                 </p>
               ) : null}
-              <h1 className="mt-4 text-3xl leading-tight font-bold text-white sm:text-4xl">
+              <Heading level={1} className="mt-4 text-3xl leading-tight font-bold text-white sm:text-4xl">
                 {heading}
-              </h1>
+              </Heading>
               <p className="mt-5 text-base leading-relaxed text-white/90 sm:text-lg">{lede}</p>
               <div className="mt-8">
                 <ContactActions
@@ -184,9 +188,12 @@ export function Hero({
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="mt-4 text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-[2.65rem]">
+          <Heading
+            level={1}
+            className="mt-4 text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-[2.65rem]"
+          >
             {heading}
-          </h1>
+          </Heading>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
             {lede}
           </p>

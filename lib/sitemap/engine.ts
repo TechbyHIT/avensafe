@@ -11,6 +11,7 @@ import {
   listStateTargets,
 } from '@/lib/routing/inventory';
 import { absoluteUrl, blogPath, guidePath } from '@/lib/routing/url';
+import { isSearchIndexTarget } from '@/lib/seo/index-policy';
 import {
   corpusSitemapLastmod,
   resetCorpusLastmodCache,
@@ -37,11 +38,11 @@ import type { PageTarget } from '@/types/routing';
  * none, so GSC showed 0 pages until every child was fetched (often never).
  *
  * Submit these urlsets (≤ 50,000 URLs — protocol max):
- * - `/sitemap.xml` — highest-value hubs / geo / service×place
- * - `/sitemap-long-tail.xml` — highest-value intent URLs
+ * - `/sitemap.xml` — Andhra Pradesh ranking hubs, geo, and service×place
+ * - `/sitemap-long-tail.xml` — installation and price URLs in that ranking set
  *
- * Full coverage stays in `/sitemaps/<name>.xml`, listed from
- * `/sitemap-more.xml` and `/sitemap-intents.xml` (robots.txt).
+ * Child files under `/sitemaps/<name>.xml` are listed from `/sitemap-more.xml`
+ * and `/sitemap-intents.xml`. Locality × intent URLs are noindex and omitted.
  *
  * Locs match canonicals. Every `<url>` has https `<loc>` + `<lastmod>`.
  */
@@ -195,7 +196,7 @@ const BUCKETS: readonly Bucket[] = [
     kind: 'light-targets',
     priority: 0.85,
     changeFrequency: 'weekly',
-    list: listServiceIntentTargets,
+    list: () => listServiceIntentTargets().filter((target) => isSearchIndexTarget(target)),
   },
   {
     type: 'states',
@@ -238,7 +239,7 @@ const BUCKETS: readonly Bucket[] = [
     kind: 'light-targets',
     priority: 0.65,
     changeFrequency: 'monthly',
-    list: listServiceDistrictTargets,
+    list: () => listServiceDistrictTargets().filter((target) => isSearchIndexTarget(target)),
   },
   {
     type: 'service-area',

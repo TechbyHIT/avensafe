@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import type { ReactNode } from 'react';
 import { business } from '@/config/business';
 import { googleSiteVerification, ROBOTS_INDEXABLE, SEO_DEFAULTS } from '@/config/seo';
@@ -9,10 +9,16 @@ import { Header } from '@/components/layout/Header';
 import { StickyMobileCta } from '@/components/layout/StickyMobileCta';
 import '@/app/globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
+const inter = localFont({
+  src: [
+    { path: '../fonts/inter-latin-400.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/inter-latin-500.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/inter-latin-600.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/inter-latin-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
   variable: '--font-inter',
+  adjustFontFallback: 'Arial',
 });
 
 /**

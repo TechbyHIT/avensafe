@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
+import { Heading } from '@/components/ui/Heading';
 import type { ImageRecord } from '@/lib/data/schemas';
 import type { ContentBlock, ContentModule } from '@/types/content';
 
@@ -60,7 +61,9 @@ function Block({ block }: { readonly block: ContentBlock }) {
                 {index + 1}
               </span>
               <div>
-                <p className="text-sm font-semibold text-ink-900">{item.title}</p>
+                <Heading level={3} className="text-sm font-semibold text-ink-900">
+                  {item.title}
+                </Heading>
                 <p className="mt-1 text-sm leading-relaxed text-ink-600">{item.detail}</p>
               </div>
             </li>
@@ -175,12 +178,13 @@ export function ContentModules({
                       <p className="text-xs font-semibold tracking-widest text-accent-700 uppercase">
                         {entry.id.replace(/-/gu, ' ')}
                       </p>
-                      <h2
+                      <Heading
+                        level={2}
                         id={anchorId}
                         className="mt-2 text-xl font-bold text-ink-900 sm:text-2xl lg:text-[1.75rem]"
                       >
                         {entry.heading}
-                      </h2>
+                      </Heading>
                       <div className="mt-5">
                         {entry.blocks.map((block, index) => (
                           <Block key={index} block={block} />
@@ -198,12 +202,13 @@ export function ContentModules({
                     <p className="text-xs font-semibold tracking-widest text-accent-700 uppercase">
                       {entry.id.replace(/-/gu, ' ')}
                     </p>
-                    <h2
+                    <Heading
+                      level={2}
                       id={anchorId}
                       className="mt-2 text-xl font-bold text-ink-900 sm:text-2xl lg:text-[1.75rem]"
                     >
                       {entry.heading}
-                    </h2>
+                    </Heading>
                     <div className="mt-5">
                       {entry.blocks.map((block, index) => (
                         <Block key={index} block={block} />

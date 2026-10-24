@@ -1,14 +1,15 @@
 import { CONTENT_THRESHOLDS } from '@/config/constants';
+import { isSearchIndexTarget } from '@/lib/seo/index-policy';
 import type { PageContent } from '@/types/content';
 import type { PageTarget } from '@/types/routing';
 
 /**
  * The publishing gate.
  *
- * Inventory URLs listed in the sitemap are indexable by default. We only block
- * indexing when the route is structurally broken (missing service / location /
- * intent). Content depth thresholds are recorded as soft notes for reports —
- * they do not flip a sitemap URL to `noindex`.
+ * Pages in the Search Console ranking set are indexable unless the route is
+ * structurally broken. Everything outside that set is `noindex, follow` and
+ * stays out of the sitemap. Content depth thresholds are soft notes for
+ * reports — they do not flip a ranking URL to `noindex`.
  */
 
 export interface PublishingDecision {
@@ -133,6 +134,10 @@ export function evaluatePublishing(
 
   if (target.kind === 'serviceIntent' && !target.intent) {
     hardReasons.push('service intent page resolved without an intent');
+  }
+
+  if (!isSearchIndexTarget(target)) {
+    hardReasons.push('outside the Andhra Pradesh ranking set submitted to Search Console');
   }
 
   return {

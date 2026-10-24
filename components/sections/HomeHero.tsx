@@ -9,6 +9,7 @@ import {
 } from '@/config/business';
 import { STATIC_ROUTES } from '@/config/routes';
 import { Container } from '@/components/ui/Container';
+import { Heading } from '@/components/ui/Heading';
 import type { ImageRecord } from '@/lib/data/schemas';
 
 export interface HomeHeroProps {
@@ -45,21 +46,24 @@ export function HomeHero({ image }: HomeHeroProps) {
             {business.shortName} · survey before any firm price
           </p>
 
-          <h1 className="mt-5 text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-[2.85rem]">
-            Safety nets &amp; invisible grills — made for your space
-          </h1>
+          <Heading
+            level={1}
+            className="mt-5 text-3xl leading-tight font-bold text-white sm:text-4xl lg:text-[2.85rem]"
+          >
+            Invisible grills, safety nets and cloth hangers in Andhra Pradesh
+          </Heading>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
             Balcony safety nets, pigeon protection, and slim cable grills planned around your
-            opening, your view, and how you use the home — with locality-level pages across eight
-            states, not a thin national brochure.
+            opening, your view, and how you use the home — with locality-level pages across Andhra
+            Pradesh, not a thin national brochure.
           </p>
 
           <ul className="mt-5 space-y-2 text-sm text-white/90">
             {[
               'A fit for your opening — measurements, edges, and fixing points',
               'Options for everyday living — view, access, birds, children, or sports',
-              'Find your city — thousands of locality pages with real specification notes',
+              'Find your city — locality notes for Visakhapatnam, Vijayawada, and other Andhra Pradesh cities',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span aria-hidden="true" className="mt-0.5 text-accent-400">

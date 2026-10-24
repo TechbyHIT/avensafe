@@ -45,7 +45,7 @@ export function Header() {
         <Container width="wide">
           <div className="flex flex-wrap items-center justify-between gap-2 py-2 text-xs sm:text-sm">
             <p className="text-white/85">
-              Premium Invisible Grills &amp; Safety Nets across South &amp; West India.
+              Premium Invisible Grills &amp; Safety Nets across Andhra Pradesh.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a
