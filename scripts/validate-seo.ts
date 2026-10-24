@@ -15,6 +15,7 @@
  */
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { business } from '../config/business';
 import { SEO_LIMITS } from '../config/constants';
 import { STATIC_ROUTES } from '../config/routes';
 import { buildPageContent } from '../lib/content/engine';
@@ -25,6 +26,7 @@ import { evaluatePublishing } from '../lib/routing/publishing';
 import { buildCrumbs } from '../lib/routing/resolve';
 import { absoluteUrl, blogPath, guidePath } from '../lib/routing/url';
 import { buildPageCopy } from '../lib/seo/copy';
+import { primaryKeywordFor } from '../lib/seo/page-seo';
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -226,6 +228,18 @@ targets.forEach((target, index) => {
   }
   if (values.h1.length > SEO_LIMITS.h1Max) {
     warnings.add(`${target.path}: H1 is ${values.h1.length} chars`);
+  }
+  if (!values.h1.trim()) errors.add(`${target.path}: missing H1`);
+
+  const primaryKeyword = primaryKeywordFor(target);
+  if (primaryKeyword.trim().length < 3) {
+    errors.add(`${target.path}: primary keyword is missing`);
+  }
+  if (!values.canonical.startsWith(business.url)) {
+    errors.add(`${target.path}: canonical ${values.canonical} is not on ${business.url}`);
+  }
+  if (values.canonical.includes('localhost') || values.canonical.includes('127.0.0.1')) {
+    errors.add(`${target.path}: canonical uses an untrusted host`);
   }
 
   /* ---------------------------------------------------- internal links */

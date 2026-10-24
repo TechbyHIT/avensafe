@@ -8,19 +8,14 @@ import { areaPath, cityPath, serviceInCityPath } from '@/lib/routing/url';
 import type { AreaMegaCity, MegaMenuLink } from '@/config/mega-menu';
 
 const PRIORITY_CITY_SLUGS = [
-  'hyderabad',
-  'bengaluru',
-  'chennai',
-  'mumbai',
-  'pune',
   'visakhapatnam',
-  'kochi',
-  'mysuru',
-  'coimbatore',
-  'navi-mumbai',
-  'thane',
-  'nagpur',
-  'bhubaneswar',
+  'vijayawada',
+  'guntur',
+  'tirupati',
+  'nellore',
+  'kakinada',
+  'rajahmundry',
+  'kurnool',
 ] as const;
 
 export function buildAreasMegaMenu(): readonly AreaMegaCity[] {

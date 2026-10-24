@@ -30,16 +30,14 @@ const CRUMBS = [
 ];
 
 const FEATURED_CITY_SLUGS = [
-  'bengaluru',
-  'hyderabad',
-  'chennai',
-  'coimbatore',
   'visakhapatnam',
   'vijayawada',
   'guntur',
   'tirupati',
-  'pune',
-  'mumbai',
+  'nellore',
+  'kakinada',
+  'rajahmundry',
+  'kurnool',
 ] as const;
 
 export function generateMetadata(): Metadata {
@@ -73,7 +71,7 @@ export default function ContactPage() {
       <Hero
         eyebrow="Contact"
         heading="Let's plan your safety net installation"
-        lede="Tell us what you need to protect. Call or WhatsApp with your city and opening details — balcony safety nets, pigeon nets, invisible grills, and related installations across South and West India."
+        lede="Tell us what you need to protect. Call or WhatsApp with your city and opening details — balcony safety nets, pigeon nets, invisible grills, and related installations across Andhra Pradesh."
         variant="split"
         ctaEmphasis="photo"
         enquiryContext="Contact page enquiry"

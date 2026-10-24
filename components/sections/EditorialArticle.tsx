@@ -1,4 +1,5 @@
 import { Container } from '@/components/ui/Container';
+import { Heading } from '@/components/ui/Heading';
 import type { ContentSection } from '@/lib/data/schemas';
 
 export interface EditorialArticleProps {
@@ -21,7 +22,9 @@ export function EditorialArticle({ sections }: EditorialArticleProps) {
         <div className="space-y-12">
           {sections.map((section, index) => (
             <section key={`${section.heading}-${index}`}>
-              <h2 className="text-xl sm:text-2xl">{section.heading}</h2>
+              <Heading level={2} className="text-xl sm:text-2xl">
+                {section.heading}
+              </Heading>
 
               <div className="mt-4 space-y-4">
                 {section.paragraphs.map((paragraph, paragraphIndex) => (
@@ -50,6 +53,35 @@ export function EditorialArticle({ sections }: EditorialArticleProps) {
                   {section.callout}
                 </p>
               ) : null}
+
+              {section.subsections?.map((subsection) => (
+                <div key={subsection.heading} className="mt-8">
+                  <Heading level={3} className="text-lg sm:text-xl">
+                    {subsection.heading}
+                  </Heading>
+                  <div className="mt-3 space-y-4">
+                    {subsection.paragraphs.map((paragraph, paragraphIndex) => (
+                      <p key={paragraphIndex} className="text-base leading-relaxed text-ink-700">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  {subsection.details?.map((detail) => (
+                    <div key={detail.heading} className="mt-6">
+                      <Heading level={4} className="text-base font-semibold">
+                        {detail.heading}
+                      </Heading>
+                      <div className="mt-2 space-y-3">
+                        {detail.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p key={paragraphIndex} className="text-base leading-relaxed text-ink-700">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </section>
           ))}
         </div>

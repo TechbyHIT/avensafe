@@ -33,7 +33,7 @@ export const revalidate = 43200; // REVALIDATE.serviceHub
 
 const TITLE = `Our Services | ${business.shortName}`;
 const DESCRIPTION =
-  'Invisible grills, safety nets, balcony nets, bird and pigeon nets, sports nets, cloth hangers, duct area nets, and building covering — specified from survey across South and West India.';
+  'Invisible grills, safety nets, balcony nets, bird and pigeon nets, sports nets, cloth hangers, duct area nets, and building covering — specified from survey across Andhra Pradesh.';
 
 const CRUMBS = [
   { label: 'Home', href: STATIC_ROUTES.home },

@@ -103,10 +103,10 @@ function serviceCopy(target: PageTarget): PageCopy {
   if (!service) return fallbackCopy();
 
   return {
-    title: composeTitle(`${service.name} Installation`, [service.locationAngles.default]),
-    h1: `${service.name} installation across South and West India`,
+    title: composeTitle(`${service.name} in Andhra Pradesh`, []),
+    h1: `${service.name} installation across Andhra Pradesh`,
     description: fitDescription(
-      `${service.summary} Surveyed, specified and installed by ${business.name}.`,
+      `${service.name} in Andhra Pradesh. ${service.summary} Free survey in Visakhapatnam, Vijayawada and other cities. Call ${primaryPhone.display}.`,
     ),
     lede: service.intro,
   };
@@ -118,13 +118,13 @@ function serviceIntentCopy(target: PageTarget): PageCopy {
   if (!service || !intent) return fallbackCopy();
 
   const taxonomyLabel = taxonomyLabelFor(service.slug, intent.slug) ?? intent.label;
-  const title = composeTitle(taxonomyLabel, ['South & West India', service.shortName]);
+  const title = composeTitle(taxonomyLabel, ['Andhra Pradesh', service.shortName]);
 
   return {
     title,
-    h1: truncateAtWord(`${taxonomyLabel} across South and West India`, SEO_LIMITS.h1Max),
+    h1: truncateAtWord(`${taxonomyLabel} across Andhra Pradesh`, SEO_LIMITS.h1Max),
     description: fitDescription(
-      `${taxonomyLabel}: ${intent.lede} Available across every state we cover — pick a city for a surveyed quotation. Call ${primaryPhone.display}.`,
+      `${taxonomyLabel}: ${intent.lede} Available across Andhra Pradesh — pick a city for a surveyed quotation. Call ${primaryPhone.display}.`,
     ),
     lede: `${intent.lede} ${service.summary} Use the state and city links below for local pages; each city URL keeps its own specification notes so content is not copied from one metro template.`,
     keywords: [

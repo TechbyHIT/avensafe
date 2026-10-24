@@ -29,7 +29,7 @@ export const revalidate = 43200; // REVALIDATE.static
 
 const TITLE = `Service Areas | ${business.shortName}`;
 const DESCRIPTION =
-  'The states, cities and localities we install in across South and West India, and how local climate and building types change what we specify.';
+  'The cities and localities we install in across Andhra Pradesh, and how local climate and building types change what we specify.';
 
 const CRUMBS = [
   { label: 'Home', href: STATIC_ROUTES.home },
@@ -50,7 +50,14 @@ export default function ServiceAreasPage() {
   const services = getServices();
 
   const citiesBySlug = new Map(getCities().map((city) => [city.slug, city]));
-  const featuredSlugs = ['hyderabad', 'bengaluru', 'chennai', 'pune', 'mumbai', 'visakhapatnam'] as const;
+  const featuredSlugs = [
+    'visakhapatnam',
+    'vijayawada',
+    'guntur',
+    'tirupati',
+    'nellore',
+    'kakinada',
+  ] as const;
   const featuredCities = featuredSlugs.flatMap((slug) => {
     const city = citiesBySlug.get(slug);
     if (!city) return [];

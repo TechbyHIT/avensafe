@@ -13,9 +13,9 @@ export const business: BusinessConfig = {
   shortName: 'Avensafe',
   tagline: 'Invisible grills, safety nets and cloth hangers, professionally installed.',
   description:
-    'Avensafe Solutions provides professional installation of Invisible Grills, Safety Nets, Sports Nets, Cloth Hangers, Duct Area Safety Nets, and Building Covering Safety Nets for residential, commercial, and industrial properties across Andhra Pradesh, Telangana, Karnataka, Kerala, Tamil Nadu, Goa, Odisha, and Maharashtra.',
+    'Avensafe Solutions provides professional installation of Invisible Grills, Safety Nets, Sports Nets, Cloth Hangers, Duct Area Safety Nets, and Building Covering Safety Nets for residential, commercial, and industrial properties across Andhra Pradesh.',
   shortDescription:
-    'Professional installation of invisible grills, safety nets, sports nets and cloth hangers for homes, businesses and industrial sites across South and West India.',
+    'Professional installation of invisible grills, safety nets, sports nets and cloth hangers for homes, businesses and industrial sites across Andhra Pradesh.',
   foundingYear: 2016,
   url: 'https://avensafesolutions.com',
   email: 'avensafesolutions@gmail.com',
@@ -95,9 +95,9 @@ export const business: BusinessConfig = {
         'Avensafe Solutions has specified and installed balcony and window safety systems since 2016, so survey and fixing habits are built from years of real openings rather than a product brochure.',
     },
     {
-      title: 'Coverage across eight states',
+      title: 'Coverage across Andhra Pradesh',
       detail:
-        'Crews work across Andhra Pradesh, Telangana, Karnataka, Kerala, Tamil Nadu, Goa, Odisha, and Maharashtra, with quotations written for local building stock and climate.',
+        'Crews work across Andhra Pradesh, with quotations written for local building stock and climate.',
     },
     {
       title: 'Survey before any firm price',

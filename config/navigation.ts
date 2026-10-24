@@ -57,12 +57,12 @@ export const FOOTER_COLUMNS: readonly FooterColumn[] = [
 
 /** Priority cities for footer / homepage race against EverSafe hubs. */
 export const FEATURED_CITY_SLUGS = [
-  'hyderabad',
-  'bengaluru',
-  'chennai',
   'visakhapatnam',
   'vijayawada',
-  'mysuru',
-  'coimbatore',
-  'pune',
+  'guntur',
+  'tirupati',
+  'nellore',
+  'kakinada',
+  'rajahmundry',
+  'kurnool',
 ] as const;
