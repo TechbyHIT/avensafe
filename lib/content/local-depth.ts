@@ -231,20 +231,12 @@ export function cityEnquirySteps(city: City): readonly { readonly title: string;
   ];
 }
 
+/** Locality hub query. One stable H1 so the page does not rotate away from its keyword. */
 export function areaH1Variant(area: Area, city: City): string {
-  return pickVariant(`${area.id}:h1`, [
-    `Safety and utility installations in ${area.name}, ${city.name}`,
-    `Invisible grills, safety nets and cloth hangers in ${area.name}, ${city.name}`,
-    `Balcony safety and netting services in ${area.name}, ${city.name}`,
-    `${area.name}, ${city.name} — installation and survey coverage`,
-  ]);
+  return `Invisible grills and safety nets in ${area.name}, ${city.name}`;
 }
 
+/** City hub query. The single-service query stays on the service × city URL. */
 export function cityH1Variant(city: City, state: State): string {
-  return pickVariant(`${city.id}:h1`, [
-    `Invisible grills, safety nets and cloth hangers in ${city.name}`,
-    `Safety net and invisible grill installation in ${city.name}, ${state.name}`,
-    `${city.name} — balcony safety, sports nets and utility fittings`,
-    `Professional safety installations across ${city.name}`,
-  ]);
+  return `Invisible grills and safety nets in ${city.name}, ${state.name}`;
 }

@@ -63,7 +63,7 @@ export function HomeHero({ image }: HomeHeroProps) {
             {[
               'A fit for your opening — measurements, edges, and fixing points',
               'Options for everyday living — view, access, birds, children, or sports',
-              'Find your city — thousands of locality pages with real specification notes',
+              'Find your city — locality notes for Visakhapatnam, Vijayawada, and other Andhra Pradesh cities',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span aria-hidden="true" className="mt-0.5 text-accent-400">

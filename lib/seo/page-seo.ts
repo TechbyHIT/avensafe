@@ -79,7 +79,7 @@ export function primaryKeywordFor(target: PageTarget): string {
     case 'serviceIntent':
       return joinParts([service, intent]);
     case 'service':
-      return joinParts([service, 'installation']);
+      return joinParts([service, 'in Andhra Pradesh']);
     case 'area':
       return joinParts([
         'invisible grills and safety nets in',
@@ -90,8 +90,9 @@ export function primaryKeywordFor(target: PageTarget): string {
     case 'district':
       return joinParts(['invisible grills and safety nets in', district, 'district']);
     case 'state':
+      return joinParts([state ?? 'Andhra Pradesh', 'installation coverage']);
     case 'serviceAreasHub':
-      return joinParts(['invisible grills and safety nets in', state ?? 'Andhra Pradesh']);
+      return 'cities we cover in Andhra Pradesh';
     case 'blogPost':
     case 'guide':
       return target.path.split('/').filter(Boolean).at(-1)?.replace(/-/g, ' ') ?? target.kind;

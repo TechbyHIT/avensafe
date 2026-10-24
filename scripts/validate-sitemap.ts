@@ -1,6 +1,7 @@
 /**
  * Asserts sitemap policy for production indexing:
- * - Every inventory URL is indexable and robots-allowed
+ * - Every ranking-set URL is indexable and robots-allowed
+ * - URLs outside that set are noindex and are not treated as sitemap URLs
  * - Primary + long-tail indexes cover every child file exactly once
  * - Sampled child sitemaps are valid XML with https loc + lastmod
  * - No duplicate locs in sampled batches
@@ -27,6 +28,7 @@ import {
   listStateTargets,
 } from '../lib/routing/inventory';
 import { evaluatePublishing } from '../lib/routing/publishing';
+import { isSearchIndexTarget } from '../lib/seo/index-policy';
 import { blogPath, guidePath, normalizePath } from '../lib/routing/url';
 import {
   getLongTailSitemapIndexXml,
@@ -73,25 +75,31 @@ function auditSample(
   const step = Math.max(1, Math.floor(targets.length / sampleSize));
   let checked = 0;
   let indexable = 0;
-  let noindex = 0;
+  let heldBack = 0;
 
   for (let i = 0; i < targets.length; i += step) {
     const target = targets[i]!;
     checked += 1;
-    if (isIndexable(target)) {
+    const shouldIndex = isSearchIndexTarget(target);
+    const indexed = isIndexable(target);
+    if (shouldIndex !== indexed) {
+      errors.push(
+        `${label}: ${shouldIndex ? 'ranking URL is noindex' : 'expected noindex'} — ${target.path}`,
+      );
+    }
+    if (shouldIndex) {
       indexable += 1;
       if (isDisallowed(target.path)) {
         errors.push(`${label}: indexable ${target.path} is robots-disallowed`);
       }
     } else {
-      noindex += 1;
-      errors.push(`${label}: sitemap URL is noindex — ${target.path}`);
+      heldBack += 1;
     }
   }
 
   console.log(
     `  ${label.padEnd(24)} sampled ${String(checked).padStart(4)} / ${String(targets.length).padStart(8)}  ` +
-      `indexable ${String(indexable).padStart(4)}  noindex ${String(noindex).padStart(4)}`,
+      `indexable ${String(indexable).padStart(4)}  noindex ${String(heldBack).padStart(4)}`,
   );
 }
 
@@ -100,14 +108,20 @@ function walkBucket(label: string, targets: readonly PageTarget[]): void {
   let excluded = 0;
 
   for (const target of targets) {
-    if (isIndexable(target)) {
+    const shouldIndex = isSearchIndexTarget(target);
+    const indexed = isIndexable(target);
+    if (shouldIndex !== indexed) {
+      errors.push(
+        `${label}: ${shouldIndex ? 'ranking URL is noindex' : 'expected noindex'} — ${target.path}`,
+      );
+    }
+    if (shouldIndex) {
       indexable += 1;
       if (isDisallowed(target.path)) {
         errors.push(`${label}: indexable ${target.path} is robots-disallowed`);
       }
     } else {
       excluded += 1;
-      errors.push(`${label}: sitemap URL is noindex — ${target.path}`);
     }
   }
 

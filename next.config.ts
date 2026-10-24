@@ -63,6 +63,7 @@ const nextConfig: NextConfig = {
 
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 85, 92],
     // Fewer variants = far less `.next/cache/images` growth when crawlers hit photos.
     deviceSizes:
       process.env.AVENSAFE_FULL_SSG === '1'
@@ -77,11 +78,27 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
+    const retired =
+      'telangana|karnataka|tamil-nadu|kerala|maharashtra|odisha|goa';
+    return [
+      {
+        source: `/:state(${retired})`,
+        destination: '/andhra-pradesh',
+        permanent: true,
+      },
+      {
+        source: `/:state(${retired})/:path*`,
+        destination: '/andhra-pradesh',
+        permanent: true,
+      },
+    ];
+  },
+
+  async rewrites() {
     return [
       {
         source: '/favicon.ico',
-        destination: '/favicon.png',
-        permanent: false,
+        destination: '/favicon.svg',
       },
     ];
   },

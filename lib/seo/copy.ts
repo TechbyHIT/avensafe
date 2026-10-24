@@ -104,7 +104,7 @@ function serviceCopy(target: PageTarget): PageCopy {
 
   return {
     title: composeTitle(`${service.name} in Andhra Pradesh`, []),
-    h1: `${service.name} installation across Andhra Pradesh`,
+    h1: `${service.name} in Andhra Pradesh`,
     description: fitDescription(
       `${service.name} in Andhra Pradesh. ${service.summary} Free survey in Visakhapatnam, Vijayawada and other cities. Call ${primaryPhone.display}.`,
     ),
@@ -139,6 +139,17 @@ function serviceIntentCopy(target: PageTarget): PageCopy {
  * Builds a title that always keeps the full place string (needed when locality
  * names collide across cities) and trims the lead phrase instead.
  */
+/** Shorten on a word boundary. Titles must not end in an ellipsis. */
+function clipWords(text: string, max: number): string {
+  if (max <= 0) return '';
+  if (text.length <= max) return text;
+  const clipped = text.slice(0, max);
+  const lastSpace = clipped.lastIndexOf(' ');
+  const base = lastSpace >= 4 ? clipped.slice(0, lastSpace) : clipped;
+  const trimmed = base.replace(/[\s,;:.\-—]+$/u, '');
+  return trimmed.length > 0 ? trimmed : text.slice(0, max);
+}
+
 /** Keep the city (last comma segment) when a place string must shrink. */
 function keepPlaceCity(place: string, budget: number): string {
   if (place.length <= budget) return place;
@@ -147,34 +158,42 @@ function keepPlaceCity(place: string, budget: number): string {
     const city = place.slice(comma);
     const areaBudget = budget - city.length;
     if (areaBudget >= 4) {
-      return `${place.slice(0, areaBudget).replace(/[\s,;:.\-—]+$/u, '')}${city}`;
+      return `${clipWords(place.slice(0, comma), areaBudget)}${city}`;
     }
-    return city.trim().slice(0, budget);
+    const cityName = city.trim();
+    return cityName.length <= budget ? cityName : cityName.slice(0, budget);
   }
-  return place.slice(0, budget);
+  return clipWords(place, budget);
 }
 
 function titleWithPlace(lead: string, place: string, modifiers: readonly string[] = []): string {
   const brand = business.shortName;
-  for (const modifier of modifiers) {
-    const candidate = `${lead} in ${place} | ${modifier} | ${brand}`;
+  const attempts = [
+    ...modifiers.map((modifier) => `${lead} in ${place} | ${modifier} | ${brand}`),
+    `${lead} in ${place} | ${brand}`,
+    `${lead} in ${place}`,
+  ];
+  for (const candidate of attempts) {
     if (candidate.length <= SEO_LIMITS.titleMax) return candidate;
   }
-  const withPlace = `${lead} in ${place} | ${brand}`;
-  if (withPlace.length <= SEO_LIMITS.titleMax) return withPlace;
 
-  const suffix = ` in ${place} | ${brand}`;
-  const maxLead = SEO_LIMITS.titleMax - suffix.length;
-  if (maxLead >= 8) return `${truncateAtWord(lead, maxLead)}${suffix}`;
+  const plainBudget = SEO_LIMITS.titleMax - lead.length - ' in '.length;
+  if (plainBudget >= 8) {
+    const candidate = `${lead} in ${keepPlaceCity(place, plainBudget)}`;
+    if (candidate.length <= SEO_LIMITS.titleMax) return candidate;
+  }
 
-  const unbranded = ` in ${place}`;
-  const maxUnbrandedLead = SEO_LIMITS.titleMax - unbranded.length;
-  if (maxUnbrandedLead >= 8) return `${truncateAtWord(lead, maxUnbrandedLead)}${unbranded}`;
+  const brandedTail = ` | ${brand}`;
+  const brandedBudget = SEO_LIMITS.titleMax - lead.length - ' in '.length - brandedTail.length;
+  if (brandedBudget >= 8) {
+    const candidate = `${lead} in ${keepPlaceCity(place, brandedBudget)}${brandedTail}`;
+    if (candidate.length <= SEO_LIMITS.titleMax) return candidate;
+  }
 
-  const shortLead = truncateAtWord(lead, 18);
-  const sep = ' | ';
-  const placeBit = keepPlaceCity(place, SEO_LIMITS.titleMax - shortLead.length - sep.length);
-  return `${shortLead}${sep}${placeBit}`;
+  const cityTail = place.includes(', ') ? place.slice(place.lastIndexOf(', ')) : '';
+  const head = clipWords(`${lead} in ${place}`, SEO_LIMITS.titleMax - cityTail.length);
+  const rebuilt = `${head}${cityTail}`;
+  return rebuilt.length <= SEO_LIMITS.titleMax ? rebuilt : rebuilt.slice(0, SEO_LIMITS.titleMax);
 }
 
 /** Compact unique service identity for titles that cannot fit the short name. */
@@ -346,11 +365,9 @@ function titleWithPlaceAndIntent(
   );
 }
 
-/** Landing-page title: try conversion modifiers, then keep place + brand. */
+/** Place + brand only. Unverified speed or ranking claims are not title modifiers. */
 function landingServiceTitle(serviceName: string, place: string): string {
-  // Avoid "Free Site Visit" here — that phrase is reserved for the free-site-visit
-  // intent URL so titles stay unique under case-insensitive comparison.
-  return titleWithPlace(serviceName, place, ['Same Day Installation', 'Call for Survey']);
+  return titleWithPlace(serviceName, place);
 }
 
 function localHeroFact(target: PageTarget): string {
@@ -389,30 +406,19 @@ function serviceLocationCopy(target: PageTarget): PageCopy {
   let titlePlace: string;
   let h1: string;
 
-  const societyKinds = new Set(['society', 'apartment', 'gated-community', 'township']);
-
   if (target.kind === 'serviceInDistrict' && district) {
     // Always say "District" so titles never collide with same-named city pages.
     titlePlace = `${district.name} District`;
-    h1 = truncateAtWord(`Best ${service.name} in ${titlePlace}`, SEO_LIMITS.h1Max);
+    h1 = truncateAtWord(`${service.name} in ${titlePlace}`, SEO_LIMITS.h1Max);
   } else if (target.kind === 'serviceInArea' && location.area && location.city) {
-    titlePlace = district
-      ? `${location.area.name}, ${location.city.name}, ${district.name}`
-      : `${location.area.name}, ${location.city.name}`;
-    const kind = location.area.locationKind;
+    titlePlace = `${location.area.name}, ${location.city.name}`;
     h1 = truncateAtWord(
-      kind && societyKinds.has(kind)
-        ? `${service.name} in ${location.area.name}, ${location.city.name}`
-        : `Best ${service.name} in ${location.area.name}, ${location.city.name}`,
+      `${service.name} in ${location.area.name}, ${location.city.name}`,
       SEO_LIMITS.h1Max,
     );
   } else if (target.kind === 'serviceInCity' && location.city) {
     titlePlace = location.city.name;
-    // Match head-term search: "{Service} Installation in {City}"
-    h1 = truncateAtWord(
-      `${service.name} Installation in ${location.city.name}`,
-      SEO_LIMITS.h1Max,
-    );
+    h1 = truncateAtWord(`${service.name} in ${location.city.name}`, SEO_LIMITS.h1Max);
   } else {
     titlePlace =
       location.area && location.city
@@ -437,10 +443,8 @@ function serviceLocationCopy(target: PageTarget): PageCopy {
     lede: `Premium installation for apartments, villas, homes, offices, and commercial buildings throughout ${metaPlace}. ${localHeroFact(target)}`,
     keywords: [
       `${serviceLower} in ${place}`,
-      `best ${serviceLower} in ${titlePlace}`,
-      `${serviceLower} installation ${place}`,
-      `${serviceLower} near me`,
-      `free site visit ${titlePlace}`,
+      `${serviceLower} installation in ${place}`,
+      `${service.name} ${titlePlace}`,
     ],
   };
 }
@@ -479,10 +483,10 @@ function stateCopy(target: PageTarget): PageCopy {
   if (!state) return fallbackCopy();
 
   return {
-    title: composeTitle(`Safety Nets & Invisible Grills in ${state.name}`, []),
-    h1: `Invisible grills, safety nets and cloth hangers across ${state.name}`,
+    title: composeTitle(`${state.name} installation coverage`, []),
+    h1: `Cities and districts covered in ${state.name}`,
     description: fitDescription(
-      `Professional installation across ${state.name}, specified for local building types and climate. Invisible grills, safety nets, sports nets and cloth hangers.`,
+      `Installation coverage across ${state.name}: Visakhapatnam, Vijayawada, Guntur, Tirupati and the other cities we survey. Each city page owns its own service details.`,
     ),
     lede: state.intro,
   };
@@ -511,11 +515,9 @@ function districtCopy(target: PageTarget): PageCopy {
   const districtLabel = `${district.name} District`;
 
   return {
-    title: composeTitle(`Safety Nets & Invisible Grills in ${districtLabel}`, [
-      location.state.name,
-    ]),
+    title: titleWithPlace('Safety nets', districtLabel),
     h1: truncateAtWord(
-      `Invisible grills and safety nets across ${districtLabel}`,
+      `Invisible grills and safety nets in ${districtLabel}, ${location.state.name}`,
       SEO_LIMITS.h1Max,
     ),
     description: fitDescription(
@@ -536,10 +538,10 @@ function areaCopy(target: PageTarget): PageCopy {
   return {
     // Avoid "Balcony…" leads — they collide with the Balcony Nets service titles
     // once both are truncated under the title length limit.
-    title: titleWithPlace('Area safety install', disambiguated),
+    title: titleWithPlace('Installations', disambiguated),
     h1: truncateAtWord(areaH1Variant(area, city), SEO_LIMITS.h1Max),
     description: fitDescription(
-      `Installation in ${area.name}, ${city.name}. ${area.notes}`,
+      `Invisible grills and safety nets in ${area.name}, ${city.name}. ${area.notes} Survey before a written quote. Call ${primaryPhone.display}.`,
     ),
     lede: `${area.notes} Below is what that means in practice for each of the services we install in ${area.name}.`,
   };

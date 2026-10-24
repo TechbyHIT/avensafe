@@ -17,7 +17,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 
 export const revalidate = 43200; // REVALIDATE.static
 
-const TITLE = `Gallery | ${business.shortName}`;
+const TITLE = `Installation Photo Gallery | ${business.shortName}`;
 const DESCRIPTION =
   'Installation photography showing cable spacing, terminations, net tensioning and anchorage detail across balconies, shafts, grounds and facades.';
 

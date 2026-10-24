@@ -17,7 +17,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
 
 export const revalidate = 43200; // REVALIDATE.editorial
 
-const TITLE = `Blog | ${business.shortName}`;
+const TITLE = `Installation Notes | ${business.shortName}`;
 const DESCRIPTION =
   'Field notes on balcony safety, invisible grills, bird control, monsoon care and what actually causes installations to fail early.';
 

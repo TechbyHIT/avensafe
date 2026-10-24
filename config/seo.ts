@@ -22,8 +22,8 @@ export const SEO_DEFAULTS = {
 } as const;
 
 /**
- * Default robots directives for indexable pages. Only structurally broken
- * resolutions are served with `noindex, follow` instead.
+ * Default robots directives for indexable pages. Pages outside the Andhra
+ * Pradesh ranking set, and structurally broken resolutions, use `noindex, follow`.
  */
 export const ROBOTS_INDEXABLE = {
   index: true,
@@ -76,7 +76,7 @@ export const SEARCH_CONSOLE_PLAN = [
   {
     id: 'coverage',
     detail:
-      'Review excluded and noindex URLs before requesting indexing. Unpublished states stay out of the sitemap because their pages are not built from published data.',
+      'Submit the sitemaps after this release, then expect Excluded by noindex to rise. That is the long-tail set leaving the index queue. Unpublished state URLs redirect to Andhra Pradesh.',
   },
   {
     id: 'queries',

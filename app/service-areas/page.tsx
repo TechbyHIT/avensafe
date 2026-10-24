@@ -27,7 +27,7 @@ import { buildMetadata } from '@/lib/seo/metadata';
  */
 export const revalidate = 43200; // REVALIDATE.static
 
-const TITLE = `Service Areas | ${business.shortName}`;
+const TITLE = `Cities We Cover in Andhra Pradesh | ${business.shortName}`;
 const DESCRIPTION =
   'The cities and localities we install in across Andhra Pradesh, and how local climate and building types change what we specify.';
 
@@ -82,8 +82,8 @@ export default function ServiceAreasPage() {
 
       <Hero
         eyebrow="Coverage"
-        heading="Where we work, and why location changes the specification"
-        lede={`We cover ${stats.states} states, ${stats.cities} cities and ${stats.areas} localities. Coastal salt, monsoon intensity and building height each change the hardware we specify, so every state and city page explains what differs there rather than repeating a national pitch.`}
+        heading="Cities and localities we cover in Andhra Pradesh"
+        lede={`We install in ${stats.cities} cities and ${stats.areas} localities across Andhra Pradesh. Coastal salt, monsoon, and building height change the hardware we specify, so each city page explains what differs there.`}
         image={getImageById('img-hero-home')}
       >
         <HeroPromiseChips items={STATIC_HERO_CHIPS} inverse />

@@ -103,7 +103,7 @@ const WHY_US = [
   },
   {
     title: 'Locality-level guidance',
-    detail: 'Thousands of area pages explain building stock and climate — not one recycled city blurb.',
+    detail: 'Locality pages for Visakhapatnam, Vijayawada, and the other Andhra Pradesh cities explain building stock and climate.',
     imageId: 'img-building-covering-safety-nets-01',
   },
   {
@@ -233,13 +233,13 @@ export default function HomePage() {
 
       <AboutShowcase
         images={aboutImages}
-        statsLabel={`${stats.states} states and ${stats.cities} cities`}
+        statsLabel={`${stats.cities} cities in Andhra Pradesh`}
       />
 
       <ServiceImageCards
         cards={coreServiceCards}
         eyebrow="Core services"
-        heading="Eight product families with real install photos"
+        heading="Services we install in Andhra Pradesh"
         lede="Invisible grills, balcony and bird nets, sports nets, cloth hangers, duct and building covering — each card opens its own hub."
         id="core-services"
       />
